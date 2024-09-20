@@ -4,15 +4,15 @@
 
 :root {
 	/* Colores */
-	--primary-pink: #ff66c4;
-	--primary-blue: #37b6ff;
-	--primary-purple: #8c53ff;
-	--background-light: #f7fafc;
-	--background-dark: #08121f;
+	--primary-pink: #FF66C4;
+	--primary-blue: #37B6FF;
+	--primary-purple: #8C53FF;
+	--background-light: #F7FAFC;
+	--background-dark: #08121F;
 
 	/* Tipografías */
 	--font-primary: 'League Spartan', sans-serif;
-	--font-secondary: 'Ubuntu', sans-serif;
+	--font-secondary: 'lato', sans-serif;
 }
 
 body {
