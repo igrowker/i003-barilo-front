@@ -70,8 +70,14 @@ export const LoginFormComponent: React.FC = () => {
 						showPassword={showPassword}
 						setShowPassword={setShowPassword}
 					/>
-					<FormMessage>{form.formState.errors.password?.message}</FormMessage>
 				</div>
+				<a
+					href='/forgot-password'
+					className='mt-3 text-sm font-normal leading-none text-right text-white font-secondary'
+				>
+					¿Has olvidado tu contraseña?
+				</a>
+				<FormMessage>{form.formState.errors.password?.message}</FormMessage>
 				<div className='mt-20 space-y-3'>
 					<CustomButton type='submit'>Iniciar sesión</CustomButton>
 					<Separator />
@@ -88,6 +94,13 @@ export const LoginFormComponent: React.FC = () => {
 						onClick={handleAppleLogin}
 					/>
 				</div>
+				<p className='mt-3 text-sm font-normal leading-none text-center text-white font-secondary'>
+					¿Aún no tienes una cuenta?{' '}
+					<a href='/register' className='antialiased font-bold'>
+						{' '}
+						Registrate
+					</a>
+				</p>
 			</form>
 		</Form>
 	)
