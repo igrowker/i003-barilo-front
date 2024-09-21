@@ -8,7 +8,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className='text-black'>
+    <div className='font-bold text-black'>
       <h1>{t('welcome')}</h1>
       <p>{t('description')}</p>
       <button onClick={() => changeLanguage('es')}>Español</button>
