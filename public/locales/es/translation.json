@@ -1,4 +1,24 @@
 {
   "welcome": "Bienvenido",
-  "description": "Esta es una descripción en español."
+  "description": "Esta es una descripción en español.",
+  
+  "progressBar": {
+    "steps": ["Grupo", "Origen", "Hoteles", "Actividades"]
+  },
+  "stepOne": {
+    "description": "Elije el nombre del grupo y más adelante podrás compartir un link de invitación a las personas que deseas agregar.",
+    "groupName": "¿Cómo se llamará el grupo?",
+    "numberOfPeople": "Número de personas"
+  },
+  "stepTwo": {
+    "origin": "Origen",
+    "destination": "Destino",
+    "date": "Fecha",
+    "departureDate": "Ida",
+    "returnDate": "Vuelta"
+  },
+  "buttons": {
+    "searchButton": "Buscar",
+    "cancelButton": "Cancelar"
+  }
 }
