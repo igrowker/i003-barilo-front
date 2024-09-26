@@ -26,7 +26,7 @@ function PlanTrip() {
               <FaRegUser size={25}/>
             </div>
             <div className='col ml-2'>
-              <p><b> Marcos Perez</b></p>{/* {user.name} */}
+              <p className="font-black "> Marcos Perez</p>{/* {user.name} */}
               <p className="leading-none">Administrator</p>{/* {user.rol} */}
             </div>
           </div>
@@ -48,9 +48,9 @@ function PlanTrip() {
         />
       </section>
       <section className="mt-3">
-        <h1 className="mb-3"><b> Mis campañas creadas</b></h1>
+        <h1 className="mb-3 text-lg font-black text-gray-700"> Mis campañas creadas</h1>
         <CampaignCard/>
-        <h1 className="mb-3 mt-3"><b> Mis grupos de egresados</b></h1>
+        <h1 className="mb-3 mt-3 text-lg font-black text-gray-700"> Mis grupos de egresados</h1>
         <GroupCard/>
       </section>
 

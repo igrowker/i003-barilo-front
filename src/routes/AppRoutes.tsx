@@ -4,6 +4,7 @@ import PlanTrip from '../pages/PlanTrip'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Error from '@/pages/Error'
+import PlanTripGroup from '@/pages/PlanTripGroup'
 
 function AppRoutes() {
 	return (
@@ -14,6 +15,7 @@ function AppRoutes() {
 				<Route path='/login' element={<Login />} />
 				<Route path='/register' element={<Register />} />
 				<Route path='/dashboard' element={<PlanTrip />} />
+				<Route path='/dashboard/group' element={<PlanTripGroup />} />
 			</Routes>
 		</Router>
 	)

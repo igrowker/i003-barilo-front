@@ -1,5 +1,6 @@
 import { RiAddFill } from "react-icons/ri"
 import { IconButton } from "./IconButton"
+import { Progress } from "./ui/progress"
 
 // interface CampaignCardProps {
 //     title: string;
@@ -19,8 +20,9 @@ function CampaignCard() {
       <div className="border border-gray-400 rounded-md p-3.5">
         <div className="bg-gray-300 h-[7em] rounded-md"/>
         {/* <img src={imageUrl} alt={title} /> */}
-        <p><b>Titulo del viaje</b></p> 
+        <p className='mt-1.5 text-lg text-gray-700'><b>Titulo del viaje</b></p> 
         {/* <p><b>{title}</b></p> */}
+        <Progress value={33} goal={100} deadline={"10/10/20"}/>
         <IconButton
           icon={RiAddFill}
           label='Ver detalle'
