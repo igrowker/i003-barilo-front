@@ -1,4 +1,3 @@
-// LoginFormComponent.tsx
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -12,7 +11,7 @@ import { ImAppleinc } from 'react-icons/im'
 import { Form, FormMessage } from '@/components/ui/form'
 
 const formSchema = z.object({
-	email: z.string().email({ message: 'Email inválido' }).min(2, {
+	email: z.string().email({ message: 'Correo electrónico inválido' }).min(2, {
 		message: 'El nombre de usuario debe tener al menos 2 caracteres.',
 	}),
 	password: z.string().min(8, {
@@ -50,7 +49,7 @@ export const LoginFormComponent: React.FC = () => {
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col'>
+			<form onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col max-w-md'>
 				<div className='space-y-6'>
 					<CustomInput
 						type='email'
@@ -73,14 +72,14 @@ export const LoginFormComponent: React.FC = () => {
 				</div>
 				<a
 					href='/forgot-password'
-					className='mt-3 text-sm font-normal leading-none text-right text-white font-secondary'
+					className='mt-3 text-sm font-normal leading-none text-right text-primary-celeste font-secondary'
 				>
 					¿Has olvidado tu contraseña?
 				</a>
 				<FormMessage>{form.formState.errors.password?.message}</FormMessage>
-				<div className='mt-20 space-y-3'>
+				<div className='space-y-3 mt-14'>
 					<CustomButton type='submit'>Iniciar sesión</CustomButton>
-					<Separator />
+					<Separator className='' />
 					<IconButton
 						className='bg-[#08121f]'
 						icon={FaGoogle}
@@ -94,7 +93,7 @@ export const LoginFormComponent: React.FC = () => {
 						onClick={handleAppleLogin}
 					/>
 				</div>
-				<p className='mt-3 text-sm font-normal leading-none text-center text-white font-secondary'>
+				<p className='mt-4 text-sm font-normal leading-none text-center text-primary-celeste font-secondary'>
 					¿Aún no tienes una cuenta?{' '}
 					<a href='/register' className='antialiased font-bold'>
 						{' '}
