@@ -58,4 +58,6 @@ function PlanTrip() {
   )
 }
 
-export default PlanTrip
+
+
+export default PlanTrip;
