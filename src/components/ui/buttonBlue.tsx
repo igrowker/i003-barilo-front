@@ -1,8 +1,9 @@
 interface ButtonBlueProps {
   text: string;
-  onClick: () => void;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   isActive?: boolean;
   className?: string;
+  type?: "button" | "submit";
 }
 
 const ButtonBlue: React.FC<ButtonBlueProps> = ({
@@ -10,9 +11,11 @@ const ButtonBlue: React.FC<ButtonBlueProps> = ({
   onClick,
   isActive = true,
   className = "",
+  type = "button",
 }) => {
   return (
     <button
+      type={type}
       onClick={onClick}
       className={`w-full px-4 py-2 font-primary font-medium rounded-3xl transition-colors duration-300 text-xl ${
         isActive
