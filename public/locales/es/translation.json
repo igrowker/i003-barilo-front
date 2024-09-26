@@ -20,5 +20,19 @@
   "buttons": {
     "searchButton": "Buscar",
     "cancelButton": "Cancelar"
+  },
+  "home": {
+    "cardEvent": {
+      "title": "Parrilla",
+      "description": "Asado traer lo que quieran beber"
+    },
+    "cardTrip": {
+      "title": "Tu Viaje",
+      "link": "Ver más",
+      "titleCard1": "Excursiones",
+      "titleCard2": "Restaurantes",
+      "titleCard3": "Destinos",
+      "titleCard4": "Destinos"
+    }
   }
 }

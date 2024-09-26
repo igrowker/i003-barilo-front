@@ -20,5 +20,19 @@
   "buttons": {
     "searchButton": "Search",
     "cancelButton": "Cancel"
+  },
+  "home": {
+    "cardEvent": {
+      "title": "Barbecue",
+      "description": "Barbecue bring whatever you want to drink"
+    },
+    "cardTrip": {
+      "title": "Your Trip",
+      "link": "See more",
+      "titleCard1": "Excursions",
+      "titleCard2": "Restaurants",
+      "titleCard3": "Destinations",
+      "titleCard4": "Destinations"
+    }
   }
 }
