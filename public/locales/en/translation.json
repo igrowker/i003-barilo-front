@@ -3,12 +3,19 @@
   "description": "This is a description in English.",
   
   "progressBar": {
-    "steps": ["Group", "Origin", "Hotels", "Activities"]
+    "steps": ["Group", "Origin", "Hotels", "Activities", "Confirmation"]
   },
   "stepOne": {
     "description": "Choose the group name, and later you will be able to share an invitation link with the people you want to add.",
     "groupName": "What will the group be called?",
     "numberOfPeople": "Number of people"
+  },
+  "stepThree": {
+  },
+  "stepFour": {
+  },
+  "stepFive": {
+    "title": "Travel Package Confirmation"
   },
   "stepTwo": {
     "origin": "Origin",
@@ -18,7 +25,24 @@
     "returnDate": "Return"
   },
   "buttons": {
+    "nextButton": "Next",
     "searchButton": "Search",
-    "cancelButton": "Cancel"
+    "cancelButton": "Cancel",
+    "confirmButton": "Confirm",
+    "finishButton": "Finish"
+  },
+  "home": {
+    "cardEvent": {
+      "title": "Barbecue:",
+      "description": "Barbecue bring whatever you want to drink"
+    },
+    "cardTrip": {
+      "title": "Your Trip",
+      "link": "See more",
+      "titleCard1": "Excursions",
+      "titleCard2": "Restaurants",
+      "titleCard3": "Destinations",
+      "titleCard4": "Destinations"
+    }
   }
 }

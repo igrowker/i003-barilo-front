@@ -3,7 +3,7 @@
   "description": "Esta es una descripción en español.",
   
   "progressBar": {
-    "steps": ["Grupo", "Origen", "Hoteles", "Actividades"]
+    "steps": ["Grupo", "Origen", "Hoteles", "Actividades", "Confirmación"]
   },
   "stepOne": {
     "description": "Elije el nombre del grupo y más adelante podrás compartir un link de invitación a las personas que deseas agregar.",
@@ -17,8 +17,32 @@
     "departureDate": "Ida",
     "returnDate": "Vuelta"
   },
+  "stepThree": {
+  },
+  "stepFour": {
+  },
+  "stepFive": {
+    "title": "Confirmación de Paquete de Viaje"
+  },
   "buttons": {
-    "searchButton": "Buscar",
-    "cancelButton": "Cancelar"
+  "nextButton": "Siguiente",
+  "searchButton": "Buscar",
+  "cancelButton": "Cancelar",
+  "confirmButton": "Confirmar",
+  "finishButton": "Finalizar"
+},
+  "home": {
+    "cardEvent": {
+      "title": "Parrilla:",
+      "description": "Asado traer lo que quieran beber"
+    },
+    "cardTrip": {
+      "title": "Tu Viaje",
+      "link": "Ver más",
+      "titleCard1": "Excursiones",
+      "titleCard2": "Restaurantes",
+      "titleCard3": "Destinos",
+      "titleCard4": "Destinos"
+    }
   }
 }
