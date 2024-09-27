@@ -3,7 +3,7 @@ import { StepOneFormData } from "./StepOne";
 import { StepTwoFormData } from "./StepTwo";
 import { StepThreeFormData } from "./StepThree";
 import { StepFourFormData } from "./StepFour";
-import { useTranslation } from "react-i18next"; // Suponiendo que estás usando i18next
+import { useTranslation } from "react-i18next";
 
 interface StepFiveProps {
   stepOneData: StepOneFormData | null;
@@ -18,7 +18,7 @@ const StepFive: React.FC<StepFiveProps> = ({
   stepThreeData,
   stepFourData,
 }) => {
-  const { t } = useTranslation(); // Hook de i18next para traducciones
+  const { t } = useTranslation();
 
   const formatDate = (dateString: string | undefined): string => {
     if (!dateString) return "No especificado";
