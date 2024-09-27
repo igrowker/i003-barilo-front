@@ -3,7 +3,7 @@
   "description": "This is a description in English.",
   
   "progressBar": {
-    "steps": ["Group", "Origin", "Hotels", "Activities"]
+    "steps": ["Group", "Origin", "Hotels", "Activities", "Confirmation"]
   },
   "stepOne": {
     "description": "Choose the group name, and later you will be able to share an invitation link with the people you want to add.",
@@ -18,7 +18,10 @@
     "returnDate": "Return"
   },
   "buttons": {
+    "nextButton": "Next",
     "searchButton": "Search",
-    "cancelButton": "Cancel"
+    "cancelButton": "Cancel",
+    "confirmButton": "Confirm",
+    "finishButton": "Finish"
   }
 }
