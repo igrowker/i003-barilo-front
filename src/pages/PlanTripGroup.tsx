@@ -1,3 +1,4 @@
+import GroupMember from "@/components/GroupMember"
 import { IconButton } from "@/components/IconButton"
 import { RiAddFill } from "react-icons/ri"
 
@@ -27,7 +28,9 @@ function PlanTripGroup() {
       </section>
       <section className="mt-3">
         <h1 className="mb-3 text-lg font-black text-gray-700"> Integrantes del grupo</h1>
-        
+        <GroupMember/>
+        <GroupMember/>
+        <GroupMember/>
       </section>
 
     </div>
