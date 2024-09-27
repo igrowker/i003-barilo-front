@@ -7,6 +7,7 @@ interface CustomButtonProps {
 	className?: string
 	isActive?: boolean
 	type?: 'button' | 'submit' | 'reset'
+	disabled?: boolean
 }
 
 export const CustomButton: React.FC<CustomButtonProps> = ({

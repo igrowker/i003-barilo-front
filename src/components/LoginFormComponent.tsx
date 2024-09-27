@@ -9,30 +9,41 @@ import { Separator } from '@/components/ui/separator'
 import { FaGoogle } from 'react-icons/fa'
 import { ImAppleinc } from 'react-icons/im'
 import { Form, FormMessage } from '@/components/ui/form'
+import { useNavigate } from 'react-router-dom'
+import { loginUser } from '@/services/authService'
+import { loginSchema } from '../validation/loginSchema'
 
-const formSchema = z.object({
-	email: z.string().email({ message: 'Correo electrónico inválido' }).min(2, {
-		message: 'El nombre de usuario debe tener al menos 2 caracteres.',
-	}),
-	password: z.string().min(8, {
-		message: 'La contraseña debe tener al menos 8 caracteres.',
-	}),
-})
+type LoginUserForm = z.infer<typeof loginSchema>
 
 export const LoginFormComponent: React.FC = () => {
 	const [showPassword, setShowPassword] = useState(false)
+	const [isLoading, setIsLoading] = useState(false)
+	const navigate = useNavigate()
 
-	const form = useForm<z.infer<typeof formSchema>>({
-		resolver: zodResolver(formSchema),
+	const form = useForm<LoginUserForm>({
+		resolver: zodResolver(loginSchema),
 		defaultValues: {
-			email: '',
+			mail: '',
 			password: '',
 		},
 	})
 
-	const onSubmit = (values: z.infer<typeof formSchema>) => {
-		// Login with email and password
-		console.log(values)
+	const onSubmit = async (values: LoginUserForm) => {
+		setIsLoading(true)
+		try {
+			const response = await loginUser(values)
+
+			if (response) {
+				console.log('Inicio de sesión exitoso:', response)
+				navigate('/dashboard')
+			} else {
+				console.error('Error en el inicio de sesión')
+			}
+		} catch (error) {
+			console.error('Error en la solicitud:', error)
+		} finally {
+			setIsLoading(false)
+		}
 	}
 
 	const handleGoogleLogin = () => (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -54,11 +65,11 @@ export const LoginFormComponent: React.FC = () => {
 					<CustomInput
 						type='email'
 						label='Correo electrónico'
-						name='email'
+						name='mail'
 						placeholder='Intorduce tu correo electrónico'
-						field={form.register('email')}
+						field={form.register('mail')}
 					/>
-					<FormMessage>{form.formState.errors.email?.message}</FormMessage>
+					<FormMessage>{form.formState.errors.mail?.message}</FormMessage>
 					<CustomInput
 						label='Contraseña'
 						name='password'
@@ -78,7 +89,9 @@ export const LoginFormComponent: React.FC = () => {
 				</a>
 				<FormMessage>{form.formState.errors.password?.message}</FormMessage>
 				<div className='space-y-3 mt-14'>
-					<CustomButton type='submit'>Iniciar sesión</CustomButton>
+					<CustomButton type='submit' disabled={isLoading}>
+						{isLoading ? 'Iniciando sesión' : 'Iniciar sesión'}
+					</CustomButton>
 					<Separator className='' />
 					<IconButton
 						className='bg-[#08121f]'

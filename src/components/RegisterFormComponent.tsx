@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { registerUser } from '@/services/authService'
+import { registerSchema } from '../validation/registerSchema'
 import { z } from 'zod'
 import { CustomInput } from '@/components/CustomInput'
 import { CustomButton } from '@/components/CustomButton'
@@ -14,55 +18,41 @@ import {
 	FormMessage,
 } from '@/components/ui/form'
 
-// import { IconButton } from '@/components//IconButton'
-// import { Separator } from '@/components/ui/separator'
-// import { FaGoogle } from 'react-icons/fa'
-// import { ImAppleinc } from 'react-icons/im'
-
-import { Link } from 'react-router-dom'
-
-const formSchema = z.object({
-	name: z.string().min(4, { message: 'El nombre debe tener al menos 4 caracteres .' }),
-	email: z.string().email({ message: 'Email inválido' }).min(2),
-	role: z.enum(['COORDINADOR', 'ESTUDIANTE'], { message: 'Debes seleccionar un rol' }),
-	password: z.string().min(8, {
-		message: 'La contraseña debe tener al menos 8 caracteres.',
-	}),
-	passwordConfirmation: z.string().min(8, {
-		message: 'La contraseña debe tener al menos 8 caracteres.',
-	}),
-})
+type RegisterUserForm = z.infer<typeof registerSchema>
 
 export const RegisterFormComponent: React.FC = () => {
 	const [showPassword, setShowPassword] = useState(false)
+	const [isLoading, setIsLoading] = useState(false)
+	const navigate = useNavigate()
 
-	const form = useForm<z.infer<typeof formSchema>>({
-		resolver: zodResolver(formSchema),
+	const form = useForm<RegisterUserForm>({
+		resolver: zodResolver(registerSchema),
 		defaultValues: {
 			name: '',
-			email: '',
+			mail: '',
 			role: 'COORDINADOR',
 			password: '',
 			passwordConfirmation: '',
 		},
 	})
 
-	const onSubmit = (values: z.infer<typeof formSchema>) => {
-		// Login with email and password
-		console.log(values)
+	const onSubmit = async (values: RegisterUserForm) => {
+		setIsLoading(true)
+		try {
+			const response = await registerUser(values)
+
+			if (response) {
+				console.log('Registro exitoso:', response)
+				navigate('/login')
+			} else {
+				console.error('Error en el registro')
+			}
+		} catch (error) {
+			console.error('Error en la solicitud:', error)
+		} finally {
+			setIsLoading(false)
+		}
 	}
-
-	// const handleGoogleLogin = () => (e: React.MouseEvent<HTMLButtonElement>) => {
-	// 	e.preventDefault()
-	// 	// Login with Google
-	// 	console.log(`Google login`)
-	// }
-
-	// const handleAppleLogin = () => (e: React.MouseEvent<HTMLButtonElement>) => {
-	// 	e.preventDefault()
-	// 	// Login with Apple
-	// 	console.log(`Apple login`)
-	// }
 
 	return (
 		<Form {...form}>
@@ -72,7 +62,7 @@ export const RegisterFormComponent: React.FC = () => {
 					name='role'
 					render={({ field }) => (
 						<FormItem className='mb-3'>
-							<FormLabel className='text-base font-bold text-primary-celeste font-secondary'>
+							<FormLabel className='text-lg font-bold font-primary text-primary-celeste'>
 								Tipo de usuario
 							</FormLabel>
 							<FormControl>
@@ -80,22 +70,19 @@ export const RegisterFormComponent: React.FC = () => {
 									onValueChange={field.onChange}
 									defaultValue={field.value}
 									className='flex'
+									aria-labelledby='tipo-usuario'
 								>
 									<FormItem className='flex items-center space-x-3 space-y-0'>
 										<FormControl>
 											<RadioGroupItem value='COORDINADOR' />
 										</FormControl>
-										<FormLabel className='text-base text-primary-celeste font-secondary'>
-											Coordinador
-										</FormLabel>
+										<FormLabel className='text-base text-primary-celeste '>Coordinador</FormLabel>
 									</FormItem>
 									<FormItem className='flex items-center space-x-3 space-y-0'>
 										<FormControl>
 											<RadioGroupItem value='ESTUDIANTE' />
 										</FormControl>
-										<FormLabel className='text-base text-primary-celeste font-secondary'>
-											Estudiante
-										</FormLabel>
+										<FormLabel className='text-base text-primary-celeste '>Estudiante</FormLabel>
 									</FormItem>
 								</RadioGroup>
 							</FormControl>
@@ -115,11 +102,11 @@ export const RegisterFormComponent: React.FC = () => {
 					<CustomInput
 						type='email'
 						label='Correo electrónico'
-						name='email'
+						name='mail'
 						placeholder='Intorduce tu correo electrónico'
-						field={form.register('email')}
+						field={form.register('mail')}
 					/>
-					<FormMessage>{form.formState.errors.email?.message}</FormMessage>
+					<FormMessage>{form.formState.errors.mail?.message}</FormMessage>
 					<CustomInput
 						label='Contraseña'
 						name='password'
@@ -143,22 +130,10 @@ export const RegisterFormComponent: React.FC = () => {
 					/>
 					<FormMessage>{form.formState.errors.passwordConfirmation?.message}</FormMessage>
 				</div>
-
 				<div className='mt-8 space-y-3'>
-					<CustomButton type='submit'>Registrarse</CustomButton>
-					{/* <Separator className='' />
-					<IconButton
-						className='bg-[#08121f]'
-						icon={FaGoogle}
-						label='Inicia sesión con Google'
-						onClick={handleGoogleLogin}
-					/>
-					<IconButton
-						icon={ImAppleinc}
-						label='Inicia sesión con Apple'
-						className='bg-[#2d3e50] '
-						onClick={handleAppleLogin}
-					/> */}
+					<CustomButton type='submit' disabled={isLoading}>
+						{isLoading ? 'Registrando...' : 'Registrarse'}
+					</CustomButton>
 				</div>
 				<p className='mt-4 text-sm font-normal leading-none text-center text-primary-celeste font-secondary'>
 					¿Ya tienes una cuenta?{' '}
