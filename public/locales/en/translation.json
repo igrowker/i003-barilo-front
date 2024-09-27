@@ -10,6 +10,13 @@
     "groupName": "What will the group be called?",
     "numberOfPeople": "Number of people"
   },
+  "stepThree": {
+  },
+  "stepFour": {
+  },
+  "stepFive": {
+    "title": "Travel Package Confirmation"
+  },
   "stepTwo": {
     "origin": "Origin",
     "destination": "Destination",
@@ -23,5 +30,19 @@
     "cancelButton": "Cancel",
     "confirmButton": "Confirm",
     "finishButton": "Finish"
+  },
+  "home": {
+    "cardEvent": {
+      "title": "Barbecue:",
+      "description": "Barbecue bring whatever you want to drink"
+    },
+    "cardTrip": {
+      "title": "Your Trip",
+      "link": "See more",
+      "titleCard1": "Excursions",
+      "titleCard2": "Restaurants",
+      "titleCard3": "Destinations",
+      "titleCard4": "Destinations"
+    }
   }
 }

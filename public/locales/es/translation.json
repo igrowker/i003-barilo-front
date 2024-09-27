@@ -25,10 +25,24 @@
     "title": "Confirmación de Paquete de Viaje"
   },
   "buttons": {
-    "nextButton": "Siguiente",
-    "searchButton": "Buscar",
-    "cancelButton": "Cancelar",
-    "confirmButton": "Confirmar",
-    "finishButton": "Finalizar"
+  "nextButton": "Siguiente",
+  "searchButton": "Buscar",
+  "cancelButton": "Cancelar",
+  "confirmButton": "Confirmar",
+  "finishButton": "Finalizar"
+},
+  "home": {
+    "cardEvent": {
+      "title": "Parrilla:",
+      "description": "Asado traer lo que quieran beber"
+    },
+    "cardTrip": {
+      "title": "Tu Viaje",
+      "link": "Ver más",
+      "titleCard1": "Excursiones",
+      "titleCard2": "Restaurantes",
+      "titleCard3": "Destinos",
+      "titleCard4": "Destinos"
+    }
   }
 }
