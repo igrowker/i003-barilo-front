@@ -20,9 +20,9 @@ const HomeCardComponent: React.FC<HijoProps> = ({nombreImagen, text }) => {
     return (
 
         <div className="flex flex-col items-center w-1/2 px-1 py-1">
-          <div className="relative flex flex-wrap w-full pb-2 sm:px-10">
+          <div className="relative flex flex-wrap w-full pb-2 sm:px-4">
             <img className='object-cover w-full h-72 rounded-3xl' src={imagenes[nombreImagen]}/>
-            <button className='absolute flex items-center justify-center w-10 h-10 rounded-full bottom-5 right-3 bg-[#C6C6C6]'>
+            <button className='absolute flex items-center justify-center w-10 h-10 rounded-full bottom-5 right-3 sm:right-10 md:right-9 bg-[#C6C6C6]'>
                 <CiHeart className='text-2xl' />
             </button>
           </div>
