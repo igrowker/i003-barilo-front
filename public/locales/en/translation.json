@@ -1,6 +1,19 @@
 {
   "welcome": "Welcome",
   "description": "This is a description in English.",
+
+
+  "footer": {
+    "copyright": "Bariló — copyright"
+  },
+
+  "header": {
+    "link": {
+      "home": "Home",
+      "login": "Login",
+      "register": "Register",
+      "dashboard": "Dashboard"
+
   
   "progressBar": {
     "steps": ["Group", "Origin", "Hotels", "Activities", "Confirmation"]
@@ -43,6 +56,7 @@
       "titleCard2": "Restaurants",
       "titleCard3": "Destinations",
       "titleCard4": "Destinations"
+
     }
   }
 }

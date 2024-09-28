@@ -10,6 +10,14 @@ const Home: React.FC = () => {
   };
 
   return (
+
+    <div className='font-bold h-screen text-black'>
+      <h1>{t('welcome')}</h1>
+      <p>{t('description')}</p>
+      <button onClick={() => changeLanguage('es')}>Español</button>
+      <button onClick={() => changeLanguage('en')}>English</button>
+    </div>
+
     <section>
       <div className='font-bold text-black'>
         <h1>{t('welcome')}</h1>
@@ -33,6 +41,7 @@ const Home: React.FC = () => {
                 </div>
             </div>
     </section>
+
   );
 };
 
