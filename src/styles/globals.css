@@ -1,0 +1,45 @@
+input::placeholder,
+textarea::placeholder {
+  color: var(--secondary-celeste);
+  opacity: 1;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: var(--secondary-celeste);
+}
+
+
+input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+  color: var(--secondary-celeste);
+}
+
+input[type="date"]:focus,
+input[type="date"]:valid {
+  color: var(--secondary-celeste);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: border-color 0.2s;
+  color: var(--secondary-celeste);
+  background-color: var(--secondary-purple)
+}
+
+input:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
