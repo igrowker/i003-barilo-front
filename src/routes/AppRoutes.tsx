@@ -5,7 +5,6 @@ import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Error from '@/pages/Error'
 import PlanTripGroup from '@/pages/PlanTripGroup'
-import Profile from '@/pages/Profile'
 
 function AppRoutes() {
 	return (
@@ -17,7 +16,6 @@ function AppRoutes() {
 				<Route path='/register' element={<Register />} />
 				<Route path='/plan-trip/group' element={<PlanTripGroup />} />
 				<Route path="/plan-trip" element={<PlanTrip />} /> 
-				<Route path="/profile" element={<Profile />} /> 
 			</Routes>
 		</Router>
 	)

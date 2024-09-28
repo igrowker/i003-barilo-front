@@ -10,8 +10,8 @@
 		"skipLibCheck": true,
 
 		/* Bundler mode */
-		"moduleResolution": "node", //cambie el bundler
-		// "allowImportingTsExtensions": true,
+		"moduleResolution": "Bundler", 
+		"allowImportingTsExtensions": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"moduleDetection": "force",

@@ -26,7 +26,7 @@ export const CustomInput: React.FC<CustomInputProps> = ({
 }) => {
 	return (
 		<FormItem>
-			<FormLabel className='text-base font-bold text-white font-secondary'>{label}</FormLabel>
+			<FormLabel className='text-lg font-bold font-primary text-primary-celeste'>{label}</FormLabel>
 			<FormControl>
 				<div className='relative'>
 					<Input
@@ -34,7 +34,7 @@ export const CustomInput: React.FC<CustomInputProps> = ({
 						type={showPasswordToggle && showPassword ? 'text' : type}
 						placeholder={placeholder}
 						{...field}
-						className='border border-white bg-[#12131e] rounded-xl text-white placeholder:text-white w-full md:w-[333px] p-3'
+						className='w-full px-3 py-2 border rounded-lg text-primary-celeste placeholder:text-primary-celeste md:w-[333px] p-3'
 					/>
 					{showPasswordToggle && setShowPassword && (
 						<Button
