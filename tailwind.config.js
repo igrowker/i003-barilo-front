@@ -9,6 +9,7 @@ export default {
 			colors: {
 				'primary-pink': '#FF66C4',
 				'primary-blue': '#37B6FF',
+				'customBlue': '#006BA8',
 				'primary-purple': '#8C53FF',
 				'background-light': '#F7FAFC',
 				'background-dark': '#08121F',

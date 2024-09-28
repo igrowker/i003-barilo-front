@@ -1,4 +1,17 @@
 {
   "welcome": "Bienvenido",
-  "description": "Esta es una descripción en español."
+  "description": "Esta es una descripción en español.",
+  
+  "footer": {
+    "copyright": "Bariló — Derechos Reservados"
+  },
+
+  "header": {
+    "link": {
+      "home": "Inicio",
+      "login": "Acceso",
+      "register": "Registrar",
+      "dashboard": "Panel"
+    }
+  }
 }

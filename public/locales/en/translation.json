@@ -1,4 +1,17 @@
 {
   "welcome": "Welcome",
-  "description": "This is a description in English."
+  "description": "This is a description in English.",
+
+  "footer": {
+    "copyright": "Bariló — copyright"
+  },
+
+  "header": {
+    "link": {
+      "home": "Home",
+      "login": "Login",
+      "register": "Register",
+      "dashboard": "Dashboard"
+    }
+  }
 }

@@ -4,10 +4,13 @@ import PlanTrip from '../pages/PlanTrip'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Error from '@/pages/Error'
+import Header from '@/components/header/Header'
+import Footer from '@/components/Footer'
 
 function AppRoutes() {
 	return (
 		<Router>
+			<Header/>
 			<Routes>
 				<Route path='*' element={<Error />} />
 				<Route path='/' element={<Home />} />
@@ -15,6 +18,7 @@ function AppRoutes() {
 				<Route path='/register' element={<Register />} />
 				<Route path='/dashboard' element={<PlanTrip />} />
 			</Routes>
+			<Footer/>
 		</Router>
 	)
 }
