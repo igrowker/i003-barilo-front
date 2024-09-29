@@ -1,5 +1,7 @@
 import React from "react";
 
+import { cn } from "@/lib/utils";
+
 interface InputFieldProps {
   label: string;
   name: string;
@@ -21,7 +23,10 @@ const InputField: React.FC<InputFieldProps> = ({
 }) => {
   return (
     <div>
-      <label htmlFor={name} className="text-lg font-bold font-primary text-primary-celeste">
+      <label
+        htmlFor={name}
+        className="text-lg font-bold font-primary text-primary-celeste"
+      >
         {label}
       </label>
       <input
@@ -32,7 +37,7 @@ const InputField: React.FC<InputFieldProps> = ({
         onChange={onChange}
         required={required}
         placeholder={placeholder}
-        className="w-full px-3 py-2 border rounded-lg"
+        className={cn("w-full px-3 py-2 border rounded-lg")}
       />
     </div>
   );

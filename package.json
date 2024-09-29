@@ -10,16 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-
-    "@headlessui/react": "^2.1.8",
-    "@heroicons/react": "^2.1.5",
-
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
-
+    "@headlessui/react": "^2.1.8",
+    "@heroicons/react": "^2.1.5",
     "@hookform/resolvers": "^3.9.0",
     "@mui/icons-material": "^6.1.1",
     "@mui/material": "^6.1.1",
+    "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-popover": "^1.1.1",
     "@radix-ui/react-radio-group": "^1.2.0",
