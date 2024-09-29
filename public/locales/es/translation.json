@@ -3,7 +3,7 @@
   "description": "Esta es una descripción en español.",
   
   "progressBar": {
-    "steps": ["Grupo", "Origen", "Hoteles", "Actividades", "Confirmación"]
+    "steps": ["Grupo", "Pasajes", "Hoteles", "Actividades", "Confirmar"]
   },
   "stepOne": {
     "description": "Elije el nombre del grupo y más adelante podrás compartir un link de invitación a las personas que deseas agregar.",
