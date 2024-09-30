@@ -1,18 +1,21 @@
-import HomeCardComponent from "@/components/HomeCardComponent";
-import HomeEventComponent from "@/components/HomeEventComponent";
-import { useTranslation } from "react-i18next";
+// import HomeCardComponent from "@/components/HomeCardComponent";
+// import HomeEventComponent from "@/components/HomeEventComponent";
+// import { useTranslation } from "react-i18next";
+import Landing from '@/components/Landing'
 
 const Home: React.FC = () => {
-  const { t, i18n } = useTranslation();
+//   const { t, i18n } = useTranslation();
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
+//   const changeLanguage = (lng: string) => {
+//     i18n.changeLanguage(lng);
+//   };
 
   return (
     <>
       <section>
-        <div className="font-bold text-black">
+        < Landing />
+        
+<!--            <div className="font-bold text-black">
           <h1>{t("welcome")}</h1>
           <p>{t("description")}</p>
           <button onClick={() => changeLanguage("es")}>Español</button>
@@ -51,7 +54,7 @@ const Home: React.FC = () => {
               text={t("home.cardTrip.titleCard4")}
             ></HomeCardComponent>
           </div>
-        </div>
+        </div> -->
       </section>
     </>
   );
