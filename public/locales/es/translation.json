@@ -1,8 +1,6 @@
-{  
+{
   "welcome": "Bienvenido",
   "description": "Esta es una descripción en español.",
-
-
   "header": {
     "link": {
       "home": "Inicio",
@@ -37,9 +35,12 @@
   "buttons": {
     "nextButton": "Siguiente",
     "searchButton": "Buscar",
+    "acceptButton": "Aceptar",
     "cancelButton": "Cancelar",
     "confirmButton": "Confirmar",
-    "finishButton": "Finalizar"
+    "finishButton": "Finalizar",
+    "homeButton": "Volver al Inicio",
+    "backButton": "Volver"
   },
   "home": {
     "cardEvent": {
@@ -57,8 +58,29 @@
   },
   "error": {
     "title": "¡Vaya, viajero!",
-    "message": "¡Algo ha ocurrido en tu viaje!\nNo sabemos cómo llegaste aquí, pero estamos trabajando para guiarte de nuevo.",
-    "help": "No te preocupes, te ayudaremos a encontrar el camino hacia tus próximos destinos.",
-    "button": "Volver al Inicio"
+    "subtitle": "¡Algo ha ocurrido en tu viaje!",
+    "message": "No sabemos cómo llegaste aquí, pero estamos trabajando para guiarte de nuevo.",
+    "help": "No te preocupes, te ayudaremos a encontrar el camino hacia tus próximos destinos."
+  },
+  "accessSection": {
+    "title": "¡Únete a la Aventura!",
+    "description1": "Para comenzar a vivir esta experiencia, solo necesitas ingresar el código de invitación que te han compartido.",
+    "description2": "Este código te permitirá formar parte de un grupo de viaje donde podrás compartir con tus compañeros, planificar juntos y disfrutar de momentos inolvidables.",
+    "description3": "¡No te quedes fuera! Ingresa tu código y empieza a explorar nuevas posibilidades.",
+    "inputLabel": "Ingresa el código de Invitación"
+  },
+  "modals": {
+    "error": {
+      "title": "¡Vaya, algo ha salido mal!",
+      "message": "El código ingresado es incorrecto, por favor ingrésalo nuevamente."
+    },
+    "confirm": {
+      "title": "¡Felicidades!",
+      "message": "Te has unido al grupo de viaje, ahora a disfrutar de tus vacaciones."
+    },
+    "logout": {
+      "title": "Cerrar Sesión",
+      "message": "¿Estás seguro de que deseas cerrar sesión?"
+    }
   }
 }
