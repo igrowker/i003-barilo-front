@@ -7,12 +7,14 @@ export default {
 	theme: {
 		extend: {
 			colors: {
+				'customBlue': '#006BA8',
 				'primary-pink': 'var(--primary-pink)',
 				'primary-blue': 'var(--primary-blue)',
 				'primary-celeste': 'var(--primary-celeste)',
 				'secondary-celeste': 'var(--secondary-celeste)',
 				'primary-purple': 'var(--primary-purple)',
 				'secondary-purple': 'var(--secondary-purple)',
+				'tertiary-purple': 'var(--tertiary-purple)',
 				'background-light': 'var(--background-light)',
 				'background-dark': 'var(--background-dark)',
 				'active-button-bg': 'var(--active-button-bg)',
@@ -20,6 +22,7 @@ export default {
 				'active-button-text': 'var(--active-button-text)',
 				'inactive-button-text': 'var(--inactive-button-text)',
 				'active-button-hover-bg': 'var(--active-button-hover-bg)',
+
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				card: {

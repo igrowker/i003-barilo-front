@@ -1,9 +1,19 @@
 {
   "welcome": "Bienvenido",
   "description": "Esta es una descripción en español.",
-  
+  "header": {
+    "link": {
+      "home": "Inicio",
+      "login": "Acceso",
+      "register": "Registrar",
+      "dashboard": "Panel"
+    }
+  },
+  "footer": {
+    "copyright": "Bariló — Derechos Reservados"
+  },
   "progressBar": {
-    "steps": ["Grupo", "Origen", "Hoteles", "Actividades", "Confirmación"]
+    "steps": ["Grupo", "Pasajes", "Hoteles", "Actividades", "Confirmar"]
   },
   "stepOne": {
     "description": "Elije el nombre del grupo y más adelante podrás compartir un link de invitación a las personas que deseas agregar.",
@@ -17,20 +27,21 @@
     "departureDate": "Ida",
     "returnDate": "Vuelta"
   },
-  "stepThree": {
-  },
-  "stepFour": {
-  },
+  "stepThree": {},
+  "stepFour": {},
   "stepFive": {
     "title": "Confirmación de Paquete de Viaje"
   },
   "buttons": {
-  "nextButton": "Siguiente",
-  "searchButton": "Buscar",
-  "cancelButton": "Cancelar",
-  "confirmButton": "Confirmar",
-  "finishButton": "Finalizar"
-},
+    "nextButton": "Siguiente",
+    "searchButton": "Buscar",
+    "acceptButton": "Aceptar",
+    "cancelButton": "Cancelar",
+    "confirmButton": "Confirmar",
+    "finishButton": "Finalizar",
+    "homeButton": "Volver al Inicio",
+    "backButton": "Volver"
+  },
   "home": {
     "cardEvent": {
       "title": "Parrilla:",
@@ -43,6 +54,33 @@
       "titleCard2": "Restaurantes",
       "titleCard3": "Destinos",
       "titleCard4": "Destinos"
+    }
+  },
+  "error": {
+    "title": "¡Vaya, viajero!",
+    "subtitle": "¡Algo ha ocurrido en tu viaje!",
+    "message": "No sabemos cómo llegaste aquí, pero estamos trabajando para guiarte de nuevo.",
+    "help": "No te preocupes, te ayudaremos a encontrar el camino hacia tus próximos destinos."
+  },
+  "accessSection": {
+    "title": "¡Únete a la Aventura!",
+    "description1": "Para comenzar a vivir esta experiencia, solo necesitas ingresar el código de invitación que te han compartido.",
+    "description2": "Este código te permitirá formar parte de un grupo de viaje donde podrás compartir con tus compañeros, planificar juntos y disfrutar de momentos inolvidables.",
+    "description3": "¡No te quedes fuera! Ingresa tu código y empieza a explorar nuevas posibilidades.",
+    "inputLabel": "Ingresa el código de Invitación"
+  },
+  "modals": {
+    "error": {
+      "title": "¡Vaya, algo ha salido mal!",
+      "message": "El código ingresado es incorrecto, por favor ingrésalo nuevamente."
+    },
+    "confirm": {
+      "title": "¡Felicidades!",
+      "message": "Te has unido al grupo de viaje, ahora a disfrutar de tus vacaciones."
+    },
+    "logout": {
+      "title": "Cerrar Sesión",
+      "message": "¿Estás seguro de que deseas cerrar sesión?"
     }
   }
 }
