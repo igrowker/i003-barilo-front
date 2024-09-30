@@ -1,7 +1,11 @@
-function PlanTrip() {
-  return (
-    <div>PlanTrip</div>
-  )
-}
+import PlanTripComponent from '../components/PlanTripComponent';
 
-export default PlanTrip
+const PlanTrip: React.FC = () => {
+  return (
+    <div className="container py-8 mx-auto">
+      <PlanTripComponent />
+    </div>
+  );
+};
+
+export default PlanTrip;

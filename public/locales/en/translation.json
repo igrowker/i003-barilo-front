@@ -1,4 +1,86 @@
 {
   "welcome": "Welcome",
-  "description": "This is a description in English."
+  "description": "This is a description in English.",
+  "header": {
+    "link": {
+      "home": "Home",
+      "login": "Login",
+      "register": "Register",
+      "dashboard": "Dashboard"
+    }
+  },
+  "footer": {
+    "copyright": "Bariló — copyright"
+  },
+  "progressBar": {
+    "steps": ["Group", "Tickets", "Hotels", "Activities", "Confirm"]
+  },
+  "stepOne": {
+    "description": "Choose the group name, and later you will be able to share an invitation link with the people you want to add.",
+    "groupName": "What will the group be called?",
+    "numberOfPeople": "Number of people"
+  },
+  "stepThree": {},
+  "stepFour": {},
+  "stepFive": {
+    "title": "Travel Package Confirmation"
+  },
+  "stepTwo": {
+    "origin": "Origin",
+    "destination": "Destination",
+    "date": "Date",
+    "departureDate": "Departure",
+    "returnDate": "Return"
+  },
+  "buttons": {
+    "nextButton": "Next",
+    "searchButton": "Search",
+    "acceptButton": "Accept",
+    "cancelButton": "Cancel",
+    "confirmButton": "Confirm",
+    "finishButton": "Finish",
+    "homeButton": "Back to Home",
+    "backButton": "Back"
+  },
+  "home": {
+    "cardEvent": {
+      "title": "Barbecue:",
+      "description": "Barbecue bring whatever you want to drink"
+    },
+    "cardTrip": {
+      "title": "Your Trip",
+      "link": "See more",
+      "titleCard1": "Excursions",
+      "titleCard2": "Restaurants",
+      "titleCard3": "Destinations",
+      "titleCard4": "Destinations"
+    }
+  },
+  "error": {
+    "title": "Oh no, traveler!",
+    "subtitle": "Something has gone wrong on your journey!",
+    "message": "We don't know how you got here, but we are working to guide you back.",
+    "help": "Don't worry, we will help you find your way to your next destinations."
+  },
+  "accessSection": {
+    "title": "Join the Adventure!",
+    "description1": "To start living this experience, you just need to enter the invitation code that has been shared with you.",
+    "description2": "This code will allow you to join a travel group where you can share with your companions, plan together, and enjoy unforgettable moments.",
+    "description3": "Don't miss out! Enter your code and start exploring new possibilities.",
+    "inputLabel": "Enter the Invitation Code"
+  },
+  "modals": {
+    "error": {
+      "title": "Oh no, traveler!",
+      "message": "The code entered is incorrect, please enter it again."
+    },
+    "confirm": {
+      "title": "Congratulations!",
+      "message": "You have joined the travel group, now enjoy your vacation."
+    },
+    "logout": {
+      "title": "Log Out",
+      "message": "Are you sure you want to log out?"
+    }
+  }
 }
