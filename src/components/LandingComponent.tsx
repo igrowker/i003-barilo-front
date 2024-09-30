@@ -3,42 +3,16 @@ import { FaRegPaperPlane } from 'react-icons/fa'
 import { FaRegCreditCard } from 'react-icons/fa'
 import { RiGroupLine } from 'react-icons/ri'
 import { Input } from '@/components/ui/input'
-import logo from '@/assets/images/logotipo.webp'
 import snowImage from '@/assets/images/snow.webp'
 import snowImage2 from '@/assets/images/snow2.webp'
 import snowImage3 from '@/assets/images/snow3.webp'
 
-export default function LandingPage() {
+export default function LandingComponent() {
 	return (
 		<>
-			<div className='flex flex-col min-h-screen'>
-				<header className='flex items-center h-16 px-4 bg-white lg:px-6'>
-					<a href='#' className='flex items-center justify-center'>
-						<img src={logo} alt='Barilo Logo' width={120} height={40} />
-					</a>
-					<nav className='flex gap-4 ml-auto sm:gap-6'>
-						<a
-							className='text-sm font-medium hover:text-[#FF74CF] transition-colors'
-							href='#features'
-						>
-							Características
-						</a>
-						<a
-							className='text-sm font-medium hover:text-[#FF74CF] transition-colors'
-							href='#how-it-works'
-						>
-							Cómo funciona
-						</a>
-						<a
-							className='text-sm font-medium hover:text-[#FF74CF] transition-colors'
-							href='#contact'
-						>
-							Contacto
-						</a>
-					</nav>
-				</header>
+			<div className=''>
 				<main className='flex-1'>
-					<section className='w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[#FF74CF] text-white  '>
+					<section className='w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[#FF74CF] text-white '>
 						<div className='container px-4 mx-auto md:px-6'>
 							<div className='flex flex-col items-center space-y-4 text-center'>
 								<div className='space-y-2 '>
@@ -184,19 +158,6 @@ export default function LandingPage() {
 						</div>
 					</section>
 				</main>
-				<footer className='flex flex-col items-center w-full gap-2 px-4 py-6 border-t sm:flex-row shrink-0 md:px-6'>
-					<p className="text-xs text-gray-600 font-['Lato']">
-						© 2024 Barilo. Todos los derechos reservados.
-					</p>
-					<nav className='flex gap-4 sm:ml-auto sm:gap-6'>
-						<a className="text-xs hover:underline underline-offset-4 font-['Lato']" href='#'>
-							Términos de servicio
-						</a>
-						<a className="text-xs hover:underline underline-offset-4 font-['Lato']" href='#'>
-							Privacidad
-						</a>
-					</nav>
-				</footer>
 			</div>
 		</>
 	)
