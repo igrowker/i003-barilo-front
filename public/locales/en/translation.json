@@ -35,9 +35,12 @@
   "buttons": {
     "nextButton": "Next",
     "searchButton": "Search",
+    "acceptButton": "Accept",
     "cancelButton": "Cancel",
     "confirmButton": "Confirm",
-    "finishButton": "Finish"
+    "finishButton": "Finish",
+    "homeButton": "Back to Home",
+    "backButton": "Back"
   },
   "home": {
     "cardEvent": {
@@ -55,8 +58,29 @@
   },
   "error": {
     "title": "Oh no, traveler!",
-    "message": "Something has gone wrong on your journey!\nWe don't know how you got here, but we are working to guide you back.",
-    "help": "Don't worry, we will help you find your way to your next destinations.",
-    "button": "Back to Home"
+    "subtitle": "Something has gone wrong on your journey!",
+    "message": "We don't know how you got here, but we are working to guide you back.",
+    "help": "Don't worry, we will help you find your way to your next destinations."
+  },
+  "accessSection": {
+    "title": "Join the Adventure!",
+    "description1": "To start living this experience, you just need to enter the invitation code that has been shared with you.",
+    "description2": "This code will allow you to join a travel group where you can share with your companions, plan together, and enjoy unforgettable moments.",
+    "description3": "Don't miss out! Enter your code and start exploring new possibilities.",
+    "inputLabel": "Enter the Invitation Code"
+  },
+  "modals": {
+    "error": {
+      "title": "Oh no, traveler!",
+      "message": "The code entered is incorrect, please enter it again."
+    },
+    "confirm": {
+      "title": "Congratulations!",
+      "message": "You have joined the travel group, now enjoy your vacation."
+    },
+    "logout": {
+      "title": "Log Out",
+      "message": "Are you sure you want to log out?"
+    }
   }
 }

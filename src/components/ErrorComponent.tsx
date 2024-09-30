@@ -9,18 +9,20 @@ const ErrorComponent = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-screen min-h-full font-primary text-secondary-blue">
+      <div className="flex flex-col items-center justify-center min-h-screen px-5 py-10 font-primary text-secondary-celeste">
         <div className="text-center">
-          <h1 className="text-3xl font-bold tracking-tight ">
+          <h1 className="mb-2 text-4xl font-bold text-primary-pink md:text-5xl lg:text-6xl">
             {t("error.title")}
           </h1>
+          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl ">
+            {t("error.subtitle")}
+          </h2>
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <p className="text-2xl tracking-tight text-center leading-1">
+            <p className="text-2xl tracking-tight text-center md:text-2xl lg:text-3xl leading-1">
               {t("error.message")}
             </p>
           </div>
         </div>
-
         <div className="flex justify-center w-full max-w-md">
           <img
             className="w-full h-auto rounded-lg"
@@ -28,16 +30,14 @@ const ErrorComponent = () => {
             alt="Error 404 - Página no encontrada"
           />
         </div>
-
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <p className="text-2xl tracking-tight text-center leading-1">
+          <p className="text-2xl tracking-tight text-center md:text-2xl lg:text-3xl leading-1 text-primary-purple">
             {t("error.help")}
           </p>
         </div>
-
         <div className="flex justify-center mt-4">
           <Link to="/">
-            <ButtonBlue text={t("error.button")} isActive={true} />
+            <ButtonBlue text={t("buttons.homeButton")} isActive={true} />
           </Link>
         </div>
       </div>

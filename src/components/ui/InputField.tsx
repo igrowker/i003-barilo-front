@@ -37,7 +37,9 @@ const InputField: React.FC<InputFieldProps> = ({
         onChange={onChange}
         required={required}
         placeholder={placeholder}
-        className={cn("w-full px-3 py-2 border rounded-lg")}
+        className={cn(
+          "w-full px-3 py-1 text-xl leading-8 transition-colors duration-200 ease-in-out outline-none text-primary-celeste rounded-xl focus:bg-transparent focus:ring-2 focus:ring-primary-blue focus:border-primary-celest"
+        )}
       />
     </div>
   );
