@@ -6,6 +6,7 @@ import Register from '../pages/Register'
 import Error from '@/pages/Error'
 import Header from '@/components/header/Header'
 import Footer from '@/components/Footer'
+import Access from '@/pages/Access'
 
 function AppRoutes() {
 	return (
@@ -17,6 +18,7 @@ function AppRoutes() {
 				<Route path='/login' element={<Login />} />
 				<Route path='/register' element={<Register />} />
 				<Route path="/plan-trip" element={<PlanTrip />} />
+				<Route path="/access-group" element={<Access />} />
 			</Routes>
 			<Footer/>
 		</Router>
