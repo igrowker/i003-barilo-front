@@ -34,7 +34,6 @@ export const CustomInput: React.FC<CustomInputProps> = ({
 						type={showPasswordToggle && showPassword ? 'text' : type}
 						placeholder={placeholder}
 						{...field}
-						className='w-full px-3 py-2 border rounded-lg text-primary-celeste placeholder:text-primary-celeste md:w-[333px] p-3'
 					/>
 					{showPasswordToggle && setShowPassword && (
 						<Button
@@ -45,9 +44,9 @@ export const CustomInput: React.FC<CustomInputProps> = ({
 							onClick={() => setShowPassword(!showPassword)}
 						>
 							{showPassword ? (
-								<RiEyeFill className='w-4 h-4' />
+								<RiEyeFill className='w-4 h-4 text-primary-celeste' />
 							) : (
-								<RiEyeCloseLine className='w-4 h-4' />
+								<RiEyeCloseLine className='w-4 h-4 text-primary-celeste' />
 							)}
 							<span className='sr-only'>
 								{showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
