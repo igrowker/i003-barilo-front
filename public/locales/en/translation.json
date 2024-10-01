@@ -1,16 +1,17 @@
 {
   "welcome": "Welcome",
   "description": "This is a description in English.",
-  "header": {
-    "link": {
-      "home": "Home",
-      "login": "Login",
-      "register": "Register",
-      "dashboard": "Dashboard"
+  "navbar": {
+    "items": {
+      "characteristic": "Characteristics",
+      "personalized": "Personalized",
+      "experience": "Experience",
+      "contact": "Contact"
     }
   },
+  "landing": {},
   "footer": {
-    "copyright": "Bariló — copyright"
+    "copyright": "All rights reserved."
   },
   "progressBar": {
     "steps": ["Group", "Tickets", "Hotels", "Activities", "Confirm"]
