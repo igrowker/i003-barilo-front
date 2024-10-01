@@ -10,6 +10,12 @@ function PlanTripGroup() {
 		console.log(`Invitar al grupo`)
 	}
 
+  const members = [
+    {name: "Ana Gallinado", info: 'Alumna 6to B'},
+    {name: "Juan Pérez", info: 'Alumno 6to A'},
+    {name: "Lucía Fernández", info: 'Alumna 6to B'},
+  ]
+
   return (
     <div className="flex-col mt-3 mx-3">
       <section>
@@ -28,9 +34,9 @@ function PlanTripGroup() {
       </section>
       <section className="mt-3">
         <h1 className="mb-3 text-lg font-black text-gray-700"> Integrantes del grupo</h1>
-        <GroupMember/>
-        <GroupMember/>
-        <GroupMember/>
+        {members.map((member, index)=> (
+              <GroupMember key={index} name={member.name} info={member.info}/>
+            ))}
       </section>
 
     </div>
