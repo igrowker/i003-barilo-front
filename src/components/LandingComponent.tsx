@@ -14,33 +14,41 @@ export default function LandingComponent() {
     <>
       <div className="">
         <main className="flex-1">
-        <section className="w-full py-12 text-white md:py-24 lg:py-32 xl:py-36 bg-secondary-pink">
-  <div className="container px-4 mx-auto md:px-6">
-    <div className="flex flex-col items-center space-y-4 text-center">
-      <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl font-primary">
-        ¡Bienvenidos, tu aventura de egresados está por comenzar!
-      </h1>
-      <p className="mx-auto max-w-[900px] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
-        En Barilo, entendemos que tu viaje de egresados es mucho más que una simple escapada; es un momento significativo que marca el cierre de una etapa y el inicio de nuevas aventuras. Nuestra misión es hacer que esta experiencia única sea accesible, inclusiva y, sobre todo, inolvidable para todos.
-      </p>
-      <p className="mx-auto max-w-[900px] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
-        Imagina explorar destinos impresionantes con tus amigos más cercanos, creando recuerdos que durarán toda la vida. En Barilo, nos comprometemos a ofrecerte una amplia gama de destinos variados que se adaptan a todos los gustos y presupuestos.
-      </p>
-      <div className="flex space-x-4">
-        <Link to="/login">
-          <CustomButton className="w-full bg-white text-secondary-pink hover:bg-secondary-purple">
-            Inicia sesión
-          </CustomButton>
-        </Link>
-        <Link to="/register">
-          <CustomButton className="text-white bg-transparent border border-white hover:bg-white hover:text-secondary-pink">
-            Regístrate
-          </CustomButton>
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
+          <section className="w-full py-12 text-white md:py-24 lg:py-32 xl:py-36 bg-secondary-pink">
+            <div className="container px-4 mx-auto md:px-6">
+              <div className="flex flex-col items-center space-y-4 text-center">
+                <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl font-primary">
+                  ¡Bienvenidos, tu aventura de egresados está por comenzar!
+                </h1>
+                <p className="mx-auto max-w-[900px] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
+                  En Barilo, entendemos que tu viaje de egresados es mucho más
+                  que una simple escapada; es un momento significativo que marca
+                  el cierre de una etapa y el inicio de nuevas aventuras.
+                  Nuestra misión es hacer que esta experiencia única sea
+                  accesible, inclusiva y, sobre todo, inolvidable para todos.
+                </p>
+                <p className="mx-auto max-w-[900px] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
+                  Imagina explorar destinos impresionantes con tus amigos más
+                  cercanos, creando recuerdos que durarán toda la vida. En
+                  Barilo, nos comprometemos a ofrecerte una amplia gama de
+                  destinos variados que se adaptan a todos los gustos y
+                  presupuestos.
+                </p>
+                <div className="flex space-x-4">
+                  <Link to="/login">
+                    <CustomButton className="w-full bg-white text-secondary-pink hover:bg-secondary-purple">
+                      Inicia sesión
+                    </CustomButton>
+                  </Link>
+                  <Link to="/register">
+                    <CustomButton className="text-white bg-transparent border border-white hover:bg-white hover:text-secondary-pink">
+                      Regístrate
+                    </CustomButton>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
           <section
             id="characteristic"
             className="w-full py-12 bg-white md:py-24 lg:py-32"
@@ -195,32 +203,40 @@ export default function LandingComponent() {
               </div>
             </div>
           </section>
-          <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-secondary-pink">
-  <div className="container px-4 mx-auto md:px-6">
-    <div className="flex flex-col items-center space-y-4 text-center">
-      <h2 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl font-primary">
-        ¿Necesitas contactarte con nosotros?
-      </h2>
-      <div className="w-full max-w-sm space-y-2">
-        <form className="flex flex-col gap-2 text-left">
-          <label htmlFor="email" className="text-white visually-hidden">Déjanos tu correo electrónico</label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="Tu correo electrónico"
-            className="bg-white font-secondary focus:bg-white"
-          />
-          <CustomButton
-            type="submit"
-            className="w-full mt-3 bg-white text-secondary-pink hover:bg-secondary-purple"
+          <section
+            id="contact"
+            className="w-full py-12 md:py-24 lg:py-32 bg-secondary-pink"
           >
-            Enviar
-          </CustomButton>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+            <div className="container px-4 mx-auto md:px-6">
+              <div className="flex flex-col items-center space-y-4 text-center">
+                <h2 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl font-primary">
+                  ¿Necesitas contactarte con nosotros?
+                </h2>
+                <div className="w-full max-w-sm space-y-2">
+                  <form className="flex flex-col gap-2 text-left">
+                    <label
+                      htmlFor="email"
+                      className="text-white visually-hidden"
+                    >
+                      Déjanos tu correo electrónico
+                    </label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Tu correo electrónico"
+                      className="bg-white font-secondary focus:bg-white"
+                    />
+                    <CustomButton
+                      type="submit"
+                      className="w-full mt-3 bg-white text-secondary-pink hover:bg-secondary-purple"
+                    >
+                      Enviar
+                    </CustomButton>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
         </main>
         <ScrollToTopButton />
       </div>
