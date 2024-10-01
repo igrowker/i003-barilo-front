@@ -37,7 +37,10 @@
     "searchButton": "Search",
     "cancelButton": "Cancel",
     "confirmButton": "Confirm",
-    "finishButton": "Finish"
+    "finishButton": "Finish",
+    "helpButton": "Help",
+    "questionButton": "Questions",
+    "contactButton": "Contact us"
   },
   "home": {
     "cardEvent": {

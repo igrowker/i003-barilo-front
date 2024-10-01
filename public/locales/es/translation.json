@@ -1,7 +1,6 @@
-{  
+{
   "welcome": "Bienvenido",
   "description": "Esta es una descripción en español.",
-
 
   "header": {
     "link": {
@@ -39,7 +38,10 @@
     "searchButton": "Buscar",
     "cancelButton": "Cancelar",
     "confirmButton": "Confirmar",
-    "finishButton": "Finalizar"
+    "finishButton": "Finalizar",
+    "helpButton": "Ayuda",
+    "questionButton": "Preguntas",
+    "contactButton": "Contáctenos"
   },
   "home": {
     "cardEvent": {
@@ -61,4 +63,6 @@
     "help": "No te preocupes, te ayudaremos a encontrar el camino hacia tus próximos destinos.",
     "button": "Volver al Inicio"
   }
+
+ 
 }

@@ -8,9 +8,9 @@ const FAQItem: React.FC<FAQItemProps> = ({ index, question, answer }) => {
         <details className="w-full">
           <summary className="bg-purple-200/70 rounded-full p-2 flex justify-between items-center cursor-pointer text-customBlue">
             <span className="text-sm font-bold px-3">{question}</span>
-            <ChevronDown size={20} className="text-customBlue" />
+            <ChevronDown size={24} className="text-customBlue flex-shrink-0" />
           </summary>
-          <div className="bg-white p-4 text-sm text-customBlue text-balance">
+          <div className="bg-white p-4 pl-6 text-sm text-customBlue text-balance">
             <p>{answer}</p>
           </div>
         </details>
