@@ -1,16 +1,17 @@
 {
   "welcome": "Bienvenido",
   "description": "Esta es una descripción en español.",
-  "header": {
-    "link": {
-      "home": "Inicio",
-      "login": "Acceso",
-      "register": "Registrar",
-      "dashboard": "Panel"
+  "navbar": {
+    "items": {
+      "characteristic": "Caracteristicas",
+      "personalized": "Personalizado",
+      "experience": "Experiencia",
+      "contact": "Contacto"
     }
   },
+  "landing": {},
   "footer": {
-    "copyright": "Bariló — Derechos Reservados"
+    "copyright": "Todos los derechos reservados."
   },
   "progressBar": {
     "steps": ["Grupo", "Pasajes", "Hoteles", "Actividades", "Confirmar"]

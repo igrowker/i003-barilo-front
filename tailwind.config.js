@@ -9,6 +9,7 @@ export default {
 			colors: {
 				'customBlue': '#006BA8',
 				'primary-pink': 'var(--primary-pink)',
+				'secondary-pink': 'var(--secondary-pink)',
 				'primary-blue': 'var(--primary-blue)',
 				'primary-celeste': 'var(--primary-celeste)',
 				'secondary-celeste': 'var(--secondary-celeste)',
