@@ -1,7 +1,11 @@
+import ErrorComponent from "@/components/ErrorComponent";
+
 function Error() {
   return (
-    <div>Error</div>
-  )
+    <>
+      <ErrorComponent />
+    </>
+  );
 }
 
-export default Error
+export default Error;

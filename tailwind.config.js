@@ -7,20 +7,15 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-
-				'primary-pink': '#FF66C4',
-				'primary-blue': '#37B6FF',
 				'customBlue': '#006BA8',
-				'primary-purple': '#8C53FF',
-				'background-light': '#F7FAFC',
-				'background-dark': '#08121F',
-
 				'primary-pink': 'var(--primary-pink)',
+				'secondary-pink': 'var(--secondary-pink)',
 				'primary-blue': 'var(--primary-blue)',
 				'primary-celeste': 'var(--primary-celeste)',
 				'secondary-celeste': 'var(--secondary-celeste)',
 				'primary-purple': 'var(--primary-purple)',
 				'secondary-purple': 'var(--secondary-purple)',
+				'tertiary-purple': 'var(--tertiary-purple)',
 				'background-light': 'var(--background-light)',
 				'background-dark': 'var(--background-dark)',
 				'active-button-bg': 'var(--active-button-bg)',

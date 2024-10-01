@@ -34,7 +34,7 @@ export default function InputGroup({ onSearch }: InputGroupProps) {
         className="pl-12 pr-12 rounded-full border-none bg-[--inactive-button-bg] h-10" 
       />
       <div className="absolute inset-y-0 right-0 flex items-center pr-1">
-        <Button variant="ghost" size="icon" className="h-8 w-8">
+        <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
           <Search className="h-4 w-4" />
           <span className="sr-only">Buscar</span>
         </Button>
