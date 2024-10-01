@@ -35,7 +35,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="container flex flex-col items-center px-5 py-8 mx-auto sm:flex-row">
+    <footer className="container flex flex-col items-center px-5 py-8 mx-auto bg-white sm:flex-row">
       <a href="/" className="flex items-center justify-center md:justify-start">
         <TextIconComponent />
       </a>

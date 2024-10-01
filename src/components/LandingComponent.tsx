@@ -8,10 +8,12 @@ import snowImage2 from "@/assets/images/snow2.webp";
 import snowImage3 from "@/assets/images/snow3.webp";
 import { Link } from "react-router-dom";
 import ScrollToTopButton from "./ScrollToTopButton";
+import NavBar from '@/components/NavBar'
 
 export default function LandingComponent() {
   return (
     <>
+    <NavBar/>
       <div className="">
         <main className="flex-1">
           <section className="w-full py-12 text-white md:py-24 lg:py-32 xl:py-36 bg-secondary-pink">
@@ -37,7 +39,7 @@ export default function LandingComponent() {
                 <div className="flex space-x-4">
                   <Link to="/login">
                     <CustomButton className="w-full bg-white text-secondary-pink hover:bg-secondary-purple">
-                      Inicia sesión
+                      Iniciar sesión
                     </CustomButton>
                   </Link>
                   <Link to="/register">

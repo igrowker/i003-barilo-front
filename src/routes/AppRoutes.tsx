@@ -5,14 +5,12 @@ import Landing from '../pages/Landing'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Error from '@/pages/Error'
-import Footer from '@/components/Footer'
 import Access from '@/pages/Access'
-import NavBar from '@/components/NavBar'
+import Footer from '@/components/Footer'
 
 function AppRoutes() {
 	return (
 		<Router>
-			<NavBar />
 			<Routes>
 				<Route path='*' element={<Error />} />
 				<Route path='/' element={<Landing />} />
@@ -22,7 +20,7 @@ function AppRoutes() {
 				<Route path='/plan-trip' element={<PlanTrip />} />
 				<Route path='/access-group' element={<Access />} />
 			</Routes>
-			<Footer />
+			<Footer/>
 		</Router>
 	)
 }
