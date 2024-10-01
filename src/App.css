@@ -5,6 +5,7 @@
 :root {
 	/* Colores */
 	--primary-pink: #FF34B1;
+	--secondary-pink: #d22c98;
 	--primary-blue: #37B6FF;
 	--primary-celeste: #003D61;
 	--secondary-celeste: #006BA8;
@@ -29,6 +30,11 @@ body {
 	background-color: var(--background-light);
 	color: var(--background-dark);
 }
+
+html {
+	scroll-behavior: smooth;
+  }
+  
 
 @layer base {
 	:root {
