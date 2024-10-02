@@ -9,46 +9,44 @@
       "contact": "Contact"
     }
   },
-
   "landing": {
-    "welcome":{
+    "welcome": {
       "title": "Welcome, your graduation trip adventure is about to begin!",
       "text1": "At Barilo, we understand that your graduation trip is much more than just a getaway; it’s a significant moment that marks the end of one chapter and the beginning of new adventures. Our mission is to make this unique experience accessible, inclusive, and, above all, unforgettable for everyone.",
       "text2": "Imagine exploring stunning destinations with your closest friends, creating memories that will last a lifetime. At Barilo, we are committed to offering you a wide range of diverse destinations to suit all tastes and budgets."
     },
-    "characteristics":{
-      "title":"Characteristics",
-      "destination":"Varied destinations",
-      "paragraphDestination":"We offer a wide range of destinations to suit all tastes and budgets.",
-      "plans":"Flexible payment plans",
-      "paragraphPlans":"Payment options adapted to different economic situations.",
-      "groups":"Inclusive groups",
-      "paragraphGroups":"We encourage integration and diversity in our travel groups."
+    "characteristics": {
+      "title": "Characteristics",
+      "destination": "Varied destinations",
+      "paragraphDestination": "We offer a wide range of destinations to suit all tastes and budgets.",
+      "plans": "Flexible payment plans",
+      "paragraphPlans": "Payment options adapted to different economic situations.",
+      "groups": "Inclusive groups",
+      "paragraphGroups": "We encourage integration and diversity in our travel groups."
     },
-    "customize":{
-      "title":"Customize your trip",
-      "caption1":"Create your group",
-      "paragraph1":"Give your adventure a name! Select how many friends will accompany you on this exciting journey.",
-      "caption2":"Choose the destination",
-      "paragraph2":"Get adventurous! Choose your ideal means of transportation, from comfortable buses to exciting plane flights.",
-      "caption3":"Select your accommodation",
-      "paragraph3":"Discover the most incredible accommodation options we have for you and your group. A perfect place to rest awaits you!",
-      "caption4":"Create your plan",
-      "paragraph4":"Customize your itinerary with exciting activities and delicious meals to suit your tastes.",
-      "caption5":"Confirm your purchase",
-      "paragraph5":"Review all the details of your trip to make sure nothing important is left out.",
-      "caption6":"Enjoy your trip!",
-      "paragraph6":"Immerse yourself in an unforgettable experience with your schoolmates!"
+    "customize": {
+      "title": "Customize your trip",
+      "caption1": "Create your group",
+      "paragraph1": "Give your adventure a name! Select how many friends will accompany you on this exciting journey.",
+      "caption2": "Choose the destination",
+      "paragraph2": "Get adventurous! Choose your ideal means of transportation, from comfortable buses to exciting plane flights.",
+      "caption3": "Select your accommodation",
+      "paragraph3": "Discover the most incredible accommodation options we have for you and your group. A perfect place to rest awaits you!",
+      "caption4": "Create your plan",
+      "paragraph4": "Customize your itinerary with exciting activities and delicious meals to suit your tastes.",
+      "caption5": "Confirm your purchase",
+      "paragraph5": "Review all the details of your trip to make sure nothing important is left out.",
+      "caption6": "Enjoy your trip!",
+      "paragraph6": "Immerse yourself in an unforgettable experience with your schoolmates!"
     },
-    "bariloExperience":"Barilo Experiences",
-    "contactUs":{
-      "title":"Do you need to contact us?",
-      "label":"Leave us your email",
+    "bariloExperience": "Barilo Experiences",
+    "contactUs": {
+      "title": "Do you need to contact us?",
+      "label": "Leave us your email",
       "inputPlaceholder": "Your email",
-      "button":"Send"
+      "button": "Send"
     }
   },
-
   "footer": {
     "copyright": "All rights reserved."
   },
@@ -92,9 +90,9 @@
     "createCrowd": "Create campaign",
     "donate": "Contribute",
     "approvedDonation": "Publish",
-    "landing":{
-      "login":"Login",
-      "register":"Register"
+    "landing": {
+      "login": "Login",
+      "register": "Register"
     }
   },
   "home": {
@@ -138,7 +136,6 @@
       "message": "Are you sure you want to log out?"
     }
   },
-  
   "crowd": {
     "organizer": {
       "text": "Start **Creating a Campaign** to be able to **finance** your **adventure**.",
@@ -153,15 +150,13 @@
       "text": "**Thanks** for your **generosity!** You have received $4000 for this **trip**."
     },
     "imageAlt": "Background image of crowdfunding"
-},
-
+  },
   "help": {
     "title": "Help Center",
     "subtitle": "How can we help you?",
     "placeholder": "Search...",
     "noContent": "No questions available"
   },
-
   "faq": {
     "create_trip": {
       "question": "How can I create a graduation trip on this site?",
