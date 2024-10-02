@@ -6,19 +6,22 @@ import ButtonBlue from "../ui/buttonBlue";
 import { useTranslation } from "react-i18next";
 import { useHelpCenter } from "@/hooks/useHelpCenter";
 import { HelpCenterView } from "@/types/HelpCenter";
+import { useNavigate } from "react-router-dom";
 
 const HelpCenterContent: React.FC = () => {
   const { t } = useTranslation();
   const { activeView, setActiveViewHelper } = useHelpCenter();
-
+  const navigate = useNavigate();
+  
   return (
     <div className="min-h-screen">
       <div className="font-bold text-black"></div>
       <header className="bg-customBlue text-white p-4">
         <div>
-          <button className="ml-2">
+          <button onClick={() => navigate("/")} className="ml-2">
             <ChevronLeft size={24} />
           </button>
+
           <h1 className="text-2xl font-bold text-center w-full">
             {t("help.title")}
           </h1>
