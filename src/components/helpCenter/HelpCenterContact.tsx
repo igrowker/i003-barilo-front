@@ -44,16 +44,18 @@ const contactItem: ContactProps[] = [
 
 const HelpCenterContact: React.FC = () => {
   return (
-    <div className="p-4 text-customBlue w-full max-w-[550px] m-auto">
-      {contactItem.map((con, index) => (
-        <ContactOption
-          key={index}
-          icon={con.icon}
-          url={con.url}
-          text={con.text}
-        ></ContactOption>
-      ))}
-    </div>
+    <main className="p-4 text-customBlue w-full max-w-[550px] m-auto">
+      <ul>
+        {contactItem.map((con, index) => (
+          <ContactOption
+            key={index}
+            icon={con.icon}
+            url={con.url}
+            text={con.text}
+          ></ContactOption>
+        ))} 
+      </ul>
+    </main>
   );
 };
 

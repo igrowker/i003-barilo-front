@@ -40,7 +40,12 @@
     "finishButton": "Finish",
     "helpButton": "Help",
     "questionButton": "Questions",
-    "contactButton": "Contact us"
+    "contactButton": "Contact us",
+    "helpButtons": {
+      "theme": "Theme",
+      "general": "General",
+      "services": "Services"
+    }
   },
   "home": {
     "cardEvent": {
@@ -61,5 +66,79 @@
     "message": "Something has gone wrong on your journey!\nWe don't know how you got here, but we are working to guide you back.",
     "help": "Don't worry, we will help you find your way to your next destinations.",
     "button": "Back to Home"
+  },
+  "help": {
+    "title": "Help Center",
+    "subtitle": "How can we help you?",
+    "placeholder": "Search...",
+    "noContent": "No questions available"
+  },
+
+  "faq": {
+    "create_trip": {
+      "question": "How can I create a senior trip on this site?",
+      "answer": "To create a senior trip, you must register on our site and fill out the trip creation form. Our team will help you plan and organize your trip.",
+      "topic": "popular_topic"
+    },
+    "trip_cost": {
+      "question": "How much does it cost to create a senior trip on this site?",
+      "answer": "The cost of creating a senior trip on our site varies depending on the type of trip and the services you want to include. Our team will provide you with a personalized quote for your trip.",
+      "topic": "popular_topic"
+    },
+    "trip_types": {
+      "question": "What type of senior trips can I create on this site?",
+      "answer": "You can create senior trips of all kinds, from adventure trips to relaxing trips on the beach. Our site allows you to customize your trip based on your interests and preferences.",
+      "topic": "popular_topic"
+    },
+    "payment": {
+      "question": "How can I pay for my senior trip?",
+      "answer": "You can pay for your senior trip by credit or debit card, or by bank transfer. Our site uses a secure payment system to protect your data.",
+      "topic": "popular_topic"
+    },
+    "cancellation": {
+      "question": "What happens if I need to cancel or modify my senior trip?",
+      "answer": "If you need to cancel or modify your senior trip, you must notify us in advance so that we can help you make the necessary changes. Certain cancellation or modification restrictions or fees may apply.",
+      "topic": "popular_topic"
+    },
+    "support": {
+      "question": "How can I contact the support team if I have a question or problem?",
+      "answer": "You can contact our support team by email or phone. We are available to help you resolve any questions or issues you may have.",
+      "topic": "service_topic"
+    },
+    "documentation": {
+      "question": "What kind of documentation do I need to create a senior trip?",
+      "answer": "You will need to provide certain documentation, such as your passport and proof of payment, to create a senior trip. Our team will guide you through the paperwork process.",
+      "topic": "service_topic"
+    },
+    "sharing": {
+      "question": "How can I share my senior trip with my friends and family?",
+      "answer": "You can share your senior trip with your friends and family via social media or email. Our site allows you to share a link to your trip so others can join.",
+      "topic": "popular_topic"
+    },
+    "register": {
+      "question": "How can I register on the site?",
+      "answer": "You can register on the site by clicking the 'Sign Up' button in the top right corner of the screen and following the instructions to create an account.",
+      "topic": "general_topic"
+    },
+    "search_trips": {
+      "question": "How can I search for alumni trips?",
+      "answer": "You can search for alumni trips using the search bar at the top of the screen. You can filter the results by date, destination, and other criteria.",
+      "topic": "general_topic"
+    },
+    "join_trip": {
+      "question": "How can I join an existing trip?",
+      "answer": "You can join an existing trip by clicking the 'Join' button on the trip page. You must have an account on the site to join a trip.",
+      "topic": "general_topic"
+    },
+    "add_remove_participants": {
+      "question": "How can I add or remove participants from my trip?",
+      "answer": "You can add or remove participants from your trip by clicking the 'Edit trip' button on the trip page and following the instructions to add or remove participants.",
+      "topic": "general_topic"
+    },
+    "update_profile": {
+      "question": "How can I update my personal details?",
+      "answer": "You can update your personal details by clicking the 'My profile' button in the top right corner of the screen and following the instructions to update your details.",
+      "topic": "general_topic"
+    }
   }
 }

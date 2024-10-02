@@ -41,7 +41,12 @@
     "finishButton": "Finalizar",
     "helpButton": "Ayuda",
     "questionButton": "Preguntas",
-    "contactButton": "Contáctenos"
+    "contactButton": "Contáctenos",
+    "helpButtons": {
+      "theme": "Tema",
+      "general": "General",
+      "services": "Servicios"
+    }
   },
   "home": {
     "cardEvent": {
@@ -62,7 +67,79 @@
     "message": "¡Algo ha ocurrido en tu viaje!\nNo sabemos cómo llegaste aquí, pero estamos trabajando para guiarte de nuevo.",
     "help": "No te preocupes, te ayudaremos a encontrar el camino hacia tus próximos destinos.",
     "button": "Volver al Inicio"
-  }
+  },
+  "help": {
+    "title": "Centro de Ayuda",
+    "subtitle": "¿Cómo Podemos Ayudarte?",
+    "placeholder": "Buscar...",
+    "noContent": "No hay preguntas disponible"
+  },
 
- 
+  "faq": {
+    "create_trip": {
+      "question": "¿Cómo puedo crear un viaje de egresados en este sitio?",
+      "answer": "Para crear un viaje de egresados, debes registrarte en nuestro sitio y completar el formulario de creación de viaje. Nuestro equipo se encargará de ayudarte a planificar y organizar tu viaje.",
+      "topic": "popular_topic"
+    },
+    "trip_cost": {
+      "question": "¿Cuánto cuesta crear un viaje de egresados en este sitio?",
+      "answer": "El costo de crear un viaje de egresados en nuestro sitio varía dependiendo del tipo de viaje y los servicios que desees incluir. Nuestro equipo se encargará de proporcionarte un presupuesto personalizado para tu viaje.",
+      "topic": "popular_topic"
+    },
+    "trip_types": {
+      "question": "¿Qué tipo de viajes de egresados puedo crear en este sitio?",
+      "answer": "Puedes crear viajes de egresados de todo tipo, desde viajes de aventura hasta viajes de relax en la playa. Nuestro sitio te permite personalizar tu viaje según tus intereses y preferencias.",
+      "topic": "popular_topic"
+    },
+    "payment": {
+      "question": "¿Cómo puedo pagar por mi viaje de egresados?",
+      "answer": "Puedes pagar por tu viaje de egresados mediante tarjeta de crédito o débito, o mediante transferencia bancaria. Nuestro sitio utiliza un sistema de pago seguro para proteger tus datos.",
+      "topic": "popular_topic"
+    },
+    "cancellation": {
+      "question": "¿Qué pasa si necesito cancelar o modificar mi viaje de egresados?",
+      "answer": "Si necesitas cancelar o modificar tu viaje de egresados, debes notificarnos con anticipación para que podamos ayudarte a hacer los cambios necesarios. Es posible que se apliquen ciertas restricciones o cargos por cancelación o modificación.",
+      "topic": "popular_topic"
+    },
+    "support": {
+      "question": "¿Cómo puedo contactar con el equipo de soporte si tengo alguna pregunta o problema?",
+      "answer": "Puedes contactar con nuestro equipo de soporte mediante correo electrónico o teléfono. Estamos disponibles para ayudarte a resolver cualquier pregunta o problema que tengas.",
+      "topic": "service_topic"
+    },
+    "documentation": {
+      "question": "¿Qué tipo de documentación necesito para crear un viaje de egresados?",
+      "answer": "Necesitarás proporcionar cierta documentación, como tu pasaporte y un comprobante de pago, para crear un viaje de egresados. Nuestro equipo se encargará de guiarte a través del proceso de documentación.",
+      "topic": "service_topic"
+    },
+    "sharing": {
+      "question": "¿Cómo puedo compartir mi viaje de egresados con mis amigos y familiares?",
+      "answer": "Puedes compartir tu viaje de egresados con tus amigos y familiares mediante redes sociales o correo electrónico. Nuestro sitio te permite compartir un enlace a tu viaje para que otros puedan unirse.",
+      "topic": "popular_topic"
+    },
+    "register": {
+      "question": "¿Cómo puedo registrarme en el sitio?",
+      "answer": "Puedes registrarte en el sitio haciendo clic en el botón 'Regístrate' en la esquina superior derecha de la pantalla y siguiendo las instrucciones para crear una cuenta.",
+      "topic": "general_topic"
+    },
+    "search_trips": {
+      "question": "¿Cómo puedo buscar viajes de egresados?",
+      "answer": "Puedes buscar viajes de egresados utilizando la barra de búsqueda en la parte superior de la pantalla. Puedes filtrar los resultados por fecha, destino y otros criterios.",
+      "topic": "general_topic"
+    },
+    "join_trip": {
+      "question": "¿Cómo puedo unirme a un viaje existente?",
+      "answer": "Puedes unirte a un viaje existente haciendo clic en el botón 'Unirse' en la página del viaje. Debes tener una cuenta en el sitio para unirte a un viaje.",
+      "topic": "general_topic"
+    },
+    "add_remove_participants": {
+      "question": "¿Cómo puedo agregar o eliminar participantes de mi viaje?",
+      "answer": "Puedes agregar o eliminar participantes de tu viaje haciendo clic en el botón 'Editar viaje' en la página del viaje y siguiendo las instrucciones para agregar o eliminar participantes.",
+      "topic": "general_topic"
+    },
+    "update_profile": {
+      "question": "¿Cómo puedo actualizar mis datos personales?",
+      "answer": "Puedes actualizar tus datos personales haciendo clic en el botón 'Mi perfil' en la esquina superior derecha de la pantalla y siguiendo las instrucciones para actualizar tus datos.",
+      "topic": "general_topic"
+    }
+  }
 }
