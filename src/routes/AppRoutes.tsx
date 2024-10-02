@@ -1,28 +1,34 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Home from '../pages/Home'
-import PlanTrip from '../pages/PlanTrip'
-import Login from '../pages/Login'
-import Register from '../pages/Register'
-import Error from '@/pages/Error'
-import Header from '@/components/header/Header'
-import Footer from '@/components/Footer'
-import HelpCenter from '@/pages/helpCenter'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PlanTrip from "../pages/PlanTrip";
+import Landing from "../pages/Landing";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import Error from "@/pages/Error";
+import Access from "@/pages/Access";
+import Footer from "@/components/Footer";
+import HelpCenter from "@/pages/helpCenter";
+import PlanTripGroup from "@/pages/PlanTripGroup";
+import Group from "@/pages/Group";
+import Home from "@/pages/Home";
 
 function AppRoutes() {
-	return (
-		<Router>
-			<Header/>
-			<Routes>
-				<Route path='*' element={<Error />} />
-				<Route path='/' element={<Home />} />
-				<Route path='/login' element={<Login />} />
-				<Route path='/register' element={<Register />} />
-				<Route path="/plan-trip" element={<PlanTrip />} />
-				<Route path="/help-center" element={<HelpCenter />} />
-			</Routes>
-			<Footer/>
-		</Router>
-	)
+  return (
+    <Router>
+      <Routes>
+        <Route path="*" element={<Error />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/help-center" element={<HelpCenter />} />
+        <Route path="/plan-trip/group" element={<PlanTripGroup />} />
+        <Route path="/plan-trip" element={<PlanTrip />} />
+        <Route path="group" element={<Group />} />
+        <Route path="/access-group" element={<Access />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
 }
 
-export default AppRoutes
+export default AppRoutes;
