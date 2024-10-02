@@ -76,28 +76,28 @@
 
   "faq": {
     "create_trip": {
-      "question": "How can I create a senior trip on this site?",
-      "answer": "To create a senior trip, you must register on our site and fill out the trip creation form. Our team will help you plan and organize your trip.",
+      "question": "How can I create a graduation trip on this site?",
+      "answer": "To create a graduation trip, you must register on our site and fill out the trip creation form. Our team will help you plan and organize your trip.",
       "topic": "popular_topic"
     },
     "trip_cost": {
-      "question": "How much does it cost to create a senior trip on this site?",
-      "answer": "The cost of creating a senior trip on our site varies depending on the type of trip and the services you want to include. Our team will provide you with a personalized quote for your trip.",
+      "question": "How much does it cost to create a graduation trip on this site?",
+      "answer": "The cost of creating a graduation trip on our site varies depending on the type of trip and the services you want to include. Our team will provide you with a personalized quote for your trip.",
       "topic": "popular_topic"
     },
     "trip_types": {
-      "question": "What type of senior trips can I create on this site?",
-      "answer": "You can create senior trips of all kinds, from adventure trips to relaxing trips on the beach. Our site allows you to customize your trip based on your interests and preferences.",
+      "question": "What type of graduation trips can I create on this site?",
+      "answer": "You can create graduation trips of all kinds, from adventure trips to relaxing trips on the beach. Our site allows you to customize your trip based on your interests and preferences.",
       "topic": "popular_topic"
     },
     "payment": {
-      "question": "How can I pay for my senior trip?",
-      "answer": "You can pay for your senior trip by credit or debit card, or by bank transfer. Our site uses a secure payment system to protect your data.",
+      "question": "How can I pay for my graduation trip?",
+      "answer": "You can pay for your graduation trip by credit or debit card, or by bank transfer. Our site uses a secure payment system to protect your data.",
       "topic": "popular_topic"
     },
     "cancellation": {
-      "question": "What happens if I need to cancel or modify my senior trip?",
-      "answer": "If you need to cancel or modify your senior trip, you must notify us in advance so that we can help you make the necessary changes. Certain cancellation or modification restrictions or fees may apply.",
+      "question": "What happens if I need to cancel or modify my graduation trip?",
+      "answer": "If you need to cancel or modify your graduation trip, you must notify us in advance so that we can help you make the necessary changes. Certain cancellation or modification restrictions or fees may apply.",
       "topic": "popular_topic"
     },
     "support": {
@@ -106,13 +106,13 @@
       "topic": "service_topic"
     },
     "documentation": {
-      "question": "What kind of documentation do I need to create a senior trip?",
-      "answer": "You will need to provide certain documentation, such as your passport and proof of payment, to create a senior trip. Our team will guide you through the paperwork process.",
+      "question": "What kind of documentation do I need to create a graduation trip?",
+      "answer": "You will need to provide certain documentation, such as your passport and proof of payment, to create a graduation trip. Our team will guide you through the paperwork process.",
       "topic": "service_topic"
     },
     "sharing": {
-      "question": "How can I share my senior trip with my friends and family?",
-      "answer": "You can share your senior trip with your friends and family via social media or email. Our site allows you to share a link to your trip so others can join.",
+      "question": "How can I share my graduation trip with my friends and family?",
+      "answer": "You can share your graduation trip with your friends and family via social media or email. Our site allows you to share a link to your trip so others can join.",
       "topic": "popular_topic"
     },
     "register": {
