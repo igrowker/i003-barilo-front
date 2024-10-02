@@ -88,6 +88,9 @@
     },
     "homeButton": "Volver al Inicio",
     "backButton": "Volver",
+    "createCrowd": "Crear Campaña",
+    "donate": "Aportar",
+    "approvedDonation": "compartir"
     "landing":{
       "login":"Iniciar sesión",
       "register":"Regístrate"
@@ -135,6 +138,22 @@
     }
   },
 
+  "crowd": {
+    "organizer": {
+      "text": "Empieza **Creando una Campaña** para poder **financiar** tu **aventura**.",
+      "subtitle": "Crea tu campaña"
+    },
+    "donor": {
+      "title": "Donante",
+      "text": "**Ayudanos** a hacer este viaje **realidad**. ¡Cada **aporte** cuenta!",
+      "subtitle": "Ayuda al grupo"
+    },
+    "approvedDonation": {
+      "text": "**¡Gracias** por tu **generosidad!** Has recaudado $4000 para el **viaje**."
+    },
+    "imageAlt": "Imagen de fondo del crowdfunding"
+  },
+  
   "help": {
     "title": "Centro de Ayuda",
     "subtitle": "¿Cómo Podemos Ayudarte?",
