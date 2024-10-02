@@ -47,7 +47,6 @@
       "button": "Enviar"
     }
   },
-
   "footer": {
     "copyright": "Todos los derechos reservados."
   },
@@ -90,10 +89,10 @@
     "backButton": "Volver",
     "createCrowd": "Crear Campaña",
     "donate": "Aportar",
-    "approvedDonation": "compartir"
-    "landing":{
-      "login":"Iniciar sesión",
-      "register":"Regístrate"
+    "approvedDonation": "compartir",
+    "landing": {
+      "login": "Iniciar sesión",
+      "register": "Regístrate"
     }
   },
   "home": {
@@ -137,7 +136,6 @@
       "message": "¿Estás seguro de que deseas cerrar sesión?"
     }
   },
-
   "crowd": {
     "organizer": {
       "text": "Empieza **Creando una Campaña** para poder **financiar** tu **aventura**.",
@@ -153,14 +151,12 @@
     },
     "imageAlt": "Imagen de fondo del crowdfunding"
   },
-  
   "help": {
     "title": "Centro de Ayuda",
     "subtitle": "¿Cómo Podemos Ayudarte?",
     "placeholder": "Buscar...",
     "noContent": "No hay preguntas disponible"
   },
-
   "faq": {
     "create_trip": {
       "question": "¿Cómo puedo crear un viaje de egresados en este sitio?",
