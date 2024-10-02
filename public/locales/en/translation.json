@@ -9,7 +9,46 @@
       "contact": "Contact"
     }
   },
-  "landing": {},
+
+  "landing": {
+    "welcome":{
+      "title": "Welcome, your graduation trip adventure is about to begin!",
+      "text1": "At Barilo, we understand that your graduation trip is much more than just a getaway; it’s a significant moment that marks the end of one chapter and the beginning of new adventures. Our mission is to make this unique experience accessible, inclusive, and, above all, unforgettable for everyone.",
+      "text2": "Imagine exploring stunning destinations with your closest friends, creating memories that will last a lifetime. At Barilo, we are committed to offering you a wide range of diverse destinations to suit all tastes and budgets."
+    },
+    "characteristics":{
+      "title":"Characteristics",
+      "destination":"Varied destinations",
+      "paragraphDestination":"We offer a wide range of destinations to suit all tastes and budgets.",
+      "plans":"Flexible payment plans",
+      "paragraphPlans":"Payment options adapted to different economic situations.",
+      "groups":"Inclusive groups",
+      "paragraphGroups":"We encourage integration and diversity in our travel groups."
+    },
+    "customize":{
+      "title":"Customize your trip",
+      "caption1":"Create your group",
+      "paragraph1":"Give your adventure a name! Select how many friends will accompany you on this exciting journey.",
+      "caption2":"Choose the destination",
+      "paragraph2":"Get adventurous! Choose your ideal means of transportation, from comfortable buses to exciting plane flights.",
+      "caption3":"Select your accommodation",
+      "paragraph3":"Discover the most incredible accommodation options we have for you and your group. A perfect place to rest awaits you!",
+      "caption4":"Create your plan",
+      "paragraph4":"Customize your itinerary with exciting activities and delicious meals to suit your tastes.",
+      "caption5":"Confirm your purchase",
+      "paragraph5":"Review all the details of your trip to make sure nothing important is left out.",
+      "caption6":"Enjoy your trip!",
+      "paragraph6":"Immerse yourself in an unforgettable experience with your schoolmates!"
+    },
+    "bariloExperience":"Barilo Experiences",
+    "contactUs":{
+      "title":"Do you need to contact us?",
+      "label":"Leave us your email",
+      "inputPlaceholder": "Your email",
+      "button":"Send"
+    }
+  },
+
   "footer": {
     "copyright": "All rights reserved."
   },
@@ -52,7 +91,11 @@
     "backButton": "Back",
     "createCrowd": "Create campaign",
     "donate": "Contribute",
-    "approvedDonation": "Publish"
+    "approvedDonation": "Publish",
+    "landing":{
+      "login":"Login",
+      "register":"Register"
+    }
   },
   "home": {
     "cardEvent": {

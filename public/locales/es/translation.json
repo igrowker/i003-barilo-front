@@ -9,7 +9,45 @@
       "contact": "Contacto"
     }
   },
-  "landing": {},
+  "landing": {
+    "welcome": {
+      "title": "¡Bienvenidos, tu aventura de egresados está por comenzar!",
+      "text1": "En Barilo, entendemos que tu viaje de egresados es mucho más que una simple escapada; es un momento significativo que marca el cierre de una etapa y el inicio de nuevas aventuras. Nuestra misión es hacer que esta experiencia única sea accesible, inclusiva y, sobre todo, inolvidable para todos.",
+      "text2": "Imagina explorar destinos impresionantes con tus amigos más cercanos, creando recuerdos que durarán toda la vida. En Barilo, nos comprometemos a ofrecerte una amplia gama de destinos variados que se adaptan a todos los gustos y presupuestos."
+    },
+    "characteristics": {
+      "title": "Características",
+      "destination": "Destinos variados",
+      "paragraphDestination": "Ofrecemos una amplia gama de destinos que se adaptan a todos los gustos y presupuestos.",
+      "plans": "Planes de pago flexibles",
+      "paragraphPlans": "Opciones de pago adaptadas a diferentes situaciones económicas.",
+      "groups": "Grupos inclusivos",
+      "paragraphGroups": "Fomentamos la integración y la diversidad en nuestros grupos de viaje."
+    },
+    "customize": {
+      "title": "Personaliza tu viaje",
+      "caption1": "Crea tu grupo",
+      "paragraph1": "¡Dale un nombre a tu aventura! Selecciona cuántos amigos te acompañarán en este emocionante viaje.",
+      "caption2": "Elige el destino",
+      "paragraph2": "¡Aventúrate! Escoge tu medio de transporte ideal, desde cómodos buses hasta emocionantes vuelos en avión.",
+      "caption3": "Selecciona tu alojamiento",
+      "paragraph3": "Descubre las opciones de alojamiento más increíbles que tenemos para ti y tu grupo. ¡Te espera un lugar perfecto para descansar!",
+      "caption4": "Crea tu plan",
+      "paragraph4": "Personaliza tu itinerario con emocionantes actividades y deliciosas comidas adaptadas a tus gustos.",
+      "caption5": "Confirma tu compra",
+      "paragraph5": "Revisa todos los detalles de tu viaje para asegurarte de que no falte nada importante.",
+      "caption6": "¡Disfruta tu viaje!",
+      "paragraph6": "¡Sumérgete en una experiencia inolvidable con tus compañeros de escuela!"
+    },
+    "bariloExperience": "Experiencias Barilo",
+    "contactUs": {
+      "title": "¿Necesitas contactarte con nosotros?",
+      "label": "Déjanos tu correo electrónico",
+      "inputPlaceholder": "Tu correo electrónico",
+      "button": "Enviar"
+    }
+  },
+
   "footer": {
     "copyright": "Todos los derechos reservados."
   },
@@ -53,6 +91,10 @@
     "createCrowd": "Crear Campaña",
     "donate": "Aportar",
     "approvedDonation": "compartir"
+    "landing":{
+      "login":"Iniciar sesión",
+      "register":"Regístrate"
+    }
   },
   "home": {
     "cardEvent": {
