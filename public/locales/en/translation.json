@@ -41,7 +41,10 @@
     "confirmButton": "Confirm",
     "finishButton": "Finish",
     "homeButton": "Back to Home",
-    "backButton": "Back"
+    "backButton": "Back",
+    "createCrowd": "Create campaign",
+    "donate": "Contribute",
+    "approvedDonation": "Publish"
   },
   "home": {
     "cardEvent": {
@@ -83,5 +86,20 @@
       "title": "Log Out",
       "message": "Are you sure you want to log out?"
     }
+  },
+  "crowd": {
+    "organizer": {
+      "text": "Start **Creating a Campaign** to be able to **finance** your **adventure**.",
+      "subtitle": "Create your campaign"
+    },
+    "donor": {
+      "title": "Donor",
+      "text": "**Help us** make this trip **a reality**. Every **contribution** counts!",
+      "subtitle": "Help the group"
+    },
+    "approvedDonation": {
+      "text": "**Thanks** for your **generosity!** You have received $4000 for this **trip**."
+    },
+    "imageAlt": "Background image of crowdfunding"
   }
 }
