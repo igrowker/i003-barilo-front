@@ -1,7 +1,26 @@
+import CrowdComponent from "@/components/crowdfunding/CrowdComponent";
+
 function Crowdfunding() {
   return (
-    <div>Crowdfunding</div>
-  )
+    <>
+      <CrowdComponent
+        profile="organizer"
+        image={"src/assets/images/amico.svg"}
+      />
+    </>
+  );
 }
 
-export default Crowdfunding
+export const CrowdfundingDonor = () => {
+  return (
+    <>
+      <CrowdComponent profile="donor" image="src\assets\images\pana.svg" />
+      <CrowdComponent
+        profile="approvedDonation"
+        image="src\assets\images\coins.svg"
+      />
+    </>
+  );
+};
+
+export default Crowdfunding;

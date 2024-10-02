@@ -39,38 +39,44 @@ const StepOne: React.FC<StepOneProps> = ({ onNext }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mx-auto space-y-5 w-80">
-      <InputField
-        label={t("stepOne.groupName")}
-        name="groupName"
-        value={formData.groupName}
-        onChange={handleChange}
-        required
-        placeholder={t("stepOne.groupName")}
-      />
-      <InputField
-        label={t("stepOne.numberOfPeople")}
-        name="numberOfPeople"
-        value={formData.numberOfPeople}
-        onChange={handleChange}
-        required
-        type="number"
-        placeholder={t("stepOne.numberOfPeople")}
-      />
-      <div className="flex items-center gap-x-4">
-        <ButtonBlue
-          text={t("buttons.nextButton")}
-          type="submit"
-          onClick={handleSubmit}
-          isActive={true}
+    <>
+      <form onSubmit={handleSubmit} className="mx-auto space-y-5 w-80 ">
+        <div className="text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg ">
+          Elije el nombre del grupo y mas adelante podrás compartir un link de
+          invitación a las personas que deseas agregar.
+        </div>
+        <InputField
+          label={t("stepOne.groupName")}
+          name="groupName"
+          value={formData.groupName}
+          onChange={handleChange}
+          required
+          placeholder={t("stepOne.groupName")}
         />
-        <ButtonBlue
-          text={t("buttons.cancelButton")}
-          onClick={handleCancel}
-          isActive={false}
+        <InputField
+          label={t("stepOne.numberOfPeople")}
+          name="numberOfPeople"
+          value={formData.numberOfPeople}
+          onChange={handleChange}
+          required
+          type="number"
+          placeholder={t("stepOne.numberOfPeople")}
         />
-      </div>
-    </form>
+        <div className="flex items-center gap-x-4">
+          <ButtonBlue
+            text={t("buttons.nextButton")}
+            type="submit"
+            onClick={handleSubmit}
+            isActive={true}
+          />
+          <ButtonBlue
+            text={t("buttons.cancelButton")}
+            onClick={handleCancel}
+            isActive={false}
+          />
+        </div>
+      </form>
+    </>
   );
 };
 

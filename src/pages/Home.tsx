@@ -3,21 +3,10 @@ import HomeEventComponent from '@/components/HomeEventComponent'
 import { useTranslation } from 'react-i18next'
 
 const Home: React.FC = () => {
-	const { t, i18n } = useTranslation()
-
-	const changeLanguage = (lng: string) => {
-		i18n.changeLanguage(lng)
-	}
-
+	const { t } = useTranslation()
 	return (
 		<>
 			<section>
-				<div className='font-bold text-black'>
-					<h1>{t('welcome')}</h1>
-					<p>{t('description')}</p>
-					<button onClick={() => changeLanguage('es')}>Español</button>
-					<button onClick={() => changeLanguage('en')}>English</button>
-				</div>
 				<div className='w-full px-4 pt-10'>
 					<HomeEventComponent></HomeEventComponent>
 				</div>

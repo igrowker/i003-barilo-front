@@ -1,16 +1,55 @@
 {
   "welcome": "Bienvenido",
   "description": "Esta es una descripción en español.",
-  "header": {
-    "link": {
-      "home": "Inicio",
-      "login": "Acceso",
-      "register": "Registrar",
-      "dashboard": "Panel"
+  "navbar": {
+    "items": {
+      "characteristic": "Caracteristicas",
+      "personalized": "Personalizado",
+      "experience": "Experiencia",
+      "contact": "Contacto"
     }
   },
+  "landing": {
+    "welcome": {
+      "title": "¡Bienvenidos, tu aventura de egresados está por comenzar!",
+      "text1": "En Barilo, entendemos que tu viaje de egresados es mucho más que una simple escapada; es un momento significativo que marca el cierre de una etapa y el inicio de nuevas aventuras. Nuestra misión es hacer que esta experiencia única sea accesible, inclusiva y, sobre todo, inolvidable para todos.",
+      "text2": "Imagina explorar destinos impresionantes con tus amigos más cercanos, creando recuerdos que durarán toda la vida. En Barilo, nos comprometemos a ofrecerte una amplia gama de destinos variados que se adaptan a todos los gustos y presupuestos."
+    },
+    "characteristics": {
+      "title": "Características",
+      "destination": "Destinos variados",
+      "paragraphDestination": "Ofrecemos una amplia gama de destinos que se adaptan a todos los gustos y presupuestos.",
+      "plans": "Planes de pago flexibles",
+      "paragraphPlans": "Opciones de pago adaptadas a diferentes situaciones económicas.",
+      "groups": "Grupos inclusivos",
+      "paragraphGroups": "Fomentamos la integración y la diversidad en nuestros grupos de viaje."
+    },
+    "customize": {
+      "title": "Personaliza tu viaje",
+      "caption1": "Crea tu grupo",
+      "paragraph1": "¡Dale un nombre a tu aventura! Selecciona cuántos amigos te acompañarán en este emocionante viaje.",
+      "caption2": "Elige el destino",
+      "paragraph2": "¡Aventúrate! Escoge tu medio de transporte ideal, desde cómodos buses hasta emocionantes vuelos en avión.",
+      "caption3": "Selecciona tu alojamiento",
+      "paragraph3": "Descubre las opciones de alojamiento más increíbles que tenemos para ti y tu grupo. ¡Te espera un lugar perfecto para descansar!",
+      "caption4": "Crea tu plan",
+      "paragraph4": "Personaliza tu itinerario con emocionantes actividades y deliciosas comidas adaptadas a tus gustos.",
+      "caption5": "Confirma tu compra",
+      "paragraph5": "Revisa todos los detalles de tu viaje para asegurarte de que no falte nada importante.",
+      "caption6": "¡Disfruta tu viaje!",
+      "paragraph6": "¡Sumérgete en una experiencia inolvidable con tus compañeros de escuela!"
+    },
+    "bariloExperience": "Experiencias Barilo",
+    "contactUs": {
+      "title": "¿Necesitas contactarte con nosotros?",
+      "label": "Déjanos tu correo electrónico",
+      "inputPlaceholder": "Tu correo electrónico",
+      "button": "Enviar"
+    }
+  },
+
   "footer": {
-    "copyright": "Bariló — Derechos Reservados"
+    "copyright": "Todos los derechos reservados."
   },
   "progressBar": {
     "steps": ["Grupo", "Pasajes", "Hoteles", "Actividades", "Confirmar"]
@@ -39,8 +78,23 @@
     "cancelButton": "Cancelar",
     "confirmButton": "Confirmar",
     "finishButton": "Finalizar",
+    "helpButton": "Ayuda",
+    "questionButton": "Preguntas",
+    "contactButton": "Contáctenos",
+    "helpButtons": {
+      "theme": "Tema",
+      "general": "General",
+      "services": "Servicios"
+    },
     "homeButton": "Volver al Inicio",
-    "backButton": "Volver"
+    "backButton": "Volver",
+    "createCrowd": "Crear Campaña",
+    "donate": "Aportar",
+    "approvedDonation": "compartir"
+    "landing":{
+      "login":"Iniciar sesión",
+      "register":"Regístrate"
+    }
   },
   "home": {
     "cardEvent": {
@@ -81,6 +135,97 @@
     "logout": {
       "title": "Cerrar Sesión",
       "message": "¿Estás seguro de que deseas cerrar sesión?"
+    }
+  },
+
+  "crowd": {
+    "organizer": {
+      "text": "Empieza **Creando una Campaña** para poder **financiar** tu **aventura**.",
+      "subtitle": "Crea tu campaña"
+    },
+    "donor": {
+      "title": "Donante",
+      "text": "**Ayudanos** a hacer este viaje **realidad**. ¡Cada **aporte** cuenta!",
+      "subtitle": "Ayuda al grupo"
+    },
+    "approvedDonation": {
+      "text": "**¡Gracias** por tu **generosidad!** Has recaudado $4000 para el **viaje**."
+    },
+    "imageAlt": "Imagen de fondo del crowdfunding"
+  },
+  
+  "help": {
+    "title": "Centro de Ayuda",
+    "subtitle": "¿Cómo Podemos Ayudarte?",
+    "placeholder": "Buscar...",
+    "noContent": "No hay preguntas disponible"
+  },
+
+  "faq": {
+    "create_trip": {
+      "question": "¿Cómo puedo crear un viaje de egresados en este sitio?",
+      "answer": "Para crear un viaje de egresados, debes registrarte en nuestro sitio y completar el formulario de creación de viaje. Nuestro equipo se encargará de ayudarte a planificar y organizar tu viaje.",
+      "topic": "popular_topic"
+    },
+    "trip_cost": {
+      "question": "¿Cuánto cuesta crear un viaje de egresados en este sitio?",
+      "answer": "El costo de crear un viaje de egresados en nuestro sitio varía dependiendo del tipo de viaje y los servicios que desees incluir. Nuestro equipo se encargará de proporcionarte un presupuesto personalizado para tu viaje.",
+      "topic": "popular_topic"
+    },
+    "trip_types": {
+      "question": "¿Qué tipo de viajes de egresados puedo crear en este sitio?",
+      "answer": "Puedes crear viajes de egresados de todo tipo, desde viajes de aventura hasta viajes de relax en la playa. Nuestro sitio te permite personalizar tu viaje según tus intereses y preferencias.",
+      "topic": "popular_topic"
+    },
+    "payment": {
+      "question": "¿Cómo puedo pagar por mi viaje de egresados?",
+      "answer": "Puedes pagar por tu viaje de egresados mediante tarjeta de crédito o débito, o mediante transferencia bancaria. Nuestro sitio utiliza un sistema de pago seguro para proteger tus datos.",
+      "topic": "popular_topic"
+    },
+    "cancellation": {
+      "question": "¿Qué pasa si necesito cancelar o modificar mi viaje de egresados?",
+      "answer": "Si necesitas cancelar o modificar tu viaje de egresados, debes notificarnos con anticipación para que podamos ayudarte a hacer los cambios necesarios. Es posible que se apliquen ciertas restricciones o cargos por cancelación o modificación.",
+      "topic": "popular_topic"
+    },
+    "support": {
+      "question": "¿Cómo puedo contactar con el equipo de soporte si tengo alguna pregunta o problema?",
+      "answer": "Puedes contactar con nuestro equipo de soporte mediante correo electrónico o teléfono. Estamos disponibles para ayudarte a resolver cualquier pregunta o problema que tengas.",
+      "topic": "service_topic"
+    },
+    "documentation": {
+      "question": "¿Qué tipo de documentación necesito para crear un viaje de egresados?",
+      "answer": "Necesitarás proporcionar cierta documentación, como tu pasaporte y un comprobante de pago, para crear un viaje de egresados. Nuestro equipo se encargará de guiarte a través del proceso de documentación.",
+      "topic": "service_topic"
+    },
+    "sharing": {
+      "question": "¿Cómo puedo compartir mi viaje de egresados con mis amigos y familiares?",
+      "answer": "Puedes compartir tu viaje de egresados con tus amigos y familiares mediante redes sociales o correo electrónico. Nuestro sitio te permite compartir un enlace a tu viaje para que otros puedan unirse.",
+      "topic": "popular_topic"
+    },
+    "register": {
+      "question": "¿Cómo puedo registrarme en el sitio?",
+      "answer": "Puedes registrarte en el sitio haciendo clic en el botón 'Regístrate' en la esquina superior derecha de la pantalla y siguiendo las instrucciones para crear una cuenta.",
+      "topic": "general_topic"
+    },
+    "search_trips": {
+      "question": "¿Cómo puedo buscar viajes de egresados?",
+      "answer": "Puedes buscar viajes de egresados utilizando la barra de búsqueda en la parte superior de la pantalla. Puedes filtrar los resultados por fecha, destino y otros criterios.",
+      "topic": "general_topic"
+    },
+    "join_trip": {
+      "question": "¿Cómo puedo unirme a un viaje existente?",
+      "answer": "Puedes unirte a un viaje existente haciendo clic en el botón 'Unirse' en la página del viaje. Debes tener una cuenta en el sitio para unirte a un viaje.",
+      "topic": "general_topic"
+    },
+    "add_remove_participants": {
+      "question": "¿Cómo puedo agregar o eliminar participantes de mi viaje?",
+      "answer": "Puedes agregar o eliminar participantes de tu viaje haciendo clic en el botón 'Editar viaje' en la página del viaje y siguiendo las instrucciones para agregar o eliminar participantes.",
+      "topic": "general_topic"
+    },
+    "update_profile": {
+      "question": "¿Cómo puedo actualizar mis datos personales?",
+      "answer": "Puedes actualizar tus datos personales haciendo clic en el botón 'Mi perfil' en la esquina superior derecha de la pantalla y siguiendo las instrucciones para actualizar tus datos.",
+      "topic": "general_topic"
     }
   }
 }

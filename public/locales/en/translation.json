@@ -1,16 +1,56 @@
 {
   "welcome": "Welcome",
   "description": "This is a description in English.",
-  "header": {
-    "link": {
-      "home": "Home",
-      "login": "Login",
-      "register": "Register",
-      "dashboard": "Dashboard"
+  "navbar": {
+    "items": {
+      "characteristic": "Characteristics",
+      "personalized": "Personalized",
+      "experience": "Experience",
+      "contact": "Contact"
     }
   },
+
+  "landing": {
+    "welcome":{
+      "title": "Welcome, your graduation trip adventure is about to begin!",
+      "text1": "At Barilo, we understand that your graduation trip is much more than just a getaway; it’s a significant moment that marks the end of one chapter and the beginning of new adventures. Our mission is to make this unique experience accessible, inclusive, and, above all, unforgettable for everyone.",
+      "text2": "Imagine exploring stunning destinations with your closest friends, creating memories that will last a lifetime. At Barilo, we are committed to offering you a wide range of diverse destinations to suit all tastes and budgets."
+    },
+    "characteristics":{
+      "title":"Characteristics",
+      "destination":"Varied destinations",
+      "paragraphDestination":"We offer a wide range of destinations to suit all tastes and budgets.",
+      "plans":"Flexible payment plans",
+      "paragraphPlans":"Payment options adapted to different economic situations.",
+      "groups":"Inclusive groups",
+      "paragraphGroups":"We encourage integration and diversity in our travel groups."
+    },
+    "customize":{
+      "title":"Customize your trip",
+      "caption1":"Create your group",
+      "paragraph1":"Give your adventure a name! Select how many friends will accompany you on this exciting journey.",
+      "caption2":"Choose the destination",
+      "paragraph2":"Get adventurous! Choose your ideal means of transportation, from comfortable buses to exciting plane flights.",
+      "caption3":"Select your accommodation",
+      "paragraph3":"Discover the most incredible accommodation options we have for you and your group. A perfect place to rest awaits you!",
+      "caption4":"Create your plan",
+      "paragraph4":"Customize your itinerary with exciting activities and delicious meals to suit your tastes.",
+      "caption5":"Confirm your purchase",
+      "paragraph5":"Review all the details of your trip to make sure nothing important is left out.",
+      "caption6":"Enjoy your trip!",
+      "paragraph6":"Immerse yourself in an unforgettable experience with your schoolmates!"
+    },
+    "bariloExperience":"Barilo Experiences",
+    "contactUs":{
+      "title":"Do you need to contact us?",
+      "label":"Leave us your email",
+      "inputPlaceholder": "Your email",
+      "button":"Send"
+    }
+  },
+
   "footer": {
-    "copyright": "Bariló — copyright"
+    "copyright": "All rights reserved."
   },
   "progressBar": {
     "steps": ["Group", "Tickets", "Hotels", "Activities", "Confirm"]
@@ -39,8 +79,23 @@
     "cancelButton": "Cancel",
     "confirmButton": "Confirm",
     "finishButton": "Finish",
+    "helpButton": "Help",
+    "questionButton": "Questions",
+    "contactButton": "Contact us",
+    "helpButtons": {
+      "theme": "Theme",
+      "general": "General",
+      "services": "Services"
+    },
     "homeButton": "Back to Home",
-    "backButton": "Back"
+    "backButton": "Back",
+    "createCrowd": "Create campaign",
+    "donate": "Contribute",
+    "approvedDonation": "Publish",
+    "landing":{
+      "login":"Login",
+      "register":"Register"
+    }
   },
   "home": {
     "cardEvent": {
@@ -81,6 +136,97 @@
     "logout": {
       "title": "Log Out",
       "message": "Are you sure you want to log out?"
+    }
+  },
+  
+  "crowd": {
+    "organizer": {
+      "text": "Start **Creating a Campaign** to be able to **finance** your **adventure**.",
+      "subtitle": "Create your campaign"
+    },
+    "donor": {
+      "title": "Donor",
+      "text": "**Help us** make this trip **a reality**. Every **contribution** counts!",
+      "subtitle": "Help the group"
+    },
+    "approvedDonation": {
+      "text": "**Thanks** for your **generosity!** You have received $4000 for this **trip**."
+    },
+    "imageAlt": "Background image of crowdfunding"
+},
+
+  "help": {
+    "title": "Help Center",
+    "subtitle": "How can we help you?",
+    "placeholder": "Search...",
+    "noContent": "No questions available"
+  },
+
+  "faq": {
+    "create_trip": {
+      "question": "How can I create a graduation trip on this site?",
+      "answer": "To create a graduation trip, you must register on our site and fill out the trip creation form. Our team will help you plan and organize your trip.",
+      "topic": "popular_topic"
+    },
+    "trip_cost": {
+      "question": "How much does it cost to create a graduation trip on this site?",
+      "answer": "The cost of creating a graduation trip on our site varies depending on the type of trip and the services you want to include. Our team will provide you with a personalized quote for your trip.",
+      "topic": "popular_topic"
+    },
+    "trip_types": {
+      "question": "What type of graduation trips can I create on this site?",
+      "answer": "You can create graduation trips of all kinds, from adventure trips to relaxing trips on the beach. Our site allows you to customize your trip based on your interests and preferences.",
+      "topic": "popular_topic"
+    },
+    "payment": {
+      "question": "How can I pay for my graduation trip?",
+      "answer": "You can pay for your graduation trip by credit or debit card, or by bank transfer. Our site uses a secure payment system to protect your data.",
+      "topic": "popular_topic"
+    },
+    "cancellation": {
+      "question": "What happens if I need to cancel or modify my graduation trip?",
+      "answer": "If you need to cancel or modify your graduation trip, you must notify us in advance so that we can help you make the necessary changes. Certain cancellation or modification restrictions or fees may apply.",
+      "topic": "popular_topic"
+    },
+    "support": {
+      "question": "How can I contact the support team if I have a question or problem?",
+      "answer": "You can contact our support team by email or phone. We are available to help you resolve any questions or issues you may have.",
+      "topic": "service_topic"
+    },
+    "documentation": {
+      "question": "What kind of documentation do I need to create a graduation trip?",
+      "answer": "You will need to provide certain documentation, such as your passport and proof of payment, to create a graduation trip. Our team will guide you through the paperwork process.",
+      "topic": "service_topic"
+    },
+    "sharing": {
+      "question": "How can I share my graduation trip with my friends and family?",
+      "answer": "You can share your graduation trip with your friends and family via social media or email. Our site allows you to share a link to your trip so others can join.",
+      "topic": "popular_topic"
+    },
+    "register": {
+      "question": "How can I register on the site?",
+      "answer": "You can register on the site by clicking the 'Sign Up' button in the top right corner of the screen and following the instructions to create an account.",
+      "topic": "general_topic"
+    },
+    "search_trips": {
+      "question": "How can I search for alumni trips?",
+      "answer": "You can search for alumni trips using the search bar at the top of the screen. You can filter the results by date, destination, and other criteria.",
+      "topic": "general_topic"
+    },
+    "join_trip": {
+      "question": "How can I join an existing trip?",
+      "answer": "You can join an existing trip by clicking the 'Join' button on the trip page. You must have an account on the site to join a trip.",
+      "topic": "general_topic"
+    },
+    "add_remove_participants": {
+      "question": "How can I add or remove participants from my trip?",
+      "answer": "You can add or remove participants from your trip by clicking the 'Edit trip' button on the trip page and following the instructions to add or remove participants.",
+      "topic": "general_topic"
+    },
+    "update_profile": {
+      "question": "How can I update my personal details?",
+      "answer": "You can update your personal details by clicking the 'My profile' button in the top right corner of the screen and following the instructions to update your details.",
+      "topic": "general_topic"
     }
   }
 }
