@@ -75,7 +75,7 @@ const CrowdComponent: React.FC<CrowdfundingData> = (data) => {
         <Link to="/">
           <ButtonBlue text={t("buttons.homeButton")} isActive={false} />
         </Link>
-        <Link to="/crowd">
+        <Link to="/crowdfundingForm">
           <ButtonBlue
             text={t(
               `buttons.${
