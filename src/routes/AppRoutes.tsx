@@ -11,6 +11,8 @@ import Group from '@/pages/Group'
 import Home from '@/pages/Home'
 import Crowdfunding, { CrowdfundingDonor } from '@/pages/Crowdfunding'
 import Payment from '@/pages/Payment'
+import PaymentMethod from '@/pages/PaymentMethod'
+import PaymentMethodCard from '@/pages/PaymentMethodCard'
 
 function AppRoutes() {
 	return (
@@ -28,6 +30,8 @@ function AppRoutes() {
 				<Route path='/crowdfunding' element={<Crowdfunding/>} />
 				<Route path='/crowdfunding-donor' element={<CrowdfundingDonor/>} />
 				<Route path='/payment' element={<Payment />} />
+				<Route path='/payment-method' element={<PaymentMethod />} />
+				<Route path="/payment-method/card" element={<PaymentMethodCard />} />
 			</Routes>
 			<Footer/>
 		</Router>
