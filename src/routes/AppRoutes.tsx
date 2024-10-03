@@ -23,9 +23,8 @@ function AppRoutes() {
 		'/group',
 		'/access-group',
 		'/crowdfunding',
-		'/crowdfunding-donor',
-		'/crowdfundingForm',
 		'/mercadopago',
+		'/payment'
 	];
 	return (
 		<>
