@@ -14,6 +14,8 @@ import CrowdfundingForm from '@/pages/CrowdfundingForm'
 import MercadoPago from '@/pages/MercadoPago'
 import Header from '@/components/Header'
 import Payment from '@/pages/Payment'
+import PaymentMethod from '@/pages/PaymentMethod'
+import PaymentMethodCard from '@/pages/PaymentMethodCard'
 
 function AppRoutes() {
 	const location = useLocation(); 
@@ -42,6 +44,8 @@ function AppRoutes() {
 				<Route path='/crowdfunding' element={<Crowdfunding />} />
 				<Route path='/crowdfunding-donor' element={<CrowdfundingDonor />} />
 				<Route path='/payment' element={<Payment />} />
+				<Route path='/payment-method' element={<PaymentMethod />} />
+				<Route path="/payment-method/card" element={<PaymentMethodCard />} />
 				<Route path='/crowdfundingForm' element={<CrowdfundingForm />} />
 				 <Route path='/mercadopago' element={<MercadoPago />} /> {/* Para probar los pagos */}
 			</Routes>
