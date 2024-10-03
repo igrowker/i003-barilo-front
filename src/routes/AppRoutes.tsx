@@ -9,6 +9,8 @@ import Footer from '@/components/Footer'
 import PlanTripGroup from '@/pages/PlanTripGroup'
 import Group from '@/pages/Group'
 import Home from '@/pages/Home'
+import MercadoPago from '@/pages/MercadoPago'
+import Crowdfunding from '@/pages/Crowdfunding'
 
 function AppRoutes() {
 	return (
@@ -23,6 +25,8 @@ function AppRoutes() {
 				<Route path="/plan-trip" element={<PlanTrip />} /> 
 				<Route path="group" element={<Group/>}/>
 				<Route path='/access-group' element={<Access />} />
+				<Route path='/mercadopago' element={<MercadoPago />} />
+				<Route path='/crowdfunding' element={<Crowdfunding />} />
 			</Routes>
 			<Footer/>
 		</Router>

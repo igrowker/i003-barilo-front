@@ -4,6 +4,8 @@ import logoExcursiones from "@/assets/images/logoExcursiones.webp"
 import GroupMember from "@/components/GroupMember"
 import {useState} from 'react'
 import InputGroup from "@/components/InputGroup"
+import Product from "@/components/Product"
+import Header from "@/components/Header"
 
 
 
@@ -56,7 +58,8 @@ function Group() {
   };
 
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col min-h-screen">
+      <Header/>
       <div className="p-3 px-7 flex items-center">
         <div className="flex">
           <button className="bg-[--primary-blue] rounded-full px-4 py-1">
@@ -81,11 +84,11 @@ function Group() {
               key={index}
               className={`${
                 day.fullDate === selectedDay
-                ? "bg-[--secondary-celeste] border-[1.9px]  text-white" 
+                ? "bg-[--secondary-celeste] border-[2px]  text-white" 
                 : day.fullDate === today.toISOString().split("T")[0]
                 ? "bg-[--primary-purple] border-[2px] border-[#5d38a7] text-white"
-                : "bg-white text-[--primary-celeste]"
-              } flex-col text-center w-full  py-3 rounded-3xl  font-black cursor-pointer`}
+                : "bg-white text-[--primary-celeste] border-[2px] border-white"
+              } flex-col text-center w-full  py-3 rounded-3xl  font-black cursor-pointer `}
               onClick={()=> handleDayClick(day.fullDate)}
             >
               <p className="text-2xl">{day.date}</p>
