@@ -1,6 +1,6 @@
 import DonationForm from "@/components/DonationForm"
 
-function Crowdfunding() {
+function CrowdfundingForm() {
   return (
     <div className="flex justify-center">
       
@@ -9,4 +9,4 @@ function Crowdfunding() {
   )
 }
 
-export default Crowdfunding
+export default CrowdfundingForm
