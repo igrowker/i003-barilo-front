@@ -2,6 +2,7 @@ import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
 import axios from "axios"
 import { useState } from 'react';
 import paqueteImg from "@/assets/images/destinationCard.webp"
+import { Link } from 'react-router-dom';
 
 
 
@@ -60,7 +61,7 @@ const Product = () => {
                 >
                 Comprar con Mercado Pago
                 </button> */}
-                <button className="bg-[--inactive-button-bg] text-black px-3 py-1 rounded-full">Crowdfunding</button>
+                <Link to="/crowdfundingForm"><button className="bg-[--inactive-button-bg] text-black px-3 py-1 rounded-full">Crowdfunding</button></Link>
             </div>
         </article>
       );

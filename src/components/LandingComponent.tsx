@@ -9,8 +9,10 @@ import snowImage3 from "@/assets/images/snow3.webp";
 import { Link } from "react-router-dom";
 import ScrollToTopButton from "./ScrollToTopButton";
 import NavBar from '@/components/NavBar'
+import { useTranslation } from 'react-i18next'
 
 export default function LandingComponent() {
+  const { t } = useTranslation()
   return (
     <>
     <NavBar/>
@@ -20,31 +22,23 @@ export default function LandingComponent() {
             <div className="container px-4 mx-auto md:px-6">
               <div className="flex flex-col items-center space-y-4 text-center">
                 <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl font-primary">
-                  ¡Bienvenidos, tu aventura de egresados está por comenzar!
+                  {t('landing.welcome.title')}
                 </h1>
                 <p className="mx-auto max-w-[900px] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
-                  En Barilo, entendemos que tu viaje de egresados es mucho más
-                  que una simple escapada; es un momento significativo que marca
-                  el cierre de una etapa y el inicio de nuevas aventuras.
-                  Nuestra misión es hacer que esta experiencia única sea
-                  accesible, inclusiva y, sobre todo, inolvidable para todos.
+                  {t('landing.welcome.text1')}
                 </p>
                 <p className="mx-auto max-w-[900px] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
-                  Imagina explorar destinos impresionantes con tus amigos más
-                  cercanos, creando recuerdos que durarán toda la vida. En
-                  Barilo, nos comprometemos a ofrecerte una amplia gama de
-                  destinos variados que se adaptan a todos los gustos y
-                  presupuestos.
+                {t('landing.welcome.text2')}
                 </p>
                 <div className="flex space-x-4">
                   <Link to="/login">
                     <CustomButton className="w-full bg-white text-secondary-pink hover:bg-secondary-purple">
-                      Iniciar sesión
+                      {t('buttons.landing.login')}
                     </CustomButton>
                   </Link>
                   <Link to="/register">
                     <CustomButton className="text-white bg-transparent border border-white hover:bg-white hover:text-secondary-pink">
-                      Regístrate
+                      {t('buttons.landing.register')}
                     </CustomButton>
                   </Link>
                 </div>
@@ -57,37 +51,34 @@ export default function LandingComponent() {
           >
             <div className="container px-4 mx-auto md:px-6">
               <h2 className="mb-12 text-3xl font-bold tracking-tighter text-center sm:text-4xl md:text-5xl text-primary-celeste font-primary">
-                Características
+                {t('landing.characteristics.title')}
               </h2>
               <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                 <div className="flex flex-col items-center text-center">
                   <FaRegPaperPlane className="mb-5 text-3xl text-primary-blue md:text-7xl" />
                   <h3 className="mb-2 text-xl font-bold primary-celeste">
-                    Destinos variados
+                  {t('landing.characteristics.destination')}
                   </h3>
                   <p className="text-secondary-blue font-secondary">
-                    Ofrecemos una amplia gama de destinos para adaptarnos a
-                    todos los gustos y presupuestos.
+                  {t('landing.characteristics.paragraphDestination')}
                   </p>
                 </div>
                 <div className="flex flex-col items-center text-center">
                   <FaRegCreditCard className="mb-5 text-3xl text-primary-blue md:text-7xl" />
                   <h3 className="mb-2 text-xl font-bold text-primary-celeste">
-                    Planes de pago flexibles
+                    {t('landing.characteristics.plans')}
                   </h3>
                   <p className="text-secondary-blue font-secondary">
-                    Opciones de pago adaptadas a diferentes situaciones
-                    económicas.
+                  {t('landing.characteristics.paragraphPlans')}
                   </p>
                 </div>
                 <div className="flex flex-col items-center text-center">
                   <RiGroupLine className="mb-5 text-3xl text-primary-blue md:text-7xl" />
                   <h3 className="mb-2 text-xl font-bold text-primary-celeste">
-                    Grupos inclusivos
+                  {t('landing.characteristics.groups')}
                   </h3>
                   <p className="text-secondary-blue font-secondary">
-                    Fomentamos la integración y la diversidad en nuestros grupos
-                    de viaje.
+                  {t('landing.characteristics.paragraphGroups')}
                   </p>
                 </div>
               </div>
@@ -99,7 +90,7 @@ export default function LandingComponent() {
           >
             <div className="container px-4 mx-auto md:px-6">
               <h2 className="mb-12 text-3xl font-bold tracking-tighter text-center text-white sm:text-4xl md:text-5xl font-primary">
-                Personaliza tu Viaje
+              {t('landing.customize.title')}
               </h2>
               <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                 <div className="flex flex-col items-center text-center">
@@ -107,11 +98,10 @@ export default function LandingComponent() {
                     1
                   </div>
                   <h3 className="mb-2 text-xl font-bold text-white">
-                    Crea tu grupo
+                  {t('landing.customize.caption1')}
                   </h3>
                   <p className="text-white font-secondary">
-                    ¡Dale un nombre a tu aventura! Selecciona cuántos amigos te
-                    acompañarán en esta emocionante travesía.
+                  {t('landing.customize.paragraph1')}
                   </p>
                 </div>
                 <div className="flex flex-col items-center text-center">
@@ -119,11 +109,10 @@ export default function LandingComponent() {
                     2
                   </div>
                   <h3 className="mb-2 text-xl font-bold text-white">
-                    Elije el destino
+                  {t('landing.customize.caption2')}
                   </h3>
                   <p className="text-white font-secondary">
-                    ¡Aventúrate! Escoge tu medio de transporte ideal, desde
-                    cómodos buses hasta emocionantes vuelos en avión.
+                  {t('landing.customize.paragraph2')}
                   </p>
                 </div>
                 <div className="flex flex-col items-center text-center">
@@ -131,12 +120,10 @@ export default function LandingComponent() {
                     3
                   </div>
                   <h3 className="mb-2 text-xl font-bold text-white">
-                    Selecciona tu hospedaje
+                  {t('landing.customize.caption3')}
                   </h3>
                   <p className="text-white font-secondary">
-                    Descubre las opciones de alojamiento más increíbles que
-                    tenemos para ti y tu grupo. ¡Te espera un lugar perfecto
-                    para descansar!
+                  {t('landing.customize.paragraph3')}
                   </p>
                 </div>
                 <div className="flex flex-col items-center text-center">
@@ -144,11 +131,10 @@ export default function LandingComponent() {
                     4
                   </div>
                   <h3 className="mb-2 text-xl font-bold text-white">
-                    Crea tu plan
+                  {t('landing.customize.caption4')}
                   </h3>
                   <p className="text-white font-secondary">
-                    Personaliza tu itinerario con actividades emocionantes y
-                    deliciosas comidas que se adapten a tus gustos.
+                  {t('landing.customize.paragraph4')}
                   </p>
                 </div>
                 <div className="flex flex-col items-center text-center">
@@ -156,11 +142,10 @@ export default function LandingComponent() {
                     5
                   </div>
                   <h3 className="mb-2 text-xl font-bold text-white">
-                    Confirma tu compra
+                  {t('landing.customize.caption5')}
                   </h3>
                   <p className="text-white font-secondary">
-                    Revisa todos los detalles de tu viaje para asegurarte de que
-                    nada importante se quede fuera.
+                  {t('landing.customize.paragraph5')}
                   </p>
                 </div>
                 <div className="flex flex-col items-center text-center">
@@ -168,11 +153,10 @@ export default function LandingComponent() {
                     6
                   </div>
                   <h3 className="mb-2 text-xl font-bold text-white">
-                    ¡Disfruta tu viaje!
+                  {t('landing.customize.caption6')}
                   </h3>
                   <p className="text-white font-secondary">
-                    ¡Sumérgete en una experiencia inolvidable junto a tus
-                    compañeros de colegio!
+                  {t('landing.customize.paragraph6')}
                   </p>
                 </div>
               </div>
@@ -184,7 +168,7 @@ export default function LandingComponent() {
           >
             <div className="container px-4 mx-auto md:px-6">
               <h2 className="mb-12 text-3xl font-bold tracking-tighter text-center sm:text-4xl md:text-5xl text-primary-celeste font-primary">
-                Experiencias Barilo
+                {t('landing.bariloExperience')}
               </h2>
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <img
@@ -212,7 +196,7 @@ export default function LandingComponent() {
             <div className="container px-4 mx-auto md:px-6">
               <div className="flex flex-col items-center space-y-4 text-center">
                 <h2 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl font-primary">
-                  ¿Necesitas contactarte con nosotros?
+                  {t('landing.contactUs.title')}
                 </h2>
                 <div className="w-full max-w-sm space-y-2">
                   <form className="flex flex-col gap-2 text-left">
@@ -220,19 +204,19 @@ export default function LandingComponent() {
                       htmlFor="email"
                       className="text-white visually-hidden"
                     >
-                      Déjanos tu correo electrónico
+                      {t('landing.contactUs.label')}
                     </label>
                     <Input
                       id="email"
                       type="email"
-                      placeholder="Tu correo electrónico"
+                      placeholder={t('landing.contactUs.inputPlaceholder')}
                       className="bg-white font-secondary focus:bg-white"
                     />
                     <CustomButton
                       type="submit"
                       className="w-full mt-3 bg-white text-secondary-pink hover:bg-secondary-purple"
                     >
-                      Enviar
+                      {t('landing.contactUs.button')}
                     </CustomButton>
                   </form>
                 </div>

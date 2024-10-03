@@ -1,12 +1,26 @@
-import DonationForm from "@/components/DonationForm"
+import CrowdComponent from "@/components/crowdfunding/CrowdComponent";
 
-function CrowdfundingForm() {
+function Crowdfunding() {
   return (
-    <div className="flex justify-center">
-      
-      <DonationForm/>
-    </div>
-  )
+    <>
+      <CrowdComponent
+        profile="organizer"
+        image={"src/assets/images/amico.svg"}
+      />
+    </>
+  );
 }
 
-export default CrowdfundingForm
+export const CrowdfundingDonor = () => {
+  return (
+    <>
+      <CrowdComponent profile="donor" image="src\assets\images\pana.svg" />
+      <CrowdComponent
+        profile="approvedDonation"
+        image="src\assets\images\coins.svg"
+      />
+    </>
+  );
+};
+
+export default Crowdfunding;
