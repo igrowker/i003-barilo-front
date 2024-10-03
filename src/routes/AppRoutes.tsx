@@ -10,6 +10,7 @@ import PlanTripGroup from '@/pages/PlanTripGroup'
 import Group from '@/pages/Group'
 import Home from '@/pages/Home'
 import Crowdfunding, { CrowdfundingDonor } from '@/pages/Crowdfunding'
+import Payment from '@/pages/Payment'
 
 function AppRoutes() {
 	return (
@@ -26,6 +27,7 @@ function AppRoutes() {
 				<Route path='/access-group' element={<Access />} />
 				<Route path='/crowdfunding' element={<Crowdfunding/>} />
 				<Route path='/crowdfunding-donor' element={<CrowdfundingDonor/>} />
+				<Route path='/payment' element={<Payment />} />
 			</Routes>
 			<Footer/>
 		</Router>
