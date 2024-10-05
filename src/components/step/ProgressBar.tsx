@@ -25,20 +25,20 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   };
 
   return (
-    <div className="relative mx-auto mb-8 cursor-pointer w-96">
+    <div className="relative mx-auto mb-8 cursor-pointer w-96 md:w-full">
       <div
-        className="w-full h-16 rounded-full bg-primary-blue"
+        className="w-full h-16 rounded-full bg-primary-blue md:h-20 lg:h-24"
         onClick={handleClick}
       >
         <div
-          className="h-16 transition-all rounded-full bg-primary-celeste"
+          className="h-16 transition-all rounded-full bg-primary-celeste md:h-20 lg:h-24"
           style={{ width: `${(currentStep / totalSteps) * 100}%` }}
         />
         <div className="absolute inset-0 flex items-center justify-between">
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`text-sm font-medium font-primary ${
+              className={`text-sm font-semibold font-primary md:text-lg ${
                 index + 1 <= currentStep
                   ? "text-white"
                   : "text-secondary-celeste"
@@ -53,6 +53,5 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
     </div>
   );
 };
-
 
 export default ProgressBar;

@@ -1,36 +1,30 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import InputField from "./ui/InputField";
-import ButtonBlue from "./ui/buttonBlue";
+import InputField from "../ui/InputField";
+import ButtonBlue from "../ui/buttonBlue";
 import { useNavigate } from "react-router-dom";
+import { useForm, FormProvider } from "react-hook-form";
+import { StepOneFormData } from "../../types/step/StepOneFormData";
+import { useEffect } from "react";
 
 interface StepOneProps {
   onNext: (formData: StepOneFormData) => void;
+  stepOneData: StepOneFormData | null;
 }
 
-export interface StepOneFormData {
-  groupName: string;
-  numberOfPeople: string;
-}
-
-const StepOne: React.FC<StepOneProps> = ({ onNext }) => {
+const StepOne: React.FC<StepOneProps> = ({ onNext, stepOneData }) => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState<StepOneFormData>({
-    groupName: "",
-    numberOfPeople: "",
-  });
+  const methods = useForm<StepOneFormData>();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  const { handleSubmit, reset } = methods;
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onNext(formData);
+  useEffect(() => {
+    if (stepOneData) {
+      reset(stepOneData);
+    }
+  }, [stepOneData, reset]);
+
+  const onSubmit = (data: StepOneFormData) => {
+    onNext(data);
   };
 
   const navigate = useNavigate();
@@ -39,25 +33,24 @@ const StepOne: React.FC<StepOneProps> = ({ onNext }) => {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit} className="mx-auto space-y-5 w-80 ">
+    <FormProvider {...methods}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="mx-auto space-y-5 w-80 md:w-96"
+      >
         <div className="text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg ">
-          Elije el nombre del grupo y mas adelante podrás compartir un link de
-          invitación a las personas que deseas agregar.
+          ¡Dale un nombre único a tu grupo de viaje, y luego podrás compartir un
+          enlace de invitación para compartir con tus amigos!
         </div>
         <InputField
           label={t("stepOne.groupName")}
           name="groupName"
-          value={formData.groupName}
-          onChange={handleChange}
           required
           placeholder={t("stepOne.groupName")}
         />
         <InputField
           label={t("stepOne.numberOfPeople")}
           name="numberOfPeople"
-          value={formData.numberOfPeople}
-          onChange={handleChange}
           required
           type="number"
           placeholder={t("stepOne.numberOfPeople")}
@@ -66,7 +59,6 @@ const StepOne: React.FC<StepOneProps> = ({ onNext }) => {
           <ButtonBlue
             text={t("buttons.nextButton")}
             type="submit"
-            onClick={handleSubmit}
             isActive={true}
           />
           <ButtonBlue
@@ -76,7 +68,7 @@ const StepOne: React.FC<StepOneProps> = ({ onNext }) => {
           />
         </div>
       </form>
-    </>
+    </FormProvider>
   );
 };
 
