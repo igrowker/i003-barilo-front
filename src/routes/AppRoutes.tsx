@@ -38,7 +38,6 @@ function AppRoutes() {
 				<Route path='/login' element={<Login />} />
 				<Route path='/home' element={<Home />} />
 				<Route path='/register' element={<Register />} />
-				<Route path='/plan-trip' element={<PlanTrip />} />
 				<Route path='/create-trip' element={<CreateTrip />} />
 				<Route path='/plan-trip/group' element={<PlanTripGroup />} />
 				<Route path="/plan-trip" element={<PlanTrip />} /> 
