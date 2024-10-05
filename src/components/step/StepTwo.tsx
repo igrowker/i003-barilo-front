@@ -17,7 +17,7 @@ type StepTwoProps = {
     selectedOutbound: PassageData | null;
     selectedReturn: PassageData | null;
   }) => void;
-  stepTwoData: StepTwoFormData | null; // Añadir stepTwoData
+  stepTwoData: StepTwoFormData | null;
 };
 
 const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
