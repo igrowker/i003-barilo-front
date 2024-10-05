@@ -1,48 +1,100 @@
-import React from "react";
-
+import React, { forwardRef } from "react";
+import { Input } from "@/components/ui/input";
+import {
+  FormControl,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  useFormField,
+} from "@/components/ui/form";
 import { cn } from "@/lib/utils";
+import { useFormContext } from "react-hook-form";
 
 interface InputFieldProps {
   label: string;
   name: string;
-  value: string | number;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   required?: boolean;
   type?: string;
   placeholder?: string;
+  options?: string[];
 }
 
-const InputField: React.FC<InputFieldProps> = ({
-  label,
-  name,
-  value,
-  onChange,
-  required = false,
-  type = "text",
-  placeholder,
-}) => {
-  return (
-    <div>
-      <label
-        htmlFor={name}
-        className="text-lg font-bold font-primary text-primary-celeste"
-      >
-        {label}
-      </label>
-      <input
-        id={name}
-        type={type}
-        name={name}
-        value={value}
-        onChange={onChange}
-        required={required}
-        placeholder={placeholder}
-        className={cn(
-          "w-full px-3 py-1 text-xl leading-8 transition-colors duration-200 ease-in-out outline-none text-primary-celeste rounded-xl focus:bg-transparent focus:ring-2 focus:ring-primary-blue focus:border-primary-celest"
-        )}
-      />
-    </div>
-  );
-};
+const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
+  (
+    { label, name, required = false, type = "text", placeholder, options = [] },
+    ref
+  ) => {
+    const { setValue, watch } = useFormContext();
+    const formField = useFormField();
+    const { error, formItemId } = formField || {};
+
+    const inputValue = watch(name);
+    const [filteredOptions, setFilteredOptions] = React.useState<string[]>([]);
+    const [showDropdown, setShowDropdown] = React.useState(false);
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      const value = event.target.value;
+      setValue(name, value);
+      setFilteredOptions(
+        options.filter((option) =>
+          option.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+      setShowDropdown(true);
+    };
+
+    const handleSelectOption = (option: string) => {
+      setValue(name, option);
+      setShowDropdown(false);
+    };
+
+    return (
+      <FormItem>
+        <FormLabel
+          htmlFor={formItemId}
+          className="text-lg font-bold font-primary text-primary-celeste"
+        >
+          {label}
+        </FormLabel>
+        <FormControl>
+          <div className="relative">
+            <Input
+              id={formItemId}
+              name={name}
+              type={type}
+              placeholder={placeholder}
+              required={required}
+              value={inputValue || ""}
+              onChange={handleInputChange}
+              className={cn("w-full", error && "")}
+              onFocus={() => {
+                if (filteredOptions.length > 0) {
+                  setShowDropdown(true);
+                }
+              }}
+              onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
+              autoComplete="off"
+              ref={ref}
+            />
+            {showDropdown && filteredOptions.length > 0 && (
+              <ul className="absolute z-10 w-full mt-2 overflow-y-auto bg-white border rounded-md shadow-lg border-primary-blue max-h-60">
+                {filteredOptions.map((option) => (
+                  <li
+                    key={option}
+                    onClick={() => handleSelectOption(option)}
+                    className="px-4 py-2 cursor-pointer hover:bg-gray-200"
+                  >
+                    {option}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </FormControl>
+        <FormMessage />
+      </FormItem>
+    );
+  }
+);
 
 export default InputField;

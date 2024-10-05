@@ -6,6 +6,7 @@ import Register from '../pages/Register'
 import Error from '@/pages/Error'
 import Access from '@/pages/Access'
 import Footer from '@/components/Footer'
+import CreateTrip from '@/pages/CreateTrip'
 import PlanTripGroup from '@/pages/PlanTripGroup'
 import Group from '@/pages/Group'
 import Home from '@/pages/Home'
@@ -37,6 +38,7 @@ function AppRoutes() {
 				<Route path='/login' element={<Login />} />
 				<Route path='/home' element={<Home />} />
 				<Route path='/register' element={<Register />} />
+				<Route path='/create-trip' element={<CreateTrip />} />
 				<Route path='/plan-trip/group' element={<PlanTripGroup />} />
 				<Route path="/plan-trip" element={<PlanTrip />} /> 
 				<Route path="/group" element={<Group/>}/>
@@ -47,7 +49,7 @@ function AppRoutes() {
 				<Route path='/payment-method' element={<PaymentMethod />} />
 				<Route path="/payment-method/card" element={<PaymentMethodCard />} />
 				<Route path='/crowdfundingForm' element={<CrowdfundingForm />} />
-				 <Route path='/mercadopago' element={<MercadoPago />} /> {/* Para probar los pagos */}
+				<Route path='/mercadopago' element={<MercadoPago />} /> {/* Para probar los pagos */}
 			</Routes>
 			<Footer/>
 		</>
