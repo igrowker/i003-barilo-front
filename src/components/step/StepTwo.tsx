@@ -27,8 +27,12 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
 
   const [isFlight, setIsFlight] = useState(true);
   const [showTickets, setShowTickets] = useState(false);
-  const [selectedOutbound, setSelectedOutbound] = useState<PassageData | null>(null);
-  const [selectedReturn, setSelectedReturn] = useState<PassageData | null>(null);
+  const [selectedOutbound, setSelectedOutbound] = useState<PassageData | null>(
+    null
+  );
+  const [selectedReturn, setSelectedReturn] = useState<PassageData | null>(
+    null
+  );
 
   useEffect(() => {
     if (stepTwoData) {
@@ -55,7 +59,12 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
       "ushuaia",
     ];
 
-    if (!origin || !destination || !validCities.includes(origin) || !validCities.includes(destination)) {
+    if (
+      !origin ||
+      !destination ||
+      !validCities.includes(origin) ||
+      !validCities.includes(destination)
+    ) {
       console.error("Ciudad seleccionada no válida.");
       return;
     }
@@ -110,7 +119,10 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
         selecciona tu modo de transporte favorito para hacer este viaje
         inolvidable.
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} className="mx-auto space-y-5 w-80">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="mx-auto space-y-5 w-80"
+      >
         <InputField
           label={t("stepTwo.origin")}
           name="origin"
@@ -188,11 +200,13 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
             />
           </>
         )}
-        <ButtonBlue
-          text={t("buttons.nextButton")}
-          onClick={handleNext}
-          isActive={canProceed}
-        />
+        {showTickets && canProceed && (
+          <ButtonBlue
+            text={t("buttons.nextButton")}
+            onClick={handleNext}
+            isActive={canProceed}
+          />
+        )}
       </form>
     </FormProvider>
   );
