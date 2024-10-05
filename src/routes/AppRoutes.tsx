@@ -7,6 +7,7 @@ import Register from '../pages/Register'
 import Error from '@/pages/Error'
 import Access from '@/pages/Access'
 import Footer from '@/components/Footer'
+import CreateTrip from '@/pages/CreateTrip'
 
 function AppRoutes() {
 	return (
@@ -18,6 +19,7 @@ function AppRoutes() {
 				<Route path='/home' element={<Home />} />
 				<Route path='/register' element={<Register />} />
 				<Route path='/plan-trip' element={<PlanTrip />} />
+				<Route path='/create-trip' element={<CreateTrip />} />
 				<Route path='/access-group' element={<Access />} />
 			</Routes>
 			<Footer/>
