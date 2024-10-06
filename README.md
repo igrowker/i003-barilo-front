@@ -47,11 +47,23 @@ Este proyecto está desarrollado utilizando las siguientes tecnologías:
 
 **¡Gracias a todos los que han hecho posible este proyecto!**
 
-### Equipo Front-End
+### Project Manager 
+
+![Sorelys Marcano](https://github.com/Sore08.png?size=60)
+
+### Team Front-End
 [![Contribuidores](https://contrib.rocks/image?repo=igrowker/i003-barilo-front&max=500&columns=20)](https://github.com/igrowker/i003-barilo-front/graphs/contributors)
 
-### Equipo Back-End
+### Team Back-End
 [![Contribuidores](https://contrib.rocks/image?repo=igrowker/i003-barilo-back&max=500&columns=20)](https://github.com/igrowker/i003-barilo-back/graphs/contributors)
+
+### UX-UI Designer
+
+![Charles Henry Eichenberger](https://github.com/eichenbergerche.png?size=60)
+
+### QA
+
+![Carlos Daniel Jiménez](https://github.com/CarlosDaniel661.png?size=60)
 
 ---
 
