@@ -1,12 +1,9 @@
 import axios, { AxiosResponse } from 'axios'
+import { z } from 'zod'
+import { loginSchema } from '../validation/loginSchema'
+import { registerSchema } from '../validation/registerSchema'
 
-interface RegisterUserForm {
-	name: string
-	mail: string
-	role: 'COORDINADOR' | 'ESTUDIANTE'
-	password: string
-	passwordConfirmation: string
-}
+type RegisterUserForm = z.infer<typeof registerSchema>
 
 interface RegisterUserResponse {
 	data: {
@@ -26,10 +23,7 @@ interface RegisterUserError {
 }
 
 // Interface para login
-interface LoginUserForm {
-	mail: string
-	password: string
-}
+type LoginUserForm = z.infer<typeof loginSchema>
 
 interface LoginUserResponse {
 	data: {
