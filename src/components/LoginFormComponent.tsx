@@ -35,7 +35,7 @@ export const LoginFormComponent: React.FC = () => {
 
 			if (response) {
 				console.log('Inicio de sesión exitoso:', response)
-				navigate('/dashboard')
+				navigate('/home')
 			} else {
 				console.error('Error en el inicio de sesión')
 			}
