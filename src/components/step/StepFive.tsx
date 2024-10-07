@@ -1,8 +1,8 @@
 import React from "react";
-import { StepOneFormData } from "./StepOne";
-import { StepTwoFormData } from "./StepTwo";
-import { StepThreeFormData } from "./StepThree";
-import { StepFourFormData } from "./StepFour";
+import { StepOneFormData } from "../../types/step/StepOneFormData";
+import { StepTwoFormData } from "../../types/step/StepTwoFormData";
+import { StepThreeFormData } from "../../types/step/StepThreeFormData";
+import { StepFourFormData } from "../../types/step/StepFourFormData";
 import { useTranslation } from "react-i18next";
 
 interface StepFiveProps {
