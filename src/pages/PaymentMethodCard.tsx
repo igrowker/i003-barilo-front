@@ -3,8 +3,11 @@ import Cards from 'react-credit-cards-2';
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'
 
 const PaymentMethodCard = () => {
+
+    const { t } = useTranslation()
 
     const navigate = useNavigate();
 
@@ -48,7 +51,7 @@ const PaymentMethodCard = () => {
         <div className="card">
             <div className="flex justify-center items-center my-8">
                 <button className="absolute left-6 pb-1 text-[--secondary-celeste] text-2xl"><IoIosArrowBack /></button>
-                <h1 className="text-2xl text-[--secondary-celeste] font-['League_Spartan'] font-semibold">Agregar Tarjeta</h1>
+                <h1 className="text-2xl text-[--secondary-celeste] font-['League_Spartan'] font-semibold">{t('views_payment.payment_method_card.title')}</h1>
             </div>
             <div className="card-body">
 
@@ -61,7 +64,7 @@ const PaymentMethodCard = () => {
                 />
                 <form className='mt-6 mx-6'>
                     <div className="form-group flex flex-col">
-                        <label htmlFor="name">Nombre del titular de la tarjeta</label>
+                        <label htmlFor="name">{t('views_payment.payment_method_card.cardholder_name')}</label>
                         <input
                             type="text"
                             name="name"
@@ -73,7 +76,7 @@ const PaymentMethodCard = () => {
                         />
                     </div>
                     <div className="form-group flex flex-col">
-                        <label htmlFor="number">Número de la tarjeta</label>
+                        <label htmlFor="number">{t('views_payment.payment_method_card.number_card')}</label>
                         <input
                             type="text"
                             name="number"
@@ -86,7 +89,7 @@ const PaymentMethodCard = () => {
                     </div>
                     <div className="form-row flex justify-between">
                         <div className="form-group col-md-6 flex flex-col">
-                            <label htmlFor="expiry">Fecha de expiración</label>
+                            <label htmlFor="expiry">{t('views_payment.payment_method_card.expiration_date')}</label>
                             <input
                                 type="text"
                                 name="expiry"
@@ -98,7 +101,7 @@ const PaymentMethodCard = () => {
                             />
                         </div>
                         <div className="form-group col-md-6 flex flex-col">
-                            <label htmlFor="cvc">CVC</label>
+                            <label htmlFor="cvc">{t('views_payment.payment_method_card.cvc')}</label>
                             <input
                                 type="text"
                                 name="cvc"
@@ -112,7 +115,7 @@ const PaymentMethodCard = () => {
                     </div>
                     
                     <div className="flex justify-center py-10">
-                        <button onClick={() => handlePaymentMethodClick('')} className="w-64 h-11 bg-[--secondary-celeste] text-[--active-button-text] rounded-3xl">Guardar Tarjeta</button>
+                        <button onClick={() => handlePaymentMethodClick('')} className="w-64 h-11 bg-[--secondary-celeste] text-[--active-button-text] rounded-3xl">{t('views_payment.payment_method_card.save_card')}</button>
                     </div>
                 </form>
             </div>
