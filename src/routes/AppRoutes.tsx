@@ -17,6 +17,7 @@ import Header from '@/components/Header'
 import Payment from '@/pages/Payment'
 import PaymentMethod from '@/pages/PaymentMethod'
 import PaymentMethodCard from '@/pages/PaymentMethodCard'
+import Profile from '@/pages/Profile'
 
 function AppRoutes() {
 	const location = useLocation(); 
@@ -50,6 +51,7 @@ function AppRoutes() {
 				<Route path="/payment-method/card" element={<PaymentMethodCard />} />
 				<Route path='/crowdfundingForm' element={<CrowdfundingForm />} />
 				<Route path='/mercadopago' element={<MercadoPago />} /> {/* Para probar los pagos */}
+				<Route path='/profile' element={<Profile />} /> {/* Para probar los pagos */}
 			</Routes>
 			<Footer/>
 		</>

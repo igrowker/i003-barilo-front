@@ -48,6 +48,13 @@ interface LoginUserError {
 	}
 }
 
+export interface UserProfile {
+	id: string
+	name: string
+	email: string
+	role: 'COORDINADOR' | 'ESTUDIANTE'
+}
+
 export const registerUser = async (
 	values: RegisterUserForm,
 ): Promise<RegisterUserResponse | null> => {
@@ -107,5 +114,39 @@ export const loginUser = async (values: LoginUserForm): Promise<LoginUserRespons
 		const typedError = error as LoginUserError
 		console.error('Error during login:', typedError.response?.data.message || error)
 		return null
+	}
+}
+
+// Función para obtener el perfil del usuario
+export const getProfile = async (): Promise<UserProfile | null> => {
+	try {
+	  // Obtén el token del localStorage
+	  const token = localStorage.getItem('token')
+  
+	  if (!token) {
+		console.error('Token no disponible')
+		return null
+	  }
+  
+	  const response: AxiosResponse<{ data: UserProfile }> = await axios.get(
+		'https://barilo.onrender.com/barilo/api/auth/profile',
+		{
+		  headers: {
+			Authorization: `Bearer ${token}`, // Incluye el token en el encabezado
+			'Content-Type': 'application/json',
+		  },
+		},
+	  )
+  
+	  if (response.status === 200) {
+		console.log('Perfil de usuario obtenido exitosamente:', response.data)
+		return response.data.data
+	  } else {
+		console.error('No se pudo obtener el perfil del usuario:', response.status)
+		return null
+	  }
+	} catch (error) {
+	  console.error('Error al obtener el perfil del usuario:', error)
+	  return null
 	}
 }
