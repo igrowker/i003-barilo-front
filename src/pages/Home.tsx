@@ -15,9 +15,9 @@ const Home: React.FC = () => {
 		<>
 			<section>
 			{userRole=="COORDINADOR" ? (
-				<p>Te logueaste Correctamente</p>
+				<p>Te logueaste Correctamente Coordinador</p>
 			) : (
-				<p>No te logueaste correctamente</p>
+				<p>Te logueaste Correctamente Estudiante</p>
 			)}
 				<div className='w-full px-4 pt-10'>
 					<HomeEventComponent></HomeEventComponent>
