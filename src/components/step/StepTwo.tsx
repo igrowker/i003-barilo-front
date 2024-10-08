@@ -113,7 +113,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
 
   return (
     <FormProvider {...methods}>
-      <div className="mx-auto mb-5 text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96">
+      <div className="mx-auto mb-5 text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
         ¡Elige tu punto de partida, destino soñado, y las fechas de tu viaje!
         Decide cuándo comienza la aventura y cuándo regresas a casa. Además,
         selecciona tu modo de transporte favorito para hacer este viaje

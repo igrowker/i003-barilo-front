@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { StepOneFormData } from "../../types/step/StepOneFormData";
 import { StepTwoFormData } from "../../types/step/StepTwoFormData";
 import { StepThreeFormData } from "../../types/step/StepThreeFormData";
 import { StepFourFormData } from "../../types/step/StepFourFormData";
 import { useTranslation } from "react-i18next";
+import ButtonBlue from "../ui/buttonBlue";
 
 interface StepFiveProps {
   stepOneData: StepOneFormData | null;
@@ -19,6 +21,7 @@ const StepFive: React.FC<StepFiveProps> = ({
   stepFourData,
 }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const formatDate = (dateString: string | undefined): string => {
     if (!dateString) return "No especificado";
@@ -31,9 +34,18 @@ const StepFive: React.FC<StepFiveProps> = ({
     return `${day}/${month}/${year}`;
   };
 
+
+  const handleProceedToPayment = () => {
+    navigate("/payment", {
+      state: { stepOneData, stepTwoData, stepThreeData, stepFourData },
+    });
+  };
+
   return (
     <div className="p-4">
-      <h3 className="mb-4 text-xl font-semibold text-center text-primary-celeste">{t("stepFive.title")}</h3>{" "}
+      <h3 className="mb-4 text-xl font-semibold text-center text-primary-celeste">
+        {t("stepFive.title")}
+      </h3>
       <table className="min-w-full border-gray-300 rounded-lg shadow-md text-primary-celeste border-xl bg-secondary-purple">
         <tbody>
           <tr>
@@ -70,6 +82,14 @@ const StepFive: React.FC<StepFiveProps> = ({
           </tr>
         </tbody>
       </table>
+
+      <div className="flex justify-between mt-4 gap-x-4">
+        <ButtonBlue
+          text="Ir pagar"
+          onClick={handleProceedToPayment}
+          isActive={true}
+        />
+      </div>
     </div>
   );
 };
