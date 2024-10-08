@@ -6,6 +6,7 @@ interface AuthContextType {
   login: (mail: string, password: string) => Promise<void>;
   logout: () => void;
   isAuthenticated: boolean;
+  role?: string;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -56,6 +57,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }, [token]);
   // Verifica si el usuario está autenticado
   const isAuthenticated = !!token && !isTokenExpired(token);
+  
+  
 
   return (
     <AuthContext.Provider value={{ token, login, logout, isAuthenticated }}>
