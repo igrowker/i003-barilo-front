@@ -26,6 +26,7 @@ interface RegisterUserError {
 type LoginUserForm = z.infer<typeof loginSchema>
 
 interface LoginUserResponse {
+  token: any
 	data: {
 		message: string
 		token: string
