@@ -1,4 +1,3 @@
-// services/userService.ts
 import axios from 'axios';
 
 interface ProfileResponse {
