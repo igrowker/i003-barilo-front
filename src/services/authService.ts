@@ -124,7 +124,7 @@ export const getProfile = async (): Promise<UserProfile | null> => {
 	  }
   
 	  const response: AxiosResponse<{ data: UserProfile }> = await axios.get(
-		'https://barilo.onrender.com/barilo/api/auth/profile',
+		'https://barilo.onrender.com/barilo/api/profile',
 		{
 		  headers: {
 			Authorization: `Bearer ${token}`, // Incluye el token en el encabezado
