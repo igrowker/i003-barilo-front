@@ -11,7 +11,7 @@ const PaymentMethodCard = () => {
 
     const navigate = useNavigate();
 
-    const handlePaymentMethodClick = (method: string) => {
+    const handlePaymentMethodClick = () => {
         navigate(`/payment`);
       };
 
@@ -115,7 +115,7 @@ const PaymentMethodCard = () => {
                     </div>
                     
                     <div className="flex justify-center py-10">
-                        <button onClick={() => handlePaymentMethodClick('')} className="w-64 h-11 bg-[--secondary-celeste] text-[--active-button-text] rounded-3xl">{t('views_payment.payment_method_card.save_card')}</button>
+                        <button onClick={() => handlePaymentMethodClick()} className="w-64 h-11 bg-[--secondary-celeste] text-[--active-button-text] rounded-3xl">{t('views_payment.payment_method_card.save_card')}</button>
                     </div>
                 </form>
             </div>

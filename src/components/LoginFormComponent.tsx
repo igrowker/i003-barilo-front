@@ -12,6 +12,7 @@ import { Form, FormMessage } from '@/components/ui/form'
 import { useNavigate } from 'react-router-dom'
 import { loginUser } from '@/services/authService'
 import { loginSchema } from '../validation/loginSchema'
+import { useAuth } from '../context/AuthProvider';
 
 type LoginUserForm = z.infer<typeof loginSchema>
 
@@ -19,6 +20,7 @@ export const LoginFormComponent: React.FC = () => {
 	const [showPassword, setShowPassword] = useState(false)
 	const [isLoading, setIsLoading] = useState(false)
 	const navigate = useNavigate()
+	const { login } = useAuth();
 
 	const form = useForm<LoginUserForm>({
 		resolver: zodResolver(loginSchema),
@@ -31,18 +33,13 @@ export const LoginFormComponent: React.FC = () => {
 	const onSubmit = async (values: LoginUserForm) => {
 		setIsLoading(true)
 		try {
-			const response = await loginUser(values)
-
-			if (response) {
-				console.log('Inicio de sesión exitoso:', response)
-				navigate('/dashboard')
-			} else {
-				console.error('Error en el inicio de sesión')
-			}
-		} catch (error) {
-			console.error('Error en la solicitud:', error)
+			const response = await login(values.mail, values.password)
+			console.log('Inicio de sesión exitoso:', response)
+			navigate('/home')
+		 } catch (error) {
+			console.error('Error en el inicio de sesión:', error);
 		} finally {
-			setIsLoading(false)
+			setIsLoading(false);
 		}
 	}
 
