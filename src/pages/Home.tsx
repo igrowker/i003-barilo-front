@@ -1,23 +1,24 @@
 import HomeCardComponent from '@/components/HomeCardComponent'
 import HomeEventComponent from '@/components/HomeEventComponent'
 import { useTranslation } from 'react-i18next'
-import { useAuth } from '../context/AuthProvider';
 import React, { useState } from 'react';
-
+import { useUserRole } from '../hooks/useUserRole';
 
 const Home: React.FC = () => {
 	const { t } = useTranslation()
 
-	const { isAuthenticated } = useAuth();
+	const userRole = useUserRole();
+
+
 
 	return (
 		<>
 			<section>
-			{isAuthenticated ? (
-        <p>Te logueaste Correctamente Test!</p>
-      ) : (
-		<p>No te logueaste correctamente</p>
-	)}
+			{userRole=="COORDINADOR" ? (
+				<p>Te logueaste Correctamente</p>
+			) : (
+				<p>No te logueaste correctamente</p>
+			)}
 				<div className='w-full px-4 pt-10'>
 					<HomeEventComponent></HomeEventComponent>
 				</div>

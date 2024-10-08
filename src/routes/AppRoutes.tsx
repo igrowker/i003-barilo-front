@@ -17,6 +17,7 @@ import Header from '@/components/Header'
 import Payment from '@/pages/Payment'
 import PaymentMethod from '@/pages/PaymentMethod'
 import PaymentMethodCard from '@/pages/PaymentMethodCard'
+import PrivateRoute from './PrivateRoute'
 
 function AppRoutes() {
 	const location = useLocation(); 
@@ -36,20 +37,22 @@ function AppRoutes() {
 				<Route path='*' element={<Error />} />
 				<Route path='/' element={<Landing />} />
 				<Route path='/login' element={<Login />} />
-				<Route path='/home' element={<Home />} />
 				<Route path='/register' element={<Register />} />
-				<Route path='/create-trip' element={<CreateTrip />} />
-				<Route path='/plan-trip/group' element={<PlanTripGroup />} />
-				<Route path="/plan-trip" element={<PlanTrip />} /> 
-				<Route path="/group" element={<Group/>}/>
-				<Route path='/access-group' element={<Access />} />
-				<Route path='/crowdfunding' element={<Crowdfunding />} />
-				<Route path='/crowdfunding-donor' element={<CrowdfundingDonor />} />
-				<Route path='/payment' element={<Payment />} />
-				<Route path='/payment-method' element={<PaymentMethod />} />
-				<Route path="/payment-method/card" element={<PaymentMethodCard />} />
-				<Route path='/crowdfundingForm' element={<CrowdfundingForm />} />
-				<Route path='/mercadopago' element={<MercadoPago />} /> {/* Para probar los pagos */}
+				<Route element={<PrivateRoute />}>
+					<Route path='/home' element={<Home />} />
+					<Route path='/create-trip' element={<CreateTrip />} />
+					<Route path='/plan-trip/group' element={<PlanTripGroup />} />
+					<Route path="/plan-trip" element={<PlanTrip />} /> 
+					<Route path="/group" element={<Group/>}/>
+					<Route path='/access-group' element={<Access />} />
+					<Route path='/crowdfunding' element={<Crowdfunding />} />
+					<Route path='/crowdfunding-donor' element={<CrowdfundingDonor />} />
+					<Route path='/payment' element={<Payment />} />
+					<Route path='/payment-method' element={<PaymentMethod />} />
+					<Route path="/payment-method/card" element={<PaymentMethodCard />} />
+					<Route path='/crowdfundingForm' element={<CrowdfundingForm />} />
+					<Route path='/mercadopago' element={<MercadoPago />} /> {/* Para probar los pagos */}
+				</Route>
 			</Routes>
 			<Footer/>
 		</>
