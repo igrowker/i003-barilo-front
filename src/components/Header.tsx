@@ -14,15 +14,13 @@ const Header = () => {
             <Link to="/profile">
                 <img src={ProfilePicture} alt="profile picture" className="w-12 h-12 rounded-full cursor-pointer"/>
             </Link>
-            {profile ? (
+
 
                 <div className="leading-tight">
                 <p className="text-[--secondary-celeste]">Hola, bienvenido de nuevo</p>
-                <p className="text-[--primary-celeste] font-bold">{profile.name}</p>
+                <p className="text-[--primary-celeste] font-bold">{profile ? profile.name : 'Cargando...'}</p>
             </div>
-            ) : (
-                <p></p>
-            )}
+
         </div>
         <div className="flex items-center gap-1">
             <Link to="/settings">

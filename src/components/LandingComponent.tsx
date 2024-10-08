@@ -10,13 +10,14 @@ import { Link } from "react-router-dom";
 import ScrollToTopButton from "./ScrollToTopButton";
 import { useTranslation } from 'react-i18next'
 import SideNavBar from "./SideNavBar";
+import Footer from "./Footer";
 
 export default function LandingComponent() {
   const { t } = useTranslation()
   return (
     <>
     <SideNavBar/>
-      <div className="">
+      <div className="ml-14 md:ml-0">
         <main className="flex-1">
           <section className="w-full py-12 text-white md:py-24 lg:py-32 xl:py-36 bg-secondary-pink">
             <div className="container px-4 mx-auto md:px-6">
@@ -30,7 +31,7 @@ export default function LandingComponent() {
                 <p className="mx-auto max-w-[900px] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
                 {t('landing.welcome.text2')}
                 </p>
-                <div className="flex space-x-4">
+                <div className="flex flex-col gap-y-3 items-center justify-center md:flex-row md:space-x-4">
                   <Link to="/login">
                     <CustomButton className="w-full bg-white text-secondary-pink hover:bg-secondary-purple">
                       {t('buttons.landing.login')}
@@ -226,6 +227,7 @@ export default function LandingComponent() {
         </main>
         <ScrollToTopButton />
       </div>
+      <Footer/>
     </>
   );
 }

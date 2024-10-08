@@ -223,5 +223,49 @@
       "answer": "Puedes actualizar tus datos personales haciendo clic en el botón 'Mi perfil' en la esquina superior derecha de la pantalla y siguiendo las instrucciones para actualizar tus datos.",
       "topic": "general_topic"
     }
+  },
+  "views_payment":{
+    "h2_pay": "Pago",
+    "activity":{
+      "name": "Sesión de sky",
+      "info": "Jornada de sky - Pack Bariló",
+      "price": "100",
+      "destination_name": "Jornada de sky - Pack Bariló",
+      "date": "Lunes 24, Nov, 2024 / 10:00 a.m.",
+      "duration": "30 Minutos"
+    },
+    "keyInfo":{
+      "date": "Fecha / Hora",
+      "duration": "Duración",
+      "reservation": {
+        "key":"Reserva para",
+        "value":"Grupo A"
+        },
+      "amount": "Cantidad",
+      "total": "Total",
+      "payment_method":{
+        "h1":"Metodo de pago",
+        "p": "Tarjeta",
+        "a": "Cambiar"
+      }
+    },
+    "button": "Pagar ahora",
+    "payment_method":{
+      "title": "Método De Pago",
+      "caption_1":"Tarjeta De Crédito y Débito",
+      "option_1": "Agregar Nueva Tarjeta",
+      "caption_2":"Más Opciones De Pago",
+      "option_2": "Marcado Pago",
+      "option_3": "Paypal",
+      "option_4": "Personal Pay"
+    },
+    "payment_method_card":{
+      "title": "Agregar Tarjeta",
+      "cardholder_name": "Nombre del titular de la tarjeta",
+      "number_card": "Número de la tarjeta",
+      "expiration_date": "Fecha de expiración",
+      "cvc": "CVC",
+      "save_card": "Guardar Tarjeta"
+    }
   }
 }

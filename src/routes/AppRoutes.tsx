@@ -5,7 +5,6 @@ import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Error from '@/pages/Error'
 import Access from '@/pages/Access'
-import Footer from '@/components/Footer'
 import CreateTrip from '@/pages/CreateTrip'
 import PlanTripGroup from '@/pages/PlanTripGroup'
 import Group from '@/pages/Group'
@@ -17,26 +16,30 @@ import Header from '@/components/Header'
 import Payment from '@/pages/Payment'
 import PaymentMethod from '@/pages/PaymentMethod'
 import PaymentMethodCard from '@/pages/PaymentMethodCard'
+import Destinations from '@/pages/Destinations'
+import AppFooter from '@/components/AppFooter'
 import PrivateRoute from './PrivateRoute'
 
 function AppRoutes() {
 	const location = useLocation(); 
 
-	const routesWithHeader = [
+	const appRoutes = [
 		'/home',
 		'/group',
 		'/access-group',
 		'/crowdfunding',
 		'/mercadopago',
-		'/payment'
+		'/payment',
+		'/create-trip',
+		'/destinations'
 	];
 	return (
 		<>
-			{routesWithHeader.includes(location.pathname) && <Header />}
+			{appRoutes.includes(location.pathname) && <Header /> }
 			<Routes>
 				<Route path='*' element={<Error />} />
 				<Route path='/' element={<Landing />} />
-				<Route path='/login' element={<Login />} />
+				<Route path='/login' element={<Login />} />			
 				<Route path='/register' element={<Register />} />
 				<Route element={<PrivateRoute />}>
 					<Route path='/home' element={<Home />} />
@@ -52,9 +55,10 @@ function AppRoutes() {
 					<Route path="/payment-method/card" element={<PaymentMethodCard />} />
 					<Route path='/crowdfundingForm' element={<CrowdfundingForm />} />
 					<Route path='/mercadopago' element={<MercadoPago />} /> {/* Para probar los pagos */}
+					<Route path='/destinations' element={<Destinations />} /> 
 				</Route>
 			</Routes>
-			<Footer/>
+			{appRoutes.includes(location.pathname) && <AppFooter /> }
 		</>
 	)
 }

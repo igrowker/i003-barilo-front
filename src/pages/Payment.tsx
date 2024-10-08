@@ -35,7 +35,7 @@ function Payment() {
 
   
   return (
-    <div>
+    <div className="pb-16">
       <div className="bg-[--secondary-celeste] h-48 items-center flex flex-col justify-between">
         <h2 className="text-2xl pt-8 text-[--active-button-text] font-[--font-primary]">{t('views_payment.h2_pay')}</h2>
         <h1 className="pb-8 text-4xl text-[--active-button-text] font-['League_Spartan'] font-bold">{activity.price}</h1>
