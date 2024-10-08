@@ -8,14 +8,14 @@ import snowImage2 from "@/assets/images/snow2.webp";
 import snowImage3 from "@/assets/images/snow3.webp";
 import { Link } from "react-router-dom";
 import ScrollToTopButton from "./ScrollToTopButton";
-import NavBar from '@/components/NavBar'
 import { useTranslation } from 'react-i18next'
+import SideNavBar from "./SideNavBar";
 
 export default function LandingComponent() {
   const { t } = useTranslation()
   return (
     <>
-    <NavBar/>
+    <SideNavBar/>
       <div className="">
         <main className="flex-1">
           <section className="w-full py-12 text-white md:py-24 lg:py-32 xl:py-36 bg-secondary-pink">
