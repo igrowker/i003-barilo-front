@@ -17,22 +17,25 @@ import Header from '@/components/Header'
 import Payment from '@/pages/Payment'
 import PaymentMethod from '@/pages/PaymentMethod'
 import PaymentMethodCard from '@/pages/PaymentMethodCard'
-import Profile from '@/pages/Profile'
+import Destinations from '@/pages/Destinations'
+import AppFooter from '@/components/AppFooter'
 
 function AppRoutes() {
 	const location = useLocation(); 
 
-	const routesWithHeader = [
+	const appRoutes = [
 		'/home',
 		'/group',
 		'/access-group',
 		'/crowdfunding',
 		'/mercadopago',
-		'/payment'
+		'/payment',
+	
+		'/create-trip'
 	];
 	return (
 		<>
-			{routesWithHeader.includes(location.pathname) && <Header />}
+			{appRoutes.includes(location.pathname) && <Header /> }
 			<Routes>
 				<Route path='*' element={<Error />} />
 				<Route path='/' element={<Landing />} />
@@ -51,9 +54,9 @@ function AppRoutes() {
 				<Route path="/payment-method/card" element={<PaymentMethodCard />} />
 				<Route path='/crowdfundingForm' element={<CrowdfundingForm />} />
 				<Route path='/mercadopago' element={<MercadoPago />} /> {/* Para probar los pagos */}
-				<Route path='/profile' element={<Profile />} /> {/* Para probar los pagos */}
+				<Route path='/destinations' element={<Destinations />} /> 
 			</Routes>
-			<Footer/>
+			{appRoutes.includes(location.pathname) && <AppFooter /> }
 		</>
 	)
 }

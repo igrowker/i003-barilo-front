@@ -48,6 +48,7 @@ export interface UserProfile {
 	name: string
 	email: string
 	role: 'COORDINADOR' | 'ESTUDIANTE'
+	pendingBalance: number | null
 }
 
 export const registerUser = async (
@@ -112,10 +113,9 @@ export const loginUser = async (values: LoginUserForm): Promise<LoginUserRespons
 	}
 }
 
-// Función para obtener el perfil del usuario
+
 export const getProfile = async (): Promise<UserProfile | null> => {
 	try {
-	  // Obtén el token del localStorage
 	  const token = localStorage.getItem('token')
   
 	  if (!token) {
@@ -127,15 +127,15 @@ export const getProfile = async (): Promise<UserProfile | null> => {
 		'https://barilo.onrender.com/barilo/api/profile',
 		{
 		  headers: {
-			Authorization: `Bearer ${token}`, // Incluye el token en el encabezado
+			Authorization: `Bearer ${token}`, 
 			'Content-Type': 'application/json',
 		  },
 		},
 	  )
   
 	  if (response.status === 200) {
-		console.log('Perfil de usuario obtenido exitosamente:', response.data)
-		return response.data.data
+		console.log('Perfil de usuario obtenido exitosamente:', response.data);
+		return response.data.data;
 	  } else {
 		console.error('No se pudo obtener el perfil del usuario:', response.status)
 		return null
