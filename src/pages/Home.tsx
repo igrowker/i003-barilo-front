@@ -1,7 +1,7 @@
 import HomeCardComponent from '@/components/HomeCardComponent'
 import HomeEventComponent from '@/components/HomeEventComponent'
 import { useTranslation } from 'react-i18next'
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useUserRole } from '../hooks/useUserRole';
 
 const Home: React.FC = () => {
