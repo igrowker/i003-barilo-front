@@ -10,12 +10,12 @@ const Home: React.FC = () => {
 	
 	return (
 		<>
-			<section className='pb-16'>
-				{userRole=="COORDINADOR" ? (
-					<p>Te logueaste Correctamente</p>
-				) : (
-					<p>No te logueaste correctamente</p>
-				)}
+			<section>
+			{userRole=="COORDINADOR" ? (
+				<p>Te logueaste Correctamente Coordinador</p>
+			) : (
+				<p>Te logueaste Correctamente Estudiante</p>
+			)}
 				<div className='w-full px-4 pt-10'>
 					<HomeEventComponent></HomeEventComponent>
 				</div>
