@@ -64,11 +64,11 @@ export default function SideNavBar() {
   }, []);
 
   return (
-    <nav className={`shadow-md h-screen  bg-white {/*bg-opacity-0 backdrop-blur-md*/} z-50 flex flex-col items-center justify-between fixed top-0 duration-100 text-primary-pink ${open ? 'w-60' : 'w-14'} md:relative md:flex-row md:h-14 md:w-auto`}>
+    <nav className={`shadow-md h-screen  bg-white {/*bg-opacity-0 backdrop-blur-md*/} z-50 flex flex-col items-center justify-between fixed top-0 duration-100 text-primary-pink ${open ? 'w-60' : 'w-14'} md:container md:relative md:flex-row md:h-14 md:w-auto md:px-5 py-8 md:mx-auto md:shadow-none`}>
 
       {/* Header */}
       <div className=' h-20 flex flex-row items-center justify-between md:p-0 md:items-start md:h-14 '>
-        <div className={`${!open && 'hidden'} h-16 w-2/4 md:flex md:items-center md:pl-5`}>
+        <div className={`${!open && 'hidden'} h-16 w-3/5 md:flex md:items-center md:pl-5`}>
           <TextIconComponent />
         </div>
         <div className='h-16 w-8'><MdMenuOpen size={34} className={` duration-500 cursor-pointer ${!open && ' rotate-180 '} md:hidden`} onClick={() => setOpen(!open)} /></div>
