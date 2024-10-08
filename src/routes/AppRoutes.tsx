@@ -39,8 +39,8 @@ function AppRoutes() {
 			<Routes>
 				<Route path='*' element={<Error />} />
 				<Route path='/' element={<Landing />} />
-				<Route path='/login' element={<Login />} />
-				<Route path='/register' element={<Register />} />				
+				<Route path='/login' element={<Login />} />			
+				<Route path='/register' element={<Register />} />
 				<Route element={<PrivateRoute />}>
 					<Route path='/home' element={<Home />} />
 					<Route path='/create-trip' element={<CreateTrip />} />
