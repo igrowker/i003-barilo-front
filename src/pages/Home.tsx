@@ -3,18 +3,21 @@ import HomeEventComponent from '@/components/HomeEventComponent'
 import { useTranslation } from 'react-i18next'
 import { useAuth } from '../context/AuthProvider';
 import { useState } from 'react';
+import { useUserRole } from '@/hooks/useUserRole';
 
 
 const Home: React.FC = () => {
 	const { t } = useTranslation()
 
-	const { isAuthenticated } = useAuth();
+	const userRole = useUserRole();
+
+
 
 	return (
 		<>
 			<section className='pb-16'>
-				{isAuthenticated ? (
-					<p>Te logueaste Correctamente Test!</p>
+				{userRole=="COORDINADOR" ? (
+					<p>Te logueaste Correctamente</p>
 				) : (
 					<p>No te logueaste correctamente</p>
 				)}

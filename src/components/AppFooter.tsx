@@ -5,18 +5,18 @@ import { Link } from "react-router-dom"
 
 const AppFooter = () => {
   return (
-    <div className="bg-indigo-100 flex justify-around px-2 py-3 fixed bottom-0 left-0 right-0 shadow-md">
+    <div className="bg-indigo-100 flex justify-around px-2 py-3 fixed bottom-0 left-0 right-0  border-t-4 border-[--primary-celeste]">
       <Link to='/home'>
-        <CiHome size={40} className='text-[--primary-celeste]'/>
+        <CiHome size={35} className='text-[--primary-celeste]'/>
       </Link>
       <Link to='/group'>
-        <FaPeopleGroup size={40} className='text-[--primary-celeste]'/>
+        <FaPeopleGroup size={35} className='text-[--primary-celeste]'/>
       </Link>
       <Link to='create-trip'>
-        <CiCirclePlus size={40} className='text-[--primary-celeste]'/>
+        <CiCirclePlus size={35} className='text-[--primary-celeste]'/>
       </Link>
       <Link to='/payment'>
-        <CiMoneyBill size={40} className='text-[--primary-celeste]'/>
+        <CiMoneyBill size={35} className='text-[--primary-celeste]'/>
       </Link>
     </div>
   )

@@ -5,7 +5,6 @@ import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Error from '@/pages/Error'
 import Access from '@/pages/Access'
-import Footer from '@/components/Footer'
 import CreateTrip from '@/pages/CreateTrip'
 import PlanTripGroup from '@/pages/PlanTripGroup'
 import Group from '@/pages/Group'
@@ -19,6 +18,7 @@ import PaymentMethod from '@/pages/PaymentMethod'
 import PaymentMethodCard from '@/pages/PaymentMethodCard'
 import Destinations from '@/pages/Destinations'
 import AppFooter from '@/components/AppFooter'
+import PrivateRoute from './PrivateRoute'
 
 function AppRoutes() {
 	const location = useLocation(); 
@@ -30,8 +30,8 @@ function AppRoutes() {
 		'/crowdfunding',
 		'/mercadopago',
 		'/payment',
-	
-		'/create-trip'
+		'/create-trip',
+		'/destinations'
 	];
 	return (
 		<>
@@ -40,21 +40,23 @@ function AppRoutes() {
 				<Route path='*' element={<Error />} />
 				<Route path='/' element={<Landing />} />
 				<Route path='/login' element={<Login />} />
-				<Route path='/home' element={<Home />} />
-				<Route path='/register' element={<Register />} />
-				<Route path='/create-trip' element={<CreateTrip />} />
-				<Route path='/plan-trip/group' element={<PlanTripGroup />} />
-				<Route path="/plan-trip" element={<PlanTrip />} /> 
-				<Route path="/group" element={<Group/>}/>
-				<Route path='/access-group' element={<Access />} />
-				<Route path='/crowdfunding' element={<Crowdfunding />} />
-				<Route path='/crowdfunding-donor' element={<CrowdfundingDonor />} />
-				<Route path='/payment' element={<Payment />} />
-				<Route path='/payment-method' element={<PaymentMethod />} />
-				<Route path="/payment-method/card" element={<PaymentMethodCard />} />
-				<Route path='/crowdfundingForm' element={<CrowdfundingForm />} />
-				<Route path='/mercadopago' element={<MercadoPago />} /> {/* Para probar los pagos */}
-				<Route path='/destinations' element={<Destinations />} /> 
+				<Route path='/register' element={<Register />} />				
+				<Route element={<PrivateRoute />}>
+					<Route path='/home' element={<Home />} />
+					<Route path='/create-trip' element={<CreateTrip />} />
+					<Route path='/plan-trip/group' element={<PlanTripGroup />} />
+					<Route path="/plan-trip" element={<PlanTrip />} /> 
+					<Route path="/group" element={<Group/>}/>
+					<Route path='/access-group' element={<Access />} />
+					<Route path='/crowdfunding' element={<Crowdfunding />} />
+					<Route path='/crowdfunding-donor' element={<CrowdfundingDonor />} />
+					<Route path='/payment' element={<Payment />} />
+					<Route path='/payment-method' element={<PaymentMethod />} />
+					<Route path="/payment-method/card" element={<PaymentMethodCard />} />
+					<Route path='/crowdfundingForm' element={<CrowdfundingForm />} />
+					<Route path='/mercadopago' element={<MercadoPago />} /> {/* Para probar los pagos */}
+					<Route path='/destinations' element={<Destinations />} /> 
+				</Route>
 			</Routes>
 			{appRoutes.includes(location.pathname) && <AppFooter /> }
 		</>
