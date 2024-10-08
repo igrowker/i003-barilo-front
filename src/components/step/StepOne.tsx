@@ -34,14 +34,14 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, stepOneData }) => {
 
   return (
     <FormProvider {...methods}>
+      <div className="mx-auto mb-5 text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
+        ¡Dale un nombre único a tu grupo de viaje, y luego podrás compartir un
+        enlace de invitación para compartir con tus amigos!
+      </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="mx-auto space-y-5 w-80 md:w-96"
       >
-        <div className="text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg ">
-          ¡Dale un nombre único a tu grupo de viaje, y luego podrás compartir un
-          enlace de invitación para compartir con tus amigos!
-        </div>
         <InputField
           label={t("stepOne.groupName")}
           name="groupName"
