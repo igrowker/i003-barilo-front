@@ -59,7 +59,7 @@ const StepFour: React.FC<StepFourProps> = ({ onNext }) => {
         ¡La oportunidad de vivir una experiencia única y sabrosa les está
         esperando para que hagan recuerdos inolvidables!
       </div>
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-4 mb-36">
         <h3 className="text-xl font-bold text-center text-primary-blue">
           Actividades
         </h3>
