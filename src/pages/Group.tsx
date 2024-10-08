@@ -58,7 +58,7 @@ function Group() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen pb-16">
       <div className="p-3 px-7 flex items-center">
         <div className="flex">
           <button className="bg-[--primary-blue] rounded-full px-4 py-1">
