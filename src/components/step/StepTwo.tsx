@@ -121,7 +121,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mx-auto space-y-5 w-80"
+        className="mx-auto space-y-5 w-80 mb-36"
       >
         <InputField
           label={t("stepTwo.origin")}
