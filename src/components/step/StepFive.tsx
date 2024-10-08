@@ -33,7 +33,9 @@ const StepFive: React.FC<StepFiveProps> = ({
 
   return (
     <div className="p-4">
-      <h3 className="mb-4 text-xl font-semibold text-center text-primary-celeste">{t("stepFive.title")}</h3>{" "}
+      <h3 className="mb-4 text-xl font-semibold text-center text-primary-celeste">
+        {t("stepFive.title")}
+      </h3>
       <table className="min-w-full border-gray-300 rounded-lg shadow-md text-primary-celeste border-xl bg-secondary-purple">
         <tbody>
           <tr>
