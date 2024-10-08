@@ -223,5 +223,50 @@
       "answer": "You can update your personal details by clicking the 'My profile' button in the top right corner of the screen and following the instructions to update your details.",
       "topic": "general_topic"
     }
+  },
+    "views_payment": {
+      "h2_pay": "Payment",
+      "activity": {
+        "name": "Ski Session",
+        "info": "Ski Day - Bariló Pack",
+        "price": "100",
+        "destination_name": "Ski Day - Bariló Pack",
+        "date": "Monday, Nov 24, 2024 / 10:00 a.m.",
+        "duration": "30 Minutes"
+      },
+      "keyInfo": {
+        "date": "Date / Time",
+        "duration": "Duration",
+        "reservation": {
+          "key": "Reservation for",
+          "value": "Group A"
+        },
+        "amount": "Amount",
+        "total": "Total",
+        "payment_method": {
+          "h1": "Payment Method",
+          "p": "Card",
+          "a": "Change"
+        }
+      },
+      "button": "Pay Now",
+      "payment_method": {
+        "title": "Payment Method",
+        "caption_1": "Credit and Debit Card",
+        "option_1": "Add New Card",
+        "caption_2": "More Payment Options",
+        "option_2": "Marcado Pago",
+        "option_3": "Paypal",
+        "option_4": "Personal Pay"
+      },
+      "payment_method_card": {
+        "title": "Add Card",
+        "cardholder_name": "Cardholder's Name",
+        "number_card": "Card Number",
+        "expiration_date": "Expiration Date",
+        "cvc": "CVC",
+        "save_card": "Save Card"
+      }
+    }
   }
-}
+
