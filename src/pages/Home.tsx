@@ -11,14 +11,15 @@ const Home: React.FC = () => {
 	return (
 		<>
 			<section>
-			{userRole=="COORDINADOR" ? (
-				<p>Te logueaste Correctamente Coordinador</p>
-			) : (
-				<p>Te logueaste Correctamente Estudiante</p>
-			)}
+				{userRole=="ESTUDIANTE" ? (
 				<div className='w-full px-4 pt-10'>
-					<HomeEventComponent></HomeEventComponent>
+					<HomeEventComponent title={t('home.cardEvent.title')} text={t('home.cardEvent.description')} button={"17h:13m:5s"} admin={false}></HomeEventComponent>
 				</div>
+				) : (
+					<div className='w-full px-4 pt-10'>
+					<HomeEventComponent title={'Crea tu grupo de viaje y empieza a disfrutar'} text={''} button={'Crear Viaje'} admin={true}></HomeEventComponent>
+				</div>
+				)}
 				<div className='container flex flex-wrap px-3 py-10 mx-auto '>
 					<div className='flex justify-between w-full px-2 pb-3'>
 						<h2 className='text-xl text-[#006BA8] font-bold'>{t('home.cardTrip.title')}</h2>
