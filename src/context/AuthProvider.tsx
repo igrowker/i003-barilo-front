@@ -46,7 +46,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       const decodedToken: DecodedToken = jwtDecode(token);
       const currentTime = Math.floor((Date.now() / 1000)-200); // Tiempo actual en segundos
   
-      return decodedToken.iat > currentTime; // Compara la expiración con el tiempo actual - 100
+      return decodedToken.iat < currentTime; // Compara la expiración con el tiempo actual - 100
     };
     
 

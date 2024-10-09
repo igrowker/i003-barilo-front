@@ -123,6 +123,27 @@
     "inputLabel": "Enter the Invitation Code"
   },
   "modals": {
+    "register":{
+      "success":{
+        "title": "¡Successful Registration!",
+        "message": "Please login",
+        "btn": "Login"
+      },
+      "error":{
+        "title": "Oops, something has gone wrong!",
+        "message": "Please register again",
+        "btn": "Login",
+        "btn2": "Close"
+      }
+    },
+    "login":{
+      "error":{
+        "title": "¡Oops, something has gone wrong!",
+        "message": "The entered user does not exist or the password is incorrect",
+        "btn": "Register",
+        "btn2": "Cerrar"
+      }
+    },
     "error": {
       "title": "Oh no, traveler!",
       "message": "The code entered is incorrect, please enter it again."
