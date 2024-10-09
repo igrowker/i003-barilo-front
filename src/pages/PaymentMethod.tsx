@@ -11,13 +11,14 @@ function PaymentMethod() {
     const { t } = useTranslation()
     const navigate = useNavigate();
 
+
     const handlePaymentMethodClick = (method: string) => {
         navigate(`/payment-method/${method}`);
       };
   return (
-    <div>
+    <div className="md:mx-28 lg:mx-44 2xl:mx-72">
         <div className="flex justify-center items-center my-8">
-            <button className="absolute left-6 pb-1 text-[--secondary-celeste] text-2xl"><IoIosArrowBack /></button>
+            <button className="absolute left-6 pb-1 text-[--secondary-celeste] text-2xl" onClick={() => navigate(-1)}><IoIosArrowBack /></button>
             <h1 className="text-2xl text-[--secondary-celeste] font-['League_Spartan'] font-semibold">{t('views_payment.payment_method.title')}</h1>
         </div>
         <div>
