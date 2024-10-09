@@ -123,6 +123,27 @@
     "inputLabel": "Ingresa el código de Invitación"
   },
   "modals": {
+    "register":{
+      "success":{
+        "title": "¡Registro Exitoso!",
+        "message": "Por favor iniciar sesión",
+        "btn": "Login"
+      },
+      "error":{
+        "title": "¡Vaya, algo ha salido mal!",
+        "message": "Por favor registresé nuevamente",
+        "btn": "Login",
+        "btn2": "Cerrar"
+      }
+    },
+    "login":{
+      "error":{
+        "title": "¡Vaya, algo ha salido mal!",
+        "message": "El usuario ingresado no existe o la contraseña es incorrecta",
+        "btn": "Registrar",
+        "btn2": "Cerrar"
+      }
+    },
     "error": {
       "title": "¡Vaya, algo ha salido mal!",
       "message": "El código ingresado es incorrecto, por favor ingrésalo nuevamente."
