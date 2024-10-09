@@ -19,6 +19,9 @@ import PaymentMethodCard from '@/pages/PaymentMethodCard'
 import Destinations from '@/pages/Destinations'
 import AppFooter from '@/components/AppFooter'
 import PrivateRoute from './PrivateRoute'
+import Profile from '@/components/profile/Profile'
+import EditProfile from '@/components/profile/EditProfile'
+import ProfileSettings from '@/components/profile/ProfileSettings'
 
 function AppRoutes() {
 	const location = useLocation(); 
@@ -57,6 +60,9 @@ function AppRoutes() {
 					<Route path='/mercadopago' element={<MercadoPago />} /> {/* Para probar los pagos */}
 					<Route path='/destinations' element={<Destinations />} /> 
 				</Route>
+					<Route path='/profile' element={<Profile />} />
+				<Route path='/editProfile' element={<EditProfile />} />
+				<Route path='/profileSettings' element={<ProfileSettings />} />
 			</Routes>
 			{appRoutes.includes(location.pathname) && <AppFooter /> }
 		</>
