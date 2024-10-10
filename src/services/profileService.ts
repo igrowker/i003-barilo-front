@@ -1,25 +1,28 @@
-// services/userService.ts
-import axios from 'axios';
+import axios from "axios";
 
 interface ProfileResponse {
-    id: string;
-    name: string;
-    email: string;
-    role: string;
-    pendingBalance: number;
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  pendingBalance: number;
 }
 
-export const getUserProfile = async (token: string): Promise<ProfileResponse | null> => {
+const API_URL = import.meta.env.VITE_API_URL;
+
+export const getUserProfile = async (
+  token: string
+): Promise<ProfileResponse | null> => {
   try {
-    const response = await axios.get('https://barilo.onrender.com/barilo/api/profile', {
+    const response = await axios.get(`${API_URL}/profile`, {
       headers: {
-        Authorization: `Bearer ${token}`, // Pasar el token en el header
+        Authorization: `Bearer ${token}`,
       },
     });
 
-    return response.data; // Retorna la información del perfil
+    return response.data;
   } catch (error) {
-    console.error('Error al obtener el perfil del usuario:', error);
+    console.error("Error al obtener el perfil del usuario:", error);
     return null;
   }
 };
