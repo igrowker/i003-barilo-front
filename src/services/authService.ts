@@ -131,3 +131,22 @@ export const getProfile = async (): Promise<UserProfile | null> => {
     return null;
   }
 };
+
+export const sendPasswordResetEmail = async (email: string): Promise<void> => {
+  try {
+    const response = await axios.post(
+      `${API_URL}/auth/forgot-password`,
+      { email },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    console.log("Solicitud de restablecimiento de contraseña enviada:", response.data);
+  } catch (error) {
+    console.error("Error al enviar el restablecimiento de contraseña:", error.response?.data.message || error);
+    throw new Error(error.response?.data.message || "Error al enviar el correo de restablecimiento de contraseña");
+  }
+};
