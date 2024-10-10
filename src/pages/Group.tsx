@@ -6,6 +6,7 @@ import {useState} from 'react'
 import InputGroup from "@/components/InputGroup"
 import Product from "@/components/Product"
 import Header from "@/components/Header"
+import GroupActivity from "@/components/GroupActivity"
 
 
 
@@ -14,6 +15,7 @@ const dayNames = ["DOM", "LUN", "MAR", "MIE", "JUE", "VIE", "SAB"];
 function Group() {
   const [selectedDay, setSelectedDay] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [activeTab, setActiveTab] = useState('grupo')
 
   const members = [
     {name: "Ana Gallinado", info: 'Alumna 6to B'},
@@ -22,9 +24,9 @@ function Group() {
   ];
 
   const activities = [
-    { date: "2024-09-30", name: "Parrilla", description: "Asado, traer lo que quieran beber" },
-    { date: "2024-10-01", name: "Reunión de equipo", description: "Revisar el proyecto de clase" },
-    { date: "2024-10-02", name: "Día de deportes", description: "Jugar fútbol en el parque" },
+    { date: "2024-10-10", name: "Parrilla", description: "Asado, traer lo que quieran beber" },
+    { date: "2024-10-11", name: "Reunión de equipo", description: "Revisar el proyecto de clase" },
+    { date: "2024-10-12", name: "Día de deportes", description: "Jugar fútbol en el parque" },
   ];
 
   const today = new Date();
@@ -52,22 +54,35 @@ function Group() {
   const filteredMembers = members.filter(member =>
     member.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+  const filteredActivities = activities.filter(activity =>
+    activity.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);  
   };
 
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  }
+
   return (
     <div className="flex flex-col min-h-screen pb-16">
       <div className="p-3 px-7 flex items-center">
         <div className="flex">
-          <button className="bg-[--primary-blue] rounded-full px-4 py-1">
+          <button 
+            className={`rounded-full px-4 py-1 ${activeTab === 'grupo' ? 'bg-[--primary-blue] text-white' : 'text-[--primary-blue]'}`}
+            onClick={()=> handleTabChange('grupo')}
+          >
             <img className=" w-14" src={logoGrupo} alt="icono de grupo" />
-            <p className="text-white font-bold">Grupo</p>
+            <p className="font-bold">Grupo</p>
           </button>
-          <button className="flex flex-col rounded-full px-4 py-1 justify-center items-center">
+          <button 
+            className={`flex flex-col rounded-full px-4 py-1 justify-center items-center ${activeTab === 'excursiones' ? 'bg-[--primary-blue] text-white' : 'text-[--secondary-celeste]'}`}
+            onClick={()=> handleTabChange('excursiones')}
+          >
             <img className=" w-6" src={logoExcursiones} alt="icono de excursiones" />
-            <p className="text-[--secondary-celeste] font-thin">Excursiones</p>
+            <p className=" font-bold">Excursiones</p>
           </button>
         </div>
         <div>
@@ -110,31 +125,55 @@ function Group() {
             </div>
           )}
         </div>
-        
       </div>
       <div className="flex-grow px-7">
-        <div className="flex items-center mb-1 mt-5 gap-1">
-          <img src={logo} className='w-12' alt="Logo de Barilo" />
-          <p className="text-[--secondary-celeste] font-bold">Integrantes del grupo</p>
-        </div>
-        {members.length === 0 ? (
-          <div className="text-center py-4">
-            <p className="text-[--primary-celeste] font-bold">Aún no hay integrantes en el grupo.</p>
-            <p>Invita a gente a unirse al grupo para empezar la planificación.</p>
+        {activeTab === 'grupo' ? (
+          <div>
+            <div className="flex items-center mb-1 mt-5 gap-1">
+              <img src={logo} className='w-12' alt="Logo de Barilo" />
+              <p className="text-[--secondary-celeste] font-bold">Integrantes del grupo</p>
+            </div>
+            {members.length === 0 ? (
+              <div className="text-center py-4">
+                <p className="text-[--primary-celeste] font-bold">Aún no hay integrantes en el grupo.</p>
+                <p>Invita a gente a unirse al grupo para empezar la planificación.</p>
+              </div>
+            ) : (
+              filteredMembers.length === 0 ? (
+                <div className="text-center py-4">
+                  <p className="text-[--primary-celeste] font-bold">No se encontraron miembros.</p>
+                  <p>Intenta buscar por otro nombre.</p>
+                </div>
+              ) : (
+                <div className="flex flex-col gap-1">
+                  {filteredMembers.map((member, index) => (
+                    <GroupMember key={index} name={member.name} info={member.info} />
+                  ))}
+                </div>
+              )
+            )}
           </div>
-        ) : (
-          filteredMembers.length === 0 ? (
-            <div className="text-center py-4">
-              <p className="text-[--primary-celeste] font-bold">No se encontraron miembros.</p>
-              <p>Intenta buscar por otro nombre.</p>
+
+        ) :(
+          <div>
+            <div className="flex items-center mb-1 mt-5 gap-1">
+              <img className=" w-7" src={logoExcursiones} alt="icono de excursiones" />
+              <p className="text-[--secondary-celeste] font-bold">Exursiones a realizar</p>
             </div>
-          ) : (
-            <div className="flex flex-col gap-1">
-              {filteredMembers.map((member, index) => (
-                <GroupMember key={index} name={member.name} info={member.info} />
-              ))}
-            </div>
-          )
+            {activities.length === 0 ? (
+              <div className="text-center py-4">
+                <p className="text-[--primary-celeste] font-bold">Aún no hay actividades para el grupo.</p>
+                <p>Invita a gente a unirse al grupo para empezar la planificación.</p>
+              </div>
+            ) : (
+                <div className="flex flex-col gap-1">
+                  {filteredActivities.map((activity, index) => (
+                    <GroupActivity key={index} name={activity.name} date={activity.date} description={activity.description} />
+                  ))}
+                </div>
+            )}
+
+          </div>
         )}
       </div>
     </div>

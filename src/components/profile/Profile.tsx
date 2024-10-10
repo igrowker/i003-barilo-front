@@ -38,7 +38,7 @@ export default function Profile() {
       <div className="flex flex-col items-stretch justify-between w-screen h-screen">
         <div className="flex flex-col w-screen gap-2 mt-5">
           <div className="flex flex-row items-center justify-start w-screen py-2 text-2xl text-customBlue">
-            <SlArrowLeft className="flex items-center justify-start w-1/3" />
+            <SlArrowLeft className="flex items-center justify-start w-1/3" onClick={()=>navigate('/home')}/>
             <h3 className="flex items-center justify-center w-1/3">Perfil</h3>
           </div>
           <div className="flex flex-col items-center justify-center gap-2">
