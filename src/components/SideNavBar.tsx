@@ -80,7 +80,7 @@ export default function SideNavBar() {
         {
           menuItems.map((item, index) => {
             return (
-              <li key={index} className='flex items-center p-2 my-2 hover:bg-primary-purple rounded-md duration-300 cursor-pointer gap-2 relative group md:hover:bg-white md:pr-10'>
+              <li key={index} className='flex items-center p-2 my-2 hover:bg-primary-purple rounded-md duration-300 cursor-pointer gap-2 relative group sm:pr-5 md:hover:bg-white md:pr-10'>
                 <a href={item.href} className={`${open && 'gap-x-3'} flex items-center `}>
                   <div className='flex items-center justify-center md:hidden'>
                     {item.icons}
@@ -98,7 +98,7 @@ export default function SideNavBar() {
             )
           })
         }
-        <div className="text-lg flex font-bold tracking-wider items-center ml-2 md:pr-10">
+        <div className="text-lg flex font-bold tracking-wider items-center">
           {currentLanguage === "es" ? (
             <button
               className={`${open && 'gap-x-2'} flex items-center transition-transform duration-200 transform hover:scale-105`}

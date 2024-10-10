@@ -227,7 +227,9 @@ export default function LandingComponent() {
         </main>
         <ScrollToTopButton />
       </div>
+      <div className="hidden md:flex">
       <Footer/>
+      </div>
     </>
   );
 }
