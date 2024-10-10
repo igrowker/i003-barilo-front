@@ -120,15 +120,13 @@ export const LoginFormComponent: React.FC = () => {
     }
   };
 
-  const handleGoogleLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    console.log(`Google login`);
+  const handleGoogleLogin = () => {
+    console.log(`Google login simulado`);
   };
-
-  const handleAppleLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    console.log(`Apple login`);
-  };
+  
+  const handleAppleLogin = () => {
+    console.log(`Apple login simulado`);
+  };  
 
   return (
     <div>
