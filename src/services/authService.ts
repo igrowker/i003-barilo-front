@@ -12,7 +12,6 @@ interface RegisterUserResponse {
     message: string;
     userId: string;
   };
-  status: number;
 }
 
 interface RegisterUserError {
@@ -34,6 +33,40 @@ export interface UserProfile {
   pendingBalance: number | null;
 }
 
+export const loginUser = async (
+  values: LoginUserForm
+): Promise<{ token: string }> => {
+  try {
+    const response: AxiosResponse<{ token: string }> = await axios.post(
+      `${API_URL}/auth/login`,
+      {
+        mail: values.mail,
+        password: values.password,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    const token = response.data.token;
+    localStorage.setItem("token", token);
+    console.log("Login successful, token:", token);
+
+    return { token };
+  } catch (error) {
+    const typedError = error as RegisterUserError;
+    console.error(
+      "Error during login:",
+      typedError.response?.data.message || error
+    );
+    throw new Error(
+      typedError.response?.data.message || "Error durante el inicio de sesión"
+    );
+  }
+};
+
 export const registerUser = async (
   values: RegisterUserForm
 ): Promise<RegisterUserResponse | null> => {
@@ -53,50 +86,14 @@ export const registerUser = async (
       }
     );
 
-    if (response.status === 200 || response.status === 201) {
-      console.log("Registration successful:", response.data);
-      return response.data;
-    } else {
-      console.error("Registration failed:", response.data);
-      return null;
-    }
+    console.log("Registration successful:", response.data);
+    return response.data;
   } catch (error) {
     const typedError = error as RegisterUserError;
     console.error(
       "Error during registration:",
       typedError.response?.data.message || error
     );
-    return null;
-  }
-};
-
-export const loginUser = async (
-  values: LoginUserForm
-): Promise<string | null> => {
-  try {
-    const response: AxiosResponse<{ token: string }> = await axios.post(
-      `${API_URL}/auth/login`,
-      {
-        mail: values.mail,
-        password: values.password,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    if (response.status === 200) {
-      const token = response.data.token;
-      localStorage.setItem("token", token);
-      console.log("Login successful, token:", token);
-      return token;
-    } else {
-      console.error("Login failed:", response.data);
-      return null;
-    }
-  } catch (error) {
-    console.error("Error during login:", error);
     return null;
   }
 };
@@ -124,18 +121,13 @@ export const getProfile = async (): Promise<UserProfile | null> => {
       }
     );
 
-    if (response.status === 200) {
-      console.log("Perfil de usuario obtenido exitosamente:", response.data);
-      return response.data.data;
-    } else {
-      console.error(
-        "No se pudo obtener el perfil del usuario:",
-        response.status
-      );
-      return null;
-    }
+    console.log("Perfil de usuario obtenido exitosamente:", response.data);
+    return response.data.data;
   } catch (error) {
-    console.error("Error al obtener el perfil del usuario:", error);
+    console.error(
+      "Error al obtener el perfil del usuario:",
+      error.response?.data.message || error
+    );
     return null;
   }
 };

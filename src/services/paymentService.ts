@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 interface PaymentResponse {
     id: number;
@@ -15,24 +15,27 @@ type PaymentForm = {
     userId: number;
 }
 
-export const postPaymentUser = async (token: string , values: PaymentForm,): Promise<PaymentResponse | null> => {
-  try {
-    console.log("aaaaaa")
-    const response = await axios.post('https://barilo.onrender.com/barilo/api/payments',
-        {
-            amount: values.amount,
-            paymentType: values.paymentType,
-            date: values.date,
-            userId: values.userId,
-        }, {
-      headers: {
-        Authorization: `Bearer ${token}`, // Pasar el token en el header
-      },
-    });
+const API_URL = import.meta.env.VITE_API_URL;
 
-    return response.data; // Retorna la información del perfil
-  } catch (error) {
-    console.error('Error al obtener el perfil del usuario:', error);
-    return null;
-  }
+export const postPaymentUser = async (
+    token: string,
+    values: PaymentForm
+): Promise<PaymentResponse | null> => {
+    try {
+        const response = await axios.post(`${API_URL}/payments`,
+            {
+                amount: values.amount,
+                paymentType: values.paymentType,
+                date: values.date,
+                userId: values.userId,
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+        return response.data;
+    } catch (error) {
+        console.error("Error al procesar el pago:", error);
+        return null;
+    }
 };
