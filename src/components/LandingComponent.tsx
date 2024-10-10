@@ -31,7 +31,7 @@ export default function LandingComponent() {
                 <p className="mx-auto max-w-[900px] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
                 {t('landing.welcome.text2')}
                 </p>
-                <div className="flex flex-col gap-y-3 items-center justify-center md:flex-row md:space-x-4">
+                <div className="flex flex-col items-center justify-center gap-y-3 md:flex-row md:space-x-4">
                   <Link to="/login">
                     <CustomButton className="w-full bg-white text-secondary-pink hover:bg-secondary-purple">
                       {t('buttons.landing.login')}
@@ -175,17 +175,17 @@ export default function LandingComponent() {
                 <img
                   src={snowImage}
                   alt="Grupo esquiando"
-                  className="object-cover w-full transition-transform transform rounded-lg shadow-lg h-96 hover:scale-105 hover:shadow-xl"
+                  className="object-cover w-full h-auto transition-transform transform rounded-lg shadow-lg hover:scale-105 hover:shadow-xl"
                 />
                 <img
                   src={snowImage3}
                   alt="Amigos en la nieve"
-                  className="object-cover w-full transition-transform transform rounded-lg shadow-lg h-96 hover:scale-105 hover:shadow-xl"
+                  className="object-cover w-full h-auto transition-transform transform rounded-lg shadow-lg hover:scale-105 hover:shadow-xl"
                 />
                 <img
                   src={snowImage2}
                   alt="Cartel de Bariloche"
-                  className="object-cover w-full mx-auto transition-transform transform rounded-lg shadow-lg h-96 hover:scale-105 hover:shadow-xl md:col-span-2 lg:col-span-1"
+                  className="object-cover w-full h-auto mx-auto transition-transform transform rounded-lg shadow-lg hover:scale-105 hover:shadow-xl md:col-span-2 lg:col-span-1"
                 />
               </div>
             </div>
