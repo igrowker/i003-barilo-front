@@ -1,64 +1,56 @@
-import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
+import { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import { loginUser } from '../services/authService'; 
 import { jwtDecode } from 'jwt-decode';
+
 interface AuthContextType {
   token: string | null;
   login: (mail: string, password: string) => Promise<void>;
   logout: () => void;
   isAuthenticated: boolean;
-  role?: string;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 interface DecodedToken {
-  sub: string;
   exp: number;
-  iat: number;
-  role?: string; 
 }
 
-// Componente AuthProvider
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
 
-  // Función de login
   const login = async (mail: string, password: string) => {
-    const response = await loginUser({ mail, password });
-    if (response?.token) {
+    try {
+      const response = await loginUser({ mail, password });
       setToken(response.token);
-      localStorage.setItem('token', response.token); // Guardar token en localStorage
+      localStorage.setItem('token', response.token);
       console.log('Token saved to localStorage');
+    } catch (error) {
+      console.error('Login error:', error);
     }
   };
 
-  // Función de logout
   const logout = () => {
     setToken(null);
-    localStorage.removeItem('token'); // Eliminar token de localStorage
+    localStorage.removeItem('token');
     console.log('Logged out and token removed from localStorage');
   };
 
-    // Función para verificar si el token ha expirado
-    const isTokenExpired = (token: string | null): boolean => {
-      if (!token) return true;
-      
-      const decodedToken: DecodedToken = jwtDecode(token);
-      const currentTime = Math.floor((Date.now() / 1000)-200); // Tiempo actual en segundos
-  
-      return decodedToken.iat < currentTime; // Compara la expiración con el tiempo actual - 100
-    };
-    
+  const isTokenExpired = (token: string | null): boolean => {
+    if (!token) return true;
 
-    useEffect(() => {
-      if (isTokenExpired(token)) {
-        logout(); // Si el token ha expirado, cerrar sesión automáticamente
-      }
-    }, [token]);
-  // Verifica si el usuario está autenticado
+    const decodedToken: DecodedToken = jwtDecode(token);
+    const currentTime = Math.floor(Date.now() / 1000);
+
+    return decodedToken.exp < currentTime;
+  };
+
+  useEffect(() => {
+    if (token && isTokenExpired(token)) {
+      logout();
+    }
+  }, [token]);
+
   const isAuthenticated = !!token && !isTokenExpired(token);
-  
-  
 
   return (
     <AuthContext.Provider value={{ token, login, logout, isAuthenticated }}>
@@ -67,7 +59,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   );
 };
 
-// Hook para usar el AuthContext
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
