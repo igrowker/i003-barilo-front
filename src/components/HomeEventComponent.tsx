@@ -10,40 +10,63 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
-const HomeEventComponent: React.FC  = () => {
+interface HijoProps {
+    title: string;
+    text: string;
+    button: string;
+    admin: boolean
+  }
 
+  const HomeEventComponent: React.FC<HijoProps> = ({title, text, button, admin }) => {
+
+    const navigate = useNavigate();
     const { t } = useTranslation();
 
     const [date, setDate] = React.useState<Date>()
 
+    const handleClick = () => {
+        navigate('/create-trip');
+      };
+
     return (
         <div className='bg-[#0098EF] h-44 justify-between flex flex-col rounded-2xl'>
             <div className='p-5'>
-                <h1 className="font-['League_Spartan'] text-2xl text-[#E4E4E4] font-bold">{t('home.cardEvent.title')}</h1>
-                <p className="text-[#E4E4E4] font-bold">{t('home.cardEvent.description')}</p>
+            {admin ? (
+                <h1 className="font-['League_Spartan'] text-2xl text-[#E4E4E4] text-center font-bold">{title}</h1>
+            ) : (
+                <h1 className="font-['League_Spartan'] text-2xl text-[#E4E4E4] font-bold">{title}</h1>
+            )}
+                <p className="text-[#E4E4E4] font-bold">{text}</p>
             </div>
-            <Popover>
-                <PopoverTrigger asChild>
+            <div className='w-full flex justify-center items-center'>
+                {admin ? (
                 <Button
+                    onClick={handleClick}
                     variant={"default"}
                     className={cn(
-                        "w-[120px] justify-center font-normal ml-5 mb-5 bg-[#006BA8] border-none rounded-2xl",
+                        "w-[120px] justify-center font-normal mb-5 bg-[#006BA8] border-none rounded-2xl",
                         
                     )}
                     >
-                    <span className='text-[#FAFAFA]'>17h:13m:5s</span>
-                </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
-                <Calendar
-                    mode="single"
-                    selected={date}
-                    onSelect={setDate}
-                    initialFocus
-                    />
-                </PopoverContent>
-            </Popover>
+                    <span className='text-[#FAFAFA]'>{button}</span>
+                    </Button>
+                        
+                ) : (
+                    <Button
+                    variant={"default"}
+                    className={cn(
+                        "w-[120px] justify-center font-normal mb-5 bg-[#006BA8] border-none rounded-2xl",
+                        
+                    )}
+                    >
+                    <span className='text-[#FAFAFA]'>{button}</span>
+                    </Button>
+                        
+                )}
+            </div>
+
         </div>
     )
   }
