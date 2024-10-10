@@ -22,6 +22,7 @@ import PrivateRoute from './PrivateRoute'
 import Profile from '@/components/profile/Profile'
 import EditProfile from '@/components/profile/EditProfile'
 import ProfileSettings from '@/components/profile/ProfileSettings'
+import ForgotPassword from '@/pages/ForgotPassword'
 
 function AppRoutes() {
 	const location = useLocation(); 
@@ -44,6 +45,7 @@ function AppRoutes() {
 				<Route path='/' element={<Landing />} />
 				<Route path='/register' element={<Register />} />
 				<Route path='/login' element={<Login />} />			
+				<Route path='/forgot-password' element={<ForgotPassword />} />			
 				<Route element={<PrivateRoute />}>
 					<Route path='/home' element={<Home />} />
 					<Route path='/create-trip' element={<CreateTrip />} />
@@ -59,10 +61,10 @@ function AppRoutes() {
 					<Route path='/crowdfundingForm' element={<CrowdfundingForm />} />
 					<Route path='/mercadopago' element={<MercadoPago />} /> {/* Para probar los pagos */}
 					<Route path='/destinations' element={<Destinations />} /> 
-				</Route>
 					<Route path='/profile' element={<Profile />} />
-				<Route path='/editProfile' element={<EditProfile />} />
-				<Route path='/profileSettings' element={<ProfileSettings />} />
+					<Route path='/editProfile' element={<EditProfile />} />
+					<Route path='/profileSettings' element={<ProfileSettings />} />
+				</Route>
 			</Routes>
 			{appRoutes.includes(location.pathname) && <AppFooter /> }
 		</>
