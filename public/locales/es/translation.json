@@ -97,11 +97,24 @@
   },
   "home": {
     "cardEvent": {
-      "title": "Parrilla:",
-      "description": "Asado traer lo que quieran beber"
+      "admin": {
+        "title": "Crea tu grupo de viaje y empieza a disfrutar",
+        "description": "",
+        "btn": "Crear viaje"
+      },
+      "student": {
+        "title": "Parrilla:",
+        "description": "Asado traer lo que quieran beber",
+        "noGroup": {
+          "title": "Aún no perteneces a ningún grupo de viaje.",
+          "description": "",
+          "btn": "Ingresa Código de invitación"
+        }
+      }
     },
     "cardTrip": {
       "title": "Tu Viaje",
+      "titleNoGroup": "Excursiones Disponibles",
       "link": "Ver más",
       "titleCard1": "Excursiones",
       "titleCard2": "Restaurantes",
