@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm, FormProvider } from "react-hook-form";
 import { StepOneFormData } from "../../types/step/StepOneFormData";
 import { useEffect } from "react";
+import { createGroup } from "../../services/groupService";
 
 interface StepOneProps {
   onNext: (formData: StepOneFormData) => void;
@@ -14,8 +15,7 @@ interface StepOneProps {
 const StepOne: React.FC<StepOneProps> = ({ onNext, stepOneData }) => {
   const { t } = useTranslation();
   const methods = useForm<StepOneFormData>();
-
-  const { handleSubmit, reset } = methods;
+  const { handleSubmit, reset, register, setError } = methods;
 
   useEffect(() => {
     if (stepOneData) {
@@ -23,8 +23,22 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, stepOneData }) => {
     }
   }, [stepOneData, reset]);
 
-  const onSubmit = (data: StepOneFormData) => {
-    onNext(data);
+  const onSubmit = async (data: StepOneFormData) => {
+    try {
+      console.log(
+        "Contenido de localStorage antes de crear grupo:",
+        localStorage
+      );
+      const groupResponse = await createGroup(data);
+      console.log("Grupo creado:", groupResponse);
+      onNext(data);
+    } catch (error) {
+      console.error("Error al crear el grupo:", error);
+      setError("groupName", {
+        type: "manual",
+        message: "Error al crear el grupo. Inténtalo nuevamente.",
+      });
+    }
   };
 
   const navigate = useNavigate();
@@ -47,6 +61,9 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, stepOneData }) => {
           name="groupName"
           required
           placeholder={t("stepOne.groupName")}
+          {...register("groupName", {
+            required: "El nombre del grupo es obligatorio",
+          })}
         />
         <InputField
           label={t("stepOne.numberOfPeople")}
@@ -54,6 +71,7 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, stepOneData }) => {
           required
           type="number"
           placeholder={t("stepOne.numberOfPeople")}
+          {...register("numberOfPeople", { required: true })}
         />
         <div className="flex items-center gap-x-4">
           <ButtonBlue

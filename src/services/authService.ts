@@ -52,20 +52,16 @@ export const loginUser = async (
 
     const token = response.data.token;
     localStorage.setItem("token", token);
-    console.log("Login successful, token:", token);
-
     return { token };
   } catch (error) {
     const typedError = error as RegisterUserError;
-    console.error(
-      "Error during login:",
-      typedError.response?.data.message || error
-    );
-    throw new Error(
-      typedError.response?.data.message || "Error durante el inicio de sesión"
-    );
+    const message =
+      typedError.response?.data.message || "Error durante el inicio de sesión";
+    console.error("Error durante el inicio de sesión:", message);
+    throw new Error(message);
   }
 };
+
 
 export const registerUser = async (
   values: RegisterUserForm
