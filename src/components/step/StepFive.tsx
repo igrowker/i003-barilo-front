@@ -23,18 +23,6 @@ const StepFive: React.FC<StepFiveProps> = ({
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const formatDate = (dateString: string | undefined): string => {
-    if (!dateString) return "No especificado";
-
-    const date = new Date(dateString);
-    const day = String(date.getDate()).padStart(2, "0");
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const year = date.getFullYear();
-
-    return `${day}/${month}/${year}`;
-  };
-
-
   const handleProceedToPayment = () => {
     navigate("/payment", {
       state: { stepOneData, stepTwoData, stepThreeData, stepFourData },
@@ -60,12 +48,7 @@ const StepFive: React.FC<StepFiveProps> = ({
             <td className="px-4 py-2 border-b">
               <strong>{t("stepTwo.origin")}:</strong> {stepTwoData?.origin}{" "}
               <br />
-              <strong>{t("stepTwo.destination")}:</strong>{" "}
               {stepTwoData?.destination} <br />
-              <strong>{t("stepTwo.departureDate")}:</strong>{" "}
-              {formatDate(stepTwoData?.departureDate)} <br />
-              <strong>{t("stepTwo.returnDate")}:</strong>{" "}
-              {formatDate(stepTwoData?.returnDate)}
             </td>
           </tr>
           <tr>
@@ -82,7 +65,6 @@ const StepFive: React.FC<StepFiveProps> = ({
           </tr>
         </tbody>
       </table>
-
       <div className="flex justify-between mt-4 gap-x-4">
         <ButtonBlue
           text="Ir pagar"

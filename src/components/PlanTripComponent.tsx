@@ -63,7 +63,6 @@ const PlanTripComponent: React.FC = () => {
       {currentStep === 4 && (
         <StepFour onNext={handleNextStepFour} stepFourData={stepFourData} />
       )}
-
       {currentStep === 5 && (
         <StepFive
           stepOneData={stepOneData}
