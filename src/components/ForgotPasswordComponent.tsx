@@ -5,7 +5,7 @@ import { z } from "zod";
 import { CustomInput } from "@/components/CustomInput";
 import { CustomButton } from "@/components/CustomButton";
 import { Form, FormMessage } from "@/components/ui/form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { forgotPasswordSchema } from "../validation/forgotPasswordSchema";
 import { useTranslation } from "react-i18next";
 import ModalComponent from "./ModalComponent";
@@ -111,6 +111,13 @@ export const ForgotPasswordComponent: React.FC = () => {
               {isLoading ? "Enviando" : "Enviar enlace"}
             </CustomButton>
           </div>
+          <p className="mt-4 text-sm font-normal leading-none text-center text-primary-celeste font-secondary">
+            ¿Ya tienes una cuenta?{" "}
+            <Link to="/login" className="antialiased font-bold">
+              {" "}
+              Inicia sesión
+            </Link>
+          </p>
         </form>
       </Form>
       {isModalVisible && modalContent && (
