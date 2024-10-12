@@ -10,19 +10,16 @@ export interface PassageProps {
   originInput: string;
   destinationInput: string;
 }
-
 const Passage: React.FC<PassageProps> = ({
   isFlight,
   onSelect,
-  onSelectReturn,
   tickets,
   originInput,
   destinationInput,
 }) => {
-  const [selectedDeparture, setSelectedDeparture] = useState<PassageType | null>(null);
-  const [selectedReturn, setSelectedReturn] = useState<PassageType | null>(null);
+  const [selectedDeparture, setSelectedDeparture] =
+    useState<PassageType | null>(null);
 
-  // Filtrado de pasajes
   const departureTickets = useMemo(() => {
     return tickets.filter((ticket) => {
       const type = ticket.type === null ? "BUS" : ticket.type;
@@ -39,13 +36,16 @@ const Passage: React.FC<PassageProps> = ({
     <div>
       <h3 className="mt-4 font-semibold text-md">Paquetes de viaje</h3>
       {departureTickets.length === 0 ? (
-        <p>No hay pasajes de ida disponibles de {originInput} a {destinationInput}</p>
+        <p>
+          No hay pasajes de ida disponibles de {originInput} a{" "}
+          {destinationInput}
+        </p>
       ) : (
         <div className="grid grid-cols-1 gap-4">
           {departureTickets.map((passage) => {
-            const isSelected = selectedDeparture?.companyName === passage.companyName &&
-                               selectedDeparture.departureDate === passage.departureDate;
-
+            const isSelected =
+              selectedDeparture?.companyName === passage.companyName &&
+              selectedDeparture.departureDate === passage.departureDate;
             return (
               <TicketCard
                 origin={originInput}
@@ -57,8 +57,15 @@ const Passage: React.FC<PassageProps> = ({
                 onSelect={() => handleSelect(passage)}
                 company={passage.companyName}
                 isSelected={isSelected}
-                departureDate={new Date(passage.departureDate).toLocaleDateString()}
-                departureTime={new Date(passage.departureDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                departureDate={new Date(
+                  passage.departureDate
+                ).toLocaleDateString()}
+                departureTime={new Date(
+                  passage.departureDate
+                ).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
               />
             );
           })}
