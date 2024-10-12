@@ -6,6 +6,7 @@ import { FaRegCalendarCheck } from "react-icons/fa";
 import { FaBusAlt } from "react-icons/fa";
 
 interface TicketCardProps {
+  origin: string;
   price: number;
   departure: string;
   arrival: string;
@@ -20,6 +21,7 @@ interface TicketCardProps {
 }
 
 const TicketCard: React.FC<TicketCardProps> = ({
+  origin,
   price,
   departure,
   arrival,
@@ -53,7 +55,7 @@ const TicketCard: React.FC<TicketCardProps> = ({
             ) : (
               <FaBusAlt className="mr-2 text-white" />
             )}
-            <span>Origen: {departure}</span>
+            <span>Origen: {origin}</span>
           </h3>
           <h3 className="flex items-center text-base font-bold text-primary-celeste md:text-lg">
             {isFlight ? (
