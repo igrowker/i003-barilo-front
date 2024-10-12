@@ -1,10 +1,11 @@
 export interface PassageData {
-    company: string;
-    flightDate: string;
-    origin: string;
-    destination: string;
-    time: string;
+    companyName: string;
+    departureDate: string;
+    destination: {
+      name: string;
+    };
     price: number;
+    transportCategory: 'PREMIUM' | 'STANDARD' | 'BASIC';
     type: 'flight' | 'bus';
 } 
 
