@@ -14,17 +14,11 @@ import IconComponent from "../IconComponent";
 import { SlArrowLeft } from "react-icons/sl";
 import { useAuth } from "../../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-const link = [
-  { name: "Perfil", href: "./editProfile", icon: <IoPersonOutline /> },
-  { name: "Favoritos", href: "#", icon: <IoHeartOutline /> },
-  { name: "Crowfounding", href: "#", icon: <IoWalletOutline /> },
-  { name: "Políticas de Privasidad", href: "#", icon: <IoLockClosedOutline /> },
-  { name: "Ajustes", href: "./profileSettings", icon: <IoSettingsOutline /> },
-  { name: "Ayuda", href: "#", icon: <IoHelp /> },
-];
 
 export default function Profile() {
+  const { t } = useTranslation()
   const { logout } = useAuth();
   const navigate = useNavigate();
 
@@ -33,11 +27,25 @@ export default function Profile() {
     navigate("/");
   };
 
+  const link = [
+    { name: "profile_user.component_profile.link.name_profile" , href: "./editProfile", icon: <IoPersonOutline /> },
+    { name: "profile_user.component_profile.link.name_favorites" , href: "#", icon: <IoHeartOutline /> },
+    { name: "profile_user.component_profile.link.name_crowfounding" , href: "#", icon: <IoWalletOutline /> },
+    { name: "profile_user.component_profile.link.name_privacy_policies" , href: "#", icon: <IoLockClosedOutline /> },
+    { name: "profile_user.component_profile.link.name_settings" , href: "./profileSettings", icon: <IoSettingsOutline /> },
+    { name: "profile_user.component_profile.link.name_help" , href: "#", icon: <IoHelp /> },
+  ];
+  
+
   return (
     <>
       <div className="flex flex-col items-stretch justify-between w-screen h-screen">
         <div className="flex flex-col w-screen gap-2 mt-5">
           <div className="flex flex-row items-center justify-start w-screen py-2 text-2xl text-customBlue">
+            <a  className="flex items-center justify-center w-1/3" href="./home">
+            <SlArrowLeft />
+            </a>
+            <h3 className="flex items-center justify-center w-1/3">{t('profile_user.component_profile.title_h3')}</h3>
             <SlArrowLeft className="flex items-center justify-start w-1/3" onClick={()=>navigate('/home')}/>
             <h3 className="flex items-center justify-center w-1/3">Perfil</h3>
           </div>
@@ -61,7 +69,7 @@ export default function Profile() {
                     href={item.href}
                     className="flex text-xl font-semibold text-gray-900 cursor-pointer"
                   >
-                    {item.name}
+                    {t(item.name)}
                     <span className="absolute inset-0" />
                   </a>
                   <div className="flex text-xl">
@@ -76,7 +84,7 @@ export default function Profile() {
               <IoLogOutOutline />
             </div>
             <button className="text-xl leading-6" onClick={handleLogout}>
-              Cerrar Sesión
+            {t('profile_user.component_profile.button_sign_ut')}
             </button>
           </div>
         </div>

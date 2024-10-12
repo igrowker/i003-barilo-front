@@ -12,8 +12,8 @@
   "landing": {
     "welcome": {
       "title": "¡Bienvenidos, tu aventura de egresados está por comenzar!",
-      "text1": "En Barilo, entendemos que tu viaje de egresados es mucho más que una simple escapada; es un momento significativo que marca el cierre de una etapa y el inicio de nuevas aventuras. Nuestra misión es hacer que esta experiencia única sea accesible, inclusiva y, sobre todo, inolvidable para todos.",
-      "text2": "Imagina explorar destinos impresionantes con tus amigos más cercanos, creando recuerdos que durarán toda la vida. En Barilo, nos comprometemos a ofrecerte una amplia gama de destinos variados que se adaptan a todos los gustos y presupuestos."
+      "text1": "En Bariló, entendemos que tu viaje de egresados es mucho más que una simple escapada; es un momento significativo que marca el cierre de una etapa y el inicio de nuevas aventuras. Nuestra misión es hacer que esta experiencia única sea accesible, inclusiva y, sobre todo, inolvidable para todos.",
+      "text2": "Imagina explorar destinos impresionantes con tus amigos más cercanos, creando recuerdos que durarán toda la vida. En Bariló, nos comprometemos a ofrecerte una amplia gama de destinos variados que se adaptan a todos los gustos y presupuestos."
     },
     "characteristics": {
       "title": "Características",
@@ -39,7 +39,7 @@
       "caption6": "¡Disfruta tu viaje!",
       "paragraph6": "¡Sumérgete en una experiencia inolvidable con tus compañeros de escuela!"
     },
-    "bariloExperience": "Experiencias Barilo",
+    "bariloExperience": "Experiencias Bariló",
     "contactUs": {
       "title": "¿Necesitas contactarte con nosotros?",
       "label": "Déjanos tu correo electrónico",
@@ -51,7 +51,13 @@
     "copyright": "Todos los derechos reservados."
   },
   "progressBar": {
-    "steps": ["Grupo", "Pasajes", "Hoteles", "Actividades", "Confirmar"]
+    "steps": [
+      "Grupo",
+      "Pasajes",
+      "Hoteles",
+      "Actividades",
+      "Confirmar"
+    ]
   },
   "stepOne": {
     "description": "Elije el nombre del grupo y más adelante podrás compartir un link de invitación a las personas que deseas agregar.",
@@ -136,21 +142,21 @@
     "inputLabel": "Ingresa el código de Invitación"
   },
   "modals": {
-    "register":{
-      "success":{
+    "register": {
+      "success": {
         "title": "¡Registro Exitoso!",
         "message": "Por favor iniciar sesión",
         "btn": "Login"
       },
-      "error":{
+      "error": {
         "title": "¡Vaya, algo ha salido mal!",
         "message": "Por favor registresé nuevamente",
         "btn": "Login",
         "btn2": "Cerrar"
       }
     },
-    "login":{
-      "error":{
+    "login": {
+      "error": {
         "title": "¡Vaya, algo ha salido mal!",
         "message": "El usuario ingresado no existe o la contraseña es incorrecta",
         "btn": "Registrar",
@@ -258,9 +264,9 @@
       "topic": "general_topic"
     }
   },
-  "views_payment":{
+  "views_payment": {
     "h2_pay": "Pago",
-    "activity":{
+    "activity": {
       "name": "Sesión de sky",
       "info": "Jornada de sky - Pack Bariló",
       "price": "100",
@@ -268,38 +274,142 @@
       "date": "Lunes 24, Nov, 2024 / 10:00 a.m.",
       "duration": "30 Minutos"
     },
-    "keyInfo":{
+    "keyInfo": {
       "date": "Fecha / Hora",
       "duration": "Duración",
       "reservation": {
-        "key":"Reserva para",
-        "value":"Grupo A"
-        },
+        "key": "Reserva para",
+        "value": "Grupo A"
+      },
       "amount": "Cantidad",
       "total": "Total",
-      "payment_method":{
-        "h1":"Metodo de pago",
+      "payment_method": {
+        "h1": "Metodo de pago",
         "p": "Tarjeta",
         "a": "Cambiar"
       }
     },
     "button": "Pagar ahora",
-    "payment_method":{
+    "payment_method": {
       "title": "Método De Pago",
-      "caption_1":"Tarjeta De Crédito y Débito",
+      "caption_1": "Tarjeta De Crédito y Débito",
       "option_1": "Agregar Nueva Tarjeta",
-      "caption_2":"Más Opciones De Pago",
+      "caption_2": "Más Opciones De Pago",
       "option_2": "Mercado Pago",
       "option_3": "Paypal",
       "option_4": "Personal Pay"
     },
-    "payment_method_card":{
+    "payment_method_card": {
       "title": "Agregar Tarjeta",
       "cardholder_name": "Nombre del titular de la tarjeta",
       "number_card": "Número de la tarjeta",
       "expiration_date": "Fecha de expiración",
       "cvc": "CVC",
       "save_card": "Guardar Tarjeta"
+    }
+  },
+  "page_login": "Inicia sesión para acceder a tu cuenta",
+  "login_form_component": {
+    "show_success_modal": {
+      "title": "Felicidades",
+      "message": "Te has logueado con éxito",
+      "button_label": "Aceptar"
+    },
+    "showErrorModal": {
+      "label": "volver"
+    },
+    "handleLogin": {
+      "new_error": "Error durante el inicio de sesión"
+    },
+    "return": {
+      "custom_input1": {
+        "label": "Correo electrónico",
+        "placeholder": "Introduce tu correo electrónico"
+      },
+      "custom_input2": {
+        "label": "Contraseña",
+        "placeholder": "Introduce tu contraseña"
+      },
+      "forget_password": "¿Has olvidado tu contraseña?",
+      "custom_button": {
+        "text1": "Iniciando sesión",
+        "text2": "Iniciar sesión"
+      },
+      "icon_button1": "Google / Próximante",
+      "icon_button2": "Apple / Próximante",
+      "p": "¿Aún no tienes una cuenta?",
+      "a": "Registrate"
+    }
+  },
+  "page_register": "Registrate para acceder a tu cuenta",
+  "register_form_component": {
+    "form_label_type_user": "Tipo de usuario",
+    "form_label_coordinator": "Coordinador",
+    "form_label_student": "Estudiante",
+    "custom_input_name": {
+      "label": "Nombre completo",
+      "placeholder": "Intorduce tu nombre completo"
+    },
+    "custom_input_email": {
+      "label": "Correo electrónico",
+      "placeholder": "Intorduce tu correo electrónico"
+    },
+    "custom_input_password": {
+      "label": "Contraseña",
+      "placeholder": "Introduce tu contraseña"
+    },
+    "custom_input_passwordConfirmation": {
+      "label": "Contraseña",
+      "placeholder": "Repite tu contraseña"
+    },
+    "custom_button": {
+      "text1": "Registrando...",
+      "text2": "Registrarse"
+    },
+    "p": "¿Ya tienes una cuenta?",
+    "link": "Inicia sesión"
+  },
+  "profile_user":{
+    "component_profile" : {
+      "link" : {
+        "name_profile" : "Perfil",
+        "name_favorites" : "Favoritos",
+        "name_crowfounding" : "Financiación colectiva",
+        "name_privacy_policies" : "Políticas de Privasidad",
+        "name_settings" : "Ajustes",
+        "name_help" : "Ayuda"
+      },
+      "title_h3" : "Perfil",
+      "button_sign_ut" : "Cerrar Sesión"
+    },
+    "edit_profile": {
+      "title_h3": "Perfil",
+      "form" : {
+        "input_field_name":{
+          "label" : "Nombre Completo",
+          "placeholder" : "Ingresa tu nombre completo"
+        },
+        "input_field_phone":{
+          "label" : "Número de telefono",
+          "placeholder" : "Ingresa número de telefono"
+        },
+        "input_field_email":{
+          "label" : "Nombre Completo",
+          "placeholder" : "Ingresa tu correo electrónico"
+        },
+        "input_field_date":{
+          "label" : "Fecha de Nacimiento"
+        },
+        "button_submit" : "Actualizar Perfil"
+      }
+    },
+    "settings" : {
+      "title_h3" : "Ajustes",
+      "link" : {
+        "name_notification_settings" : "Configuración de Notificaciones",
+        "name_password_management" : "Administración de Contraseñas",
+        "name_delete_account" : "Eliminar Cuenta"
+      }
     }
   }
 }
