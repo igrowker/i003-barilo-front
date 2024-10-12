@@ -20,7 +20,7 @@ const HomeCardComponent: React.FC<HijoProps> = ({nombreImagen, text, link }) => 
       };
     return (
         
-        <Link to={link} className="lg:w-1/4 md:w-1/2 md:p-4 lg:p-1 w-full my-4">
+        <Link to={link} className="lg:w-1/3 md:w-1/2 md:p-4 lg:p-1 w-full my-4">
           <div className="relative flex flex-wrap w-full pb-2 px-4">
             <img className='object-cover w-full h-72 rounded-3xl' src={imagenes[nombreImagen]}/>
             <button className='absolute flex items-center justify-center w-10 h-10 rounded-full bottom-5 right-8 bg-[#C6C6C6]'>
