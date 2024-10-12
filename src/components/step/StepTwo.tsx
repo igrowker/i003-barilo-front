@@ -9,18 +9,19 @@ import Passage from "./Passage";
 import AutocompleteInputField from "../ui/autocompleteInputField";
 import axios from "axios";
 import { useAuth } from "@/context/AuthProvider";
-
 type StepTwoProps = {
   onNext: (data: {
     origin: string;
     destination: string;
-    departureDate: string;
-    returnDate: string;
+    // departureDate: string;
+    // returnDate: string;
     selectedOutbound: PassageData | null;
     selectedReturn: PassageData | null;
   }) => void;
   stepTwoData: StepTwoFormData | null;
 };
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
   const { t } = useTranslation();
@@ -51,9 +52,13 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
 
   const fetchTickets = async (destinationName: string) => {
     try {
-      const response = await axios.get(`https://barilo.onrender.com/barilo/api/transports`, {
+      const response = await axios.get(`${API_URL}/transports`, {
+        params: {
+          destinationName: destinationName,
+        },
         headers: {
           Authorization: `Bearer ${token}`,
+        
         },
       });
       console.log(response.data.data.content);
@@ -61,13 +66,8 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
       if (!transports || transports.length === 0) {
         throw new Error("No se encontraron pasajes para este destino");
       }
-
-      const filteredTransports = transports.filter(
-        (transport: any) => transport.destination.name.toLowerCase() === destinationName.toLowerCase()
-      );
-      console.log(filteredTransports)
-
-      setTickets(filteredTransports);
+      
+      setTickets(transports);
       setShowTickets(true);
     } catch (error) {
       console.error("Error al obtener los pasajes:", error);
@@ -104,14 +104,14 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
   const canProceed = selectedOutbound !== null && selectedReturn !== null;
 
   const handleNext = () => {
-    const departureDate = formatToISO(getValues("departureDate"));
-    const returnDate = formatToISO(getValues("returnDate"));
+    // const departureDate = formatToISO(getValues("departureDate"));
+    // const returnDate = formatToISO(getValues("returnDate"));
     if (canProceed) {
       onNext({
         origin: getValues("origin"),
         destination: getValues("destination"),
-        departureDate,
-        returnDate,
+        // departureDate,
+        // returnDate,
         selectedOutbound,
         selectedReturn,
       });
@@ -158,7 +158,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
           ]}
           {...register("destination", { required: true })}
         />
-        <div>
+        {/* <div>
           <label className="text-lg font-bold font-primary text-primary-celeste">
             {t("stepTwo.date")}
           </label>
@@ -180,7 +180,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
               {...register("returnDate", { required: true })}
             />
           </div>
-        </div>
+        </div> */}
         <div className="flex items-center gap-x-4">
           <ButtonBlue
             text={t("buttons.searchButton")}
@@ -204,9 +204,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
               onSelect={handleSelectOutbound}
               onSelectReturn={handleSelectReturn}
               tickets={tickets}
-              departureDate={methods.getValues("departureDate")}
-              returnDate={"2024-10-11T20:55:19"}
-              originInput={"2024-10-11T20:55:19"}
+              originInput={methods.getValues("origin")}
               destinationInput={methods.getValues("destination")}
             />
           </>
