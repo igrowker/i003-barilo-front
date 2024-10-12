@@ -4,6 +4,7 @@ import InputField from "../ui/InputField";
 import ButtonBlue from "../ui/buttonBlue";
 import { useForm, FormProvider } from "react-hook-form"; 
 import profileImage from "../../../public/Group 62.png";
+import { useTranslation } from "react-i18next";
 
 // Define la interfaz para los datos del formulario
 interface ProfileForm {
@@ -14,7 +15,9 @@ interface ProfileForm {
 }
 
 const EditProfile = () => {
-  const methods = useForm<ProfileForm>(); // Inicializa el formulario con el tipo
+  const { t } = useTranslation();
+
+  const methods = useForm<ProfileForm>();
   const { handleSubmit } = methods;
 
   // Utiliza el tipo ProfileForm en la función onSubmit
@@ -33,7 +36,7 @@ const EditProfile = () => {
           <a className="w-1/3 flex items-center justify-center" href="./profile">
             <SlArrowLeft />
           </a>
-          <h3 className="w-1/3 flex items-center justify-center">Perfil</h3>
+          <h3 className="w-1/3 flex items-center justify-center">{t('profile_user.edit_profile.title_h3')}</h3>
           <button
             type="button"
             className="w-1/3 flex items-center justify-center"
@@ -55,25 +58,28 @@ const EditProfile = () => {
             <div className="flex flex-col gap-4">
               <InputField
                 type="text"
-                label="Nombre Completo"
-                name="nombreCompleto" // Solo nombre
+                label={t('profile_user.edit_profile.form.input_field_name.label')}
+                name="nombreCompleto"
+                placeholder={t('profile_user.edit_profile.form.input_field_name.placeholder')}
                 required
               />
               <InputField
                 type="number"
-                label="Número de telefono"
+                label={t('profile_user.edit_profile.form.input_field_phone.label')}
                 name="telefono"
+                placeholder={t('profile_user.edit_profile.form.input_field_phone.placeholder')}
                 required
               />
               <InputField
                 type="email"
-                label="Correo Electrónico"
+                label={t('profile_user.edit_profile.form.input_field_email.label')}
                 name="email"
+                placeholder={t('profile_user.edit_profile.form.input_field_email.placeholder')}
                 required
               />
               <InputField
                 type="date"
-                label="Fecha de Nacimiento"
+                label={t('profile_user.edit_profile.form.input_field_date.label')}
                 name="fechaNacimiento"
                 required
               />
@@ -81,7 +87,7 @@ const EditProfile = () => {
             <div>
               <ButtonBlue
                 type="submit"
-                text="Actualizar Perfil"
+                text={t('profile_user.edit_profile.button_submit')}
               />
             </div>
           </form>
