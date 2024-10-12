@@ -8,6 +8,7 @@ import { Switch } from "@/components/ui/switch";
 import Passage from "./Passage";
 import AutocompleteInputField from "../ui/autocompleteInputField";
 import axios from "axios";
+import { useAuth } from "@/context/AuthProvider";
 
 type StepTwoProps = {
   onNext: (data: {
@@ -25,6 +26,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
   const { t } = useTranslation();
   const methods = useForm<StepTwoFormData>();
   const { handleSubmit, register, getValues, reset } = methods;
+  const { token } = useAuth();
 
   const [isFlight, setIsFlight] = useState(true);
   const [showTickets, setShowTickets] = useState(false);
@@ -49,14 +51,23 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
 
   const fetchTickets = async (destinationName: string) => {
     try {
-      const response = await axios.get(`/api/transports/`, {
-        params: { name: destinationName },
+      const response = await axios.get(`https://barilo.onrender.com/barilo/api/transports`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
-      const transports = response.data.transports;
+      console.log(response.data.data.content);
+      const transports = response.data.data.content;
       if (!transports || transports.length === 0) {
         throw new Error("No se encontraron pasajes para este destino");
       }
-      setTickets(transports);
+
+      const filteredTransports = transports.filter(
+        (transport: any) => transport.destination.name.toLowerCase() === destinationName.toLowerCase()
+      );
+      console.log(filteredTransports)
+
+      setTickets(filteredTransports);
       setShowTickets(true);
     } catch (error) {
       console.error("Error al obtener los pasajes:", error);
