@@ -392,15 +392,15 @@ const Passage: React.FC<PassageProps> = ({
             {returnTickets.map((passage) => (
               <TicketCard
               isFlight={isFlight}
-              key={`${passage.companyName}-${passage.departureDate}-${passage.departureDate}`}
+              key={`${passage.companyName}-${passage.departureDate.toString().split("T")[0] }-${passage.departureDate.toString().split("T")[0]}`}
               price={passage.price}
               departure={passage.companyName}
               arrival={passage.destination.name}
               onSelect={() => handleSelect(passage)}
               company={passage.companyName}
               isSelected={selectedDeparture?.companyName === passage.companyName && selectedDeparture.departureDate === passage.departureDate}
-              departureDate={passage.departureDate}
-              departureTime={passage.departureDate}
+              departureDate={passage.departureDate.toString().split("T")[0]}
+              departureTime={passage.departureDate.toString().split("T")[0]}
             />
             ))}
           </div>
