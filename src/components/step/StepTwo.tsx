@@ -7,6 +7,7 @@ import { StepTwoFormData, PassageData } from "../../types/step/StepTwoFormData";
 import { Switch } from "@/components/ui/switch";
 import Passage from "./Passage";
 import AutocompleteInputField from "../ui/autocompleteInputField";
+import axios from "axios";
 
 type StepTwoProps = {
   onNext: (data: {
@@ -33,6 +34,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
   const [selectedReturn, setSelectedReturn] = useState<PassageData | null>(
     null
   );
+  const [tickets, setTickets] = useState<PassageData[]>([]);
 
   useEffect(() => {
     if (stepTwoData) {
@@ -45,12 +47,26 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
     return `${year}-${month}-${day}`;
   };
 
+  const fetchTickets = async (destinationName: string) => {
+    try {
+      const response = await axios.get(`/api/transports/`, {
+        params: { name: destinationName },
+      });
+      const transports = response.data.transports;
+      if (!transports || transports.length === 0) {
+        throw new Error("No se encontraron pasajes para este destino");
+      }
+      setTickets(transports);
+      setShowTickets(true);
+    } catch (error) {
+      console.error("Error al obtener los pasajes:", error);
+    }
+  };
+
   const onSubmit = () => {
     const allValues = getValues();
-    console.log(allValues);
-    const origin = allValues.origin?.trim().toLowerCase();
     const destination = allValues.destination?.trim().toLowerCase();
-
+    console.log("Destino ingresado:", destination);
     const validCities = [
       "buenos aires",
       "cordoba",
@@ -58,31 +74,11 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
       "mendoza",
       "ushuaia",
     ];
-
-    if (
-      !origin ||
-      !destination ||
-      !validCities.includes(origin) ||
-      !validCities.includes(destination)
-    ) {
+    if (!destination || !validCities.includes(destination)) {
       console.error("Ciudad seleccionada no válida.");
       return;
     }
-
-    const departureDateValue = getValues("departureDate");
-    const returnDateValue = getValues("returnDate");
-
-    if (!departureDateValue || !returnDateValue) {
-      console.error("Fechas no válidas.");
-      return;
-    }
-
-    const departureDate = formatToISO(departureDateValue);
-    const returnDate = formatToISO(returnDateValue);
-
-    console.log("Fechas formateadas:", departureDate, returnDate);
-
-    setShowTickets(true);
+    fetchTickets(destination);
   };
 
   const handleSelectOutbound = (ticket: PassageData) => {
@@ -98,7 +94,6 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
   const handleNext = () => {
     const departureDate = formatToISO(getValues("departureDate"));
     const returnDate = formatToISO(getValues("returnDate"));
-
     if (canProceed) {
       onNext({
         origin: getValues("origin"),
@@ -184,6 +179,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
             isActive={false}
           />
         </div>
+
         {showTickets && (
           <>
             <div className="flex items-center mt-5 gap-x-4">
@@ -193,6 +189,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
               isFlight={isFlight}
               onSelect={handleSelectOutbound}
               onSelectReturn={handleSelectReturn}
+              tickets={tickets}
               departureDate={methods.getValues("departureDate")}
               returnDate={methods.getValues("returnDate")}
               originInput={methods.getValues("origin")}
@@ -200,6 +197,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
             />
           </>
         )}
+
         {showTickets && canProceed && (
           <ButtonBlue
             text={t("buttons.nextButton")}
