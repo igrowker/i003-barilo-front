@@ -103,11 +103,24 @@
   },
   "home": {
     "cardEvent": {
-      "title": "Barbecue:",
-      "description": "Barbecue bring whatever you want to drink"
+      "admin": {
+        "title": "Create your travel group and start enjoying",
+        "description": "",
+        "btn": "Create trip"
+      },
+      "student": {
+        "title": "Barbecue:",
+        "description": "Barbecue bring whatever you want to drink",
+        "noGroup": {
+          "title": "You do not yet belong to any travel group.",
+          "description": "",
+          "btn": "Enter invitation code"
+        }
+      }
     },
     "cardTrip": {
       "title": "Your Trip",
+      "titleNoGroup": "Available Excursions",
       "link": "See more",
       "titleCard1": "Excursions",
       "titleCard2": "Restaurants",

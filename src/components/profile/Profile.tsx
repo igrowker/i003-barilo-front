@@ -46,6 +46,8 @@ export default function Profile() {
             <SlArrowLeft />
             </a>
             <h3 className="flex items-center justify-center w-1/3">{t('profile_user.component_profile.title_h3')}</h3>
+            <SlArrowLeft className="flex items-center justify-start w-1/3" onClick={()=>navigate('/home')}/>
+            <h3 className="flex items-center justify-center w-1/3">Perfil</h3>
           </div>
           <div className="flex flex-col items-center justify-center gap-2">
             <img src="../../../public/Group 62.png" alt="foto perfil" />

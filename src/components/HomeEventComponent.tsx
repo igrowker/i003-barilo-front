@@ -17,9 +17,10 @@ interface HijoProps {
     text: string;
     button: string;
     admin: boolean
+    member: boolean
   }
 
-  const HomeEventComponent: React.FC<HijoProps> = ({title, text, button, admin }) => {
+  const HomeEventComponent: React.FC<HijoProps> = ({title, text, button, admin, member }) => {
 
     const navigate = useNavigate();
     const { t } = useTranslation();
@@ -35,8 +36,15 @@ interface HijoProps {
             <div className='p-5'>
             {admin ? (
                 <h1 className="font-['League_Spartan'] text-2xl text-[#E4E4E4] text-center font-bold">{title}</h1>
+                
             ) : (
-                <h1 className="font-['League_Spartan'] text-2xl text-[#E4E4E4] font-bold">{title}</h1>
+                <div>
+                    {member ? (
+                        <h1 className="font-['League_Spartan'] text-2xl text-[#E4E4E4] font-bold">{title}</h1>
+                        ) : (
+                    <h1 className="font-['League_Spartan'] text-2xl text-[#E4E4E4] text-center font-bold">{title}</h1>
+                    )}
+                </div>
             )}
                 <p className="text-[#E4E4E4] font-bold">{text}</p>
             </div>
@@ -54,15 +62,30 @@ interface HijoProps {
                     </Button>
                         
                 ) : (
-                    <Button
-                    variant={"default"}
-                    className={cn(
-                        "w-[120px] justify-center font-normal mb-5 bg-[#006BA8] border-none rounded-2xl",
+                    <div>
+                    {member ? (
+                        <Button
+                        variant={"default"}
+                        className={cn(
+                            "w-[120px] justify-center font-normal mb-5 bg-[#006BA8] border-none rounded-2xl",
                         
+                        )}
+                        >
+                        <span className='text-[#FAFAFA]'>{button}</span>
+                        </Button>
+                        ) : (
+                            <Button
+                            variant={"default"}
+                            className={cn(
+                                " justify-center font-normal mb-5 bg-[#006BA8] border-none rounded-2xl",
+                                
+                            )}
+                            >
+                            <span className='text-[#FAFAFA]'>{button}</span>
+                            </Button>
                     )}
-                    >
-                    <span className='text-[#FAFAFA]'>{button}</span>
-                    </Button>
+                </div>
+
                         
                 )}
             </div>
