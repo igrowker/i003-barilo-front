@@ -80,10 +80,11 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
     console.log("Destino ingresado:", destination);
     const validCities = [
       "buenos aires",
-      "cordoba",
+      "san martín de los andes",
       "bariloche",
       "mendoza",
       "ushuaia",
+      "salta"
     ];
     if (!destination || !validCities.includes(destination)) {
       console.error("Ciudad seleccionada no válida.");
@@ -135,10 +136,11 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
           placeholder={t("stepTwo.origin")}
           options={[
             "Buenos Aires",
-            "Cordoba",
+            "San Martín de los Andes",
             "Bariloche",
             "Mendoza",
             "Ushuaia",
+            "Salta",
           ]}
           {...register("origin", { required: true })}
         />
@@ -148,10 +150,11 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
           placeholder={t("stepTwo.destination")}
           options={[
             "Buenos Aires",
-            "Cordoba",
+            "San Martín de los Andes",
             "Bariloche",
             "Mendoza",
             "Ushuaia",
+            "Salta",
           ]}
           {...register("destination", { required: true })}
         />

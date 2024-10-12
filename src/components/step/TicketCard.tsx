@@ -1,7 +1,7 @@
 import { FaRegBuilding } from "react-icons/fa";
 import { AiOutlineDollar } from "react-icons/ai";
 import { TbPlaneArrival, TbPlaneDeparture } from "react-icons/tb";
-import { IoMdTime } from "react-icons/io";
+// import { IoMdTime } from "react-icons/io";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import { FaBusAlt } from "react-icons/fa";
 
@@ -28,8 +28,8 @@ const TicketCard: React.FC<TicketCardProps> = ({
   isSelected,
   departureDate,
   returnDate,
-  departureTime,
-  returnTime,
+  // departureTime,
+  // returnTime,
   isFlight,
 }) => {
   return (
@@ -66,15 +66,15 @@ const TicketCard: React.FC<TicketCardProps> = ({
           <h3 className="flex items-center text-base font-bold text-primary-celeste md:text-lg">
             <FaRegCalendarCheck className="mr-2 text-white" />
             <span>{departureDate}</span>
-            <IoMdTime className="mx-2 text-white" />
-            <span>{departureTime}</span>
+            {/* <IoMdTime className="mx-2 text-white" />
+            <span>{departureTime}</span> */}
           </h3>
           
             <h3 className="flex items-center text-base font-bold text-primary-celeste md:text-lg">
               <FaRegCalendarCheck className="mr-2 text-white" />
               <span>{returnDate}</span>
-              <IoMdTime className="mr-2 text-white" />
-              <span>{returnTime}</span>
+              {/* <IoMdTime className="mr-2 text-white" />
+              <span>{returnTime}</span> */}
             </h3>
           
           <h3 className="flex items-center text-lg font-semibold">
