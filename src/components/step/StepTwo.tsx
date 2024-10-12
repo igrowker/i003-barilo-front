@@ -202,8 +202,8 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
               onSelectReturn={handleSelectReturn}
               tickets={tickets}
               departureDate={methods.getValues("departureDate")}
-              returnDate={methods.getValues("returnDate")}
-              originInput={methods.getValues("origin")}
+              returnDate={"2024-10-11T20:55:19"}
+              originInput={"2024-10-11T20:55:19"}
               destinationInput={methods.getValues("destination")}
             />
           </>

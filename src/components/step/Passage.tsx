@@ -326,20 +326,16 @@ const Passage: React.FC<PassageProps> = ({
   const [selectedReturn, setSelectedReturn] = useState<PassageType | null>(null);
 
   const departureTickets = tickets.filter((ticket) => {
-    const ticketDate = new Date(ticket.flightDate);
-    const departure = new Date(departureDate);
-    const isMatchingType = ticket.type === (isFlight ? "flight" : "bus");
-
+    const ticketDate = new Date("2024-10-11T20:55:19");
+    const departure = new Date(ticket.departureDate);
+    console.log(departure.toISOString().split("T")[0] )
     return (
-      ticketDate.toISOString().split("T")[0] ===
-        departure.toISOString().split("T")[0] &&
-      ticket.destination.toLowerCase() === destinationInput.toLowerCase() &&
-      isMatchingType
+      departure.toISOString().split("T")[0] 
     );
   });
 
   const returnTickets = tickets.filter((ticket) => {
-    const ticketDate = new Date(ticket.flightDate);
+    const ticketDate = new Date(ticket.departureDate);
     const returnTicketDate = new Date(returnDate);
     const isMatchingType = ticket.type === (isFlight ? "flight" : "bus");
 
@@ -347,7 +343,7 @@ const Passage: React.FC<PassageProps> = ({
       returnDate &&
       ticketDate.toISOString().split("T")[0] ===
         returnTicketDate.toISOString().split("T")[0] &&
-      ticket.destination.toLowerCase() === originInput.toLowerCase() &&
+      ticket.destination.name.toLowerCase() === originInput.toLowerCase() &&
       isMatchingType
     );
   });
@@ -373,15 +369,15 @@ const Passage: React.FC<PassageProps> = ({
             {departureTickets.map((passage) => (
               <TicketCard
                 isFlight={isFlight}
-                key={`${passage.company}-${passage.flightDate}-${passage.time}`}
+                key={`${passage.companyName}-${passage.departureDate.toString().split("T")[0] }-${passage.departureDate.toString().split("T")[0]}`}
                 price={passage.price}
-                departure={passage.origin}
-                arrival={passage.destination}
+                departure={passage.companyName}
+                arrival={passage.destination.name}
                 onSelect={() => handleSelect(passage)}
-                company={passage.company}
-                isSelected={selectedDeparture?.company === passage.company && selectedDeparture.flightDate === passage.flightDate}
-                departureDate={passage.flightDate}
-                departureTime={passage.time}
+                company={passage.companyName}
+                isSelected={selectedDeparture?.companyName === passage.companyName && selectedDeparture.departureDate === passage.departureDate}
+                departureDate={passage.departureDate.toString().split("T")[0]}
+                departureTime={passage.departureDate.toString().split("T")[0]}
               />
             ))}
           </div>
@@ -395,17 +391,17 @@ const Passage: React.FC<PassageProps> = ({
           <div className="grid grid-cols-1 gap-4">
             {returnTickets.map((passage) => (
               <TicketCard
-                isFlight={isFlight}
-                key={`${passage.company}-${passage.flightDate}-${passage.time}`}
-                price={passage.price}
-                departure={passage.origin}
-                arrival={passage.destination}
-                onSelect={() => handleSelectReturn(passage)}
-                company={passage.company}
-                isSelected={selectedReturn?.company === passage.company && selectedReturn.flightDate === passage.flightDate}
-                departureDate={passage.flightDate}
-                departureTime={passage.time}
-              />
+              isFlight={isFlight}
+              key={`${passage.companyName}-${passage.departureDate}-${passage.departureDate}`}
+              price={passage.price}
+              departure={passage.companyName}
+              arrival={passage.destination.name}
+              onSelect={() => handleSelect(passage)}
+              company={passage.companyName}
+              isSelected={selectedDeparture?.companyName === passage.companyName && selectedDeparture.departureDate === passage.departureDate}
+              departureDate={passage.departureDate}
+              departureTime={passage.departureDate}
+            />
             ))}
           </div>
         )}

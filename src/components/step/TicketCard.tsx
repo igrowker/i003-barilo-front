@@ -69,14 +69,14 @@ const TicketCard: React.FC<TicketCardProps> = ({
             <IoMdTime className="mx-2 text-white" />
             <span>{departureTime}</span>
           </h3>
-          {returnDate && returnTime && (
+          
             <h3 className="flex items-center text-base font-bold text-primary-celeste md:text-lg">
               <FaRegCalendarCheck className="mr-2 text-white" />
               <span>{returnDate}</span>
               <IoMdTime className="mr-2 text-white" />
               <span>{returnTime}</span>
             </h3>
-          )}
+          
           <h3 className="flex items-center text-lg font-semibold">
             <AiOutlineDollar className="mr-2" />
             <span>{price}</span>
