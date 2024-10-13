@@ -86,6 +86,7 @@
     "helpButton": "Help",
     "questionButton": "Questions",
     "contactButton": "Contact us",
+    "creatingGroup": "Creating...",
     "helpButtons": {
       "theme": "Theme",
       "general": "General",

@@ -4,7 +4,7 @@ import ButtonBlue from "../ui/buttonBlue";
 import { useNavigate } from "react-router-dom";
 import { useForm, FormProvider } from "react-hook-form";
 import { StepOneFormData } from "../../types/step/StepOneFormData";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createGroup } from "../../services/groupService";
 
 interface StepOneProps {
@@ -16,6 +16,8 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, stepOneData }) => {
   const { t } = useTranslation();
   const methods = useForm<StepOneFormData>();
   const { handleSubmit, reset, register, setError } = methods;
+
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (stepOneData) {
@@ -29,6 +31,7 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, stepOneData }) => {
         "Contenido de localStorage antes de crear grupo:",
         localStorage
       );
+      setIsLoading(true);
       const groupResponse = await createGroup(data);
       console.log("Grupo creado:", groupResponse);
       onNext(data);
@@ -38,6 +41,8 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, stepOneData }) => {
         type: "manual",
         message: "Error al crear el grupo. Inténtalo nuevamente.",
       });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -75,9 +80,12 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, stepOneData }) => {
         />
         <div className="flex items-center gap-x-4">
           <ButtonBlue
-            text={t("buttons.nextButton")}
+            text={
+              isLoading ? t("buttons.creatingGroup") : t("buttons.nextButton")
+            }
             type="submit"
             isActive={true}
+            disabled={isLoading}
           />
           <ButtonBlue
             text={t("buttons.cancelButton")}

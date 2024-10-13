@@ -1,9 +1,11 @@
 export interface Hotel {
   id: number;
   name: string;
-  image: string;
+  image: {
+    url: string;
+  };
   price: number;
-  location: string;
+  location?: string;
 }
 
 export interface StepThreeFormData {
