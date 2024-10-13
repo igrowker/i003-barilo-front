@@ -27,11 +27,14 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
   );
   const [activitiesData, setActivitiesData] = useState<Activity[]>([]);
   const [restaurantsData, setRestaurantsData] = useState<Restaurant[]>([]);
+  const [confirmationA, setConfirmationA] = useState<number>(0);
+  const [confirmationB, setconfirmationB] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchActivitiesAndRestaurants = async () => {
+      console.log(destinationId)
       if (!destinationId) {
         console.error("destinationId is undefined");
         return;
@@ -53,8 +56,7 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
         ]);
 
         const activities = activitiesResponse.data || [];
-        const restaurants = restaurantsResponse.data || [];
-
+        const restaurants = restaurantsResponse.data.content || [];
         setActivitiesData(activities);
         setRestaurantsData(restaurants);
       } catch (error) {

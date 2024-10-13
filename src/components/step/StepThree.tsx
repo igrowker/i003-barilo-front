@@ -26,6 +26,7 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
     const fetchHotels = async () => {
       setLoading(true);
       setError(null);
+      console.log(destinationId)
       try {
         const response = await axios.get(`${API_URL}/accommodations`, {
           headers: {
