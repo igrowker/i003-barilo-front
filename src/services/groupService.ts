@@ -106,3 +106,19 @@ export const getAvailablePassages = async (
     );
   }
 };
+
+export const getHotelsByDestination = async (destination: string) => {
+  const token = getToken();
+  try {
+    const response = await axios.get(`${API_URL}/hotels`, {
+      params: { destination },
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response.data.data;
+  } catch (error) {
+    console.error("Error al obtener hoteles:", error);
+    throw new Error(
+      error.response?.data?.message || "Error al obtener hoteles"
+    );
+  }
+};

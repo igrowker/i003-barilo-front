@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import InputField from "../ui/InputField";
 import ButtonBlue from "../ui/buttonBlue";
 import { useForm, FormProvider } from "react-hook-form";
-import { StepTwoFormData, PassageData } from "../../types/step/StepTwoFormData";
+import { StepTwoFormData, PassageData } from "@/types/step/StepTwoFormData";
 import { Switch } from "@/components/ui/switch";
 import Passage from "./Passage";
 import axios from "axios";
@@ -15,6 +15,7 @@ type StepTwoProps = {
     destination: string;
     selectedOutbound: PassageData | null;
     selectedReturn: PassageData | null;
+    destinationId: string;
   }) => void;
   stepTwoData: StepTwoFormData | null;
 };
@@ -28,17 +29,27 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
   const { token } = useAuth();
   const [isFlight, setIsFlight] = useState(true);
   const [showTickets, setShowTickets] = useState(false);
-  const [selectedOutbound, setSelectedOutbound] = useState<PassageData | null>(null);
-  const [selectedReturn, setSelectedReturn] = useState<PassageData | null>(null);
+  const [selectedOutbound, setSelectedOutbound] = useState<PassageData | null>(
+    null
+  );
+  const [selectedReturn, setSelectedReturn] = useState<PassageData | null>(
+    null
+  );
   const [tickets, setTickets] = useState<PassageData[]>([]);
-
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const [destination, setDestination] = useState<string | null>(null);
+  
   useEffect(() => {
     if (stepTwoData) {
       reset(stepTwoData);
+      setDestination(stepTwoData.destination);
     }
   }, [stepTwoData, reset]);
 
   const fetchTickets = async (destinationName: string) => {
+    setLoading(true);
+    setError(null);
     try {
       const response = await axios.get(`${API_URL}/transports`, {
         params: { destinationName },
@@ -52,6 +63,9 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
       setShowTickets(true);
     } catch (error) {
       console.error("Error al obtener los pasajes:", error);
+      setError("Error al cargar los pasajes");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -87,16 +101,18 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
     if (canProceed) {
       onNext({
         origin: getValues("origin"),
-        destination: getValues("destination"),
+        destination: destination,
         selectedOutbound,
         selectedReturn,
+        destinationId: destination ? destination.trim().toLowerCase() : "",
       });
     }
-};
+  };
+  
 
   return (
     <FormProvider {...methods}>
-      <div className="mx-auto mb-5 text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
+      <div className="mx-auto mb-5 text-sm text-justify font-primary font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
         ¡Elige tu punto de partida, destino soñado, y las fechas de tu viaje!
         Decide cuándo comienza la aventura y cuándo regresas a casa. Además,
         selecciona tu modo de transporte favorito para hacer este viaje
@@ -146,27 +162,39 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
             isActive={false}
           />
         </div>
-        {showTickets && (
-          <>
-            <div className="flex items-center mt-5 gap-x-4">
-              <Switch checked={isFlight} onCheckedChange={setIsFlight} />
+        {loading ? (
+          <div className="flex items-center justify-center">
+            <div className="pr-2 overflow-hidden text-lg font-bold loader-text whitespace-nowrap text-primary-blue">
+              Cargando pasajes...
             </div>
-            <Passage
-              isFlight={isFlight}
-              onSelect={handleSelectOutbound}
-              onSelectReturn={handleSelectReturn}
-              tickets={tickets}
-              originInput={methods.getValues("origin")}
-              destinationInput={methods.getValues("destination")}
-            />
+          </div>
+        ) : error ? (
+          <div className="flex items-center justify-center text-red-500">{error}</div>
+        ) : (
+          <>
+            {showTickets && (
+              <div className="flex items-center mt-5 gap-x-4">
+                <Switch checked={isFlight} onCheckedChange={setIsFlight} />
+              </div>
+            )}
+            {showTickets && (
+              <Passage
+                isFlight={isFlight}
+                onSelect={handleSelectOutbound}
+                onSelectReturn={handleSelectReturn}
+                tickets={tickets}
+                originInput={methods.getValues("origin")}
+                destinationInput={methods.getValues("destination")}
+              />
+            )}
+            {showTickets && canProceed && (
+              <ButtonBlue
+                text={t("buttons.nextButton")}
+                onClick={handleNext}
+                isActive={canProceed}
+              />
+            )}
           </>
-        )}
-        {showTickets && canProceed && (
-          <ButtonBlue
-            text={t("buttons.nextButton")}
-            onClick={handleNext}
-            isActive={canProceed}
-          />
         )}
       </form>
     </FormProvider>

@@ -14,4 +14,5 @@ export interface StepTwoFormData {
   destination: string;
   selectedOutbound?: PassageData | null;
   selectedReturn?: PassageData | null;
+  destinationId: number;
 }
