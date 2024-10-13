@@ -4,6 +4,7 @@ import 'react-credit-cards-2/dist/es/styles-compiled.css';
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next'
+import { useLocation } from 'react-router-dom';
 
 const PaymentMethodCard = () => {
 
@@ -11,8 +12,16 @@ const PaymentMethodCard = () => {
 
     const navigate = useNavigate();
 
+    const location = useLocation();
+    const { stepOneData, stepTwoData, stepThreeData, stepFourData } = location.state || {};
+    const [method, setCardNumber] = useState('');
+
+    console.log(stepOneData, stepTwoData, stepThreeData, stepFourData);
+
     const handlePaymentMethodClick = () => {
-        navigate(`/payment`);
+        navigate(`/payment`, {
+            state: { stepOneData, stepTwoData, stepThreeData, stepFourData, method },
+          });
       };
 
     type Focused = 'number' | 'expiry' | 'cvc' | 'name' | undefined;
@@ -26,10 +35,16 @@ const PaymentMethodCard = () => {
     })
 
     const handleInputChange = (e) => {
-        setState({
-            ...state,
-            [e.target.name] : e.target.value
-        })
+        const { name, value } = e.target; // Desestructuración para obtener el nombre y el valor
+        setState((prevState) => ({
+            ...prevState,
+            [name]: value
+        }));
+
+        // Si el nombre del input es "number", actualiza cardNumber
+        if (name === 'number') {
+            setCardNumber(value);
+        }
     }
 
     const handleFocusChange = (e) => {
@@ -39,13 +54,6 @@ const PaymentMethodCard = () => {
         })
     }
 
-    const processPayment = () => {
-        console.log("number => ", state.number)
-        console.log("name => ", state.name)
-        console.log("expiry => ", state.expiry)
-        console.log("cvc => ", state.cvc)
-        console.log(JSON.stringify(state))
-    }
 
     return (
         <div className="card md:mx-36 lg:mx-44 flex flex-col justify-center items-center">
