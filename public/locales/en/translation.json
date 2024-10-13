@@ -102,6 +102,7 @@
     }
   },
   "home": {
+    "header": "Hello, welcome back",
     "cardEvent": {
       "admin": {
         "title": "Create your travel group and start enjoying",

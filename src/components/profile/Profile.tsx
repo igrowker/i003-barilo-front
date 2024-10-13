@@ -15,13 +15,16 @@ import { SlArrowLeft } from "react-icons/sl";
 import { useAuth } from "../../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import ProfilePicture from '@/assets/images/excursionCard.webp';
+import { useUserProfile } from "@/hooks/useUserProfile"
 
 
 export default function Profile() {
   const { t } = useTranslation()
   const { logout } = useAuth();
   const navigate = useNavigate();
-
+  const { profile } = useUserProfile();
+  
   const handleLogout = async () => {
     await logout();
     navigate("/");
@@ -48,8 +51,8 @@ export default function Profile() {
             <h3 className="flex items-center justify-center w-1/3">{t('profile_user.component_profile.title_h3')}</h3>  
           </div>
           <div className="flex flex-col items-center justify-center gap-2">
-            <img src="../../../public/Group 62.png" alt="foto perfil" />
-            <h4 className="text-2xl font-bold font-primary">Nombre Usuario</h4>
+            <img src={ProfilePicture} alt="profile picture" className="w-32 h-32 rounded-full cursor-pointer" />
+            <h4 className="text-2xl font-bold font-primary">{profile ? profile.name : 'Cargando...'}</h4>
           </div>
         </div>
         <div>

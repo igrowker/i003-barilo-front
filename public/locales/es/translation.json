@@ -102,6 +102,7 @@
     }
   },
   "home": {
+    "header": "Hola, bienvenido de nuevo",
     "cardEvent": {
       "admin": {
         "title": "Crea tu grupo de viaje y empieza a disfrutar",
