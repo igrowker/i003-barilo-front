@@ -93,6 +93,9 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
   };
 
   const handleNext = () => {
+    if (selectedActivities.length === 0) {
+       return;
+    }
     onNext({
       activities: selectedActivities,
       restaurants: selectedRestaurants,

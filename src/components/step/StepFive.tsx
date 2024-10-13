@@ -55,16 +55,16 @@ const StepFive: React.FC<StepFiveProps> = ({
           <tr>
             <td className="px-4 py-2 border-b">
               <strong>{t("stepThree.hotel")}:</strong>{" "}
-              {stepThreeData?.hotels[0].name || "No especificado"}
+              {stepThreeData?.hotels?.[0]?.name || "No especificado"}
             </td>
           </tr>
           <tr>
             <td className="px-4 py-2 border-b">
               <strong>{t("stepFour.package")}:</strong>{" "}
-              {stepFourData?.activities[0].name || "No especificado"}
+              {stepFourData?.activities?.[0]?.name || "No especificado"}
               <br />
               <strong>{t("stepFour.restaurant")}:</strong>{" "}
-              {stepFourData?.restaurants[0].name || "No especificado"}
+              {stepFourData?.restaurants?.[0]?.name || "No especificado"}
             </td>
           </tr>
         </tbody>
