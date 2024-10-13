@@ -46,28 +46,32 @@ const StepFive: React.FC<StepFiveProps> = ({
           </tr>
           <tr>
             <td className="px-4 py-2 border-b">
-              <strong>{t("stepTwo.origin")}:</strong> {stepTwoData?.origin}{" "}
+              <strong>{t("stepTwo.origin")}: </strong> {stepTwoData?.origin}{" "}
               <br />
+              <strong>{t("stepTwo.destination")}: </strong>
               {stepTwoData?.destination} <br />
             </td>
           </tr>
           <tr>
             <td className="px-4 py-2 border-b">
-              <strong>{t("stepThree.confirmation")}:</strong>{" "}
-              {stepThreeData?.confirmation || "No especificado"}
+              <strong>{t("stepThree.hotel")}:</strong>{" "}
+              {stepThreeData?.hotels?.[0]?.name || "No especificado"}
             </td>
           </tr>
           <tr>
             <td className="px-4 py-2 border-b">
-              <strong>{t("stepFour.confirmation")}:</strong>{" "}
-              {stepFourData?.confirmation || "No especificado"}
+              <strong>{t("stepFour.package")}:</strong>{" "}
+              {stepFourData?.activities?.[0]?.name || "No especificado"}
+              <br />
+              <strong>{t("stepFour.restaurant")}:</strong>{" "}
+              {stepFourData?.restaurants?.[0]?.name || "No especificado"}
             </td>
           </tr>
         </tbody>
       </table>
       <div className="flex justify-between mt-4 gap-x-4">
         <ButtonBlue
-          text="Ir pagar"
+          text={t("buttons.goToPayButton")}
           onClick={handleProceedToPayment}
           isActive={true}
         />

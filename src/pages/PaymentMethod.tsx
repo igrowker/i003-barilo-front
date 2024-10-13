@@ -6,14 +6,20 @@ import { RiPaypalLine } from "react-icons/ri";
 import { Bitcoin } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next'
+import { useLocation } from 'react-router-dom';
 
 function PaymentMethod() {
     const { t } = useTranslation()
     const navigate = useNavigate();
+    const location = useLocation();
+    const { stepOneData, stepTwoData, stepThreeData, stepFourData } = location.state || {};
 
+    console.log(stepOneData, stepTwoData, stepThreeData, stepFourData);
 
     const handlePaymentMethodClick = (method: string) => {
-        navigate(`/payment-method/${method}`);
+        navigate(`/payment-method/${method}`, {
+            state: { stepOneData, stepTwoData, stepThreeData, stepFourData },
+          });
       };
   return (
     <div className="md:mx-28 lg:mx-44 2xl:mx-72">

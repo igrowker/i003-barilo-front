@@ -25,9 +25,12 @@ import ProfileSettings from '@/components/profile/ProfileSettings'
 import ForgotPassword from '@/pages/ForgotPassword'
 import HelpCenter from '@/pages/helpCenter'
 import Language from '@/components/profile/Language'
+import DetailPage from '@/pages/DetailPage'
+import { useAuth } from '../context/AuthProvider';
 
 function AppRoutes() {
 	const location = useLocation(); 
+    const { token } = useAuth();
 
 	const appRoutes = [
 		'/home',
@@ -49,7 +52,7 @@ function AppRoutes() {
 				<Route path='/login' element={<Login />} />			
 				<Route path='/forgot-password' element={<ForgotPassword />} />			
 				<Route element={<PrivateRoute />}>
-					<Route path='/home' element={<Home />} />
+					<Route path='/home' element={<Home token={token}/>} />
 					<Route path='/create-trip' element={<CreateTrip />} />
 					<Route path='/plan-trip/group' element={<PlanTripGroup />} />
 					<Route path="/plan-trip" element={<PlanTrip />} /> 
@@ -62,7 +65,8 @@ function AppRoutes() {
 					<Route path="/payment-method/card" element={<PaymentMethodCard />} />
 					<Route path='/crowdfundingForm' element={<CrowdfundingForm />} />
 					<Route path='/mercadopago' element={<MercadoPago />} /> {/* Para probar los pagos */}
-					<Route path='/destinations' element={<Destinations />} /> 
+					<Route path='/destinations' element={<Destinations />} />
+					<Route path='/detail/:type/:id' element={<DetailPage />} />
 					<Route path='/profile' element={<Profile />} />
 					<Route path='/editProfile' element={<EditProfile />} />
 					<Route path='/profileSettings' element={<ProfileSettings />} />

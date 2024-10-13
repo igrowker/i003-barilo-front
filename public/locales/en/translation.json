@@ -51,21 +51,20 @@
     "copyright": "All rights reserved."
   },
   "progressBar": {
-    "steps": [
-      "Group",
-      "Tickets",
-      "Hotels",
-      "Activities",
-      "Confirm"
-    ]
+    "steps": ["Group", "Tickets", "Hotels", "Activities", "Confirm"]
   },
   "stepOne": {
     "description": "Choose the group name, and later you will be able to share an invitation link with the people you want to add.",
     "groupName": "What will the group be called?",
     "numberOfPeople": "Number of people"
   },
-  "stepThree": {},
-  "stepFour": {},
+  "stepThree": {
+    "hotel": "Hotel"
+  },
+  "stepFour": {
+    "package": "Travel Package",
+    "restaurant": "Restaurants"
+  },
   "stepFive": {
     "title": "Travel Package Confirmation"
   },
@@ -86,6 +85,8 @@
     "helpButton": "Help",
     "questionButton": "Questions",
     "contactButton": "Contact us",
+    "creatingGroup": "Creating...",
+    "goToPayButton": "Go to pay",
     "helpButtons": {
       "theme": "Theme",
       "general": "General",

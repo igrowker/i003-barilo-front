@@ -51,13 +51,7 @@
     "copyright": "Todos los derechos reservados."
   },
   "progressBar": {
-    "steps": [
-      "Grupo",
-      "Pasajes",
-      "Hoteles",
-      "Actividades",
-      "Confirmar"
-    ]
+    "steps": ["Grupo", "Pasajes", "Hoteles", "Actividades", "Confirmar"]
   },
   "stepOne": {
     "description": "Elije el nombre del grupo y más adelante podrás compartir un link de invitación a las personas que deseas agregar.",
@@ -71,8 +65,13 @@
     "departureDate": "Ida",
     "returnDate": "Vuelta"
   },
-  "stepThree": {},
-  "stepFour": {},
+  "stepThree": {
+    "hotel": "Hotel"
+  },
+  "stepFour": {
+    "package": "Excursiones",
+    "restaurant": "Restaurantes"
+  },
   "stepFive": {
     "title": "Confirmación de Paquete de Viaje"
   },
@@ -86,6 +85,8 @@
     "helpButton": "Ayuda",
     "questionButton": "Preguntas",
     "contactButton": "Contáctenos",
+    "creatingGroup": "Creando...",
+    "goToPayButton": "Ir a pagar",
     "helpButtons": {
       "theme": "Tema",
       "general": "General",
@@ -396,6 +397,16 @@
         "name_settings": "Ajustes",
         "name_help": "Ayuda"
       },
+  "profile_user": {
+    "component_profile": {
+      "link": {
+        "name_profile": "Perfil",
+        "name_favorites": "Favoritos",
+        "name_crowfounding": "Financiación colectiva",
+        "name_privacy_policies": "Políticas de Privasidad",
+        "name_settings": "Ajustes",
+        "name_help": "Ayuda"
+      },
       "title_h3": "Perfil",
       "button_sign_ut": "Cerrar Sesión"
     },
@@ -426,7 +437,8 @@
         "name_notification_settings": "Configuración de Notificaciones",
         "name_password_management": "Administración de Contraseñas",
         "name_delete_account": "Eliminar Cuenta",
-        "name_language": "Idioma"
+        "name_language": "Idioma",
+        "name_delete_account": "Eliminar Cuenta"
       }
     },
     "language": {
