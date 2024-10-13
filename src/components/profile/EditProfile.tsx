@@ -5,7 +5,7 @@ import ButtonBlue from "../ui/buttonBlue";
 import { useForm, FormProvider } from "react-hook-form"; 
 import profileImage from "../../../public/Group 62.png";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import IconComponent from "../IconComponent";
 
 // Define la interfaz para los datos del formulario
 interface ProfileForm {
@@ -20,7 +20,7 @@ const EditProfile = () => {
 
   const methods = useForm<ProfileForm>();
   const { handleSubmit } = methods;
-  const navigate = useNavigate();
+
 
   // Utiliza el tipo ProfileForm en la función onSubmit
   const onSubmit = (data: ProfileForm) => {
@@ -89,12 +89,15 @@ const EditProfile = () => {
             <div>
               <ButtonBlue
                 type="submit"
-                text={t('profile_user.edit_profile.button_submit')}
+                text={t('profile_user.edit_profile.form.button_submit')}
               />
             </div>
           </form>
         </FormProvider>
       </div>
+      <div className="flex items-center justify-center pb-5 ">
+          <IconComponent />
+        </div>
     </div>
   );
 };

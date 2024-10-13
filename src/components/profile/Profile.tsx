@@ -33,7 +33,7 @@ export default function Profile() {
     { name: "profile_user.component_profile.link.name_crowfounding" , href: "#", icon: <IoWalletOutline /> },
     { name: "profile_user.component_profile.link.name_privacy_policies" , href: "#", icon: <IoLockClosedOutline /> },
     { name: "profile_user.component_profile.link.name_settings" , href: "./profileSettings", icon: <IoSettingsOutline /> },
-    { name: "profile_user.component_profile.link.name_help" , href: "#", icon: <IoHelp /> },
+    { name: "profile_user.component_profile.link.name_help" , href: "/help-center", icon: <IoHelp /> },
   ];
   
 
@@ -45,9 +45,7 @@ export default function Profile() {
             <a  className="flex items-center justify-center w-1/3" href="./home">
             <SlArrowLeft />
             </a>
-            <h3 className="flex items-center justify-center w-1/3">{t('profile_user.component_profile.title_h3')}</h3>
-            <SlArrowLeft className="flex items-center justify-start w-1/3" onClick={()=>navigate('/home')}/>
-            <h3 className="flex items-center justify-center w-1/3">Perfil</h3>
+            <h3 className="flex items-center justify-center w-1/3">{t('profile_user.component_profile.title_h3')}</h3>  
           </div>
           <div className="flex flex-col items-center justify-center gap-2">
             <img src="../../../public/Group 62.png" alt="foto perfil" />

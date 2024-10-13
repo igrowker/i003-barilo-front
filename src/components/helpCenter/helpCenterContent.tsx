@@ -18,7 +18,7 @@ const HelpCenterContent: React.FC = () => {
       <div className="font-bold text-black"></div>
       <header className="bg-customBlue text-white p-4">
         <div>
-          <button onClick={() => navigate("/")} className="ml-2">
+          <button onClick={() => navigate("/profile")} className="ml-2">
             <ChevronLeft size={24} />
           </button>
 

@@ -369,47 +369,69 @@
     "p": "¿Ya tienes una cuenta?",
     "link": "Inicia sesión"
   },
-  "profile_user":{
-    "component_profile" : {
-      "link" : {
-        "name_profile" : "Perfil",
-        "name_favorites" : "Favoritos",
-        "name_crowfounding" : "Financiación colectiva",
-        "name_privacy_policies" : "Políticas de Privasidad",
-        "name_settings" : "Ajustes",
-        "name_help" : "Ayuda"
+  "forgot_password": {
+    "info": "Ingresa tu correo para que enviemos un enlace para recuperar tu contraseña",
+    "f_p_component": {
+      "h_p_reset": "No se pudo enviar el correo de restablecimiento.",
+      "custom_input": {
+        "label": "Correo electrónico",
+        "placeholder": "Introduce tu correo electrónico"
       },
-      "title_h3" : "Perfil",
-      "button_sign_ut" : "Cerrar Sesión"
+      "custom_button": {
+        "text1": "Enviando",
+        "text2": "Enviar enlace"
+      },
+      "p": "¿Ya tienes una cuenta?",
+      "link": "Inicia sesión"
+    }
+  },
+  "profile_user": {
+    "component_profile": {
+      "link": {
+        "name_profile": "Perfil",
+        "name_favorites": "Favoritos",
+        "name_crowfounding": "Financiación colectiva",
+        "name_privacy_policies": "Políticas de Privacidad",
+        "name_settings": "Ajustes",
+        "name_help": "Ayuda"
+      },
+      "title_h3": "Perfil",
+      "button_sign_ut": "Cerrar Sesión"
     },
     "edit_profile": {
       "title_h3": "Perfil",
-      "form" : {
-        "input_field_name":{
-          "label" : "Nombre Completo",
-          "placeholder" : "Ingresa tu nombre completo"
+      "form": {
+        "input_field_name": {
+          "label": "Nombre Completo",
+          "placeholder": "Ingresa tu nombre completo"
         },
-        "input_field_phone":{
-          "label" : "Número de telefono",
-          "placeholder" : "Ingresa número de telefono"
+        "input_field_phone": {
+          "label": "Número de telefono",
+          "placeholder": "Ingresa número de telefono"
         },
-        "input_field_email":{
-          "label" : "Nombre Completo",
-          "placeholder" : "Ingresa tu correo electrónico"
+        "input_field_email": {
+          "label": "Nombre Completo",
+          "placeholder": "Ingresa tu correo electrónico"
         },
-        "input_field_date":{
-          "label" : "Fecha de Nacimiento"
+        "input_field_date": {
+          "label": "Fecha de Nacimiento"
         },
-        "button_submit" : "Actualizar Perfil"
+        "button_submit": "Actualizar Perfil"
       }
     },
-    "settings" : {
-      "title_h3" : "Ajustes",
-      "link" : {
-        "name_notification_settings" : "Configuración de Notificaciones",
-        "name_password_management" : "Administración de Contraseñas",
-        "name_delete_account" : "Eliminar Cuenta"
+    "settings": {
+      "title_h3": "Ajustes",
+      "link": {
+        "name_notification_settings": "Configuración de Notificaciones",
+        "name_password_management": "Administración de Contraseñas",
+        "name_delete_account": "Eliminar Cuenta",
+        "name_language": "Idioma"
       }
+    },
+    "language": {
+      "title": "Idioma",
+      "español_spanish": "Español / Spanish",
+      "inglés_english": "Inglés / English"
     }
   }
 }

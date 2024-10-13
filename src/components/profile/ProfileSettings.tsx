@@ -6,6 +6,7 @@ import {
   IoPersonOutline ,
   IoChevronForwardSharp
 } from "react-icons/io5";
+import { MdLanguage } from "react-icons/md";
 import IconComponent from "../IconComponent";
 import { SlArrowLeft } from "react-icons/sl";
 import { useTranslation } from "react-i18next";
@@ -14,6 +15,7 @@ const link = [
   { name: 'profile_user.settings.link.name_notification_settings', href: './editProfile', icon: <IoNotificationsOutline  /> },
   { name: 'profile_user.settings.link.name_password_management', href: '#', icon: <IoKeyOutline  /> },
   { name: 'profile_user.settings.link.name_delete_account', href: '#', icon: <IoPersonOutline  /> },
+  { name: 'profile_user.settings.link.name_language', href: '/language', icon: <MdLanguage /> },
 ]
 
 export default function ProfileSettings() {

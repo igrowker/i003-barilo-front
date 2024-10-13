@@ -368,5 +368,70 @@
     },
     "p": "Already have an account?",
     "link": "Log in"
+  },
+  "forgot_password": {
+    "info": "Enter your email so we can send a link to reset your password",
+    "f_p_component": {
+      "h_p_reset": "The reset email could not be sent.",
+      "custom_input": {
+        "label": "Email",
+        "placeholder": "Enter your email"
+      },
+      "custom_button": {
+        "text1": "Sending",
+        "text2": "Send link"
+      },
+      "p": "Already have an account?",
+      "link": "Log in"
+    }
+  },
+  "profile_user": {
+    "component_profile": {
+      "link": {
+        "name_profile": "Profile",
+        "name_favorites": "Favorites",
+        "name_crowfounding": "Crowdfunding",
+        "name_privacy_policies": "Privacy Policies",
+        "name_settings": "Settings",
+        "name_help": "Help"
+      },
+      "title_h3": "Profile",
+      "button_sign_out": "Sign Out"
+    },
+    "edit_profile": {
+      "title_h3": "Profile",
+      "form": {
+        "input_field_name": {
+          "label": "Full Name",
+          "placeholder": "Enter your full name"
+        },
+        "input_field_phone": {
+          "label": "Phone Number",
+          "placeholder": "Enter your phone number"
+        },
+        "input_field_email": {
+          "label": "Email",
+          "placeholder": "Enter your email"
+        },
+        "input_field_date": {
+          "label": "Date of Birth"
+        },
+        "button_submit": "Update Profile"
+      }
+    },
+    "settings": {
+      "title_h3": "Settings",
+      "link": {
+        "name_notification_settings": "Notification Settings",
+        "name_password_management": "Password Management",
+        "name_delete_account": "Delete Account",
+        "name_language": "Language"
+      }
+    },
+    "language": {
+      "title": "Language",
+      "español_spanish": "Spanish / Español ",
+      "inglés_english": "English / Inglés"
+    }
   }
 }

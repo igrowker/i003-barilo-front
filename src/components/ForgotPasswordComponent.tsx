@@ -78,7 +78,7 @@ export const ForgotPasswordComponent: React.FC = () => {
       showSuccessModal();
     } catch (error) {
       console.error("Error al enviar el correo de restablecimiento:", error);
-      showErrorModal("No se pudo enviar el correo de restablecimiento.");
+      showErrorModal(t('forgot_password.h_p_reset'));
     } finally {
       setIsLoading(false);
     }
@@ -99,23 +99,23 @@ export const ForgotPasswordComponent: React.FC = () => {
           <div className="space-y-6">
             <CustomInput
               type="email"
-              label="Correo electrónico"
+              label={t('forgot_password.f_p_component.custom_input.label')}
               name="mail"
-              placeholder="Introduce tu correo electrónico"
+              placeholder={t('forgot_password.f_p_component.custom_input.placeholder')}
               field={form.register("mail")}
             />
             <FormMessage>{form.formState.errors.mail?.message}</FormMessage>
           </div>
           <div className="space-y-3 mt-14">
             <CustomButton type="submit" disabled={isLoading}>
-              {isLoading ? "Enviando" : "Enviar enlace"}
+              {isLoading ? t('forgot_password.f_p_component.custom_button.text1') : t('forgot_password.f_p_component.custom_button.text2')}
             </CustomButton>
           </div>
           <p className="mt-4 text-sm font-normal leading-none text-center text-primary-celeste font-secondary">
-            ¿Ya tienes una cuenta?{" "}
+          {t('forgot_password.f_p_component.p')}{" "}
             <Link to="/login" className="antialiased font-bold">
               {" "}
-              Inicia sesión
+              {t('forgot_password.f_p_component.link')}
             </Link>
           </p>
         </form>
