@@ -103,6 +103,7 @@
     }
   },
   "home": {
+    "header": "Hola, bienvenido de nuevo",
     "cardEvent": {
       "admin": {
         "title": "Crea tu grupo de viaje y empieza a disfrutar",
@@ -370,6 +371,32 @@
     "p": "¿Ya tienes una cuenta?",
     "link": "Inicia sesión"
   },
+  "forgot_password": {
+    "info": "Ingresa tu correo para que enviemos un enlace para recuperar tu contraseña",
+    "f_p_component": {
+      "h_p_reset": "No se pudo enviar el correo de restablecimiento.",
+      "custom_input": {
+        "label": "Correo electrónico",
+        "placeholder": "Introduce tu correo electrónico"
+      },
+      "custom_button": {
+        "text1": "Enviando",
+        "text2": "Enviar enlace"
+      },
+      "p": "¿Ya tienes una cuenta?",
+      "link": "Inicia sesión"
+    }
+  },
+  "profile_user": {
+    "component_profile": {
+      "link": {
+        "name_profile": "Perfil",
+        "name_favorites": "Favoritos",
+        "name_crowfounding": "Financiación colectiva",
+        "name_privacy_policies": "Políticas de Privacidad",
+        "name_settings": "Ajustes",
+        "name_help": "Ayuda"
+      },
   "profile_user": {
     "component_profile": {
       "link": {
@@ -409,8 +436,15 @@
       "link": {
         "name_notification_settings": "Configuración de Notificaciones",
         "name_password_management": "Administración de Contraseñas",
+        "name_delete_account": "Eliminar Cuenta",
+        "name_language": "Idioma",
         "name_delete_account": "Eliminar Cuenta"
       }
+    },
+    "language": {
+      "title": "Idioma",
+      "español_spanish": "Español / Spanish",
+      "inglés_english": "Inglés / English"
     }
   }
 }

@@ -3,9 +3,11 @@ import { FaRegBell } from "react-icons/fa"
 import ProfilePicture from '@/assets/images/excursionCard.webp'
 import { Link } from "react-router-dom"
 import { useUserProfile } from "@/hooks/useUserProfile"
+import { useTranslation } from "react-i18next"
 
 
 const Header = () => {
+    const { t } = useTranslation()
     const { profile } = useUserProfile();
     
   return (
@@ -17,7 +19,7 @@ const Header = () => {
 
 
                 <div className="leading-tight">
-                <p className="text-[--secondary-celeste]">Hola, bienvenido de nuevo</p>
+                <p className="text-[--secondary-celeste]">{t('home.header')}</p>
                 <p className="text-[--primary-celeste] font-bold">{profile ? profile.name : 'Cargando...'}</p>
             </div>
 

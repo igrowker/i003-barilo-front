@@ -3,24 +3,34 @@ import { SlArrowLeft } from "react-icons/sl";
 import InputField from "../ui/InputField";
 import ButtonBlue from "../ui/buttonBlue";
 import { useForm, FormProvider } from "react-hook-form"; 
-import profileImage from "../../../public/Group 62.png";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import IconComponent from "../IconComponent";
+import ProfilePicture from '@/assets/images/excursionCard.webp';
+import { useUserProfile } from "@/hooks/useUserProfile"
+import { useEffect } from "react";
 
 // Define la interfaz para los datos del formulario
 interface ProfileForm {
   nombreCompleto: string;
-  telefono: string;
+  telefono: number;
   email: string;
-  fechaNacimiento: string;
+  fechaNacimiento: number;
 }
 
 const EditProfile = () => {
   const { t } = useTranslation();
+  const { profile } = useUserProfile();
 
   const methods = useForm<ProfileForm>();
-  const { handleSubmit } = methods;
-  const navigate = useNavigate();
+  const { handleSubmit, setValue } = methods;
+
+  //Rellena los campos del form con los datos del perfil
+  useEffect(() => {
+    if (profile) {
+      setValue("nombreCompleto", profile.name);
+      setValue("email", profile.email);
+    }
+  }, [profile, setValue]);
 
   // Utiliza el tipo ProfileForm en la función onSubmit
   const onSubmit = (data: ProfileForm) => {
@@ -48,7 +58,7 @@ const EditProfile = () => {
           </button>
         </div>
         <div className="flex flex-col gap-2 items-center justify-center">
-          <img src={profileImage} alt="foto perfil" />
+        <img src={ProfilePicture} alt="profile picture" className="w-32 h-32 rounded-full cursor-pointer" />
         </div>
       </div>
       <div className="h-5/6 w-screen flex item-center justify-center">
@@ -89,12 +99,15 @@ const EditProfile = () => {
             <div>
               <ButtonBlue
                 type="submit"
-                text={t('profile_user.edit_profile.button_submit')}
+                text={t('profile_user.edit_profile.form.button_submit')}
               />
             </div>
           </form>
         </FormProvider>
       </div>
+      <div className="flex items-center justify-center pb-5 ">
+          <IconComponent />
+        </div>
     </div>
   );
 };
