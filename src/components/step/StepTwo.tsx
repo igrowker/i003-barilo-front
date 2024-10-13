@@ -12,7 +12,7 @@ import { useAuth } from "@/context/AuthProvider";
 type StepTwoProps = {
   onNext: (data: {
     origin: string;
-    destination: string;
+    destinationId: number;
     selectedOutbound: PassageData | null;
     selectedReturn: PassageData | null;
   }) => void;
@@ -94,16 +94,35 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
 
   const canProceed = selectedOutbound !== null || selectedReturn !== null;
 
-  const handleNext = () => {
-    const selectedDestination = getValues("destination")?.trim().toLowerCase();
-    if (canProceed) {
-      onNext({
-        origin: getValues("origin"),
-        destination: selectedDestination,
-        selectedOutbound,
-        selectedReturn,
+  const fetchDestinations = async (name: string) => {
+    try {
+      const response = await axios.get(`${API_URL}/destinations/name`, {
+        params: { name },
+        headers: { Authorization: `Bearer ${token}` },
       });
+      return response.data;
+    } catch (error) {
+      console.error("Error al obtener las ciudades:", error);
+      return [];
     }
+  };
+
+  const handleNext = () => {
+    const selectedDestination = getValues("destination")?.trim();
+    fetchDestinations(selectedDestination)
+      .then((destination) => {
+        if (destination) {
+          onNext({
+            origin: getValues("origin"),
+            destinationId: destination?.id,
+            selectedOutbound,
+            selectedReturn,
+          });
+        }
+      })
+      .catch((error) => {
+        console.error("Error al obtener las ciudades:", error);
+      });
   };
 
   return (

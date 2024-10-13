@@ -9,14 +9,14 @@ import { useAuth } from "@/context/AuthProvider";
 
 interface StepThreeProps {
   onNext: (data: StepThreeFormData) => void;
-  destinationId: number;
+  destinationId?: number;
   stepThreeData?: StepThreeFormData;
 }
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-const StepThree: React.FC<StepThreeProps> = ({ onNext , destinationId }) => {
-  console.log("2- destinationName:", destinationId);
+const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
+
   const { token } = useAuth();
   const [hotels, setHotels] = useState<Hotel[]>([]);
   const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
@@ -30,13 +30,13 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext , destinationId }) => {
         setError("Debes seleccionar un destino");
         return;
       }
-      
+
       setLoading(true);
       setError(null);
       try {
         const response = await axios.get(`${API_URL}/accommodations`, {
           params: {
-            destinationName: destinationId,
+            destinationId,
           },
           headers: {
             Authorization: `Bearer ${token}`,
@@ -69,7 +69,7 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext , destinationId }) => {
 
   const handleNext = () => {
     if (selectedHotel) {
-      onNext({ destinationName: destinationId,  hotels: [selectedHotel] });
+      onNext({ destinationId, hotels: [selectedHotel] });
     }
   };
 

@@ -13,7 +13,7 @@ import axios from "axios";
 
 interface StepFourProps {
   onNext: (data: StepFourFormData) => void;
-  destinationId: number;
+  destinationId?: number;
   stepFourData: StepFourFormData | null;
 }
 
@@ -94,7 +94,7 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
     onNext({
       activities: selectedActivities,
       restaurants: selectedRestaurants,
-      destinationId,
+      destinationId
     });
   };
 
