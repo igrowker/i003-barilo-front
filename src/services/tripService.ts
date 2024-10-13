@@ -21,10 +21,10 @@ export const getDestinations = async (): Promise<Destination[] | null> => {
     }
 
     const response: AxiosResponse<Destination[]> = await axios.get(
-      "https://barilo.onrender.com/barilo/api/accomodations",
+      `${API_URL}/accomodations`,
       {
         headers: {
-          Authorization: `Bearer ${token}`, // Incluye el token en el encabezado
+          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
       }
