@@ -51,13 +51,7 @@
     "copyright": "Todos los derechos reservados."
   },
   "progressBar": {
-    "steps": [
-      "Grupo",
-      "Pasajes",
-      "Hoteles",
-      "Actividades",
-      "Confirmar"
-    ]
+    "steps": ["Grupo", "Pasajes", "Hoteles", "Actividades", "Confirmar"]
   },
   "stepOne": {
     "description": "Elije el nombre del grupo y más adelante podrás compartir un link de invitación a las personas que deseas agregar.",
@@ -71,8 +65,13 @@
     "departureDate": "Ida",
     "returnDate": "Vuelta"
   },
-  "stepThree": {},
-  "stepFour": {},
+  "stepThree": {
+    "hotel": "Hotel"
+  },
+  "stepFour": {
+    "package": "Excursiones",
+    "restaurant": "Restaurantes"
+  },
   "stepFive": {
     "title": "Confirmación de Paquete de Viaje"
   },
@@ -87,6 +86,7 @@
     "questionButton": "Preguntas",
     "contactButton": "Contáctenos",
     "creatingGroup": "Creando...",
+    "goToPayButton": "Ir a pagar",
     "helpButtons": {
       "theme": "Tema",
       "general": "General",
@@ -370,46 +370,46 @@
     "p": "¿Ya tienes una cuenta?",
     "link": "Inicia sesión"
   },
-  "profile_user":{
-    "component_profile" : {
-      "link" : {
-        "name_profile" : "Perfil",
-        "name_favorites" : "Favoritos",
-        "name_crowfounding" : "Financiación colectiva",
-        "name_privacy_policies" : "Políticas de Privasidad",
-        "name_settings" : "Ajustes",
-        "name_help" : "Ayuda"
+  "profile_user": {
+    "component_profile": {
+      "link": {
+        "name_profile": "Perfil",
+        "name_favorites": "Favoritos",
+        "name_crowfounding": "Financiación colectiva",
+        "name_privacy_policies": "Políticas de Privasidad",
+        "name_settings": "Ajustes",
+        "name_help": "Ayuda"
       },
-      "title_h3" : "Perfil",
-      "button_sign_ut" : "Cerrar Sesión"
+      "title_h3": "Perfil",
+      "button_sign_ut": "Cerrar Sesión"
     },
     "edit_profile": {
       "title_h3": "Perfil",
-      "form" : {
-        "input_field_name":{
-          "label" : "Nombre Completo",
-          "placeholder" : "Ingresa tu nombre completo"
+      "form": {
+        "input_field_name": {
+          "label": "Nombre Completo",
+          "placeholder": "Ingresa tu nombre completo"
         },
-        "input_field_phone":{
-          "label" : "Número de telefono",
-          "placeholder" : "Ingresa número de telefono"
+        "input_field_phone": {
+          "label": "Número de telefono",
+          "placeholder": "Ingresa número de telefono"
         },
-        "input_field_email":{
-          "label" : "Nombre Completo",
-          "placeholder" : "Ingresa tu correo electrónico"
+        "input_field_email": {
+          "label": "Nombre Completo",
+          "placeholder": "Ingresa tu correo electrónico"
         },
-        "input_field_date":{
-          "label" : "Fecha de Nacimiento"
+        "input_field_date": {
+          "label": "Fecha de Nacimiento"
         },
-        "button_submit" : "Actualizar Perfil"
+        "button_submit": "Actualizar Perfil"
       }
     },
-    "settings" : {
-      "title_h3" : "Ajustes",
-      "link" : {
-        "name_notification_settings" : "Configuración de Notificaciones",
-        "name_password_management" : "Administración de Contraseñas",
-        "name_delete_account" : "Eliminar Cuenta"
+    "settings": {
+      "title_h3": "Ajustes",
+      "link": {
+        "name_notification_settings": "Configuración de Notificaciones",
+        "name_password_management": "Administración de Contraseñas",
+        "name_delete_account": "Eliminar Cuenta"
       }
     }
   }

@@ -112,7 +112,7 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
         esperando para que hagan recuerdos inolvidables!
       </div>
       {loading ? (
-        <div className="text-xl text-center text-primary-blue">
+        <div className="pr-2 overflow-hidden text-lg font-bold text-center loader-text whitespace-nowrap text-primary-blue">
           Cargando actividades y restaurantes...
         </div>
       ) : error ? (
