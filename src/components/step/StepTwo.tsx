@@ -15,9 +15,11 @@ type StepTwoProps = {
     destination: string;
     selectedOutbound: PassageData | null;
     selectedReturn: PassageData | null;
+    destinationId: number;
   }) => void;
   stepTwoData: StepTwoFormData | null;
 };
+
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -34,15 +36,17 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
   const [selectedReturn, setSelectedReturn] = useState<PassageData | null>(
     null
   );
+  const [destinationId, setDestinationId] = useState<number>(0);
   const [tickets, setTickets] = useState<PassageData[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  
 
   useEffect(() => {
-    if (stepTwoData) {
-      reset(stepTwoData);
+    if (destinationId !== null) {
+      console.log(destinationId); // Aquí el valor actualizado de destinationId
     }
-  }, [stepTwoData, reset]);
+  }, [destinationId]);
 
   const fetchTickets = async (destinationName: string) => {
     setLoading(true);
@@ -56,6 +60,10 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
       if (!transports || transports.length === 0) {
         throw new Error("No se encontraron pasajes para este destino");
       }
+
+      
+      setDestinationId(transports[0].destination.id);
+      
       setTickets(transports);
       setShowTickets(true);
     } catch (error) {
@@ -92,7 +100,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
     setSelectedReturn(ticket);
   };
 
-  const canProceed = selectedOutbound !== null || selectedReturn !== null;
+  const canProceed = selectedOutbound !== null || selectedReturn !== null || destinationId !== null;
 
   const handleNext = () => {
     const selectedDestination = getValues("destination").trim().toLowerCase();
@@ -102,6 +110,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
         destination: selectedDestination,
         selectedOutbound,
         selectedReturn,
+        destinationId
       });
     }
   };
