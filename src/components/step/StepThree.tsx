@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react"; 
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { StepThreeFormData } from "@/types/step/StepThreeFormData";
-import { FaHotel } from "react-icons/fa";
 import { AiOutlineDollar } from "react-icons/ai";
 import ButtonBlue from "../ui/buttonBlue";
 import { t } from "i18next";
@@ -11,6 +10,7 @@ import { useAuth } from "@/context/AuthProvider";
 interface StepThreeProps {
   onNext: (data: StepThreeFormData) => void;
   destinationId: number;
+  stepThreeData?: StepThreeFormData;
 }
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -35,7 +35,9 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
             destinationId: destinationId,
           },
         });
-        const { data: { content } } = response.data;
+        const {
+          data: { content },
+        } = response.data;
         const hotelsFromApi = content.map((hotel: Hotel) => ({
           id: hotel.id,
           name: hotel.name,
@@ -43,7 +45,6 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
             url: hotel.image?.url || "",
           },
           price: hotel.price,
-          location: hotel.location || "Ubicación desconocida",
         }));
         setHotels(hotelsFromApi);
       } catch (err) {
@@ -104,10 +105,6 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
                 <p className="flex items-center text-lg font-semibold">
                   <AiOutlineDollar className="mr-2" />
                   {hotel.price} por noche
-                </p>
-                <p className="flex items-center text-sm font-medium">
-                  <FaHotel className="mr-2" />
-                  {hotel.location}
                 </p>
               </div>
             </div>

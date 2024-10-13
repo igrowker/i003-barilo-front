@@ -15,7 +15,6 @@ type StepTwoProps = {
     destination: string;
     selectedOutbound: PassageData | null;
     selectedReturn: PassageData | null;
-    destinationId: string;
   }) => void;
   stepTwoData: StepTwoFormData | null;
 };
@@ -38,12 +37,10 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
   const [tickets, setTickets] = useState<PassageData[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const [destination, setDestination] = useState<string | null>(null);
-  
+
   useEffect(() => {
     if (stepTwoData) {
       reset(stepTwoData);
-      setDestination(stepTwoData.destination);
     }
   }, [stepTwoData, reset]);
 
@@ -98,17 +95,16 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
   const canProceed = selectedOutbound !== null || selectedReturn !== null;
 
   const handleNext = () => {
+    const selectedDestination = getValues("destination").trim().toLowerCase();
     if (canProceed) {
       onNext({
         origin: getValues("origin"),
-        destination: destination,
+        destination: selectedDestination,
         selectedOutbound,
         selectedReturn,
-        destinationId: destination ? destination.trim().toLowerCase() : "",
       });
     }
   };
-  
 
   return (
     <FormProvider {...methods}>
@@ -169,7 +165,9 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
             </div>
           </div>
         ) : error ? (
-          <div className="flex items-center justify-center text-red-500">{error}</div>
+          <div className="flex items-center justify-center text-red-500">
+            {error}
+          </div>
         ) : (
           <>
             {showTickets && (

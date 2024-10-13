@@ -13,8 +13,8 @@ import axios from "axios";
 
 interface StepFourProps {
   onNext: (data: StepFourFormData) => void;
-  destinationId: number; // Asegúrate de pasar este prop desde el componente padre
-  stepFourData: StepFourFormData | null; // Puedes usarlo si es necesario
+  destinationId: number;
+  stepFourData: StepFourFormData | null;
 }
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -22,7 +22,9 @@ const API_URL = import.meta.env.VITE_API_URL;
 const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
   const { token } = useAuth();
   const [selectedActivities, setSelectedActivities] = useState<Activity[]>([]);
-  const [selectedRestaurants, setSelectedRestaurants] = useState<Restaurant[]>([]);
+  const [selectedRestaurants, setSelectedRestaurants] = useState<Restaurant[]>(
+    []
+  );
   const [activitiesData, setActivitiesData] = useState<Activity[]>([]);
   const [restaurantsData, setRestaurantsData] = useState<Restaurant[]>([]);
   const [loading, setLoading] = useState(true);
@@ -32,7 +34,7 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
     const fetchActivitiesAndRestaurants = async () => {
       if (!destinationId) {
         console.error("destinationId is undefined");
-        return; // Salir si destinationId es undefined
+        return;
       }
 
       setLoading(true);
@@ -43,19 +45,15 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
 
         const [activitiesResponse, restaurantsResponse] = await Promise.all([
           axios.get(`${API_URL}/destinations/${destinationId}/activities`, {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
+            headers: { Authorization: `Bearer ${token}` },
           }),
           axios.get(`${API_URL}/destinations/${destinationId}/meals`, {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
+            headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
 
-        const activities = activitiesResponse.data;
-        const restaurants = restaurantsResponse.data;
+        const activities = activitiesResponse.data || [];
+        const restaurants = restaurantsResponse.data || [];
 
         setActivitiesData(activities);
         setRestaurantsData(restaurants);
@@ -65,8 +63,10 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
           console.error("Response data:", error.response?.data);
           setError(
             error.response?.data.message ||
-            "Error al cargar actividades y restaurantes"
+              "Error al cargar actividades y restaurantes"
           );
+        } else {
+          setError("Error desconocido");
         }
       } finally {
         setLoading(false);
@@ -173,11 +173,11 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
                   <FaUtensils className="mr-2 text-white align-middle" />
                   {restaurant.name}
                 </h3>
-                <h4 className="flex items-center text-lg text-gray-200">
+                <h4 className="flex items-center text-lg text-white">
                   <AiOutlineDollar className="mr-2 align-middle" />
                   {restaurant.price}
                 </h4>
-                <p className="text-base text-gray-300">
+                <p className="mt-2 text-base text-gray-300">
                   {restaurant.description}
                 </p>
               </div>
