@@ -46,21 +46,21 @@ const StepFive: React.FC<StepFiveProps> = ({
           </tr>
           <tr>
             <td className="px-4 py-2 border-b">
-              <strong>{t("stepTwo.origin")}:</strong> {stepTwoData?.origin}{" "}
+              <strong>{t("stepTwo.origin")}: </strong> {stepTwoData?.origin}{" "}
               <br />
-              {stepTwoData?.destination} <br />
+              <strong>{t("stepTwo.destination")}: </strong>{stepTwoData?.destination} <br />
             </td>
           </tr>
           <tr>
             <td className="px-4 py-2 border-b">
               <strong>{t("stepThree.confirmation")}:</strong>{" "}
-              {stepThreeData?.confirmation || "No especificado"}
+              {stepFourData?.restaurants[0].name || "No especificado"}
             </td>
           </tr>
           <tr>
             <td className="px-4 py-2 border-b">
               <strong>{t("stepFour.confirmation")}:</strong>{" "}
-              {stepFourData?.confirmation || "No especificado"}
+              {stepFourData?.activities[0].name || "No especificado"}
             </td>
           </tr>
         </tbody>
