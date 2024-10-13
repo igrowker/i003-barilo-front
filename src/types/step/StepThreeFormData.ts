@@ -10,5 +10,6 @@ export interface Hotel {
 
 export interface StepThreeFormData {
   hotels: Hotel[];
+  destinationName: string;
   confirmation?: string;
 }

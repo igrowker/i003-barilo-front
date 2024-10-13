@@ -18,4 +18,5 @@ export interface StepFourFormData {
   activities: Activity[];
   restaurants: Restaurant[];
   confirmation?: string;
+  destinationId: number;
 }

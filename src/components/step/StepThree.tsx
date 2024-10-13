@@ -15,7 +15,8 @@ interface StepThreeProps {
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
+const StepThree: React.FC<StepThreeProps> = ({ onNext , destinationId }) => {
+  console.log("2- destinationName:", destinationId);
   const { token } = useAuth();
   const [hotels, setHotels] = useState<Hotel[]>([]);
   const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
@@ -24,17 +25,24 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
 
   useEffect(() => {
     const fetchHotels = async () => {
+      if (!destinationId) {
+        setLoading(false);
+        setError("Debes seleccionar un destino");
+        return;
+      }
+      
       setLoading(true);
       setError(null);
       try {
         const response = await axios.get(`${API_URL}/accommodations`, {
+          params: {
+            destinationName: destinationId,
+          },
           headers: {
             Authorization: `Bearer ${token}`,
           },
-          params: {
-            destinationId: destinationId,
-          },
         });
+
         const {
           data: { content },
         } = response.data;
@@ -46,6 +54,7 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
           },
           price: hotel.price,
         }));
+
         setHotels(hotelsFromApi);
       } catch (err) {
         console.error("Error en la API", err);
@@ -54,12 +63,13 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
         setLoading(false);
       }
     };
+
     fetchHotels();
   }, [destinationId, token]);
 
   const handleNext = () => {
     if (selectedHotel) {
-      onNext({ hotels: [selectedHotel] });
+      onNext({ destinationName: destinationId,  hotels: [selectedHotel] });
     }
   };
 

@@ -95,7 +95,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
   const canProceed = selectedOutbound !== null || selectedReturn !== null;
 
   const handleNext = () => {
-    const selectedDestination = getValues("destination").trim().toLowerCase();
+    const selectedDestination = getValues("destination")?.trim().toLowerCase();
     if (canProceed) {
       onNext({
         origin: getValues("origin"),
