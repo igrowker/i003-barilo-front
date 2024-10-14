@@ -1,6 +1,6 @@
 import { CiSettings } from "react-icons/ci";
 import { FaRegBell } from "react-icons/fa";
-import ProfilePicture from "@/assets/images/excursionCard.webp";
+import ProfilePicture from "@/assets/images/2810502.png";
 import { Link } from "react-router-dom";
 import { useUserProfile } from "@/hooks/useUserProfile";
 import { useTranslation } from "react-i18next";

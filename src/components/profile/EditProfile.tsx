@@ -5,7 +5,7 @@ import ButtonBlue from "../ui/buttonBlue";
 import { useForm, FormProvider } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import IconComponent from "../IconComponent";
-import ProfilePicture from "@/assets/images/excursionCard.webp";
+import ProfilePicture from "@/assets/images/2810502.png";
 import { useUserProfile } from "@/hooks/useUserProfile";
 import { useEffect } from "react";
 
