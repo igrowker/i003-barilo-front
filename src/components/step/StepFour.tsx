@@ -34,7 +34,7 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
 
   useEffect(() => {
     const fetchActivitiesAndRestaurants = async () => {
-      console.log(destinationId)
+      console.log(destinationId);
       if (!destinationId) {
         console.error("destinationId is undefined");
         return;
@@ -55,8 +55,16 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
           }),
         ]);
 
-        const activities = activitiesResponse.data || [];
-        const restaurants = restaurantsResponse.data.content || [];
+        const activities =
+          activitiesResponse.data?.map((activity) => ({
+            ...activity,
+            image: activity.image?.url || "",
+          })) || [];
+        const restaurants = restaurantsResponse.data.content?.map((restaurant) => ({
+          ...restaurant,
+          image: restaurant.image?.url || "",
+        })) || [];
+
         setActivitiesData(activities);
         setRestaurantsData(restaurants);
       } catch (error) {
@@ -93,7 +101,7 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
   };
 
   const handleNext = () => {
-    if (selectedActivities.length === 0) {
+    if (selectedActivities.length === 0 || selectedRestaurants.length === 0) {
        return;
     }
     onNext({
