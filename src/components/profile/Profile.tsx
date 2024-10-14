@@ -15,7 +15,7 @@ import { SlArrowLeft } from "react-icons/sl";
 import { useAuth } from "../../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import ProfilePicture from "@/assets/images/excursionCard.webp";
+import ProfilePicture from "@/assets/images/2810502.png";
 import { useUserProfile } from "@/hooks/useUserProfile";
 
 export default function Profile() {
