@@ -112,8 +112,12 @@ function Payment() {
             <hr className="bg-[--secondary-celeste] h-px border-none my-2" />
             <div className="flex items-center justify-between px-4 py-2">
               <h1 className="text-sm font-[--font-primary] text-[--secondary-celeste]">{t('views_payment.keyInfo.payment_method.h1')}</h1>
-              <div className="flex">
-                <p className="text-xs font-[--font-primary] mr-2">{method.slice(0, 4)}</p>
+              <div className="flex">{method ? (
+                <p className="text-xs font-[--font-primary] mr-2">{method}</p>
+              ) : (
+                <p className="text-xs font-[--font-primary] mr-2">Por favor seleccione un metodo</p>
+                )}
+
                 <button onClick={handleChangeMethod} className="text-xs font-[--font-primary] text-[--secondary-celeste]">{t('views_payment.keyInfo.payment_method.a')}</button>
               </div>
             </div>
