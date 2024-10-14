@@ -27,8 +27,6 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
   );
   const [activitiesData, setActivitiesData] = useState<Activity[]>([]);
   const [restaurantsData, setRestaurantsData] = useState<Restaurant[]>([]);
-  const [confirmationA, setConfirmationA] = useState<number>(0);
-  const [confirmationB, setconfirmationB] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -60,10 +58,11 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
             ...activity,
             image: activity.image?.url || "",
           })) || [];
-        const restaurants = restaurantsResponse.data.content?.map((restaurant) => ({
-          ...restaurant,
-          image: restaurant.image?.url || "",
-        })) || [];
+        const restaurants =
+          restaurantsResponse.data.content?.map((restaurant) => ({
+            ...restaurant,
+            image: restaurant.image?.url || "",
+          })) || [];
 
         setActivitiesData(activities);
         setRestaurantsData(restaurants);
@@ -102,7 +101,7 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
 
   const handleNext = () => {
     if (selectedActivities.length === 0 || selectedRestaurants.length === 0) {
-       return;
+      return;
     }
     onNext({
       activities: selectedActivities,
