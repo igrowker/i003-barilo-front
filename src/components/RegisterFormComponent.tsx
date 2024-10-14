@@ -113,7 +113,7 @@ export const RegisterFormComponent: React.FC = () => {
             render={({ field }) => (
               <FormItem className="mb-3">
                 <FormLabel className="text-lg font-bold font-primary text-primary-celeste">
-                  Tipo de usuario
+                {t('register_form_component.form_label_type_user')}
                 </FormLabel>
                 <FormControl>
                   <RadioGroup
@@ -127,7 +127,7 @@ export const RegisterFormComponent: React.FC = () => {
                         <RadioGroupItem value="COORDINADOR" />
                       </FormControl>
                       <FormLabel className="text-base text-primary-celeste ">
-                        Coordinador
+                      {t('register_form_component.form_label_coordinator')}
                       </FormLabel>
                     </FormItem>
                     <FormItem className="flex items-center space-x-3 space-y-0">
@@ -135,7 +135,7 @@ export const RegisterFormComponent: React.FC = () => {
                         <RadioGroupItem value="ESTUDIANTE" />
                       </FormControl>
                       <FormLabel className="text-base text-primary-celeste ">
-                        Estudiante
+                      {t('register_form_component.form_label_student')}
                       </FormLabel>
                     </FormItem>
                   </RadioGroup>
@@ -147,25 +147,25 @@ export const RegisterFormComponent: React.FC = () => {
           <div className="space-y-6">
             <CustomInput
               type="text"
-              label="Nombre completo"
+              label={t('register_form_component.custom_input_name.label')}
               name="name"
-              placeholder="Intorduce tu nombre completo"
+              placeholder={t('register_form_component.custom_input_name.placeholder')}
               field={form.register("name")}
             />
             <FormMessage>{form.formState.errors.name?.message}</FormMessage>
             <CustomInput
               type="email"
-              label="Correo electrónico"
+              label={t('register_form_component.custom_input_email.label')}
               name="mail"
-              placeholder="Intorduce tu correo electrónico"
+              placeholder={t('register_form_component.custom_input_email.placeholder')}
               field={form.register("mail")}
             />
             <FormMessage>{form.formState.errors.mail?.message}</FormMessage>
             <CustomInput
-              label="Contraseña"
+              label={t('register_form_component.custom_input_password.label')}
               name="password"
               type="password"
-              placeholder="Introduce tu contraseña"
+              placeholder={t('register_form_component.custom_input_password.placeholder')}
               field={form.register("password")}
               showPasswordToggle
               showPassword={showPassword}
@@ -173,10 +173,10 @@ export const RegisterFormComponent: React.FC = () => {
             />
             <FormMessage>{form.formState.errors.password?.message}</FormMessage>
             <CustomInput
-              label="Contraseña"
+              label={t('register_form_component.custom_input_passwordConfirmation.label')}
               name="passwordConfirmation"
               type="password"
-              placeholder="Repite tu contraseña"
+              placeholder={t('register_form_component.custom_input_passwordConfirmation.placeholder')}
               field={form.register("passwordConfirmation")}
               showPasswordToggle
               showPassword={showPassword}
@@ -188,14 +188,13 @@ export const RegisterFormComponent: React.FC = () => {
           </div>
           <div className="mt-8 space-y-3">
             <CustomButton type="submit" disabled={isLoading}>
-              {isLoading ? "Registrando..." : "Registrarse"}
+              {isLoading ? t('register_form_component.custom_button.text1') : t('register_form_component.custom_button.text2')}
             </CustomButton>
           </div>
           <p className="mt-4 text-sm font-normal leading-none text-center text-primary-celeste font-secondary">
-            ¿Ya tienes una cuenta?{" "}
+          {t('register_form_component.p')}{" "}
             <Link to="/login" className="antialiased font-bold">
-              {" "}
-              Inicia sesión
+            {t('register_form_component.link')}{" "}
             </Link>
           </p>
         </form>

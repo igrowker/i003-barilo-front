@@ -1,6 +1,4 @@
 {
-  "welcome": "Welcome",
-  "description": "This is a description in English.",
   "navbar": {
     "items": {
       "characteristic": "Characteristics",
@@ -12,8 +10,8 @@
   "landing": {
     "welcome": {
       "title": "Welcome, your graduation trip adventure is about to begin!",
-      "text1": "At Barilo, we understand that your graduation trip is much more than just a getaway; it’s a significant moment that marks the end of one chapter and the beginning of new adventures. Our mission is to make this unique experience accessible, inclusive, and, above all, unforgettable for everyone.",
-      "text2": "Imagine exploring stunning destinations with your closest friends, creating memories that will last a lifetime. At Barilo, we are committed to offering you a wide range of diverse destinations to suit all tastes and budgets."
+      "text1": "At Bariló, we understand that your graduation trip is much more than just a getaway; it's a significant moment that marks the end of one chapter and the beginning of new adventures. Our mission is to make this unique experience accessible, inclusive, and, above all, unforgettable for everyone.",
+      "text2": "Imagine exploring stunning destinations with your closest friends, creating memories that will last a lifetime. At Bariló, we are committed to offering you a wide range of diverse destinations to suit all tastes and budgets."
     },
     "characteristics": {
       "title": "Characteristics",
@@ -39,7 +37,7 @@
       "caption6": "Enjoy your trip!",
       "paragraph6": "Immerse yourself in an unforgettable experience with your schoolmates!"
     },
-    "bariloExperience": "Barilo Experiences",
+    "bariloExperience": "Bariló Experiences",
     "contactUs": {
       "title": "Do you need to contact us?",
       "label": "Leave us your email",
@@ -58,8 +56,13 @@
     "groupName": "What will the group be called?",
     "numberOfPeople": "Number of people"
   },
-  "stepThree": {},
-  "stepFour": {},
+  "stepThree": {
+    "hotel": "Hotel"
+  },
+  "stepFour": {
+    "package": "Travel Package",
+    "restaurant": "Restaurants"
+  },
   "stepFive": {
     "title": "Travel Package Confirmation"
   },
@@ -80,6 +83,8 @@
     "helpButton": "Help",
     "questionButton": "Questions",
     "contactButton": "Contact us",
+    "creatingGroup": "Creating...",
+    "goToPayButton": "Go to pay",
     "helpButtons": {
       "theme": "Theme",
       "general": "General",
@@ -96,12 +101,26 @@
     }
   },
   "home": {
+    "header": "Hello, welcome back",
     "cardEvent": {
-      "title": "Barbecue:",
-      "description": "Barbecue bring whatever you want to drink"
+      "admin": {
+        "title": "Create your travel group and start enjoying",
+        "description": "",
+        "btn": "Create trip"
+      },
+      "student": {
+        "title": "Barbecue:",
+        "description": "Barbecue bring whatever you want to drink",
+        "noGroup": {
+          "title": "You do not yet belong to any travel group.",
+          "description": "",
+          "btn": "Enter invitation code"
+        }
+      }
     },
     "cardTrip": {
       "title": "Your Trip",
+      "titleNoGroup": "Available Excursions",
       "link": "See more",
       "titleCard1": "Excursions",
       "titleCard2": "Restaurants",
@@ -123,21 +142,21 @@
     "inputLabel": "Enter the Invitation Code"
   },
   "modals": {
-    "register":{
-      "success":{
+    "register": {
+      "success": {
         "title": "¡Successful Registration!",
         "message": "Please login",
         "btn": "Login"
       },
-      "error":{
+      "error": {
         "title": "Oops, something has gone wrong!",
         "message": "Please register again",
         "btn": "Login",
         "btn2": "Close"
       }
     },
-    "login":{
-      "error":{
+    "login": {
+      "error": {
         "title": "¡Oops, something has gone wrong!",
         "message": "The entered user does not exist or the password is incorrect",
         "btn": "Register",
@@ -245,49 +264,175 @@
       "topic": "general_topic"
     }
   },
-    "views_payment": {
-      "h2_pay": "Payment",
-      "activity": {
-        "name": "Ski Session",
-        "info": "Ski Day - Bariló Pack",
-        "price": "100",
-        "destination_name": "Ski Day - Bariló Pack",
-        "date": "Monday, Nov 24, 2024 / 10:00 a.m.",
-        "duration": "30 Minutes"
+  "views_payment": {
+    "h2_pay": "Payment",
+    "activity": {
+      "name": "Ski Session",
+      "info": "Ski Day - Bariló Pack",
+      "price": "100",
+      "destination_name": "Ski Day - Bariló Pack",
+      "date": "Monday, Nov 24, 2024 / 10:00 a.m.",
+      "duration": "30 Minutes"
+    },
+    "keyInfo": {
+      "date": "Date / Time",
+      "duration": "Duration",
+      "reservation": {
+        "key": "Reservation for",
+        "value": "Group A"
       },
-      "keyInfo": {
-        "date": "Date / Time",
-        "duration": "Duration",
-        "reservation": {
-          "key": "Reservation for",
-          "value": "Group A"
-        },
-        "amount": "Amount",
-        "total": "Total",
-        "payment_method": {
-          "h1": "Payment Method",
-          "p": "Card",
-          "a": "Change"
-        }
-      },
-      "button": "Pay Now",
+      "amount": "Amount",
+      "total": "Total",
       "payment_method": {
-        "title": "Payment Method",
-        "caption_1": "Credit and Debit Card",
-        "option_1": "Add New Card",
-        "caption_2": "More Payment Options",
-        "option_2": "Payment Market",
-        "option_3": "Paypal",
-        "option_4": "Personal Pay"
-      },
-      "payment_method_card": {
-        "title": "Add Card",
-        "cardholder_name": "Cardholder's Name",
-        "number_card": "Card Number",
-        "expiration_date": "Expiration Date",
-        "cvc": "CVC",
-        "save_card": "Save Card"
+        "h1": "Payment Method",
+        "p": "Card",
+        "a": "Change"
       }
+    },
+    "button": "Pay Now",
+    "payment_method": {
+      "title": "Payment Method",
+      "caption_1": "Credit and Debit Card",
+      "option_1": "Add New Card",
+      "caption_2": "More Payment Options",
+      "option_2": "Payment Market",
+      "option_3": "Paypal",
+      "option_4": "Personal Pay"
+    },
+    "payment_method_card": {
+      "title": "Add Card",
+      "cardholder_name": "Cardholder's Name",
+      "number_card": "Card Number",
+      "expiration_date": "Expiration Date",
+      "cvc": "CVC",
+      "save_card": "Save Card"
+    }
+  },
+  "page_login": "Log in to access your account",
+  "loading": "Loading...",
+  "login_form_component": {
+    "show_success_modal": {
+      "title": "Congratulations",
+      "message": "You have successfully logged in",
+      "button_label": "Accept"
+    },
+    "showErrorModal": {
+      "label": "Return"
+    },
+    "handleLogin": {
+      "new_error": "Error during login"
+    },
+    "return": {
+      "custom_input1": {
+        "label": "Email",
+        "placeholder": "Enter your email"
+      },
+      "custom_input2": {
+        "label": "Password",
+        "placeholder": "Enter your password"
+      },
+      "forget_password": "Forgot your password?",
+      "custom_button": {
+        "text1": "Logging in",
+        "text2": "Login"
+      },
+      "icon_button1": "Google / Coming soon",
+      "icon_button2": "Apple / Coming soon",
+      "p": "Don't have an account yet?",
+      "a": "Sign up"
+    }
+  },
+  "page_register": "Register to access your account",
+  "register_form_component": {
+    "form_label_type_user": "User type",
+    "form_label_coordinator": "Coordinator",
+    "form_label_student": "Student",
+    "custom_input_name": {
+      "label": "Full name",
+      "placeholder": "Enter your full name"
+    },
+    "custom_input_email": {
+      "label": "Email",
+      "placeholder": "Enter your email"
+    },
+    "custom_input_password": {
+      "label": "Password",
+      "placeholder": "Enter your password"
+    },
+    "custom_input_passwordConfirmation": {
+      "label": "Password",
+      "placeholder": "Confirm your password"
+    },
+    "custom_button": {
+      "text1": "Registering...",
+      "text2": "Register"
+    },
+    "p": "Already have an account?",
+    "link": "Log in"
+  },
+  "forgot_password": {
+    "info": "Enter your email so we can send a link to reset your password",
+    "f_p_component": {
+      "h_p_reset": "The reset email could not be sent.",
+      "custom_input": {
+        "label": "Email",
+        "placeholder": "Enter your email"
+      },
+      "custom_button": {
+        "text1": "Sending",
+        "text2": "Send link"
+      },
+      "p": "Already have an account?",
+      "link": "Log in"
+    }
+  },
+  "profile_user": {
+    "component_profile": {
+      "link": {
+        "name_profile": "Profile",
+        "name_favorites": "Favorites",
+        "name_crowfounding": "Crowdfunding",
+        "name_privacy_policies": "Privacy Policies",
+        "name_settings": "Settings",
+        "name_help": "Help"
+      },
+      "title_h3": "Profile",
+      "button_sign_out": "Sign Out"
+    },
+    "edit_profile": {
+      "title_h3": "Profile",
+      "form": {
+        "input_field_name": {
+          "label": "Full Name",
+          "placeholder": "Enter your full name"
+        },
+        "input_field_phone": {
+          "label": "Phone Number",
+          "placeholder": "Enter your phone number"
+        },
+        "input_field_email": {
+          "label": "Email",
+          "placeholder": "Enter your email"
+        },
+        "input_field_date": {
+          "label": "Date of Birth"
+        },
+        "button_submit": "Update Profile"
+      }
+    },
+    "settings": {
+      "title_h3": "Settings",
+      "link": {
+        "name_notification_settings": "Notification Settings",
+        "name_password_management": "Password Management",
+        "name_delete_account": "Delete Account",
+        "name_language": "Language"
+      }
+    },
+    "language": {
+      "title": "Language",
+      "español_spanish": "Spanish / Español ",
+      "inglés_english": "English / Inglés"
     }
   }
-
+}

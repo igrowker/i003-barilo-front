@@ -53,11 +53,11 @@ export const LoginFormComponent: React.FC = () => {
 
   const showSuccessModal = () => {
     setModalContent({
-      title: "Felicidades",
-      message: "Te has logueado con éxito",
+      title: t('login_form_component.show_success_modal.title'),
+      message: t('login_form_component.show_success_modal.message'),
       buttons: [
         {
-          label: "Aceptar",
+          label: t('login_form_component.show_success_modal.button_label'),
           action: () => {
             setIsModalVisible(false);
             navigate("/home");
@@ -100,7 +100,7 @@ export const LoginFormComponent: React.FC = () => {
       return response.token;
     } catch (error) {
       console.error("Error durante el inicio de sesión:", error);
-      throw new Error("Error durante el inicio de sesión");
+      throw new Error(t('login_form_component.return.handleLogin.new_error'));
     }
   };
 
@@ -135,17 +135,17 @@ export const LoginFormComponent: React.FC = () => {
           <div className="space-y-6">
             <CustomInput
               type="email"
-              label="Correo electrónico"
+              label={t('login_form_component.return.custom_input1.label')}
               name="mail"
-              placeholder="Introduce tu correo electrónico"
+              placeholder={t('login_form_component.return.custom_input1.placeholder')}
               field={form.register("mail")}
             />
             <FormMessage>{form.formState.errors.mail?.message}</FormMessage>
             <CustomInput
-              label="Contraseña"
+              label={t('login_form_component.return.custom_input2.label')}
               name="password"
               type="password"
-              placeholder="Introduce tu contraseña"
+              placeholder={t('login_form_component.return.custom_input2.placeholder')}
               field={form.register("password")}
               showPasswordToggle
               showPassword={showPassword}
@@ -156,30 +156,30 @@ export const LoginFormComponent: React.FC = () => {
             href="/forgot-password"
             className="mt-3 text-sm font-normal leading-none text-right text-primary-celeste font-secondary"
           >
-            ¿Has olvidado tu contraseña?
+            {t('login_form_component.return.forget_password')}
           </a>
           <FormMessage>{form.formState.errors.password?.message}</FormMessage>
           <div className="space-y-3 mt-14">
             <CustomButton type="submit" disabled={isLoading}>
-              {isLoading ? "Iniciando sesión" : "Iniciar sesión"}
+              {isLoading ? t('login_form_component.return.custom_button.text1') : t('login_form_component.return.custom_button.text2')}
             </CustomButton>
             <Separator className="" />
             <IconButton
               className="bg-[#08121f]"
               icon={FaGoogle}
-              label="Google / Proximante"
+              label={t('login_form_component.return.icon_button1')}
               onClick={handleGoogleLogin}
             />
             <IconButton
               icon={ImAppleinc}
-              label="Apple / Proximante"
+              label={t('login_form_component.return.icon_button2')}
               className="bg-[#2d3e50]"
               onClick={handleAppleLogin}
             />
           </div>
           <p className="mt-4 text-sm font-normal leading-none text-center text-primary-celeste font-secondary">
-            ¿Aún no tienes una cuenta?{" "}
-            <a href="/register" className="antialiased font-bold"> Registrate</a>
+          {t('login_form_component.return.p')}{" "}
+            <a href="/register" className="antialiased font-bold"> {t('login_form_component.return.a')}</a>
           </p>
         </form>
       </Form>

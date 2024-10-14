@@ -26,3 +26,20 @@ export const getUserProfile = async (
     return null;
   }
 };
+
+export const getUserIsMember = async (
+  token: string
+) => {
+  try {
+    const response = await axios.get(`${API_URL}/profile/group-membership`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error("Error al obtener el perfil del usuario:", error);
+    return null;
+  }
+};

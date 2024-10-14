@@ -3,28 +3,30 @@ import { useTranslation } from "react-i18next";
 import InputField from "../ui/InputField";
 import ButtonBlue from "../ui/buttonBlue";
 import { useForm, FormProvider } from "react-hook-form";
-import { StepTwoFormData, PassageData } from "../../types/step/StepTwoFormData";
+import { StepTwoFormData, PassageData } from "@/types/step/StepTwoFormData";
 import { Switch } from "@/components/ui/switch";
 import Passage from "./Passage";
-import AutocompleteInputField from "../ui/autocompleteInputField";
+import axios from "axios";
+import { useAuth } from "@/context/AuthProvider";
 
 type StepTwoProps = {
   onNext: (data: {
     origin: string;
     destination: string;
-    departureDate: string;
-    returnDate: string;
     selectedOutbound: PassageData | null;
     selectedReturn: PassageData | null;
+    destinationId: number;
   }) => void;
   stepTwoData: StepTwoFormData | null;
 };
 
-const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
+const API_URL = import.meta.env.VITE_API_URL;
+
+const StepTwo: React.FC<StepTwoProps> = ({ onNext }) => {
   const { t } = useTranslation();
   const methods = useForm<StepTwoFormData>();
-  const { handleSubmit, register, getValues, reset } = methods;
-
+  const { handleSubmit, register, getValues } = methods;
+  const { token } = useAuth();
   const [isFlight, setIsFlight] = useState(true);
   const [showTickets, setShowTickets] = useState(false);
   const [selectedOutbound, setSelectedOutbound] = useState<PassageData | null>(
@@ -33,56 +35,58 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
   const [selectedReturn, setSelectedReturn] = useState<PassageData | null>(
     null
   );
+  const [destinationId, setDestinationId] = useState<number>(0);
+  const [tickets, setTickets] = useState<PassageData[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (stepTwoData) {
-      reset(stepTwoData);
+    if (destinationId !== null) {
+      console.log(destinationId);
     }
-  }, [stepTwoData, reset]);
+  }, [destinationId]);
 
-  const formatToISO = (date: string) => {
-    const [day, month, year] = date.split("/");
-    return `${year}-${month}-${day}`;
+  const fetchTickets = async (destinationName: string) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await axios.get(`${API_URL}/transports`, {
+        params: { destinationName },
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const transports = response.data.data.content;
+      if (!transports || transports.length === 0) {
+        throw new Error("No se encontraron pasajes para este destino");
+      }
+
+      setDestinationId(transports[0].destination.id);
+
+      setTickets(transports);
+      setShowTickets(true);
+    } catch (error) {
+      console.error("Error al obtener los pasajes:", error);
+      setError("Error al cargar los pasajes");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const onSubmit = () => {
     const allValues = getValues();
-    console.log(allValues);
-    const origin = allValues.origin?.trim().toLowerCase();
     const destination = allValues.destination?.trim().toLowerCase();
-
     const validCities = [
       "buenos aires",
-      "cordoba",
+      "san martín de los andes",
       "bariloche",
       "mendoza",
       "ushuaia",
+      "salta",
     ];
-
-    if (
-      !origin ||
-      !destination ||
-      !validCities.includes(origin) ||
-      !validCities.includes(destination)
-    ) {
+    if (!destination || !validCities.includes(destination)) {
       console.error("Ciudad seleccionada no válida.");
       return;
     }
-
-    const departureDateValue = getValues("departureDate");
-    const returnDateValue = getValues("returnDate");
-
-    if (!departureDateValue || !returnDateValue) {
-      console.error("Fechas no válidas.");
-      return;
-    }
-
-    const departureDate = formatToISO(departureDateValue);
-    const returnDate = formatToISO(returnDateValue);
-
-    console.log("Fechas formateadas:", departureDate, returnDate);
-
-    setShowTickets(true);
+    fetchTickets(destination);
   };
 
   const handleSelectOutbound = (ticket: PassageData) => {
@@ -93,27 +97,27 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
     setSelectedReturn(ticket);
   };
 
-  const canProceed = selectedOutbound !== null && selectedReturn !== null;
+  const canProceed =
+    selectedOutbound !== null ||
+    selectedReturn !== null ||
+    destinationId !== null;
 
   const handleNext = () => {
-    const departureDate = formatToISO(getValues("departureDate"));
-    const returnDate = formatToISO(getValues("returnDate"));
-
+    const selectedDestination = getValues("destination").trim().toLowerCase();
     if (canProceed) {
       onNext({
         origin: getValues("origin"),
-        destination: getValues("destination"),
-        departureDate,
-        returnDate,
+        destination: selectedDestination,
         selectedOutbound,
         selectedReturn,
+        destinationId,
       });
     }
   };
 
   return (
     <FormProvider {...methods}>
-      <div className="mx-auto mb-5 text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
+      <div className="mx-auto mb-5 text-sm text-justify font-primary font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
         ¡Elige tu punto de partida, destino soñado, y las fechas de tu viaje!
         Decide cuándo comienza la aventura y cuándo regresas a casa. Además,
         selecciona tu modo de transporte favorito para hacer este viaje
@@ -129,10 +133,11 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
           placeholder={t("stepTwo.origin")}
           options={[
             "Buenos Aires",
-            "Cordoba",
+            "San Martín de los Andes",
             "Bariloche",
             "Mendoza",
             "Ushuaia",
+            "Salta",
           ]}
           {...register("origin", { required: true })}
         />
@@ -142,36 +147,14 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
           placeholder={t("stepTwo.destination")}
           options={[
             "Buenos Aires",
-            "Cordoba",
+            "San Martín de los Andes",
             "Bariloche",
             "Mendoza",
             "Ushuaia",
+            "Salta",
           ]}
           {...register("destination", { required: true })}
         />
-        <div>
-          <label className="text-lg font-bold font-primary text-primary-celeste">
-            {t("stepTwo.date")}
-          </label>
-          <div className="flex-1">
-            <AutocompleteInputField
-              label={t("stepTwo.departureDate")}
-              name="departureDate"
-              required={true}
-              placeholder={t("stepTwo.departureDate")}
-              {...register("departureDate", { required: true })}
-            />
-          </div>
-          <div className="flex-1 pt-2">
-            <AutocompleteInputField
-              label={t("stepTwo.returnDate")}
-              name="returnDate"
-              required={true}
-              placeholder={t("stepTwo.returnDate")}
-              {...register("returnDate", { required: true })}
-            />
-          </div>
-        </div>
         <div className="flex items-center gap-x-4">
           <ButtonBlue
             text={t("buttons.searchButton")}
@@ -184,28 +167,41 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
             isActive={false}
           />
         </div>
-        {showTickets && (
-          <>
-            <div className="flex items-center mt-5 gap-x-4">
-              <Switch checked={isFlight} onCheckedChange={setIsFlight} />
+        {loading ? (
+          <div className="flex items-center justify-center">
+            <div className="pr-2 overflow-hidden text-lg font-bold loader-text whitespace-nowrap text-primary-blue">
+              Cargando pasajes...
             </div>
-            <Passage
-              isFlight={isFlight}
-              onSelect={handleSelectOutbound}
-              onSelectReturn={handleSelectReturn}
-              departureDate={methods.getValues("departureDate")}
-              returnDate={methods.getValues("returnDate")}
-              originInput={methods.getValues("origin")}
-              destinationInput={methods.getValues("destination")}
-            />
+          </div>
+        ) : error ? (
+          <div className="flex items-center justify-center text-red-500">
+            {error}
+          </div>
+        ) : (
+          <>
+            {showTickets && (
+              <div className="flex items-center mt-5 gap-x-4">
+                <Switch checked={isFlight} onCheckedChange={setIsFlight} />
+              </div>
+            )}
+            {showTickets && (
+              <Passage
+                isFlight={isFlight}
+                onSelect={handleSelectOutbound}
+                onSelectReturn={handleSelectReturn}
+                tickets={tickets}
+                originInput={methods.getValues("origin")}
+                destinationInput={methods.getValues("destination")}
+              />
+            )}
+            {showTickets && canProceed && (
+              <ButtonBlue
+                text={t("buttons.nextButton")}
+                onClick={handleNext}
+                isActive={canProceed}
+              />
+            )}
           </>
-        )}
-        {showTickets && canProceed && (
-          <ButtonBlue
-            text={t("buttons.nextButton")}
-            onClick={handleNext}
-            isActive={canProceed}
-          />
         )}
       </form>
     </FormProvider>

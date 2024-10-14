@@ -20,6 +20,7 @@ const PlanTripComponent: React.FC = () => {
   const [stepFourData, setStepFourData] = useState<StepFourFormData | null>(
     null
   );
+  const [destinationId, setDestinationId] = useState<number | null>(null);
 
   const handleStepChange = (step: number) => {
     if (step <= currentStep) {
@@ -34,6 +35,7 @@ const PlanTripComponent: React.FC = () => {
 
   const handleNextStepTwo = (data: StepTwoFormData) => {
     setStepTwoData(data);
+    setDestinationId(data.destinationId);
     setCurrentStep(3);
   };
 
@@ -58,12 +60,19 @@ const PlanTripComponent: React.FC = () => {
         <StepTwo onNext={handleNextStepTwo} stepTwoData={stepTwoData} />
       )}
       {currentStep === 3 && (
-        <StepThree onNext={handleNextStepThree} stepThreeData={stepThreeData} />
+        <StepThree
+          onNext={handleNextStepThree}
+          stepThreeData={stepThreeData}
+          destinationId={destinationId}
+        />
       )}
       {currentStep === 4 && (
-        <StepFour onNext={handleNextStepFour} stepFourData={stepFourData} />
+        <StepFour 
+          onNext={handleNextStepFour} 
+          stepFourData={stepFourData} 
+          destinationId={destinationId}
+        />
       )}
-
       {currentStep === 5 && (
         <StepFive
           stepOneData={stepOneData}
