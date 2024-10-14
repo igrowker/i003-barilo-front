@@ -4,10 +4,18 @@ import ProfilePicture from "@/assets/images/excursionCard.webp";
 import { Link } from "react-router-dom";
 import { useUserProfile } from "@/hooks/useUserProfile";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import PaymentHistoryComponent from "./PaymentHistoryComponent";
 
 const Header = () => {
   const { t } = useTranslation();
   const { profile } = useUserProfile();
+  const [isNotificationOpen, setNotificationOpen] = useState(false);
+
+  const handleBellClick = () => {
+    setNotificationOpen(!isNotificationOpen);
+    console.log(isNotificationOpen)
+  };
 
   return (
     <div className="sticky top-0 left-0 z-10 w-full bg-white shadow-md">
@@ -35,9 +43,13 @@ const Header = () => {
             />
           </Link>
           <FaRegBell
+            onClick={handleBellClick}
             size={32}
             className="bg-[--inactive-button-bg] rounded-full p-1.5 text-[--primary-celeste]"
           />
+          {isNotificationOpen && (
+            <PaymentHistoryComponent/> // Renderiza el componente si el estado es true
+          )}
         </div>
       </div>
     </div>

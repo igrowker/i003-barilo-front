@@ -34,7 +34,7 @@ function Payment() {
 
   const paymentData = {
     amount: price,
-    paymentType: "card",
+    paymentType: "Tarjeta",
     date: new Date(Date.now()).toISOString(),
   };
 
@@ -50,6 +50,7 @@ function Payment() {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log('Pago exitoso:', response);
+      navigate("/home")
     } catch (error) {
       console.error('Error al realizar el pago:', error.response ? error.response.data : error.message);
     } finally {
@@ -64,10 +65,10 @@ function Payment() {
         <h1 className="pb-8 text-4xl text-[--active-button-text] font-['League_Spartan'] font-bold">{paymentData.amount}</h1>
       </div>
       <div>
-        <PaymentCard name={stepFourData.restaurants[0].name} info={"Restaurante cinco estrellas"}></PaymentCard>
+        <PaymentCard name={stepFourData.restaurants[0].name} info={"Restaurante cinco estrellas"} img={stepFourData.restaurants[0].image}></PaymentCard>
       </div>
       <div>
-        <PaymentCard name={stepFourData.activities[0].name} info={stepFourData.activities[0].description}></PaymentCard>
+        <PaymentCard name={stepFourData.activities[0].name} info={stepFourData.activities[0].description} img={stepFourData.activities[0].image}></PaymentCard>
       </div>
       <div className="">
         <div className="flex flex-col px-4">
