@@ -50,38 +50,49 @@ const PlanTripComponent: React.FC = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto">
-      <ProgressBar currentStep={currentStep} onStepChange={handleStepChange} />
+    <section className="flex flex-col items-center justify-center mb-6 overflow-hidden text-justify text-secondary-celeste font-primary">
+      <div className="container flex flex-col items-center mx-auto">
+        <div className="w-full">
+          <h1 className="mx-5 mb-2 text-3xl font-bold text-secondary-blue md:text-4xl lg:text-5xl">
+            Crea tu viaje!!
+          </h1>
 
-      {currentStep === 1 && (
-        <StepOne onNext={handleNextStepOne} stepOneData={stepOneData} />
-      )}
-      {currentStep === 2 && (
-        <StepTwo onNext={handleNextStepTwo} stepTwoData={stepTwoData} />
-      )}
-      {currentStep === 3 && (
-        <StepThree
-          onNext={handleNextStepThree}
-          stepThreeData={stepThreeData}
-          destinationId={destinationId}
-        />
-      )}
-      {currentStep === 4 && (
-        <StepFour 
-          onNext={handleNextStepFour} 
-          stepFourData={stepFourData} 
-          destinationId={destinationId}
-        />
-      )}
-      {currentStep === 5 && (
-        <StepFive
-          stepOneData={stepOneData}
-          stepTwoData={stepTwoData}
-          stepThreeData={stepThreeData}
-          stepFourData={stepFourData}
-        />
-      )}
-    </div>
+          <ProgressBar
+            currentStep={currentStep}
+            onStepChange={handleStepChange}
+          />
+
+          {currentStep === 1 && (
+            <StepOne onNext={handleNextStepOne} stepOneData={stepOneData} />
+          )}
+          {currentStep === 2 && (
+            <StepTwo onNext={handleNextStepTwo} stepTwoData={stepTwoData} />
+          )}
+          {currentStep === 3 && (
+            <StepThree
+              onNext={handleNextStepThree}
+              stepThreeData={stepThreeData}
+              destinationId={destinationId}
+            />
+          )}
+          {currentStep === 4 && (
+            <StepFour
+              onNext={handleNextStepFour}
+              stepFourData={stepFourData}
+              destinationId={destinationId}
+            />
+          )}
+          {currentStep === 5 && (
+            <StepFive
+              stepOneData={stepOneData}
+              stepTwoData={stepTwoData}
+              stepThreeData={stepThreeData}
+              stepFourData={stepFourData}
+            />
+          )}
+        </div>
+      </div>
+    </section>
   );
 };
 

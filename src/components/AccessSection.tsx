@@ -25,7 +25,7 @@ const AccessSection: React.FC = () => {
           label: t("buttons.cancelButton"),
           action: () => {
             setIsModalVisible(false);
-            navigate("/");
+            navigate("/home");
           },
           isPrimary: false,
         },
@@ -50,13 +50,13 @@ const AccessSection: React.FC = () => {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen py-10 text-justify text-secondary-celeste font-primary">
+    <section className="flex flex-col items-center justify-center mt-16 text-justify overflfirst-letter:ow-hidden text-secondary-celeste font-primary">
       <div className="container flex flex-wrap items-center px-5 pb-12 mx-auto">
         <div className="pr-0 lg:w-3/5 lg:pr-0">
           <h1 className="mb-2 text-3xl font-bold text-secondary-blue md:text-4xl lg:text-5xl">
             {t("accessSection.title")}
           </h1>
-          <div className="text-xl md:text-2xl lg:text-3xl ">
+          <div className="text-xl md:text-2xl lg:text-3xl">
             <p className="mt-4 leading-tight">
               {t("accessSection.description1")}
             </p>
@@ -75,27 +75,25 @@ const AccessSection: React.FC = () => {
               className="block mb-2 text-lg font-medium text-secondary-celeste"
             >
               <h2 className="mb-5 text-2xl font-semibold md:text-3xl lg:text-4xl text-primary-pink">
-            {t("accessSection.inputLabel")}
-          </h2>
+                {t("accessSection.inputLabel")}
+              </h2>
             </label>
             <input
               type="text"
               id="invite-code"
               name="invite-code"
               className="w-full px-3 py-1 text-xl leading-8 transition-colors duration-200 ease-in-out outline-none text-primary-celeste rounded-xl focus:bg-transparent focus:ring-2 focus:ring-primary-blue focus:border-primary-celeste"
-              // placeholder={t("accessSection.inputLabel")}
             />
             <div className="flex items-center mt-8 gap-x-4">
               <BotonBlue
                 text={t("buttons.acceptButton")}
                 isActive={true}
                 onClick={showErrorModal}
-                // onClick={showSuccessModal}
               />
               <BotonBlue
                 text={t("buttons.cancelButton")}
                 isActive={false}
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/home")}
               />
             </div>
           </div>
