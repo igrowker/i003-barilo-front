@@ -50,18 +50,11 @@ const StepFour: React.FC<StepFourProps> = ({ onNext }) => {
   return (
     <div className="font-primary">
       <div className="mx-auto mb-5 text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
-        ¡Descubre las experiencias perfectas para tu grupo! Sumérgete en una
-        amplia variedad de actividades emocionantes y deliciosos restaurantes
-        que se adaptan a todos los gustos. Desde aventuras al aire libre hasta
-        recorridos culturales, hay algo para cada miembro del grupo. Después de
-        un día lleno de diversión, elijan un restaurante acogedor donde
-        disfrutar de platillos exquisitos y crear momentos memorables juntos.
-        ¡La oportunidad de vivir una experiencia única y sabrosa les está
-        esperando para que hagan recuerdos inolvidables!
+        {t('stepFour.return_information_message')}
       </div>
       <div className="grid grid-cols-1 gap-4 mb-36">
         <h3 className="text-xl font-bold text-center text-primary-blue">
-          Actividades
+        {t('stepFour.title_activity')}
         </h3>
         {activitiesData.map((activity) => (
           <div
@@ -81,7 +74,7 @@ const StepFour: React.FC<StepFourProps> = ({ onNext }) => {
               />
               <h3 className="flex items-center text-xl font-bold text-primary-celeste">
                 <FaHiking className="mr-2 text-white align-middle" />
-                {activity.name}
+                {t(activity.name)}
               </h3>
               <h4 className="flex items-center text-lg text-white">
                 <AiOutlineDollar className="mr-2 align-middle" />
@@ -96,7 +89,7 @@ const StepFour: React.FC<StepFourProps> = ({ onNext }) => {
         ))}
 
         <h3 className="text-xl font-bold text-center text-primary-blue">
-          Restaurantes
+          {t('stepFour.title_restaurant')}
         </h3>
         {restaurantsData.map((restaurant) => (
           <div

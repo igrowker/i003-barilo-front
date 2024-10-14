@@ -24,7 +24,7 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext }) => {
   return (
     <div className="font-primary">
       <div className="mx-auto mb-5 text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
-      ¡Encuentra el alojamiento perfecto para tu grupo! Exploren juntos una variedad de hoteles que se adaptan a sus necesidades y deseos. Elijan el lugar ideal para descansar y relajarse después de un día lleno de aventuras, disfrutando de comodidades y servicios que harán que su experiencia sea inolvidable. ¡Su hogar lejos de casa les está esperando para crear recuerdos juntos!
+        {t('stepThree.return_information_message')}
       </div>
       <div className="grid grid-cols-1 gap-4 mb-36">
         {hotels.map((hotel) => (
@@ -48,7 +48,7 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext }) => {
               </p>
               <p className="flex items-center text-lg font-semibold">
                 <AiOutlineDollar className="mr-2" />
-                {hotel.price} por noche
+                {hotel.price} {t('stepThree.hotel_price')}
               </p>
             </div>
           </div>

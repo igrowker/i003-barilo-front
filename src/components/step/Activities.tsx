@@ -9,38 +9,34 @@ export interface Activity {
 export const activitiesData: Activity[] = [
   {
     id: 1,
-    name: "Excursiones a Caballo",
+    name: "stepFour.activity.id_1.name",
     image:
       "https://media.tacdn.com/media/attractions-splice-spp-360x240/12/6d/56/f5.jpg",
-    description:
-      "Disfruta de una aventura a caballo en un rancho tradicional, apta para todos los niveles.",
+    description:  "stepFour.activity.id_1.description",
     price: 20,
   },
   {
     id: 2,
-    name: "Navegación en barco a Puerto Blest",
+    name: "stepFour.activity.id_2.name",
     image:
       "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/70/d9/80.jpg",
-    description:
-      "Descubre el glaciar Negro y el monte Tronador en una excursión de día completo al Parque Nacional Nahuel Huapi.",
+    description: "stepFour.activity.id_2.description",
     price: 30,
   },
   {
     id: 3,
-    name: "Excursión al monte Tronador y al glaciar Negro",
+    name: "stepFour.activity.id_3.name",
     image:
       "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6e/dc/16.jpg",
-    description:
-      "Explora el glaciar Negro y disfruta de vistas panorámicas en un tour guiado por Bariloche.",
+    description: "stepFour.activity.id_3.description",
     price: 25,
   },
   {
     id: 4,
-    name: "San Martín de los Andes por la Ruta de los 7 lagos",
+    name: "stepFour.activity.id_4.name",
     image:
       "https://media.tacdn.com/media/attractions-splice-spp-674x446/0f/61/95/e1.jpg",
-    description:
-      "Viaja por paisajes impresionantes y visita San Martín de los Andes en una excursión de un día.",
+    description: "stepFour.activity.id_4.description",
     price: 40,
   },
 ];

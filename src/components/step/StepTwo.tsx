@@ -46,7 +46,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
       });
       const transports = response.data.data.content;
       if (!transports || transports.length === 0) {
-        throw new Error("No se encontraron pasajes para este destino");
+        throw new Error(t('stepTwo.fetchTickets_error'));
       }
       setTickets(transports);
       setShowTickets(true);
@@ -97,10 +97,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext, stepTwoData }) => {
   return (
     <FormProvider {...methods}>
       <div className="mx-auto mb-5 text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
-        ¡Elige tu punto de partida, destino soñado, y las fechas de tu viaje!
-        Decide cuándo comienza la aventura y cuándo regresas a casa. Además,
-        selecciona tu modo de transporte favorito para hacer este viaje
-        inolvidable.
+        {t('stepTwo.return_information_message')}
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}

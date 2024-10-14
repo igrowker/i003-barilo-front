@@ -36,7 +36,7 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, stepOneData }) => {
       console.error("Error al crear el grupo:", error);
       setError("groupName", {
         type: "manual",
-        message: "Error al crear el grupo. Inténtalo nuevamente.",
+        message: t('stepOne.onSubmit_error'),
       });
     }
   };
@@ -49,8 +49,7 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, stepOneData }) => {
   return (
     <FormProvider {...methods}>
       <div className="mx-auto mb-5 text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
-        ¡Dale un nombre único a tu grupo de viaje, y luego podrás compartir un
-        enlace de invitación para compartir con tus amigos!
+        {t('stepOne.return_information_message')}
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}

@@ -62,19 +62,26 @@
   "stepOne": {
     "description": "Choose the group name, and later you will be able to share an invitation link with the people you want to add.",
     "groupName": "What will the group be called?",
-    "numberOfPeople": "Number of people"
-  },
-  "stepThree": {},
-  "stepFour": {},
-  "stepFive": {
-    "title": "Travel Package Confirmation"
+    "numberOfPeople": "Number of people",
+    "onSubmit_error": "Error creating the group. Please try again.",
+    "return_information_message": "Give your travel group a unique name, and then you'll be able to share an invitation link with your friends!"
   },
   "stepTwo": {
     "origin": "Origin",
     "destination": "Destination",
     "date": "Date",
     "departureDate": "Departure",
-    "returnDate": "Return"
+    "returnDate": "Return",
+    "fetchTickets_error": "No tickets were found for this destination.",
+    "return_information_message": "Choose your starting point, dream destination, and travel dates! Decide when the adventure begins and when you return home. Also, select your favorite mode of transport to make this trip unforgettable."
+  },
+  "stepThree": {
+    "return_information_message": "Find the perfect accommodation for your group! Together, explore a variety of hotels that fit your needs and desires. Choose the ideal place to rest and relax after a day full of adventures, enjoying amenities and services that will make your experience unforgettable. Your home away from home is waiting for you to create memories together!",
+    "hotel_price": "per night"
+  },
+  "stepFour": {},
+  "stepFive": {
+    "title": "Travel Package Confirmation"
   },
   "buttons": {
     "nextButton": "Next",
