@@ -52,6 +52,7 @@ export const loginUser = async (
 
     const token = response.data.token;
     localStorage.setItem("token", token);
+    console.log(token)
     return { token };
   } catch (error) {
     const typedError = error as RegisterUserError;

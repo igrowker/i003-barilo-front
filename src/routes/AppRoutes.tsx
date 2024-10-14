@@ -27,6 +27,8 @@ import HelpCenter from '@/pages/helpCenter'
 import Language from '@/components/profile/Language'
 import DetailPage from '@/pages/DetailPage'
 import { useAuth } from '../context/AuthProvider';
+import Excursions from '@/pages/Excursions'
+import Restaurants from '@/pages/Restaurants'
 
 function AppRoutes() {
 	const location = useLocation(); 
@@ -40,7 +42,9 @@ function AppRoutes() {
 		'/mercadopago',
 		'/payment',
 		'/create-trip',
-		'/destinations'
+		'/destinations',
+		'/excursions',
+		'/restaurants'
 	];
 	return (
 		<>
@@ -66,6 +70,8 @@ function AppRoutes() {
 					<Route path='/crowdfundingForm' element={<CrowdfundingForm />} />
 					<Route path='/mercadopago' element={<MercadoPago />} /> {/* Para probar los pagos */}
 					<Route path='/destinations' element={<Destinations />} />
+					<Route path='/excursions' element={<Excursions />} />
+					<Route path='/restaurants' element={<Restaurants />} />
 					<Route path='/detail/:type/:id' element={<DetailPage />} />
 					<Route path='/profile' element={<Profile />} />
 					<Route path='/editProfile' element={<EditProfile />} />
