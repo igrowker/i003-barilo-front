@@ -46,14 +46,22 @@ function PaymentHistoryComponent(){
 
     return (
         <div className='absolute px-2 w-64 right-5 top-20 rounded-lg bg-white shadow-2xl h-96 overflow-y-auto'>
-            {Array.isArray(payments) && payments.length > 0 ? (
-                payments.map((payment) => (
-                <div key={payment.id} className="">
-                    <PaymentHistoryCard amount={payment.amount} type={payment.paymentType} date={new Date(payment.date).toLocaleString()}></PaymentHistoryCard>
-                </div>
-                ))
+            {Array.isArray(payments) ? (
+                payments.length > 0 ? (
+                    payments.map((payment) => (
+                        <div key={payment.id}>
+                            <PaymentHistoryCard 
+                                amount={payment.amount} 
+                                type={payment.paymentType} 
+                                date={new Date(payment.date).toLocaleString()} 
+                            />
+                        </div>
+                    ))
+                ) : (
+                    <div className='flex justify-center items-center h-full'>No hay pagos realizados.</div> // Mensaje cuando payments está vacío
+                )
             ) : (
-                <div className='flex justify-center items-center h-full'>Cargando...</div> // Mensaje en caso de que payments esté vacío o no sea un array
+                <div className='flex justify-center items-center h-full'>Cargando...</div> // Mensaje en caso de que payments no sea un array
             )}
         </div>
      
