@@ -1,6 +1,4 @@
 {
-  "welcome": "Welcome",
-  "description": "This is a description in English.",
   "navbar": {
     "items": {
       "characteristic": "Characteristics",
@@ -12,7 +10,7 @@
   "landing": {
     "welcome": {
       "title": "Welcome, your graduation trip adventure is about to begin!",
-      "text1": "At Bariló, we understand that your graduation trip is much more than just a getaway; it’s a significant moment that marks the end of one chapter and the beginning of new adventures. Our mission is to make this unique experience accessible, inclusive, and, above all, unforgettable for everyone.",
+      "text1": "At Bariló, we understand that your graduation trip is much more than just a getaway; it's a significant moment that marks the end of one chapter and the beginning of new adventures. Our mission is to make this unique experience accessible, inclusive, and, above all, unforgettable for everyone.",
       "text2": "Imagine exploring stunning destinations with your closest friends, creating memories that will last a lifetime. At Bariló, we are committed to offering you a wide range of diverse destinations to suit all tastes and budgets."
     },
     "characteristics": {
@@ -311,6 +309,7 @@
     }
   },
   "page_login": "Log in to access your account",
+  "loading": "Loading...",
   "login_form_component": {
     "show_success_modal": {
       "title": "Congratulations",

@@ -1,6 +1,4 @@
 {
-  "welcome": "Bienvenido",
-  "description": "Esta es una descripción en español.",
   "navbar": {
     "items": {
       "characteristic": "Caracteristicas",
@@ -311,6 +309,7 @@
     }
   },
   "page_login": "Inicia sesión para acceder a tu cuenta",
+  "loading": "Cargando...",
   "login_form_component": {
     "show_success_modal": {
       "title": "Felicidades",
@@ -397,16 +396,6 @@
         "name_settings": "Ajustes",
         "name_help": "Ayuda"
       },
-  "profile_user": {
-    "component_profile": {
-      "link": {
-        "name_profile": "Perfil",
-        "name_favorites": "Favoritos",
-        "name_crowfounding": "Financiación colectiva",
-        "name_privacy_policies": "Políticas de Privasidad",
-        "name_settings": "Ajustes",
-        "name_help": "Ayuda"
-      },
       "title_h3": "Perfil",
       "button_sign_ut": "Cerrar Sesión"
     },
@@ -437,8 +426,7 @@
         "name_notification_settings": "Configuración de Notificaciones",
         "name_password_management": "Administración de Contraseñas",
         "name_delete_account": "Eliminar Cuenta",
-        "name_language": "Idioma",
-        "name_delete_account": "Eliminar Cuenta"
+        "name_language": "Idioma"
       }
     },
     "language": {
