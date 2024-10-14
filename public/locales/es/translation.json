@@ -397,7 +397,7 @@
         "name_help": "Ayuda"
       },
       "title_h3": "Perfil",
-      "button_sign_ut": "Cerrar Sesión"
+      "button_sign_out": "Cerrar Sesión"
     },
     "edit_profile": {
       "title_h3": "Perfil",

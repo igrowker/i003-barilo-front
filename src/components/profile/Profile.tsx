@@ -118,7 +118,7 @@ export default function Profile() {
               className="flex text-xl font-semibold cursor-pointer"
               onClick={handleLogout}
             >
-              {t("profile_user.component_profile.button_sign_ut")}
+              {t("profile_user.component_profile.button_sign_out")}
             </button>
           </div>
         </div>
