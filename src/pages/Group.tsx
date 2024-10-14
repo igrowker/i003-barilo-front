@@ -7,26 +7,37 @@ import InputGroup from "@/components/InputGroup"
 import Product from "@/components/Product"
 import Header from "@/components/Header"
 import GroupActivity from "@/components/GroupActivity"
+import { useTranslation } from "react-i18next" 
 
 
 
-const dayNames = ["DOM", "LUN", "MAR", "MIE", "JUE", "VIE", "SAB"];
 
 function Group() {
   const [selectedDay, setSelectedDay] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [activeTab, setActiveTab] = useState('grupo')
+  const { t } = useTranslation()
+
+  const dayNames = [
+    "group.dayNames.sun", 
+    "group.dayNames.mon", 
+    "group.dayNames.tue", 
+    "group.dayNames.wed", 
+    "group.dayNames.thu", 
+    "group.dayNames.fri", 
+    "group.dayNames.sat"
+  ];
 
   const members = [
-    {name: "Ana Gallinado", info: 'Alumna 6to B'},
-    {name: "Juan Pérez", info: 'Alumno 6to A'},
-    {name: "Lucía Fernández", info: 'Alumna 6to B'},
+    {name: "group.members.user1_name", info: 'group.members.user1_info'},
+    {name: "group.members.user2_name", info: 'group.members.user2_info'},
+    {name: "group.members.user3_name", info: 'group.members.user3_info'},
   ];
 
   const activities = [
-    { date: "2024-10-10", name: "Parrilla", description: "Asado, traer lo que quieran beber" },
-    { date: "2024-10-11", name: "Reunión de equipo", description: "Revisar el proyecto de clase" },
-    { date: "2024-10-12", name: "Día de deportes", description: "Jugar fútbol en el parque" },
+    { date: "2024-10-10", name: "group.activities.name1", description: "group.activities.description1" },
+    { date: "2024-10-11", name: "group.activities.name2", description: "group.activities.description2" },
+    { date: "2024-10-12", name: "group.activities.name3", description: "group.activities.description3" },
   ];
 
   const today = new Date();
@@ -75,14 +86,14 @@ function Group() {
             onClick={()=> handleTabChange('grupo')}
           >
             <img className=" w-14" src={logoGrupo} alt="icono de grupo" />
-            <p className="font-bold">Grupo</p>
+            <p className="font-bold">{t('group.group_p')}</p>
           </button>
           <button 
             className={`flex flex-col rounded-full px-4 py-1 justify-center items-center ${activeTab === 'excursiones' ? 'bg-[--primary-blue] text-white' : 'text-[--secondary-celeste]'}`}
             onClick={()=> handleTabChange('excursiones')}
           >
             <img className=" w-6" src={logoExcursiones} alt="icono de excursiones" />
-            <p className=" font-bold">Excursiones</p>
+            <p className=" font-bold">{t('group.excursions_p')}</p>
           </button>
         </div>
         <div>
@@ -106,7 +117,7 @@ function Group() {
               onClick={()=> handleDayClick(day.fullDate)}
             >
               <p className="text-2xl">{day.date}</p>
-              <p className="font-thin tracking-tighter">{dayNames[day.day]}</p>
+              <p className="font-thin tracking-tighter">{t(dayNames[day.day])}</p>
             </div>
           ))}
         </div>
@@ -115,13 +126,13 @@ function Group() {
             <div className="bg-white p-4 rounded-3xl mt-4">
               <p className="text-[--secondary-celeste] text-center mb-2 ">{dayNames[new Date(selectedActivity.date).getDay()]} - {selectedDay ? 'seleccionado' : 'hoy'}</p>
               <div className="bg-[--secondary-purple] rounded-3xl p-3 pl-5">
-                <p className="font-black text-[--primary-celeste]">{selectedActivity.name}</p>
-                <p className="text-[--secondary-celeste] font-thin">{selectedActivity.description}</p>
+                <p className="font-black text-[--primary-celeste]">{t(selectedActivity.name)}</p>
+                <p className="text-[--secondary-celeste] font-thin">{t(selectedActivity.description)}</p>
               </div>
             </div>
           ):(
             <div className="bg-white p-4 rounded-3xl mt-4">
-              <p>No hay actividades programadas para hoy</p>
+              <p>{t('group.no_activities_p')}</p>
             </div>
           )}
         </div>
@@ -131,23 +142,23 @@ function Group() {
           <div>
             <div className="flex items-center mb-1 mt-5 gap-1">
               <img src={logo} className='w-12' alt="Logo de Barilo" />
-              <p className="text-[--secondary-celeste] font-bold">Integrantes del grupo</p>
+              <p className="text-[--secondary-celeste] font-bold">{t('group.group_members_p')}</p>
             </div>
             {members.length === 0 ? (
               <div className="text-center py-4">
-                <p className="text-[--primary-celeste] font-bold">Aún no hay integrantes en el grupo.</p>
-                <p>Invita a gente a unirse al grupo para empezar la planificación.</p>
+                <p className="text-[--primary-celeste] font-bold">{t('group.group_members_no_p')}</p>
+                <p>{t('group.invite_user_p')}</p>
               </div>
             ) : (
               filteredMembers.length === 0 ? (
                 <div className="text-center py-4">
-                  <p className="text-[--primary-celeste] font-bold">No se encontraron miembros.</p>
-                  <p>Intenta buscar por otro nombre.</p>
+                  <p className="text-[--primary-celeste] font-bold">{t('group.no_members_p')}</p>
+                  <p>{t('group.try_to_search')}</p>
                 </div>
               ) : (
                 <div className="flex flex-col gap-1">
                   {filteredMembers.map((member, index) => (
-                    <GroupMember key={index} name={member.name} info={member.info} />
+                    <GroupMember key={index} name={t(member.name)} info={t(member.info)} />
                   ))}
                 </div>
               )
@@ -158,17 +169,17 @@ function Group() {
           <div>
             <div className="flex items-center mb-1 mt-5 gap-1">
               <img className=" w-7" src={logoExcursiones} alt="icono de excursiones" />
-              <p className="text-[--secondary-celeste] font-bold">Exursiones a realizar</p>
+              <p className="text-[--secondary-celeste] font-bold">{t('group.excursions_to_take')}</p>
             </div>
             {activities.length === 0 ? (
               <div className="text-center py-4">
-                <p className="text-[--primary-celeste] font-bold">Aún no hay actividades para el grupo.</p>
-                <p>Invita a gente a unirse al grupo para empezar la planificación.</p>
+                <p className="text-[--primary-celeste] font-bold">{t('group.no_activities_group')}</p>
+                <p>{t('group.invite_user_p')}</p>
               </div>
             ) : (
                 <div className="flex flex-col gap-1">
                   {filteredActivities.map((activity, index) => (
-                    <GroupActivity key={index} name={activity.name} date={activity.date} description={activity.description} />
+                    <GroupActivity key={index} name={t(activity.name)} date={activity.date} description={t(activity.description)} />
                   ))}
                 </div>
             )}

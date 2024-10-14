@@ -54,20 +54,20 @@ const StepFive: React.FC<StepFiveProps> = ({
           <tr>
             <td className="px-4 py-2 border-b">
               <strong>{t("stepThree.confirmation")}:</strong>{" "}
-              {stepThreeData?.confirmation || "No especificado"}
+              {stepThreeData?.confirmation || t('stepFive.not_specified')}
             </td>
           </tr>
           <tr>
             <td className="px-4 py-2 border-b">
               <strong>{t("stepFour.confirmation")}:</strong>{" "}
-              {stepFourData?.confirmation || "No especificado"}
+              {stepFourData?.confirmation || t('stepFive.not_specified')}
             </td>
           </tr>
         </tbody>
       </table>
       <div className="flex justify-between mt-4 gap-x-4">
         <ButtonBlue
-          text="Ir pagar"
+          text={t('stepFive.go_pay')}
           onClick={handleProceedToPayment}
           isActive={true}
         />

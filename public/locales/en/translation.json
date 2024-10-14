@@ -121,13 +121,23 @@
     }
   },
   "stepFive": {
-    "title": "Travel Package Confirmation"
+    "title": "Travel Package Confirmation",
+    "not_specified": "Not specified",
+    "go_pay": "Go pay"
   },
   "passage": {
     "travel_packages": "Travel Packages",
     "availability": "No outbound tickets available from ",
     "availability_a": "to"
   },
+  "ticket_card" : {
+    "origin": "Origin:",
+    "arrival": "Destination:"
+  },
+  "switch": {
+  "text1": "Airplane Trips",
+  "text2": "Bus Trips"
+},
   "buttons": {
     "nextButton": "Next",
     "searchButton": "Search",
@@ -180,6 +190,43 @@
       "titleCard3": "Destinations",
       "titleCard4": "Destinations"
     }
+  },
+  "group": {
+    "dayNames": {
+      "sun": "SUN",
+      "mon": "MON",
+      "tue": "TUE",
+      "wed": "WED",
+      "thu": "THU",
+      "fri": "FRI",
+      "sat": "SAT"
+    },
+    "members": {
+      "user1_name": "Ana Gallinado",
+      "user1_info": "6th B Grade Student",
+      "user2_name": "Juan Pérez",
+      "user2_info": "6th A Grade Student",
+      "user3_name": "Lucía Fernández",
+      "user3_info": "6th B Grade Student"
+    },
+    "activities": {
+      "name1": "Barbecue",
+      "description1": "Grill, bring your own drinks",
+      "name2": "Team Meeting",
+      "description2": "Review the class project",
+      "name3": "Sports Day",
+      "description3": "Play soccer in the park"
+    },
+    "group_p": "Group",
+    "excursions_p": "Excursions",
+    "no_activities_p": "No activities scheduled for today",
+    "group_members_p": "Group Members",
+    "group_members_no_p": "There are no members in the group yet.",
+    "invite_user_p": "Invite people to join the group to start planning.",
+    "no_members_p": "No members found.",
+    "try_to_search": "Try searching for another name.",
+    "excursions_to_take": "Excursions to be taken",
+    "no_activities_group": "There are no activities for the group yet."
   },
   "error": {
     "title": "Oh no, traveler!",

@@ -121,12 +121,22 @@
     }
   },
   "stepFive": {
-    "title": "Confirmación de Paquete de Viaje"
+    "title": "Confirmación de Paquete de Viaje",
+    "not_specified": "No especificado",
+    "go_pay": "Ir pagar"
   },
   "passage": {
     "travel_packages": "Paquetes de viaje",
     "availability": "No hay pasajes de ida disponibles de ",
     "availability_a": "a"
+  },
+  "ticket_card" : {
+    "origin": "Origen:",
+    "arrival": "Destino:"
+  },
+  "switch": {
+    "text1": "Viajes en Avión",
+    "text2": "Viajes en Autobús"
   },
   "buttons": {
     "nextButton": "Siguiente",
@@ -180,6 +190,43 @@
       "titleCard3": "Destinos",
       "titleCard4": "Destinos"
     }
+  },
+  "group": {
+    "dayNames":{
+      "sun": "DOM",
+      "mon": "LUN",
+      "tue": "MAR",
+      "wed": "MIE",
+      "thu": "JUE",
+      "fri": "VIE",
+      "sat": "SAB"
+    },
+    "members": {
+      "user1_name" : "Ana Gallinado",
+      "user1_info" : "Alumna 6to B",
+      "user2_name" : "Juan Pérez",
+      "user2_info" : "Alumno 6to A",
+      "user3_name" : "Lucía Fernández",
+      "user3_info" : "Alumna 6to B"
+    },
+    "activities":{
+      "name1": "Parrilla",
+      "description1": "Asado, traer lo que quieran para beber",
+      "name2": "Reunión de equipo",
+      "description2": "Revisar el proyecto de clase",
+      "name3": "Día de deportes",
+      "description3": "Jugar fútbol en el parque"
+    },
+    "group_p": "Grupo",
+    "excursions_p": "Excursiones",
+    "no_activities_p": "No hay actividades programadas para hoy",
+    "group_members_p": "Integrantes del grupo",
+    "group_members_no_p":"Aún no hay integrantes en el grupo.",
+    "invite_user_p": "Invita a gente a unirse al grupo para empezar la planificación.",
+    "no_members_p":"No se encontraron miembros.",
+    "try_to_search": "Intenta buscar por otro nombre.",
+    "excursions_to_take": "Exursiones a realizar",
+    "no_activities_group": "Aún no hay actividades para el grupo."
   },
   "error": {
     "title": "¡Vaya, viajero!",
