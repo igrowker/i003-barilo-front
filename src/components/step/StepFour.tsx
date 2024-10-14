@@ -10,6 +10,7 @@ import { AiOutlineDollar } from "react-icons/ai";
 import { t } from "i18next";
 import { useAuth } from "@/context/AuthProvider";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 interface StepFourProps {
   onNext: (data: StepFourFormData) => void;
@@ -21,6 +22,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
   const { token } = useAuth();
+  const navigate = useNavigate();
   const [selectedActivities, setSelectedActivities] = useState<Activity[]>([]);
   const [selectedRestaurants, setSelectedRestaurants] = useState<Restaurant[]>(
     []
@@ -107,6 +109,10 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
       activities: selectedActivities,
       restaurants: selectedRestaurants,
     });
+  };
+
+  const handleCancel = () => {
+    navigate("/home");
   };
 
   return (
@@ -202,6 +208,13 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
               isActive={
                 selectedActivities.length > 0 || selectedRestaurants.length > 0
               }
+            />
+          </div>
+          <div className="mx-5">
+            <ButtonBlue
+              text={t("buttons.cancelButton")}
+              onClick={handleCancel}
+              isActive={false}
             />
           </div>
         </div>
