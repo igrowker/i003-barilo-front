@@ -6,6 +6,7 @@ import ButtonBlue from "../ui/buttonBlue";
 import { t } from "i18next";
 import { Hotel } from "@/types/step/StepThreeFormData";
 import { useAuth } from "@/context/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 interface StepThreeProps {
   onNext: (data: StepThreeFormData) => void;
@@ -21,12 +22,13 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
   const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchHotels = async () => {
       setLoading(true);
       setError(null);
-      console.log(destinationId)
+      console.log(destinationId);
       try {
         const response = await axios.get(`${API_URL}/accommodations`, {
           headers: {
@@ -62,6 +64,10 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
     if (selectedHotel) {
       onNext({ hotels: [selectedHotel] });
     }
+  };
+
+  const handleCancel = () => {
+    navigate("/home");
   };
 
   return (
@@ -119,6 +125,13 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
               />
             </div>
           )}
+          <div className="mx-5">
+            <ButtonBlue
+              text={t("buttons.cancelButton")}
+              onClick={handleCancel}
+              isActive={false}
+            />
+          </div>
         </div>
       )}
     </>

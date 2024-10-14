@@ -8,6 +8,7 @@ import { Switch } from "@/components/ui/switch";
 import Passage from "./Passage";
 import axios from "axios";
 import { useAuth } from "@/context/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 type StepTwoProps = {
   onNext: (data: {
@@ -27,6 +28,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext }) => {
   const methods = useForm<StepTwoFormData>();
   const { handleSubmit, register, getValues } = methods;
   const { token } = useAuth();
+  const navigate = useNavigate();
   const [isFlight, setIsFlight] = useState(true);
   const [showTickets, setShowTickets] = useState(false);
   const [selectedOutbound, setSelectedOutbound] = useState<PassageData | null>(
@@ -115,6 +117,10 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext }) => {
     }
   };
 
+  const handleCancel = () => {
+    navigate("/home");
+  };
+
   return (
     <FormProvider {...methods}>
       <div className="mx-auto mb-5 text-sm text-justify font-primary font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
@@ -163,7 +169,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext }) => {
           />
           <ButtonBlue
             text={t("buttons.cancelButton")}
-            onClick={() => console.log("")}
+            onClick={handleCancel}
             isActive={false}
           />
         </div>

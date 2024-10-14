@@ -29,6 +29,10 @@ const StepFive: React.FC<StepFiveProps> = ({
     });
   };
 
+  const handleCancel = () => {
+    navigate("/home");
+  };
+
   return (
     <div className="p-4">
       <h3 className="mb-4 text-xl font-semibold text-center text-primary-celeste">
@@ -74,6 +78,11 @@ const StepFive: React.FC<StepFiveProps> = ({
           text={t("buttons.goToPayButton")}
           onClick={handleProceedToPayment}
           isActive={true}
+        />
+        <ButtonBlue
+          text={t("buttons.cancelButton")}
+          onClick={handleCancel}
+          isActive={false}
         />
       </div>
     </div>

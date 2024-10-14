@@ -34,6 +34,7 @@ import { useAuth } from "@/context/AuthProvider";
 import Activities from "@/pages/Activities";
 import Restaurants from "@/pages/Restaurants";
 import ActivityDetailPage from "@/pages/ActivitiesDetailPage";
+import TripComponent from "@/components/TripComponent";
 
 function AppRoutes() {
   const location = useLocation();
@@ -51,6 +52,7 @@ function AppRoutes() {
     /^\/activities$/,
     /^\/restaurants$/,
     /^\/activity\/\d+$/,
+    /^\/trip-component+$/,
   ];
 
   const shouldShowHeaderFooter = () => {
@@ -67,6 +69,7 @@ function AppRoutes() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route element={<PrivateRoute />}>
           <Route path="/home" element={<Home token={token} />} />
+          <Route path="/trip-component" element={<TripComponent />} />
           <Route path="/create-trip" element={<CreateTrip />} />
           <Route path="/plan-trip/group" element={<PlanTripGroup />} />
           <Route path="/plan-trip" element={<PlanTrip />} />

@@ -48,7 +48,7 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, stepOneData }) => {
 
   const navigate = useNavigate();
   const handleCancel = () => {
-    navigate("/");
+    navigate("/home");
   };
 
   return (
