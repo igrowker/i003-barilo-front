@@ -79,9 +79,54 @@
     "return_information_message": "Find the perfect accommodation for your group! Together, explore a variety of hotels that fit your needs and desires. Choose the ideal place to rest and relax after a day full of adventures, enjoying amenities and services that will make your experience unforgettable. Your home away from home is waiting for you to create memories together!",
     "hotel_price": "per night"
   },
-  "stepFour": {},
+  "stepFour": {
+    "return_information_message": "Discover the perfect experiences for your group! Dive into a wide variety of exciting activities and delightful restaurants that cater to all tastes. From outdoor adventures to cultural tours, there’s something for every group member. After a fun-filled day, choose a cozy restaurant to enjoy exquisite dishes and create memorable moments together. The opportunity to live a unique and tasty experience awaits you, so you can make unforgettable memories!",
+    "title_activity": "Activities",
+    "title_restaurant": "Restaurants",
+    "activity": {
+      "id_1": {
+        "name": "Horseback Riding Excursions",
+        "description": "Enjoy a horseback adventure at a traditional ranch, suitable for all levels."
+      },
+      "id_2": {
+        "name": "Boat Trip to Puerto Blest",
+        "description": "Discover the Black Glacier and Mount Tronador on a full-day excursion to Nahuel Huapi National Park."
+      },
+      "id_3": {
+        "name": "Excursion to Mount Tronador and Black Glacier",
+        "description": "Explore the Black Glacier and enjoy panoramic views on a guided tour of Bariloche."
+      },
+      "id_4": {
+        "name": "San Martín de los Andes via the Route of the 7 Lakes",
+        "description": "Travel through breathtaking landscapes and visit San Martín de los Andes on a full-day excursion."
+      }
+    },
+    "restaurant": {
+      "id_1": {
+        "name": "El Boliche de Alberto",
+        "description": "Famous for its Argentine meats and fries, it's a Bariloche classic since 1990."
+      },
+      "id_2": {
+        "name": "Butterfly",
+        "description": "Specializing in fondue and melon soup, it offers a beautiful view of Lake Nahuel Huapi."
+      },
+      "id_3": {
+        "name": "Familia Weiss",
+        "description": "Rustic restaurant in the city center offering German dishes and Patagonian specialties."
+      },
+      "id_4": {
+        "name": "El Patacón",
+        "description": "Famous for its meats and lake views, it offers vegetarian options and gluten-free dishes."
+      }
+    }
+  },
   "stepFive": {
     "title": "Travel Package Confirmation"
+  },
+  "passage": {
+    "travel_packages": "Travel Packages",
+    "availability": "No outbound tickets available from ",
+    "availability_a": "to"
   },
   "buttons": {
     "nextButton": "Next",

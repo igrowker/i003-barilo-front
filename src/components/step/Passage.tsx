@@ -1,6 +1,7 @@
 import TicketCard from "./TicketCard";
 import { PassageData as PassageType } from "../../types/step/StepTwoFormData";
 import { useState, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 export interface PassageProps {
   isFlight: boolean;
@@ -11,6 +12,7 @@ export interface PassageProps {
   destinationInput: string;
 }
 const Passage: React.FC<PassageProps> = ({
+
   isFlight,
   onSelect,
   tickets,
@@ -32,12 +34,14 @@ const Passage: React.FC<PassageProps> = ({
     onSelect(ticket);
   };
 
+  const { t } = useTranslation();
+
   return (
     <div>
-      <h3 className="mt-4 font-semibold text-md">Paquetes de viaje</h3>
+      <h3 className="mt-4 font-semibold text-md">{t('passage.travel_packages')}</h3>
       {departureTickets.length === 0 ? (
         <p>
-          No hay pasajes de ida disponibles de {originInput} a{" "}
+          {t('passage.availability')} {originInput} {t('passage.availability_a')}{" "}
           {destinationInput}
         </p>
       ) : (

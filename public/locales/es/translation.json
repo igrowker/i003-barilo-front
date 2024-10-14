@@ -103,13 +103,30 @@
     },
     "restaurant" : {
       "id_1" : {
-        "name" : "",
-        "description" : ""
+        "name" : "El Boliche de Alberto",
+        "description" : "Conocido por sus carnes argentinas y papas fritas, es un clásico de Bariloche desde 1990."
       },
+      "id_2" : {
+        "name" : "Butterfly",
+        "description" : "Especializado en fondue y sopa de melón, ofrece una hermosa vista al Lago Nahuel Huapi."
+      },
+      "id_3" : {
+        "name" : "Familia Weiss",
+        "description" : "Restaurante rústico en el centro, ofrece platos alemanes y típicos de la Patagonia."
+      },
+      "id_4" : {
+        "name" : "El Patacón",
+        "description" : "Famoso por sus carnes y vistas al lago, ofrece opciones vegetarianas y platos para celíacos."
+      }
     }
   },
   "stepFive": {
     "title": "Confirmación de Paquete de Viaje"
+  },
+  "passage": {
+    "travel_packages": "Paquetes de viaje",
+    "availability": "No hay pasajes de ida disponibles de ",
+    "availability_a": "a"
   },
   "buttons": {
     "nextButton": "Siguiente",

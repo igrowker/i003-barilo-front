@@ -9,38 +9,34 @@ export interface Restaurant {
 export const restaurantsData: Restaurant[] = [
   {
     id: 1,
-    name: "El Boliche de Alberto",
+    name: "stepFour.restaurant.id_1.name",
     image:
       "https://assets.turismocity.com/cdn-cgi/image/format=auto,width=1400,fit=scale-down/restaurante%20bariloche/El-boliche-de-Alberto.jpg",
-    description:
-      "Conocido por sus carnes argentinas y papas fritas, es un clásico de Bariloche desde 1990.",
+    description: "stepFour.restaurant.id_1.description",
     price: 25,
   },
   {
     id: 2,
-    name: "Butterfly",
+    name: "stepFour.restaurant.id_2.name",
     image:
       "https://assets.turismocity.com/cdn-cgi/image/format=auto,width=1400,fit=scale-down/restaurante%20bariloche/Butterfly-bariloche.jpg",
-    description:
-      "Especializado en fondue y sopa de melón, ofrece una hermosa vista al Lago Nahuel Huapi.",
+    description: "stepFour.restaurant.id_2.description",
     price: 35,
   },
   {
     id: 3,
-    name: "Familia Weiss",
+    name: "stepFour.restaurant.id_3.name",
     image:
       "https://assets.turismocity.com/cdn-cgi/image/format=auto,width=1400,fit=scale-down/restaurante%20bariloche/Fam%C3%ADlia-Weiss.jpg",
-    description:
-      "Restaurante rústico en el centro, ofrece platos alemanes y típicos de la Patagonia.",
+    description: "stepFour.restaurant.id_3.description",
     price: 15,
   },
   {
     id: 4,
-    name: "El Patacón",
+    name: "stepFour.restaurant.id_4.name",
     image:
       "https://assets.turismocity.com/cdn-cgi/image/format=auto,width=1400,fit=scale-down/restaurante%20bariloche/El-patacon.jpg",
-    description:
-      "Famoso por sus carnes y vistas al lago, ofrece opciones vegetarianas y platos para celíacos.",
+    description: "stepFour.restaurant.id_4.description",
     price: 20,
   },
 ];

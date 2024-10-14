@@ -82,7 +82,7 @@ const StepFour: React.FC<StepFourProps> = ({ onNext }) => {
               </h4>
 
               <p className="mt-2 text-base text-gray-300">
-                {activity.description}
+                {t(activity.description)}
               </p>
             </div>
           </div>
@@ -109,7 +109,7 @@ const StepFour: React.FC<StepFourProps> = ({ onNext }) => {
               />
               <h3 className="flex items-center text-xl font-bold text-primary-celeste">
                 <FaUtensils className="mr-2 text-white align-middle" />
-                {restaurant.name}
+                {t(restaurant.name)}
               </h3>
               <h4 className="flex items-center text-lg text-gray-200">
                 <AiOutlineDollar className="mr-2 align-middle" />
@@ -117,7 +117,7 @@ const StepFour: React.FC<StepFourProps> = ({ onNext }) => {
               </h4>
 
               <p className="text-base text-gray-300">
-                {restaurant.description}
+                {t(restaurant.description)}
               </p>
             </div>
           </div>
