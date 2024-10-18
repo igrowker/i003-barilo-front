@@ -1,7 +1,9 @@
 import { Label } from "@/components/ui/label";
 import { Bus, Plane } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function Switch({ checked, onCheckedChange }) {
+  const { t } = useTranslation()
   return (
     <div className="flex items-center space-x-5">
       <button
@@ -25,7 +27,7 @@ export function Switch({ checked, onCheckedChange }) {
         </span>
       </button>
       <Label htmlFor="transport-mode" className="text-xl font-semibold text-primary-purple font-primary">
-        {checked ? "Viajes en Avión" : "Viajes en Autobús"}
+        {checked ? t('switch.text1') : t('switch.text2')}
       </Label>
     </div>
   );

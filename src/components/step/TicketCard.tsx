@@ -4,6 +4,7 @@ import { TbPlaneArrival, TbPlaneDeparture } from "react-icons/tb";
 // import { IoMdTime } from "react-icons/io";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import { FaBusAlt } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 interface TicketCardProps {
   origin: string;
@@ -30,6 +31,8 @@ const TicketCard: React.FC<TicketCardProps> = ({
   departureDate,
   isFlight,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <div
       onClick={onSelect}
@@ -51,7 +54,7 @@ const TicketCard: React.FC<TicketCardProps> = ({
             ) : (
               <FaBusAlt className="mr-2 text-white" />
             )}
-            <span>Origen: {origin}</span>
+            <span>{t('ticket_card.origin')} {origin}</span>
           </h3>
           <h3 className="flex items-center text-base font-bold text-primary-celeste md:text-lg">
             {isFlight ? (
@@ -59,7 +62,7 @@ const TicketCard: React.FC<TicketCardProps> = ({
             ) : (
               <FaBusAlt className="mr-2 text-white" />
             )}
-            <span>Destino: {arrival}</span>
+            <span>{t('ticket_card.arrival')} {arrival}</span>
           </h3>
           <h3 className="flex items-center text-base font-bold text-primary-celeste md:text-lg">
             <FaRegCalendarCheck className="mr-2 text-white" />

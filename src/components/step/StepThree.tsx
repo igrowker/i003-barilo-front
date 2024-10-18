@@ -52,7 +52,7 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
         setHotels(hotelsFromApi);
       } catch (err) {
         console.error("Error en la API", err);
-        setError("Error al cargar los hoteles");
+        setError(t('stepThree.error_lopading_hotel'));
       } finally {
         setLoading(false);
       }
@@ -73,17 +73,12 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
   return (
     <>
       <div className="mx-auto mb-5 text-sm text-justify font-primary font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
-        ¡Encuentra el alojamiento perfecto para tu grupo! Exploren juntos una
-        variedad de hoteles que se adaptan a sus necesidades y deseos. Elijan el
-        lugar ideal para descansar y relajarse después de un día lleno de
-        aventuras, disfrutando de comodidades y servicios que harán que su
-        experiencia sea inolvidable. ¡Su hogar lejos de casa les está esperando
-        para crear recuerdos juntos!
+      {t('stepThree.return_information_message')}
       </div>
       {loading ? (
         <div className="flex items-center justify-center">
           <div className="pr-2 overflow-hidden text-lg font-bold loader-text whitespace-nowrap text-primary-blue">
-            Cargando hoteles...
+            {t('stepThree.loading_hotel')}
           </div>
         </div>
       ) : error ? (
@@ -111,7 +106,7 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
                 </h3>
                 <p className="flex items-center text-lg font-semibold">
                   <AiOutlineDollar className="mr-2" />
-                  {hotel.price} por noche
+                  {hotel.price} {t('stepThree.hotel_price')}
                 </p>
               </div>
             </div>

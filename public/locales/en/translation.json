@@ -49,29 +49,70 @@
     "copyright": "All rights reserved."
   },
   "progressBar": {
-    "steps": ["Group", "Tickets", "Hotels", "Activities", "Confirm"]
+    "steps": [
+      "Group",
+      "Tickets",
+      "Hotels",
+      "Activities",
+      "Confirm"
+    ]
   },
   "stepOne": {
-    "description": "Choose the group name, and later you will be able to share an invitation link with the people you want to add.",
+    "description": "Choose the group name, and later you can share an invitation link with the people you want to add.",
     "groupName": "What will the group be called?",
-    "numberOfPeople": "Number of people"
-  },
-  "stepThree": {
-    "hotel": "Hotel"
-  },
-  "stepFour": {
-    "package": "Travel Package",
-    "restaurant": "Restaurants"
-  },
-  "stepFive": {
-    "title": "Travel Package Confirmation"
+    "numberOfPeople": "Number of people",
+    "onSubmit_error": "Error creating the group. Please try again.",
+    "return_information_message": "Give your travel group a unique name, and then you can share an invitation link with your friends!"
   },
   "stepTwo": {
     "origin": "Origin",
     "destination": "Destination",
     "date": "Date",
     "departureDate": "Departure",
-    "returnDate": "Return"
+    "returnDate": "Return",
+    "fetchTickets_error": "No tickets found for this destination",
+    "fetchTickets_setError": "Error loading tickets",
+    "return_information_message": "Choose your starting point, dream destination, and your travel dates! Decide when the adventure begins and when you return home. Also, select your favorite mode of transportation to make this trip unforgettable.",
+    "loading": "Loading..."
+  },
+  "stepThree": {
+    "hotel": "Hotel",
+    "return_information_message": "Find the perfect accommodation for your group! Explore a variety of hotels that suit your needs and preferences. Choose the ideal place to rest and relax after a day full of adventures, enjoying amenities and services that will make your experience unforgettable. Your home away from home is waiting to create memories together!",
+    "hotel_price": "per night",
+    "error_lopading_hotel": "Error loading hotels",
+    "loading_hotel": "Loading hotels..."
+  },
+  "stepFour": {
+    "package": "Excursions",
+    "error_loading_act_rest": "Error loading activities and restaurants",
+    "set_error": "Unknown error",
+    "return_information_message": "Discover the perfect experiences for your group! Dive into a wide variety of exciting activities and delicious restaurants that cater to all tastes. From outdoor adventures to cultural tours, there's something for every member of the group. After a day of fun, choose a cozy restaurant to enjoy exquisite dishes and create memorable moments together. The opportunity to live a unique and flavorful experience is waiting for you to make unforgettable memories!",
+    "loading_act_res": "Loading activities and restaurants...",
+    "title_activity": "Activities",
+    "title_restaurant": "Restaurants"
+  },
+  "stepFive": {
+    "title": "Travel Package Confirmation",
+    "not_specified": "Not specified",
+    "go_pay": "Go to Pay"
+  },
+  "passage": {
+    "travel_packages": "Travel packages",
+    "availability": "No departure tickets available from ",
+    "availability_a": "to"
+  },
+  "ticket_card": {
+    "origin": "Origin:",
+    "arrival": "Destination:"
+  },
+  "switch": {
+    "text1": "Air Travel",
+    "text2": "Bus Travel"
+  },
+  "progress": {
+    "collected": "Collected $",
+    "of": " of $",
+    "percentage": "% of the trip"
   },
   "buttons": {
     "nextButton": "Next",
@@ -127,6 +168,43 @@
       "titleCard3": "Destinations",
       "titleCard4": "Destinations"
     }
+  },
+  "group": {
+    "dayNames": {
+      "sun": "SUN",
+      "mon": "MON",
+      "tue": "TUE",
+      "wed": "WED",
+      "thu": "THU",
+      "fri": "FRI",
+      "sat": "SAT"
+    },
+    "members": {
+      "user1_name": "Ana Gallinado",
+      "user1_info": "6th B Grade Student",
+      "user2_name": "Juan Pérez",
+      "user2_info": "6th A Grade Student",
+      "user3_name": "Lucía Fernández",
+      "user3_info": "6th B Grade Student"
+    },
+    "activities": {
+      "name1": "Barbecue",
+      "description1": "Grill, bring your own drinks",
+      "name2": "Team Meeting",
+      "description2": "Review the class project",
+      "name3": "Sports Day",
+      "description3": "Play soccer in the park"
+    },
+    "group_p": "Group",
+    "excursions_p": "Excursions",
+    "no_activities_p": "No activities scheduled for today",
+    "group_members_p": "Group Members",
+    "group_members_no_p": "There are no members in the group yet.",
+    "invite_user_p": "Invite people to join the group to start planning.",
+    "no_members_p": "No members found.",
+    "try_to_search": "Try searching for another name.",
+    "excursions_to_take": "Excursions to be taken",
+    "no_activities_group": "There are no activities for the group yet."
   },
   "error": {
     "title": "Oh no, traveler!",
