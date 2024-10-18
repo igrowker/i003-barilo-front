@@ -58,7 +58,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext }) => {
       });
       const transports = response.data.data.content;
       if (!transports || transports.length === 0) {
-        throw new Error("No se encontraron pasajes para este destino");
+        throw new Error(t('stepTwo.fetchTickets_error'));
       }
 
       setDestinationId(transports[0].destination.id);
@@ -67,7 +67,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext }) => {
       setShowTickets(true);
     } catch (error) {
       console.error("Error al obtener los pasajes:", error);
-      setError("Error al cargar los pasajes");
+      setError(t('stepTwo.fetchTickets_setError'));
     } finally {
       setLoading(false);
     }
@@ -124,10 +124,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext }) => {
   return (
     <FormProvider {...methods}>
       <div className="mx-auto mb-5 text-sm text-justify font-primary font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
-        ¡Elige tu punto de partida, destino soñado, y las fechas de tu viaje!
-        Decide cuándo comienza la aventura y cuándo regresas a casa. Además,
-        selecciona tu modo de transporte favorito para hacer este viaje
-        inolvidable.
+      {t('stepTwo.return_information_message')}
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -176,7 +173,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext }) => {
         {loading ? (
           <div className="flex items-center justify-center">
             <div className="pr-2 overflow-hidden text-lg font-bold loader-text whitespace-nowrap text-primary-blue">
-              Cargando pasajes...
+              {t('stepTwo.loading')}
             </div>
           </div>
         ) : error ? (

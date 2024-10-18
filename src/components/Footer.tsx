@@ -7,17 +7,17 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="container flex flex-col items-center px-5 py-8 mx-auto bg-white sm:flex-row">
+    <footer className="container flex flex-col items-center px-5 py-8 mx-auto bg-white md:flex-row">
       <a href="/" className="flex items-center justify-center md:justify-start">
         <TextIconComponent />
       </a>
-      <p className="mt-2 text-xs text-primary-celeste sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-secondary-celeste sm:py-2 sm:mt-0 md:text-sm lg:text-lg">
+      <p className=" mt-2 text-xs text-primary-celeste md:ml-4 md:pl-4 md:border-l-2 md:border-secondary-celeste md:py-2 md:mt-0 md:text-sm lg:text-lg">
         © {currentYear}
       </p>
-      <p className="mt-2 text-xs text-primary-celeste sm:ml-2 sm:border-secondary-celeste sm:py-2 sm:mt-0 md:text-sm lg:text-lg">
+      <p className=" mt-2 text-xs text-primary-celeste md:ml-2 md:border-secondary-celeste md:py-2 md:mt-0 md:text-sm lg:text-lg">
         {t("footer.copyright")}
       </p>
-      <SocialNetworks className={"flex flex-row justify-center mt-4 sm:ml-auto sm:mt-0 sm:justify-start"}/>
+      <SocialNetworks className={"flex flex-row justify-center mt-4 md:ml-auto md:mt-0 md:justify-start"}/>
     </footer>
   );
 };

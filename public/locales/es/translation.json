@@ -54,24 +54,59 @@
   "stepOne": {
     "description": "Elije el nombre del grupo y más adelante podrás compartir un link de invitación a las personas que deseas agregar.",
     "groupName": "¿Cómo se llamará el grupo?",
-    "numberOfPeople": "Número de personas"
+    "numberOfPeople": "Número de personas",
+    "onSubmit_error": "Error al crear el grupo. Inténtalo nuevamente.",
+    "return_information_message": "¡Dale un nombre único a tu grupo de viaje, y luego podrás compartir un enlace de invitación para compartir con tus amigos!"
   },
   "stepTwo": {
     "origin": "Origen",
     "destination": "Destino",
     "date": "Fecha",
     "departureDate": "Ida",
-    "returnDate": "Vuelta"
+    "returnDate": "Vuelta",
+    "fetchTickets_error": "No se encontraron pasajes para este destino",
+    "fetchTickets_setError": "Error al cargar los pasajes",
+    "return_information_message": "¡Elige tu punto de partida, destino soñado, y las fechas de tu viaje! Decide cuándo comienza la aventura y cuándo regresas a casa. Además, selecciona tu modo de transporte favorito para hacer este viaje inolvidable.",
+    "loading" : "Cargando..."
   },
   "stepThree": {
-    "hotel": "Hotel"
+    "hotel": "Hotel",
+    "return_information_message": "¡Encuentra el alojamiento perfecto para tu grupo! Exploren juntos una variedad de hoteles que se adaptan a sus necesidades y deseos. Elijan el lugar ideal para descansar y relajarse después de un día lleno de aventuras, disfrutando de comodidades y servicios que harán que su experiencia sea inolvidable. ¡Su hogar lejos de casa les está esperando para crear recuerdos juntos!",
+    "hotel_price": "por noche",
+    "error_lopading_hotel": "Error al cargar los hoteles",
+    "loading_hotel": "Cargando hoteles..."
   },
   "stepFour": {
     "package": "Excursiones",
-    "restaurant": "Restaurantes"
+    "error_loading_act_rest": "Error al cargar actividades y restaurantes",
+    "set_error" : "Error desconocido",
+    "return_information_message": "¡Descubre las experiencias perfectas para tu grupo! Sumérgete en una amplia variedad de actividades emocionantes y deliciosos restaurantes que se adaptan a todos los gustos. Desde aventuras al aire libre hasta recorridos culturales, hay algo para cada miembro del grupo. Después de un día lleno de diversión, elijan un restaurante acogedor donde disfrutar de platillos exquisitos y crear momentos memorables juntos. ¡La oportunidad de vivir una experiencia única y sabrosa les está esperando para que hagan recuerdos inolvidables!",
+    "loading_act_res": "Cargando actividades y restaurantes...",
+    "title_activity": "Actividades",
+    "title_restaurant": "Restaurantes"
   },
   "stepFive": {
-    "title": "Confirmación de Paquete de Viaje"
+    "title": "Confirmación de Paquete de Viaje",
+    "not_specified": "No especificado",
+    "go_pay": "Ir pagar"
+  },
+  "passage": {
+    "travel_packages": "Paquetes de viaje",
+    "availability": "No hay pasajes de ida disponibles de ",
+    "availability_a": "a"
+  },
+  "ticket_card" : {
+    "origin": "Origen:",
+    "arrival": "Destino:"
+  },
+  "switch": {
+    "text1": "Viajes en Avión",
+    "text2": "Viajes en Autobús"
+  },
+  "progress": {
+    "collected" : "Se ha recaudado $",
+    "of": " de $",
+    "percentage": "% del viaje"
   },
   "buttons": {
     "nextButton": "Siguiente",
@@ -127,6 +162,43 @@
       "titleCard3": "Destinos",
       "titleCard4": "Destinos"
     }
+  },
+  "group": {
+    "dayNames":{
+      "sun": "DOM",
+      "mon": "LUN",
+      "tue": "MAR",
+      "wed": "MIE",
+      "thu": "JUE",
+      "fri": "VIE",
+      "sat": "SAB"
+    },
+    "members": {
+      "user1_name" : "Ana Gallinado",
+      "user1_info" : "Alumna 6to B",
+      "user2_name" : "Juan Pérez",
+      "user2_info" : "Alumno 6to A",
+      "user3_name" : "Lucía Fernández",
+      "user3_info" : "Alumna 6to B"
+    },
+    "activities":{
+      "name1": "Parrilla",
+      "description1": "Asado, traer lo que quieran para beber",
+      "name2": "Reunión de equipo",
+      "description2": "Revisar el proyecto de clase",
+      "name3": "Día de deportes",
+      "description3": "Jugar fútbol en el parque"
+    },
+    "group_p": "Grupo",
+    "excursions_p": "Excursiones",
+    "no_activities_p": "No hay actividades programadas para hoy",
+    "group_members_p": "Integrantes del grupo",
+    "group_members_no_p":"Aún no hay integrantes en el grupo.",
+    "invite_user_p": "Invita a gente a unirse al grupo para empezar la planificación.",
+    "no_members_p":"No se encontraron miembros.",
+    "try_to_search": "Intenta buscar por otro nombre.",
+    "excursions_to_take": "Exursiones a realizar",
+    "no_activities_group": "Aún no hay actividades para el grupo."
   },
   "error": {
     "title": "¡Vaya, viajero!",

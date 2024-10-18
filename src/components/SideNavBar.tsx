@@ -82,7 +82,7 @@ export default function SideNavBar() {
   return (
     <nav
       ref={sideNavRef}
-      className={`shadow-md h-screen bg-white z-50 flex flex-col items-center justify-between fixed top-0 duration-100 text-primary-pink ${
+      className={`shadow-md h-screen bg-white z-50 flex flex-col items-center justify-around fixed top-0 duration-100 text-primary-pink ${
         open ? "w-60" : "w-14"
       } md:container md:relative md:flex-row md:h-20 md:w-auto md:px-5 py-8 md:mx-auto md:shadow-none`}
     >
@@ -109,13 +109,13 @@ export default function SideNavBar() {
       <ul
         className={`${!open && "items-center"} ${
           open && " w-11/12 md:w-auto"
-        } flex flex-col h-2/4 sm:flex-row sm:items-center md:h-auto`}
+        } flex flex-col h-2/4 md:flex-row md:items-center md:h-auto`}
       >
         {menuItems.map((item, index) => {
           return (
             <li
               key={index}
-              className="relative flex items-center gap-2 p-2 my-2 duration-300 rounded-md cursor-pointer hover:bg-primary-purple group sm:pr-5 md:hover:bg-white md:pr-10"
+              className="relative flex items-center gap-2 p-2 my-2 duration-300 rounded-md cursor-pointer hover:bg-primary-purple group md:pr-5 md:hover:bg-white"
             >
               <a
                 href={item.href}
@@ -213,7 +213,7 @@ export default function SideNavBar() {
         </div>
       </ul>
       {/* footer */}
-      <div className={`${open && "hidden"} sm:hidden`}>
+      <div className={`${open && "hidden"} md:hidden`}>
         <SocialNetworks className={"flex flex-col gap-4 mb-4"} />
       </div>
       <div className={`${!open && "hidden"} md:hidden md:h-0`}>
